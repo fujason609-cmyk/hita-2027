@@ -334,11 +334,41 @@ html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 130px)}
   .leg.rv::after{display:none}
   .wall .rubble,.wall .wire{display:none}
 }
+/* ===== decorations ===== */
+.breach .bimg{position:absolute;inset:-6%;width:112%;height:112%;object-fit:cover;object-position:50% 40%;opacity:0;transition:opacity 1.2s ease-out;animation:peer 9s ease-in-out infinite alternate}
+.breach .bimg.on{opacity:1}
+.breach::after{content:"";position:absolute;inset:0;box-shadow:inset 0 0 38px 12px #000;background:linear-gradient(180deg,rgba(0,0,0,.35),transparent 30%,transparent 70%,rgba(0,0,0,.55));pointer-events:none}
+@keyframes peer{0%{transform:scale(1) translateY(2%)}100%{transform:scale(1.07) translateY(-2%)}}
+.parapet{position:absolute;left:0;right:0;top:34%;height:clamp(34px,6vw,56px);transform:translateY(-100%);z-index:1;pointer-events:none}
+.parapet svg{width:100%;height:100%;display:block}
+.torch{position:absolute;top:34%;width:10px;height:36px;transform:translateY(-100%);z-index:2;pointer-events:none}
+.torch::before{content:"";position:absolute;left:3px;bottom:0;width:4px;height:22px;background:#2a221b}
+.torch::after{content:"";position:absolute;left:-4px;bottom:18px;width:18px;height:22px;border-radius:50% 50% 45% 45%/60% 60% 40% 40%;
+  background:radial-gradient(circle at 50% 70%,#FFE9A8 0 18%,#F2A33A 40%,rgba(142,27,20,.8) 70%,transparent 72%);filter:blur(.4px);animation:flame .18s ease-in-out infinite alternate;transform-origin:50% 100%}
+.torch .glow{position:absolute;left:-40px;bottom:-10px;width:90px;height:90px;border-radius:50%;background:radial-gradient(closest-side,rgba(242,163,58,.35),transparent);animation:glow 1.6s ease-in-out infinite alternate}
+@keyframes flame{0%{transform:scale(1,1) skewX(-3deg)}100%{transform:scale(.92,1.1) skewX(4deg)}}
+@keyframes glow{0%{opacity:.6}100%{opacity:1}}
+.t1{left:14%}.t2{left:86%}
+.crows{position:absolute;left:0;right:0;top:6%;height:26%;pointer-events:none;z-index:1;overflow:hidden}
+.crows svg{position:absolute;width:22px;height:12px;fill:#140f0c;opacity:.85;animation:fly linear infinite}
+.crows svg path{animation:flap .5s ease-in-out infinite alternate;transform-origin:50% 60%}
+@keyframes fly{0%{transform:translate(-10vw,0)}50%{transform:translate(55vw,-12px)}100%{transform:translate(115vw,6px)}}
+@keyframes flap{0%{transform:scaleY(1)}100%{transform:scaleY(-.5)}}
+.deco-side{position:absolute;top:34%;z-index:2;max-height:min(30vh,260px);max-width:28vw;transform:translateY(-100%);opacity:0;transition:opacity 1s ease-out,transform 1s ease-out;pointer-events:none;filter:drop-shadow(0 6px 10px rgba(0,0,0,.6))}
+.deco-side.on{opacity:1}
+.deco-l{left:4%}.deco-r{right:3%}
+.deco-foot{display:block;max-width:min(420px,80%);margin:10px auto 0;opacity:.9}
+@media(max-width:560px){.deco-side{max-width:34vw;max-height:22vh}.t1{left:8%}.t2{left:92%}}
+@media (prefers-reduced-motion:reduce){.breach .bimg,.torch::after,.torch .glow,.crows svg,.crows svg path{animation:none!important}.crows{display:none}}
 </style></head><body><template id="shell">
 <header class="wall">
   <div class="steam" aria-hidden="true"></div>
   <div class="bricks" aria-hidden="true"></div>
-  <div class="breach" aria-hidden="true"></div>
+  <div class="crows" aria-hidden="true"><svg style="top:20%;animation-duration:26s;animation-delay:0s" viewBox="0 0 22 12"><path d="M0 6 Q5 0 11 6 Q17 0 22 6 Q17 3 11 9 Q5 3 0 6Z"/></svg><svg style="top:45%;animation-duration:32s;animation-delay:-9s" viewBox="0 0 22 12"><path d="M0 6 Q5 0 11 6 Q17 0 22 6 Q17 3 11 9 Q5 3 0 6Z"/></svg><svg style="top:10%;animation-duration:38s;animation-delay:-20s" viewBox="0 0 22 12"><path d="M0 6 Q5 0 11 6 Q17 0 22 6 Q17 3 11 9 Q5 3 0 6Z"/></svg><svg style="top:60%;animation-duration:29s;animation-delay:-14s" viewBox="0 0 22 12"><path d="M0 6 Q5 0 11 6 Q17 0 22 6 Q17 3 11 9 Q5 3 0 6Z"/></svg></div>
+  <div class="parapet" aria-hidden="true"><svg viewBox="0 0 1200 56" preserveAspectRatio="none" aria-hidden="true"><g fill="#34312A"><rect x="0" y="0" width="34" height="22" /><rect x="60" y="0" width="34" height="22" /><rect x="120" y="0" width="34" height="22" /><rect x="180" y="0" width="34" height="22" /><rect x="240" y="0" width="34" height="22" /><rect x="300" y="0" width="34" height="22" /><rect x="360" y="0" width="34" height="22" /><rect x="420" y="0" width="34" height="22" /><rect x="480" y="0" width="34" height="22" /><rect x="540" y="0" width="34" height="22" /><rect x="600" y="0" width="34" height="22" /><rect x="660" y="0" width="34" height="22" /><rect x="720" y="0" width="34" height="22" /><rect x="780" y="0" width="34" height="22" /><rect x="840" y="0" width="34" height="22" /><rect x="900" y="0" width="34" height="22" /><rect x="960" y="0" width="34" height="22" /><rect x="1020" y="0" width="34" height="22" /><rect x="1080" y="0" width="34" height="22" /><rect x="1140" y="0" width="34" height="22" /><rect x="0" y="22" width="1200" height="34"/></g><g fill="#221f19"><g transform="translate(250,4)"><rect x="-4" y="16" width="36" height="8" rx="2"/><circle cx="4" cy="26" r="6"/><circle cx="24" cy="26" r="6"/><rect x="2" y="6" width="40" height="11" rx="5" transform="rotate(-12 2 11)"/></g><g transform="translate(610,4)"><rect x="-4" y="16" width="36" height="8" rx="2"/><circle cx="4" cy="26" r="6"/><circle cx="24" cy="26" r="6"/><rect x="2" y="6" width="40" height="11" rx="5" transform="rotate(-12 2 11)"/></g><g transform="translate(930,4)"><rect x="-4" y="16" width="36" height="8" rx="2"/><circle cx="4" cy="26" r="6"/><circle cx="24" cy="26" r="6"/><rect x="2" y="6" width="40" height="11" rx="5" transform="rotate(-12 2 11)"/></g></g></svg></div>
+  <div class="torch t1" aria-hidden="true"><span class="glow"></span></div><div class="torch t2" aria-hidden="true"><span class="glow"></span></div>
+  <div class="breach" aria-hidden="true"><img class="bimg" alt="" data-deco="breach"></div>
+  <img class="deco-side deco-l" alt="" data-deco="wall-left"><img class="deco-side deco-r" alt="" data-deco="wall-right">
   <div class="rubble" aria-hidden="true"></div><div class="wire w1" aria-hidden="true"></div><div class="wire w2" aria-hidden="true"></div><div class="dust" aria-hidden="true"></div>
   <div class="inner">
     <p class="unit">壁外调查记录　第 2027-11 次</p>
@@ -386,7 +416,7 @@ html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 130px)}
   </div>
 </section>
 </main>
-<footer>营业时间、休息日和活动都可能变动，出发前一个月到 <a href="https://shingeki-hita.com/spot/index.html" target="_blank" rel="noopener">shingeki-hita.com</a> 再核对一次。本页为个人旅行规划，与官方无关。</footer></template><script type="application/json" id="data">{"spots":{}}</script><script id="app">
+<footer><img class="deco-foot hidden" alt="" data-deco="footer">营业时间、休息日和活动都可能变动，出发前一个月到 <a href="https://shingeki-hita.com/spot/index.html" target="_blank" rel="noopener">shingeki-hita.com</a> 再核对一次。本页为个人旅行规划，与官方无关。</footer></template><script type="application/json" id="data">{"spots":{}}</script><script id="app">
 (function(){
 var LIMIT=15*1024*1024;
 var HEAD='<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><title>日田 · 壁外调查记录 2027</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;700;900&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">';
@@ -713,6 +743,11 @@ function setupAdmin(){
 }
 art=token()?{gh:true}:null;
 build();setupAdmin();hero();
+[].forEach.call(document.querySelectorAll('img[data-deco]'),function(img){
+  var exts=['png','webp','jpg'],k=0;
+  function next(){if(k>=exts.length){img.remove();return;}img.src='deco/'+img.getAttribute('data-deco')+'.'+exts[k++];}
+  img.onload=function(){img.classList.add('on');img.classList.remove('hidden');};img.onerror=next;next();
+});
 (function(){var b=document.getElementById('refresh');if(!b)return;var lock=false;
   b.onclick=function(){if(lock)return;lock=true;b.disabled=true;b.textContent='更新中…';b.classList.add('spin');
     loadRemote(true).then(function(ok){b.classList.remove('spin');build();var t=new Date();b.textContent=ok?'✓ 已更新 '+String(t.getHours()).padStart(2,'0')+':'+String(t.getMinutes()).padStart(2,'0'):'暂时无法更新';

@@ -20,3 +20,12 @@
 6. 在 iPhone 用 Safari 打开网站，拉到最下面「照片管理」，贴上后按保存。
 之后每个地点会出现「上传打卡照片」和「加目的地照」。
 金钥等于这个 repo 的写入钥匙，不要发给别人或贴到群组。
+
+—— 装饰图片（可选）——
+在 repo 里建一个 deco 资料夹，放进下面这些名字的图片（png / webp / jpg 都可以），网站会自动显示；没有放的就不显示：
+  deco/breach.png      放进墙上破洞里（建议直式、主体在中间）
+  deco/wall-left.png   站在城墙左边（建议去背 png）
+  deco/wall-right.png  站在城墙右边（建议去背 png）
+  deco/footer.png      页面最下面
+上传方法：repo 页面 Add file → Upload files，把图片拖进去之前，先在上方路径输入 deco/ 。
+注意：网站是公开的，请只放你有权使用的图片。
