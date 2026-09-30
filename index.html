@@ -261,6 +261,11 @@ html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 130px)}
 .abtn{display:flex;gap:8px;margin-top:8px}
 .abtn button{flex:1;min-height:46px;font:inherit;font-weight:700;border:1px solid var(--brass);background:var(--green);color:#EFE8D6}
 .abtn .aclear{background:transparent;color:var(--text)}
+.refresh{margin-left:auto;order:2;min-height:36px;padding:0 12px;font:inherit;font-size:13.5px;font-weight:700;color:#1B1914;background:var(--brass);border:none;cursor:pointer}
+.refresh:disabled{opacity:.75}
+.status #count{order:1}
+.status .gauge{order:3;flex-basis:100%}
+.status nav{order:4}
 </style></head><body><template id="shell">
 <header class="wall">
   <div class="steam" aria-hidden="true"></div>
@@ -275,7 +280,7 @@ html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 130px)}
 </header>
 
 <div class="status" role="status">
-  <span id="curday" class="curday"></span><b id="count">调查进度 0 / 0</b>
+  <span id="curday" class="curday"></span><button type="button" id="refresh" class="refresh">↻ 更新照片</button><b id="count">调查进度 0 / 0</b>
   <div class="gauge" aria-hidden="true"><i id="fill"></i></div>
   <nav id="daynav"></nav>
 </div>
@@ -605,8 +610,8 @@ function loadRemote(force){
   if(cached&&!force&&Date.now()-cached.t<180000){REMOTE=parseTree(cached.tree);return Promise.resolve();}
   return ghFetch('/git/trees/'+GH.branch+'?recursive=1&_='+Date.now(),{cache:'no-store'}).then(function(r){if(!r.ok)throw r.status;return r.json();}).then(function(j){
     try{localStorage.setItem('gh-tree',JSON.stringify({t:Date.now(),tree:j.tree}));}catch(e){}
-    REMOTE=parseTree(j.tree);
-  }).catch(function(){if(cached)REMOTE=parseTree(cached.tree);});
+    REMOTE=parseTree(j.tree);return true;
+  }).catch(function(){if(cached)REMOTE=parseTree(cached.tree);return false;});
 }
 function setupAdmin(){
   var box=document.getElementById('admin');if(!box)return;
@@ -622,6 +627,12 @@ function setupAdmin(){
 }
 art=token()?{gh:true}:null;
 build();setupAdmin();
+(function(){var b=document.getElementById('refresh');if(!b)return;var lock=false;
+  b.onclick=function(){if(lock)return;lock=true;b.disabled=true;b.textContent='更新中…';
+    loadRemote(true).then(function(ok){build();var t=new Date();b.textContent=ok?'✓ 已更新 '+String(t.getHours()).padStart(2,'0')+':'+String(t.getMinutes()).padStart(2,'0'):'暂时无法更新';
+      if(!ok)msg('GitHub 暂时拒绝查询（同一个网络查询太多次），请过几分钟再试，或改用手机流量。');
+      setTimeout(function(){lock=false;b.disabled=false;b.textContent='↻ 更新照片';},20000);});};
+})();
 loadRemote(false).then(build);
 setInterval(function(){if(!document.hidden)loadRemote(false).then(build);},180000);
 if('serviceWorker' in navigator){navigator.serviceWorker.register('sw.js').catch(function(){});}
