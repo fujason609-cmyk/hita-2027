@@ -278,8 +278,9 @@ html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 130px)}
 .wall .wire.w2{top:22%;animation-delay:3.8s;transform:rotate(-8deg);width:30%}
 .wall .wire.w1{top:46%}
 @keyframes wire{0%{left:-45%;opacity:0}4%{opacity:1}14%{left:110%;opacity:.9}15%,100%{left:110%;opacity:0}}
-.wall.shake .bricks,.wall.shake .breach{animation:rumble .7s ease-out 1}
-.wall.shake .breach{animation:rumble .7s ease-out 1,ember 3.6s ease-in-out .7s infinite alternate}
+.wall.shake .bricks{animation:rumble .7s ease-out 1}
+.wall.shake .breach{animation:rumbleB .7s ease-out 1,ember 3.6s ease-in-out .7s infinite alternate}
+@keyframes rumbleB{0%,100%{transform:translateX(-50%)}15%{transform:translate(calc(-50% - 4px),3px)}30%{transform:translate(calc(-50% + 4px),-2px)}45%{transform:translate(calc(-50% - 3px),1px)}60%{transform:translate(calc(-50% + 2px),2px)}80%{transform:translate(calc(-50% - 1px),-1px)}}
 @keyframes rumble{0%,100%{transform:translate(0,0)}15%{transform:translate(-4px,3px)}30%{transform:translate(4px,-2px)}45%{transform:translate(-3px,1px)}60%{transform:translate(2px,2px)}80%{transform:translate(-1px,-1px)}}
 .wall .breach{transform-origin:50% 100%}
 .wall h1{animation:slam .9s cubic-bezier(.2,.9,.25,1.2) .15s both}
@@ -296,8 +297,10 @@ html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 130px)}
 /* ===== reveal: dossiers deploy ===== */
 .rv{opacity:0;transform:translateY(26px) rotate(-.6deg);transition:opacity .55s ease-out,transform .65s cubic-bezier(.2,.8,.2,1)}
 .rv.in{opacity:1;transform:none}
-.leg.rv{opacity:1;transform:none;clip-path:inset(0 0 100% 0);transition:clip-path .7s cubic-bezier(.6,0,.2,1)}
-.leg.rv.in{clip-path:inset(0 0 0 0)}
+.leg{position:relative}
+.leg.rv{transform:translateY(10px)}
+.leg.rv::after{content:"";position:absolute;left:-4px;top:-2px;bottom:-2px;width:5px;background:var(--night);transform-origin:50% 100%;transition:transform .8s cubic-bezier(.6,0,.2,1) .1s}
+.leg.rv.in::after{transform:scaleY(0)}
 .dayhead.rv .dd{display:inline-block;transition:transform .6s cubic-bezier(.2,.9,.3,1.3) .1s;transform:translateX(-18px) scale(1.2)}
 .dayhead.rv.in .dd{transform:none}
 
@@ -327,7 +330,8 @@ html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 130px)}
 
 @media (prefers-reduced-motion:reduce){
   .wall *,.breach,.wire,.rubble i,.dust,.gauge i,.stamp.fresh,.dossier.hit,.saving::before,.lb,.status nav a.on{animation:none!important}
-  .rv,.leg.rv{opacity:1!important;transform:none!important;clip-path:none!important;transition:none!important}
+  .rv,.leg.rv{opacity:1!important;transform:none!important;transition:none!important}
+  .leg.rv::after{display:none}
   .wall .rubble,.wall .wire{display:none}
 }
 </style></head><body><template id="shell">
