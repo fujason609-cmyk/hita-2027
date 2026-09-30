@@ -360,6 +360,13 @@ html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 130px)}
 .deco-foot{display:block;max-width:min(420px,80%);margin:10px auto 0;opacity:.9}
 @media(max-width:560px){.deco-side{max-width:34vw;max-height:22vh}.t1{left:8%}.t2{left:92%}}
 @media (prefers-reduced-motion:reduce){.breach .bimg,.torch::after,.torch .glow,.crows svg,.crows svg path{animation:none!important}.crows{display:none}}
+.wall.has-art .breach{background:none;clip-path:none;box-shadow:none;filter:none;animation:none;mix-blend-mode:multiply;
+  left:68%;top:27%;width:min(44vw,480px);height:auto;aspect-ratio:1/1}
+.wall.has-art.shake .breach{animation:rumbleB .7s ease-out 1}
+.wall.has-art .breach::after{display:none}
+.wall.has-art .breach .bimg{inset:0;width:100%;height:100%;object-fit:contain;animation:none;transform:none}
+.wall.has-art .rubble i{top:40%}
+@media(max-width:560px){.wall.has-art .breach{left:64%;top:36%;width:64vw}}
 </style></head><body><template id="shell">
 <header class="wall">
   <div class="steam" aria-hidden="true"></div>
@@ -702,7 +709,7 @@ function motion(){
 }
 function hero(){
   var w=document.querySelector('.wall');if(!w||RM)return;
-  var rb=w.querySelector('.rubble');if(rb&&!rb.children.length){for(var i=0;i<16;i++){var q=document.createElement('i');if(i%3)q.className='s';var x=52+Math.random()*14;q.style.left=x+'%';q.style.setProperty('--dx',((Math.random()-.5)*80).toFixed(0)+'px');q.style.setProperty('--r',((Math.random()>.5?1:-1)*(180+Math.random()*400)).toFixed(0)+'deg');q.style.animationDuration=(2.6+Math.random()*3.4).toFixed(2)+'s';q.style.animationDelay=(Math.random()*5).toFixed(2)+'s';rb.appendChild(q);}}
+  var rb=w.querySelector('.rubble');if(rb&&!rb.children.length){for(var i=0;i<16;i++){var q=document.createElement('i');if(i%3)q.className='s';var x=56+Math.random()*20;q.style.left=x+'%';q.style.setProperty('--dx',((Math.random()-.5)*80).toFixed(0)+'px');q.style.setProperty('--r',((Math.random()>.5?1:-1)*(180+Math.random()*400)).toFixed(0)+'deg');q.style.animationDuration=(2.6+Math.random()*3.4).toFixed(2)+'s';q.style.animationDelay=(Math.random()*5).toFixed(2)+'s';rb.appendChild(q);}}
   setTimeout(function(){w.classList.add('shake');setTimeout(function(){w.classList.remove('shake');},800);},650);
   var last=0;w.addEventListener('click',function(){var t=Date.now();if(t-last<900)return;last=t;w.classList.remove('shake');void w.offsetWidth;w.classList.add('shake');setTimeout(function(){w.classList.remove('shake');},800);});
 }
@@ -744,9 +751,10 @@ function setupAdmin(){
 art=token()?{gh:true}:null;
 build();setupAdmin();hero();
 [].forEach.call(document.querySelectorAll('img[data-deco]'),function(img){
-  var exts=['png','webp','jpg'],k=0;
-  function next(){if(k>=exts.length){img.remove();return;}img.src='deco/'+img.getAttribute('data-deco')+'.'+exts[k++];}
-  img.onload=function(){img.classList.add('on');img.classList.remove('hidden');};img.onerror=next;next();
+  var n=img.getAttribute('data-deco'),raw='https://raw.githubusercontent.com/'+GH.owner+'/'+GH.repo+'/'+GH.branch+'/deco/';
+  var urls=['png','webp','jpg','jpeg','PNG','JPG'].map(function(e){return raw+n+'.'+e;}).concat(['deco/'+n+'.png']),k=0;
+  function next(){if(k>=urls.length){img.remove();return;}img.src=urls[k++]+(k===1?'?v='+Math.floor(Date.now()/600000):'');}
+  img.onload=function(){img.classList.add('on');img.classList.remove('hidden');if(n==='breach'){var w=document.querySelector('.wall');if(w)w.classList.add('has-art');}};img.onerror=next;next();
 });
 (function(){var b=document.getElementById('refresh');if(!b)return;var lock=false;
   b.onclick=function(){if(lock)return;lock=true;b.disabled=true;b.textContent='更新中…';b.classList.add('spin');
