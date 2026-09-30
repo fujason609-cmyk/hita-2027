@@ -218,7 +218,6 @@ main{padding:0 12px 60px}
 .nx-m{font-size:13.5px;color:#D9CBA8;margin-top:2px}
 .nx-b{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:8px}
 .nx-b a{display:flex;align-items:center;justify-content:center;min-height:48px;font-weight:700;font-size:15px;text-decoration:none;color:#1B1914;background:var(--brass)}
-.nx-b a.waze{background:#8FC7E0}
 .nx-b.start{margin:4px 0 14px}
 .util .next{margin:10px 0 0}
 .util .addr{color:var(--text-soft);border-top-color:var(--line)}
@@ -368,51 +367,51 @@ html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 130px)}
 .wall.has-art .breach .bimg{inset:0;width:100%;height:100%;object-fit:contain;animation:none;transform:none;
   filter:url(#keywhite) drop-shadow(0 0 3px rgba(0,0,0,.9)) drop-shadow(0 10px 26px rgba(0,0,0,.75))}
 @media(max-width:560px){.wall.has-art .breach{left:70%;top:36%;width:60vw}}
-/* ===== unified buttons: survey corps issue ===== */
-.nx-b a,.nav a,.acts button,.lgbtn,.daytools a,.abtn button,.refresh{
-  --cut:9px;
-  display:flex;align-items:center;justify-content:center;gap:8px;
-  min-height:50px;padding:0 14px;border:none;border-radius:0;
-  font-family:"Noto Serif SC","Noto Sans SC",serif;font-weight:900;font-size:15px;letter-spacing:.06em;line-height:1.2;text-align:center;text-decoration:none;
-  color:#EFE8D6;background:linear-gradient(180deg,#3A4A30,#26311F);
-  clip-path:polygon(var(--cut) 0,100% 0,100% calc(100% - var(--cut)),calc(100% - var(--cut)) 100%,0 100%,0 var(--cut));
-  box-shadow:inset 0 0 0 2px #B48A3A,inset 0 0 0 4px rgba(0,0,0,.35),inset 0 -6px 10px rgba(0,0,0,.35);
-  text-shadow:0 1px 0 rgba(0,0,0,.6);cursor:pointer}
-.nx-b a::before,.nav a::before,.acts button::before,.lgbtn::before,.daytools a::before{
-  content:"";flex:0 0 auto;width:7px;height:7px;background:#B48A3A;transform:rotate(45deg);box-shadow:0 0 0 2px rgba(0,0,0,.35)}
-/* navigation pair */
+/* ===== buttons v2: field-issue plates ===== */
+.next .nx-b a,.nx-b a,.leg .lgbtn,.lgbtn,.daytools a,.acts .up{
+  position:relative;display:flex;align-items:stretch;min-height:52px;padding:0;border:1px solid rgba(180,138,58,.55);border-radius:2px;
+  color:#EFE8D6;text-decoration:none;font-family:"Noto Serif SC",serif;font-weight:900;font-size:15.5px;letter-spacing:.04em;
+  --trim:#D2AE55;--p1:#2F3B27;--p2:#1F271A;
+  background:linear-gradient(var(--trim),var(--trim)) left top/12px 2px no-repeat,linear-gradient(var(--trim),var(--trim)) left top/2px 12px no-repeat,linear-gradient(var(--trim),var(--trim)) right top/12px 2px no-repeat,linear-gradient(var(--trim),var(--trim)) right top/2px 12px no-repeat,linear-gradient(var(--trim),var(--trim)) left bottom/12px 2px no-repeat,linear-gradient(var(--trim),var(--trim)) left bottom/2px 12px no-repeat,linear-gradient(var(--trim),var(--trim)) right bottom/12px 2px no-repeat,linear-gradient(var(--trim),var(--trim)) right bottom/2px 12px no-repeat,linear-gradient(180deg,var(--p1),var(--p2));
+  box-shadow:0 2px 0 rgba(0,0,0,.35);cursor:pointer;overflow:hidden;transition:transform .12s,filter .15s}
+.nx-b a .ic,.lgbtn .ic,.daytools a .ic,.acts .up .ic{flex:0 0 46px;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.28);border-right:1px solid rgba(180,138,58,.45)}
+.ic svg{width:20px;height:20px;fill:none;stroke:#D2AE55;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.nx-b a .tx,.lgbtn .tx,.daytools a .tx,.acts .up .tx{flex:1;display:flex;align-items:center;justify-content:center;padding:0 12px;text-shadow:0 1px 0 rgba(0,0,0,.6)}
+.nx-b a.waze{--p1:#2E4854;--p2:#1C2E36}
+.nx-b a.waze .ic svg{stroke:#9FD3EA}
+.acts .up{--trim:#F2D38A;--p1:#9E2219;--p2:#6A130D;border-color:rgba(242,211,138,.5);width:100%;font:inherit;font-family:"Noto Serif SC",serif;font-weight:900;font-size:15.5px}
+.acts .up .ic{border-right-color:rgba(242,211,138,.4)}
+.acts .up .ic svg{stroke:#F2D38A}
 .nx-b{display:grid;grid-template-columns:1fr 1fr;gap:8px}
-.nx-b a.waze{background:linear-gradient(180deg,#34505C,#223843)}
-.nx-b a.waze::before{background:#8FC7E0}
-/* secondary: parchment plates */
-.nav{display:grid;gap:8px}
-.nav a.off{color:#2A2419;background:linear-gradient(180deg,#E6DBBE,#CDBD95);box-shadow:inset 0 0 0 2px #6B5A3A,inset 0 0 0 4px rgba(255,255,255,.25);text-shadow:none;min-height:46px;font-size:14px}
-.nav a.off::before{background:#6B5A3A;box-shadow:none}
-/* actions */
-.acts{display:grid!important;grid-template-columns:2fr 1fr;gap:8px}
-.acts button{background:linear-gradient(180deg,#A2241B,#6E140E)}
-.acts button::before{background:#F2D38A}
-.acts button.sec{color:#2A2419;background:linear-gradient(180deg,#E6DBBE,#CDBD95);box-shadow:inset 0 0 0 2px #6B5A3A;text-shadow:none;padding:0 10px;font-size:14px}
-.acts button.sec::before{background:#6B5A3A;box-shadow:none}
-/* leg link */
-.lgr{display:block;margin-top:10px}
-.lgbtn{display:inline-flex;min-height:44px;font-size:14px;padding:0 18px;margin:0}
-/* day tools */
-.daytools a{min-height:46px}
-/* refresh & admin */
-.refresh{--cut:7px;min-height:38px;font-size:13.5px;color:#1B1914;background:linear-gradient(180deg,#E0B858,#A7802F);box-shadow:inset 0 0 0 2px #3B2E16;text-shadow:none}
-.abtn button{min-height:46px}
-.abtn .aclear{color:var(--text);background:transparent;box-shadow:inset 0 0 0 2px var(--line)}
-/* hover (desktop) */
-@media (hover:hover){
-  .nx-b a:hover,.nav a:hover,.acts button:hover,.lgbtn:hover,.daytools a:hover,.abtn button:hover,.refresh:hover{filter:brightness(1.12)}
-}
-/* spacing between route leg and next dossier */
-.leg{padding-bottom:26px!important}
 .nx-b.go{margin:12px 12px 0}
 .util .nx-b.go{margin:12px 0 0}
-.nav{padding:8px 12px 0}
-.acts{padding:8px 12px 12px}
+/* secondary links: inline tags */
+.nav{display:flex!important;flex-wrap:wrap;gap:4px 18px;padding:10px 14px 0!important;grid-template-columns:none!important}
+.nav a,.nav a.off{display:inline-flex;align-items:center;gap:6px;min-height:40px;padding:0;background:none;border:none;box-shadow:none;clip-path:none;
+  color:#4A3C22;font-family:"Noto Serif SC",serif;font-weight:700;font-size:14.5px;text-decoration:none;text-shadow:none;border-bottom:1px solid rgba(107,90,58,.5)}
+.nav a::before,.nav a.off::before{display:none}
+.nav a .ic{display:inline-flex}.nav a .ic svg{width:16px;height:16px;stroke:#6B5A3A}
+.nav a::after{content:"›";color:#8C7B55;font-size:18px;line-height:1;margin-left:2px}
+/* actions */
+.acts{display:flex!important;flex-direction:column;align-items:stretch;gap:6px;padding:12px 12px 12px!important;grid-template-columns:none!important}
+.acts button{clip-path:none}
+.acts .ref{align-self:center;display:inline-flex;align-items:center;gap:6px;min-height:40px;padding:0 6px;background:none!important;border:none;box-shadow:none!important;
+  color:#5A4E3A!important;font:inherit;font-family:"Noto Serif SC",serif;font-weight:700;font-size:14px;cursor:pointer;text-shadow:none}
+.acts .ref::before{display:none}
+.acts .ref .ic svg{width:16px;height:16px;stroke:#6B5A3A}
+.acts button::after{display:none}
+/* route leg */
+.lgr{display:block;margin-top:10px}
+.leg .lgbtn{display:inline-flex;min-height:44px;font-size:14px;margin:0;padding:0;color:#EFE8D6}
+.leg .lgbtn .ic{flex-basis:40px}
+.lgbtn::before,.nx-b a::before,.daytools a::before,.acts .up::before{display:none}
+.daytools a{min-height:48px;display:inline-flex}
+/* press */
+.nx-b a:active,.lgbtn:active,.daytools a:active,.acts .up:active{transform:translateY(1px) scale(.985);filter:brightness(1.15)}
+@media (hover:hover){.nx-b a:hover,.lgbtn:hover,.daytools a:hover,.acts .up:hover{filter:brightness(1.14)}.nav a:hover{color:#2A2419;border-bottom-color:#2A2419}}
+.leg{padding-bottom:26px!important}
+.nx-b a .tx,.lgbtn .tx,.daytools a .tx,.acts .up .tx{white-space:nowrap;padding:0 8px}
+@media(max-width:560px){.nx-b a,.acts .up{font-size:15px;letter-spacing:.02em}.nx-b a .ic,.acts .up .ic{flex-basis:40px}}
 </style></head><body><template id="shell">
 <header class="wall pending">
   <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><filter id="keywhite" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB"><feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  -6 -6 -6 0 16.8" result="m"/><feMorphology in="m" operator="erode" radius="1.5" result="me"/><feComposite in="SourceGraphic" in2="me" operator="in" result="c"/><feComposite in="c" in2="SourceAlpha" operator="in"/></filter></svg>
@@ -549,7 +548,10 @@ function dir(o,d,mode,wps){var u=GW+'dir/?api=1&origin='+encodeURIComponent(o)+'
 function dayRoute(pts,mode){var a=pts[0],z=pts[pts.length-1];var mid=[];pts.slice(1,-1).forEach(function(p){if(!mid.some(function(q){return q.pid===p.pid;}))mid.push(p);});mid=mid.slice(0,9);var u=GW+'dir/?api=1&origin='+encodeURIComponent(lbl(a))+'&destination='+encodeURIComponent(lbl(z))+'&travelmode='+gmode(mode);if(a.pid)u+='&origin_place_id='+a.pid;if(z.pid)u+='&destination_place_id='+z.pid;if(mid.length){u+='&waypoints='+encodeURIComponent(mid.map(lbl).join('|'));if(mid.every(function(p){return p.pid;}))u+='&waypoint_place_ids='+encodeURIComponent(mid.map(function(p){return p.pid;}).join('|'));}return u;}
 function go(b,mode){var u=GW+'dir/?api=1&destination='+encodeURIComponent(lbl(b))+'&travelmode='+gmode(mode);if(b.pid)u+='&destination_place_id='+b.pid;return u;}
 function place(s){if(!s.lat)return null;var u=GW+'search/?api=1&query='+encodeURIComponent(s.jp||ll(s));if(s.pid)u+='&query_place_id='+s.pid;return u;}
-function goBlock(s,mode){var w=el('div');var b=el('div','nx-b go');b.appendChild(lnk(null,'Google Maps 去这里',go(s,mode)));b.appendChild(lnk('waze','Waze 去这里',waze(s)));w.appendChild(b);return w;}
+var ICN={"pin": "<path d=\"M12 21s-6.5-6.2-6.5-11A6.5 6.5 0 0 1 18.5 10c0 4.8-6.5 11-6.5 11z\"/><circle cx=\"12\" cy=\"10\" r=\"2.4\"/>", "nav": "<path d=\"M4 11.5 20 4l-7.5 16-2.2-6.3z\"/>", "photo": "<rect x=\"3.5\" y=\"5\" width=\"17\" height=\"14\" rx=\"1.5\"/><circle cx=\"9\" cy=\"10\" r=\"1.8\"/><path d=\"m4 17 5-5 4 4 2.5-2.5L20 17\"/>", "scroll": "<path d=\"M7 4h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H7\"/><path d=\"M7 4a2 2 0 0 0-2 2v2h4V6a2 2 0 0 0-2-2z\"/><path d=\"M9 9h7M9 12.5h7M9 16h5\"/>", "camera": "<path d=\"M4 8h3l1.6-2.5h6.8L17 8h3v11H4z\"/><circle cx=\"12\" cy=\"13.2\" r=\"3.4\"/>", "plus": "<path d=\"M12 5v14M5 12h14\"/>", "route": "<circle cx=\"6\" cy=\"18\" r=\"2.2\"/><circle cx=\"18\" cy=\"6\" r=\"2.2\"/><path d=\"M8 17c6 0 2-10 8-10\"/>"};
+function ic(n){var s=el('span','ic');s.innerHTML='<svg viewBox="0 0 24 24" aria-hidden="true">'+ICN[n]+'</svg>';return s;}
+function plate(c,n,txt,href){var a=lnk(c,'',href);a.appendChild(ic(n));a.appendChild(el('span','tx',txt));return a;}
+function goBlock(s,mode){var w=el('div');var b=el('div','nx-b go');b.appendChild(plate(null,'pin','Google Maps',go(s,mode)));b.appendChild(plate('waze','nav','Waze',waze(s)));w.appendChild(b);return w;}
 function short(n){return n.split('（')[0].split(' ／ ')[0];}
 function nextBlock(s,next,mode){
   var box=el('div','next');
@@ -608,11 +610,10 @@ function card(s,no,prev,next,mode){
   if(s.lat)d.appendChild(goBlock(s,mode));
   var nav=el('div','nav');
   var g=place(s);
-  if(g)nav.appendChild(lnk('off','Google 照片',g));
-  if(s.off)nav.appendChild(lnk('off','官方页面',s.off));
-  nav.style.gridTemplateColumns='repeat('+nav.children.length+',1fr)';
+  if(g){var gp=lnk('off','',g);gp.appendChild(ic('photo'));gp.appendChild(document.createTextNode('Google 照片'));nav.appendChild(gp);}
+  if(s.off){var op=lnk('off','',s.off);op.appendChild(ic('scroll'));op.appendChild(document.createTextNode('官方页面'));nav.appendChild(op);}
   if(nav.children.length)d.appendChild(nav);
-  if(art){var acts=el('div','acts');var up=el('button',null,'上传打卡照片');up.type='button';up.onclick=function(){pick(s.id,'shots');};var rf=el('button','sec','加目的地照');rf.type='button';rf.onclick=function(){pick(s.id,'refs');};acts.appendChild(up);acts.appendChild(rf);d.appendChild(acts);}
+  if(art){var acts=el('div','acts');var up=el('button','up');up.appendChild(ic('camera'));up.appendChild(el('span','tx','上传打卡照片'));up.type='button';up.onclick=function(){pick(s.id,'shots');};var rf=el('button','ref');rf.appendChild(ic('plus'));rf.appendChild(document.createTextNode('加目的地照片'));rf.type='button';rf.onclick=function(){pick(s.id,'refs');};acts.appendChild(up);acts.appendChild(rf);d.appendChild(acts);}
   else{var sp=el('div');sp.style.height='12px';d.appendChild(sp);}
   return d;
 }
@@ -635,7 +636,7 @@ function leg(a,b,mode,s){
   var note=s.official?s.official:(s.fromNote&&!s._inner?s.fromNote+'。估计值':'估计值，按导航看实时路况');
   if(s.taxi)note='步行较远，打车约 '+Math.max(5,Math.round(e.km/25*60)+3)+' 分钟。'+note;
   t.appendChild(el('small',null,note));box.appendChild(t);
-  var lr=el('div','lgr');lr.appendChild(lnk('lgbtn','查看地图距离',route(a,b,m)));box.appendChild(lr);
+  var lr=el('div','lgr');lr.appendChild(plate('lgbtn','route','查看地图距离',route(a,b,m)));box.appendChild(lr);
   return box;
 }
 
@@ -651,7 +652,7 @@ function build(){
     var tools=el('div','daytools');
     if(pts.length>=2){
       var wps=pts.slice(1,-1).map(ll).filter(function(v,i,arr){return arr.indexOf(v)===i;}).slice(0,9);
-      tools.appendChild(lnk(null,'整天路线 Google Maps',dayRoute(pts,D.mode)));
+      tools.appendChild(plate(null,'route','整天路线',dayRoute(pts,D.mode)));
       var tot=0,tm=0;if(pts[0].from){var e0=est(pts[0].from,[pts[0].lat,pts[0].lng],D.mode);tot+=e0.km;tm+=e0.min;}for(var i=1;i<pts.length;i++){if(pts[i].same)continue;var e=est([pts[i-1].lat,pts[i-1].lng],[pts[i].lat,pts[i].lng],pts[i].walkFromPrev?'walking':D.mode);tot+=e.km;tm+=e.min;}
       tools.appendChild(el('span',null,'全天移动约 '+tot.toFixed(1)+' 公里，'+(D.mode==='walking'?'步行':'车程')+'约 '+tm+' 分钟（估计）'));
     }
