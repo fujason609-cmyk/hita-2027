@@ -626,6 +626,28 @@ html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 130px)}
   -webkit-mask:linear-gradient(0deg,#000 0,#000 100%);
   transform-origin:50% 100%;animation:plume2 3.4s ease-in-out infinite alternate}
 @keyframes plume2{0%{transform:skewX(0deg) scaleY(.97)}100%{transform:skewX(-6deg) scaleY(1.03)}}
+.shots .more{position:relative;overflow:hidden}
+.shots .more img{filter:blur(2px) brightness(.45) sepia(.3);transform:scale(1.1)}
+.shots .more .more-l{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;color:#F3ECDA;
+  font-family:"Noto Serif SC",serif;box-shadow:inset 0 0 0 2px rgba(210,174,85,.7)}
+.shots .more .more-l b{font-size:24px;font-weight:900;line-height:1}
+.shots .more .more-l span{font-size:13px;font-weight:700;letter-spacing:.2em}
+.gal-ov{position:fixed;inset:0;z-index:38;display:flex;flex-direction:column;background:#15130F;
+  background-image:repeating-linear-gradient(0deg,rgba(255,255,255,.015) 0 2px,transparent 2px 5px);animation:rise .25s ease-out}
+.gal-hd{display:flex;align-items:center;gap:12px;padding:calc(env(safe-area-inset-top,0px) + 12px) 14px 12px;background:linear-gradient(180deg,#34432B,#202A1A);border-bottom:2px solid #B48A3A}
+.gal-ht{flex:1;min-width:0}
+.gal-unit{margin:0;font-family:"Noto Serif SC",serif;font-weight:900;font-size:12px;letter-spacing:.3em;color:#D2AE55}
+.gal-ht h3{display:inline;margin:0;font-family:"Noto Serif SC",serif;font-weight:900;font-size:22px;color:#EFE8D6}
+.gal-n{margin-left:10px;font-size:13px;color:#C9BD9C}
+.gal-x{flex:0 0 auto;min-height:44px;padding:0 16px;font:inherit;font-family:"Noto Serif SC",serif;font-weight:900;font-size:15px;letter-spacing:.2em;color:#EFE8D6;
+  background:rgba(0,0,0,.3);border:1px solid rgba(180,138,58,.7);border-radius:2px;cursor:pointer}
+.gal-grid{flex:1;overflow-y:auto;-webkit-overflow-scrolling:touch;display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:6px;
+  padding:10px 10px calc(env(safe-area-inset-bottom,0px) + 16px);align-content:start}
+@media(max-width:560px){.gal-grid{grid-template-columns:repeat(3,1fr);gap:4px;padding:6px 6px calc(env(safe-area-inset-bottom,0px) + 16px)}}
+.gal-it{position:relative;aspect-ratio:1;padding:0;border:1px solid #3E3A31;background:#26231C;cursor:zoom-in;overflow:hidden}
+.gal-it img{width:100%;height:100%;object-fit:cover;display:block}
+.gal-cap{position:absolute;left:0;right:0;bottom:0;padding:14px 6px 4px;font-size:11px;color:#EFE8D6;text-align:left;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+  background:linear-gradient(180deg,transparent,rgba(0,0,0,.75))}
 </style></head><body><template id="shell">
 <header class="wall pending">
   <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><filter id="keywhite" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB"><feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  -6 -6 -6 0 16.8" result="m"/><feMorphology in="m" operator="erode" radius="1.5" result="me"/><feComposite in="SourceGraphic" in2="me" operator="in" result="c"/><feComposite in="c" in2="SourceAlpha" operator="in"/></filter></svg>
@@ -875,7 +897,10 @@ function card(s,no,prev,next,mode){
   var gl=el('div','glabel');gl.appendChild(el('span',null,'打卡照片'));gl.appendChild(el('span',null,st.shots.length+' 张'));d.appendChild(gl);
   var sh=el('div','shots');
   if(!st.shots.length)sh.appendChild(el('div','none','还没有人来调查过。'));
-  st.shots.forEach(function(p,i){var b=el('button');b.type='button';b.setAttribute('aria-label','打卡照片 '+(i+1));var im=el('img');im.src=p.src;im.alt='';im.loading='lazy';b.appendChild(im);b.onclick=function(){openLB(s.id,'shots',i);};sh.appendChild(b);});
+  var cols=shotCols(),n=st.shots.length,showN=n>cols?cols-1:n;
+  st.shots.slice(0,showN).forEach(function(p,i){var b=el('button');b.type='button';b.setAttribute('aria-label','打卡照片 '+(i+1));var im=el('img');im.src=p.src;im.alt='';im.loading='lazy';b.appendChild(im);b.onclick=function(){openLB(s.id,'shots',i);};sh.appendChild(b);});
+  if(n>cols){var mb=el('button','more');mb.type='button';mb.setAttribute('aria-label','查看全部 '+n+' 张打卡照片');var bg=el('img');bg.src=st.shots[showN].src;bg.alt='';bg.loading='lazy';mb.appendChild(bg);var ml=el('span','more-l');ml.appendChild(el('b',null,'+'+(n-showN)));ml.appendChild(el('span',null,'更多'));mb.appendChild(ml);mb.onclick=function(){openGallery(s.id);};sh.appendChild(mb);}
+  sh.style.gridTemplateColumns='repeat('+cols+',1fr)';
   d.appendChild(sh);
   if(s.lat)d.appendChild(goBlock(s,mode));
   if(art){var acts=el('div','acts');var up=el('button','up');up.appendChild(ic('camera'));up.appendChild(el('span','tx','上传打卡照片'));up.type='button';up.onclick=function(){pick(s.id,'shots');};acts.appendChild(up);d.appendChild(acts);}
@@ -987,7 +1012,7 @@ function openLB(id,kind,i){
   var spot=SPOTS.filter(function(s){return s.id===id;})[0];
   closeLB();lb=el('div','lb');lb.setAttribute('role','dialog');lb.setAttribute('aria-modal','true');
   var top=el('div','top');var cap=el('span');top.appendChild(cap);var right=el('div');right.style.display='flex';right.style.gap='8px';
-  if(art){var del=el('button','del','删除这张');del.type='button';var armed=false,tmr=null;del.onclick=function(){if(!armed){armed=true;del.textContent='再按一次确认删除';tmr=setTimeout(function(){armed=false;del.textContent='删除这张';},4000);return;}clearTimeout(tmr);var meta=(kind==='refs'?st.refsMeta:st.shotsMeta)[i];if(!meta){del.textContent='内建照片不能删除';return;}closeLB();saving(true);ghDelete(meta).then(function(){return loadRemote(true);}).then(function(){saving(false);build();}).catch(function(){saving(false);msg('删除失败，请检查网络或金钥后再试。');});};right.appendChild(del);}
+  if(art){var del=el('button','del','删除这张');del.type='button';var armed=false,tmr=null;del.onclick=function(){if(!armed){armed=true;del.textContent='再按一次确认删除';tmr=setTimeout(function(){armed=false;del.textContent='删除这张';},4000);return;}clearTimeout(tmr);var meta=(kind==='refs'?st.refsMeta:st.shotsMeta)[i];if(!meta){del.textContent='内建照片不能删除';return;}closeLB();closeGallery();saving(true);ghDelete(meta).then(function(){return loadRemote(true);}).then(function(){saving(false);build();}).catch(function(){saving(false);msg('删除失败，请检查网络或金钥后再试。');});};right.appendChild(del);}
   var x=el('button',null,'关闭');x.type='button';x.onclick=closeLB;right.appendChild(x);top.appendChild(right);lb.appendChild(top);
   var fig=el('figure');var im=el('img');fig.appendChild(im);lb.appendChild(fig);
   var bot=el('div','bot');var pv=el('button',null,'上一张');pv.type='button';var nx=el('button',null,'下一张');nx.type='button';bot.appendChild(pv);bot.appendChild(nx);lb.appendChild(bot);
@@ -997,6 +1022,23 @@ function openLB(id,kind,i){
   document.body.appendChild(lb);show();x.focus();
 }
 function closeLB(){if(lb){lb.remove();lb=null;}}
+var MQ=window.matchMedia?matchMedia('(max-width:560px)'):null;
+function shotCols(){return MQ&&MQ.matches?3:4;}
+if(MQ){var _mq=function(){build();};MQ.addEventListener?MQ.addEventListener('change',_mq):MQ.addListener(_mq);}
+var gov=null;
+function closeGallery(){if(gov){gov.remove();gov=null;document.documentElement.style.overflow='';}}
+function openGallery(id){
+  closeGallery();var st=S(id),spot=SPOTS.filter(function(s){return s.id===id;})[0];
+  gov=el('div','gal-ov');gov.setAttribute('role','dialog');gov.setAttribute('aria-modal','true');
+  var hd=el('div','gal-hd');var ht=el('div','gal-ht');ht.appendChild(el('p','gal-unit','调查记录　打卡照片'));ht.appendChild(el('h3',null,spot.name.split('　')[0]));ht.appendChild(el('span','gal-n',st.shots.length+' 张'));hd.appendChild(ht);
+  var x=el('button','gal-x','关闭');x.type='button';x.onclick=closeGallery;hd.appendChild(x);gov.appendChild(hd);
+  var g=el('div','gal-grid');
+  st.shots.forEach(function(p,i){var b=el('button','gal-it');b.type='button';var im=el('img');im.src=p.src;im.alt='';im.loading='lazy';b.appendChild(im);
+    var mt=st.shotsMeta[i];var cap=el('span','gal-cap');cap.textContent=(mt&&mt.by?mt.by+' · ':'')+fmt(p.at);b.appendChild(cap);
+    b.onclick=function(){openLB(id,'shots',i);};g.appendChild(b);});
+  gov.appendChild(g);document.body.appendChild(gov);document.documentElement.style.overflow='hidden';x.focus();
+  gov.addEventListener('keydown',function(e){if(e.key==='Escape'&&!lb)closeGallery();});
+}
 
 var curDay=null,ticking=false;
 function spy(){
