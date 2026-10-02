@@ -734,6 +734,42 @@ html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 130px)}
 .nb-line .langsw.sm{padding:0!important;margin:6px 0;align-items:stretch;height:38px;font-size:0}
 .nb-line .langsw.sm button{min-height:0;height:100%;display:flex;align-items:center;justify-content:center;padding:0 16px;font-size:14px;line-height:1}
 .langsw button{padding-top:0!important;padding-bottom:0!important}
+.glabel .sh-btn{display:inline-flex;align-items:center;gap:6px;min-height:34px;margin:-6px 0;padding:0 12px;font:inherit;font-family:"Noto Serif SC",serif;font-weight:900;font-size:13px;letter-spacing:.06em;
+  color:#EFE8D6;background:linear-gradient(180deg,#2F3B27,#1F271A);border:1px solid rgba(180,138,58,.75);border-radius:2px;cursor:pointer}
+.glabel .sh-btn svg{width:15px;height:15px;fill:none;stroke:#D2AE55;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+.glabel{align-items:center}
+.sh-ov .sh-opts{padding:12px 14px 4px;background:#1C1A15;border-bottom:1px solid #3E3A31}
+.sh-fmt{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.sh-fmt button{display:flex;align-items:center;gap:12px;min-height:60px;padding:8px 12px;font:inherit;color:#C9BD9C;background:rgba(0,0,0,.25);border:1.5px solid #3E3A31;border-radius:2px;cursor:pointer;text-align:left}
+.sh-fmt button b{display:block;font-family:"Noto Serif SC",serif;font-weight:900;font-size:15px;color:#EFE8D6}
+.sh-fmt button small{font-size:12px;color:#8C8170}
+.sh-fmt button.on{border-color:#D2AE55;background:linear-gradient(180deg,#34432B,#202A1A)}
+.sh-shape{flex:0 0 auto;display:block;border:2px solid #8C7B55;border-radius:2px}
+.sh-shape.story{width:18px;height:32px}.sh-shape.post{width:24px;height:30px}
+.sh-fmt button.on .sh-shape{border-color:#D2AE55;background:rgba(210,174,85,.2)}
+.sh-tip{margin:10px 0 6px;font-size:13px;color:#8C8170}
+.sh-grid .gal-it{cursor:pointer}
+.sh-grid .gal-it .sh-no{position:absolute;top:6px;right:6px;z-index:2;width:28px;height:28px;border-radius:50%;border:2px solid rgba(255,255,255,.85);background:rgba(0,0,0,.35);
+  display:flex;align-items:center;justify-content:center;font-family:"Noto Serif SC",serif;font-weight:900;font-size:14px;color:#fff}
+.sh-grid .gal-it.picked{outline:3px solid #D2AE55;outline-offset:-3px}
+.sh-grid .gal-it.picked .sh-no{background:radial-gradient(circle at 38% 34%,#C2392C,#8E1B14 60%,#5E0F0A);border-color:#F2D38A}
+.sh-grid .gal-it.dim img{opacity:.35!important}
+.sh-foot{padding:10px 14px calc(env(safe-area-inset-bottom,0px) + 12px);background:#1C1A15;border-top:1px solid #3E3A31}
+.sh-go{width:100%;min-height:54px;font:inherit;font-family:"Noto Serif SC",serif;font-weight:900;font-size:17px;letter-spacing:.2em;color:#F6EEDB;
+  background:linear-gradient(180deg,#9E2219,#6A130D);border:1px solid rgba(242,211,138,.6);border-radius:2px;cursor:pointer}
+.sh-go:disabled{opacity:.5}
+.pv-ov{z-index:62;flex-direction:column}
+.pv-box{width:100%;max-width:520px;max-height:100%;display:flex;flex-direction:column;align-items:center;gap:10px;padding:calc(env(safe-area-inset-top,0px) + 8px) 0 calc(env(safe-area-inset-bottom,0px) + 8px)}
+.pv-sc{flex:1;min-height:0;width:100%;display:flex;justify-content:center;overflow:auto;-webkit-overflow-scrolling:touch}
+.pv-img{display:block;max-width:100%;max-height:calc(100dvh - 190px);height:auto;object-fit:contain;cursor:zoom-in;box-shadow:0 0 0 1px #7A6440,0 0 0 4px #2A2219,0 0 0 5px #B48A3A,0 20px 40px rgba(0,0,0,.6)}
+.pv-box.zoom{max-width:none;height:100%}
+.pv-box.zoom .pv-sc{justify-content:flex-start;align-items:flex-start}
+.pv-box.zoom .pv-img{max-width:none;max-height:none;width:min(1080px,240vw);cursor:zoom-out;box-shadow:none}
+.pv-hint{margin:0;font-size:12.5px;color:#C9BD9C;letter-spacing:.08em}
+.pv-row{display:grid;grid-template-columns:1fr 2fr;gap:10px;width:100%;max-width:420px;padding:0 16px}
+.pv-row button{min-height:52px;font:inherit;font-family:"Noto Serif SC",serif;font-weight:900;font-size:16px;letter-spacing:.15em;border-radius:2px;cursor:pointer}
+.pv-c{color:#EFE8D6;background:transparent;border:1px solid rgba(180,138,58,.7)}
+.pv-s{color:#F6EEDB;background:linear-gradient(180deg,#9E2219,#6A130D);border:1px solid rgba(242,211,138,.6)}
 </style></head><body><template id="shell">
 <header class="wall pending">
   <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><filter id="keywhite" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB"><feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  -6 -6 -6 0 16.8" result="m"/><feMorphology in="m" operator="erode" radius="1.5" result="me"/><feComposite in="SourceGraphic" in2="me" operator="in" result="c"/><feComposite in="c" in2="SourceAlpha" operator="in"/></filter></svg>
@@ -855,7 +891,7 @@ var art=null;
 function el(t,c,txt){var e=document.createElement(t);if(c)e.className=c;if(txt!=null)e.textContent=txt;return e;}
 function lnk(c,txt,href){var a=el('a',c,txt);a.href=href;a.target='_blank';a.rel='noopener';return a;}
 
-var TC={"c":{"欢":"歡","饮":"飲","没":"沒","尔":"爾","来":"來","从":"從","发":"發","档":"檔","馆":"館","点":"點","宫":"宮","则":"則","钟":"鐘","进":"進","击":"擊","题":"題","树":"樹","险":"險","风":"風","装":"裝","员":"員","会":"會","帮":"幫","录":"錄","确":"確","认":"認","联":"聯","还":"還","预":"預","约":"約","周":"週","评":"評","页":"頁","过":"過","车":"車","圣":"聖","礼":"禮","价":"價","广":"廣","场":"場","驾":"駕","动":"動","与":"與","开":"開","区":"區","资":"資","浓":"濃","雾":"霧","结":"結","带":"帶","议":"議","顺":"順","图":"圖","书":"書","内":"內","删":"刪","旧":"舊","学":"學","现":"現","兴":"興","护":"護","证":"證","复":"複","时":"時","载":"載","请":"請","传":"傳","这":"這","几":"幾","张":"張","号":"號","异":"異","写":"寫","观":"觀","冲":"沖","签":"簽","纸":"紙","离":"離","恋":"戀","乌":"烏","里":"裡","败":"敗","试":"試","论":"論","调":"調","记":"記","检":"檢","网":"網","络":"絡","后":"後","单":"單","让":"讓","对":"對","为":"為","个":"個","规":"規","划":"劃","无":"無","关":"關","满":"滿","们":"們","钥":"鑰","台":"臺","机":"機","冈":"岡","达":"達","订":"訂","红":"紅","叶":"葉","墙":"牆","报":"報","实":"實","厅":"廳","环":"環","绕":"繞","干":"乾","产":"產","温":"溫","驿":"驛","当":"當","师":"師","贺":"賀","询":"詢","问":"問","谏":"諫","创":"創","乡":"鄉","马":"馬","线":"線","坝":"壩","铜":"銅","较":"較","远":"遠","设":"設","亲":"親","绘":"繪","制":"製","计":"計","电":"電","话":"話","编":"編","辑":"輯","简":"簡","体":"體","军":"軍","黄":"黃","双":"雙","滚":"滾","轮":"輪","经":"經","属":"屬","随":"隨","轻":"輕","鸡":"雞","画":"畫","导":"導","况":"況","头":"頭","显":"顯","际":"際","间":"間","权":"權","费":"費","觉":"覺","么":"麼","样":"樣","团":"團","厂":"廠","园":"園","办":"辦","驶":"駛","亚":"亞","门":"門","额":"額","须":"須","详":"詳","齐":"齊","暂":"暫","绝":"絕","两":"兩","饭":"飯","闭":"閉","丰":"豐","务":"務","长":"長","兽":"獸","楼":"樓","游":"遊","戏":"戲","换":"換","弹":"彈","读":"讀","优":"優","兑":"兌","奖":"獎","骑":"騎","课":"課","标":"標","奥":"奧","储":"儲","业":"業","转":"轉","谁":"誰","尽":"儘","钮":"鈕","贴":"貼","帐":"帳","买":"買","国":"國","营":"營","补":"補","给":"給","备":"備","负":"負","责":"責","变":"變","玛":"瑪","纹":"紋","灯":"燈","谜":"謎","处":"處"},"p":{"剪发的":"剪髮的","新干线":"新幹線","公里":"公里","公里，":"公里，"}};
+var TC={"c":{"点":"點","饮":"飲","楼":"樓","游":"遊","戏":"戲","个":"個","预":"預","订":"訂","红":"紅","叶":"葉","机":"機","储":"儲","间":"間","这":"這","没":"沒","里":"裡","从":"從","现":"現","导":"導","两":"兩","标":"標","计":"計","离":"離","时":"時","图":"圖","会":"會","圣":"聖","无":"無","读":"讀","请":"請","换":"換","贴":"貼","车":"車","须":"須","与":"與","内":"內","费":"費","调":"調","记":"記","录":"錄","进":"進","击":"擊","乌":"烏","题":"題","周":"週","驿":"驛","报":"報","团":"團","张":"張","发":"發","关":"關","坝":"壩","铜":"銅","页":"頁","评":"評","论":"論","场":"場","联":"聯","约":"約","画":"畫","后":"後","开":"開","过":"過","网":"網","络":"絡","钟":"鐘","制":"製","价":"價","浓":"濃","雾":"霧","结":"結","带":"帶","议":"議","办":"辦","动":"動","帐":"帳","号":"號","则":"則","实":"實","况":"況","线":"線","显":"顯","际":"際","电":"電","话":"話","绘":"繪","玛":"瑪","亚":"亞","墙":"牆","纹":"紋","灯":"燈","谜":"謎","树":"樹","险":"險","风":"風","装":"裝","员":"員","帮":"幫","确":"確","认":"認","还":"還","档":"檔","异":"異","试":"試","详":"詳","兽":"獸","饭":"飯","当":"當","师":"師","来":"來","贺":"賀","礼":"禮","询":"詢","问":"問","国":"國","驾":"駕","负":"負","责":"責","传":"傳","设":"設","补":"補","给":"給","备":"備","鸡":"雞","签":"簽","纸":"紙","远":"遠","暂":"暫","绝":"絕","几":"幾","钥":"鑰","写":"寫","权":"權","闭":"閉","门":"門","馆":"館","属":"屬","恋":"戀","败":"敗","检":"檢","丰":"豐","处":"處","轻":"輕","载":"載","厂":"廠","园":"園","区":"區","马":"馬","觉":"覺","么":"麼","样":"樣","删":"刪","双":"雙","学":"學","旧":"舊","冲":"沖","台":"臺","转":"轉","编":"編","辑":"輯","尔":"爾","书":"書","经":"經","冈":"岡","达":"達","兑":"兌","奖":"獎","营":"營","业":"業","观":"觀","资":"資","简":"簡","体":"體","头":"頭","军":"軍","优":"優","厅":"廳","谁":"誰","随":"隨","选":"選","干":"乾","产":"產","顺":"順","广":"廣","长":"長","变":"變","单":"單","让":"讓","态":"態","尽":"儘","钮":"鈕","较":"較","数":"數","温":"溫","弹":"彈","护":"護","证":"證","复":"複","齐":"齊","买":"買","奥":"奧","滚":"滾","轮":"輪","满":"滿","们":"們","欢":"歡","驶":"駛","对":"對","为":"為","规":"規","划":"劃","务":"務","骑":"騎","课":"課","环":"環","绕":"繞","宫":"宮","兴":"興","亲":"親","额":"額","谏":"諫","创":"創","乡":"鄉","黄":"黃"},"p":{"公里，":"公里，","限制）":"限制）","剪发的":"剪髮的","公里":"公里","新干线":"新幹線"}};
 var TCP=Object.keys(TC.p).sort(function(a,b){return b.length-a.length;});
 function lang(){try{return localStorage.getItem('aot-lang')==='tc'?'tc':'sc';}catch(e){return 'sc';}}
 function tcv(s){if(!s||!/[\u4e00-\u9fff]/.test(s))return s;var out='',i=0;
@@ -1016,7 +1052,7 @@ function card(s,no,prev,next,mode){
   body.appendChild(h4);body.appendChild(el('p',null,s.note));
   if(s.addr){body.appendChild(lnk('addr','📍 '+s.addr,place(s)));}if(s.tel){var tl=el('a','telk','📞 '+s.tel);tl.href='tel:'+s.tel.replace(/-/g,'');body.appendChild(tl);}if(s.ginfo)body.appendChild(el('div','tel ginfo',s.ginfo));body.appendChild(voteBox(s));
   d.appendChild(body);
-  var gl=el('div','glabel');gl.appendChild(el('span',null,'打卡照片'));gl.appendChild(el('span',null,st.shots.length+' 张'));d.appendChild(gl);
+  var gl=el('div','glabel');gl.appendChild(el('span',null,'打卡照片　'+st.shots.length+' 张'));if(st.shots.length){var sb=el('button','sh-btn');sb.type='button';sb.innerHTML='<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="3" width="12" height="18" rx="1.5"/><path d="M9 8h6M9 12h6M9 16h3"/></svg>';sb.appendChild(document.createTextNode('制作分享图'));sb.onclick=function(){openSharePicker(s.id);};gl.appendChild(sb);}d.appendChild(gl);
   var sh=el('div','shots');
   if(!st.shots.length)sh.appendChild(el('div','none','还没有人来调查过。'));
   var cols=shotCols(),n=st.shots.length,showN=n>cols?cols-1:n;
@@ -1203,6 +1239,109 @@ function markImg(img){var p=img.closest&&img.closest('.shots > button,.gal-it,.g
 document.addEventListener('load',function(e){if(e.target&&e.target.tagName==='IMG')markImg(e.target);},true);
 document.addEventListener('error',function(e){if(e.target&&e.target.tagName==='IMG')markImg(e.target);},true);
 function markLoaded(){[].forEach.call(document.querySelectorAll('.shots > button img,.gal-it img,.gal .lead img'),function(im){if(im.complete)markImg(im);});}
+/* ===== share poster ===== */
+function T(s){return lang()==='tc'?tcv(s):s;}
+function loadCORS(src){return new Promise(function(res,rej){var im=new Image();im.crossOrigin='anonymous';im.onload=function(){res(im);};im.onerror=function(){rej(src);};im.src=src+(src.indexOf('?')<0?'?':'&')+'cv=1';});}
+function openSharePicker(id){
+  var st=S(id),spot=SPOTS.filter(function(s){return s.id===id;})[0];if(!st.shots.length)return;
+  var sel=st.shots.slice(0,9).map(function(_,i){return i;}),fmtSel='story';
+  var ov=el('div','gal-ov sh-ov');ov.setAttribute('role','dialog');ov.setAttribute('aria-modal','true');
+  var hd=el('div','gal-hd');var ht=el('div','gal-ht');ht.appendChild(el('p','gal-unit','调查记录　制作分享图'));ht.appendChild(el('h3',null,spot.name.split('　')[0]));var cnt=el('span','gal-n');ht.appendChild(cnt);hd.appendChild(ht);
+  var x=el('button','gal-x','取消');x.type='button';x.onclick=function(){ov.remove();document.documentElement.style.overflow='';};hd.appendChild(x);ov.appendChild(hd);
+  var opts=el('div','sh-opts');var fm=el('div','sh-fmt');
+  [['story','限时动态','9:16'],['post','贴文','4:5']].forEach(function(o){var b=el('button',o[0]===fmtSel?'on':'');b.type='button';var fr=el('i','sh-shape '+o[0]);b.appendChild(fr);var t=el('span');t.appendChild(el('b',null,'IG '+o[1]));t.appendChild(el('small',null,o[2]));b.appendChild(t);
+    b.onclick=function(){fmtSel=o[0];[].forEach.call(fm.children,function(c){c.classList.toggle('on',c===b);});};fm.appendChild(b);});
+  opts.appendChild(fm);opts.appendChild(el('p','sh-tip','点选照片，最多 9 张，数字是排列顺序。'));ov.appendChild(opts);
+  var g=el('div','gal-grid sh-grid');
+  function paint(){cnt.textContent='已选 '+sel.length+' / 9';[].forEach.call(g.children,function(b,i){var k=sel.indexOf(i);b.classList.toggle('picked',k>=0);b.querySelector('.sh-no').textContent=k>=0?String(k+1):'';b.classList.toggle('dim',k<0&&sel.length>=9);});go.disabled=!sel.length;}
+  st.shots.forEach(function(p,i){var b=el('button','gal-it');b.type='button';var im=el('img');im.src=p.src;im.alt='';im.loading='lazy';b.appendChild(im);b.appendChild(el('span','sh-no'));
+    b.onclick=function(){var k=sel.indexOf(i);if(k>=0)sel.splice(k,1);else if(sel.length<9)sel.push(i);paint();};g.appendChild(b);});
+  ov.appendChild(g);
+  var ft=el('div','sh-foot');var go=el('button','sh-go');go.type='button';go.textContent='生成分享图';ft.appendChild(go);ov.appendChild(ft);
+  go.onclick=function(){if(!sel.length)return;go.disabled=true;go.textContent='制作中…';
+    makePoster(id,sel.map(function(i){return i;}),fmtSel).then(function(r){go.disabled=false;go.textContent='生成分享图';showPoster(r,id,fmtSel);})
+    .catch(function(e){go.disabled=false;go.textContent='生成分享图';msg(e==='taint'?'照片无法读取（跨网站限制），请稍后再试。':'制作失败，请检查网络后再试。');});};
+  document.body.appendChild(ov);document.documentElement.style.overflow='hidden';paint();markLoaded();
+  if(lang()==='tc')convNode(ov);
+}
+function layoutRows(n,fmt){var S9={1:[1],2:[1,1],3:[1,2],4:[2,2],5:[1,2,2],6:[2,2,2],7:[1,3,3],8:[2,3,3],9:[3,3,3]};var P9={1:[1],2:[2],3:[1,2],4:[2,2],5:[2,3],6:[3,3],7:[2,2,3],8:[3,2,3],9:[3,3,3]};return (fmt==='story'?S9:P9)[n];}
+function makePoster(id,idxs,fmt){
+  var st=S(id),spot=SPOTS.filter(function(s){return s.id===id;})[0];
+  var W=1080,H=fmt==='story'?1920:1350;
+  var shots=idxs.map(function(i){return {p:st.shots[i],m:st.shotsMeta[i]};});
+  var fontsP=(document.fonts&&document.fonts.load)?Promise.all(['900 110px "Noto Serif SC"','700 34px "Noto Serif SC"','500 30px "Noto Sans SC"'].map(function(f){return document.fonts.load(f,T('日田站调查记录'));})).catch(function(){}):Promise.resolve();
+  return Promise.all([fontsP].concat(shots.map(function(s){return loadCORS(s.p.src);}))).then(function(rs){
+    var imgs=rs.slice(1);var c=document.createElement('canvas');c.width=W;c.height=H;var x=c.getContext('2d');
+    var SERIF='"Noto Serif SC","Songti SC",serif',SANS='"Noto Sans SC","PingFang SC",sans-serif';
+    /* background */
+    var bg=x.createLinearGradient(0,0,0,H);bg.addColorStop(0,'#2A1512');bg.addColorStop(.28,'#221D17');bg.addColorStop(1,'#15130F');x.fillStyle=bg;x.fillRect(0,0,W,H);
+    var rg=x.createRadialGradient(W*.72,H*.08,10,W*.72,H*.08,W*.9);rg.addColorStop(0,'rgba(142,27,20,.55)');rg.addColorStop(1,'rgba(142,27,20,0)');x.fillStyle=rg;x.fillRect(0,0,W,H);
+    /* stone wall band behind header */
+    var wy=fmt==='story'?236:176,rowsN=fmt==='story'?5:4,bh=42;x.save();x.strokeStyle='#8A857A';x.lineWidth=3;
+    for(var r=0;r<rowsN;r++){var yy=wy+r*bh;x.globalAlpha=.2*Math.sin(Math.PI*(r+.5)/rowsN);x.beginPath();x.moveTo(0,yy);x.lineTo(W,yy);x.stroke();for(var xx=(r%2?-42:0);xx<W;xx+=84){x.beginPath();x.moveTo(xx,yy);x.lineTo(xx,yy+bh);x.stroke();}}x.restore();
+    /* grain */
+    x.save();for(var k=0;k<5000;k++){x.fillStyle='rgba(230,215,180,'+(Math.random()*.035)+')';x.fillRect(Math.random()*W,Math.random()*H,2,2);}x.restore();
+    /* frame */
+    x.strokeStyle='#B48A3A';x.lineWidth=3;x.strokeRect(34,34,W-68,H-68);x.strokeStyle='rgba(180,138,58,.45)';x.lineWidth=1.5;x.strokeRect(46,46,W-92,H-92);
+    [[34,34,1,1],[W-34,34,-1,1],[34,H-34,1,-1],[W-34,H-34,-1,-1]].forEach(function(q){x.fillStyle='#D2AE55';x.fillRect(q[0]-(q[2]<0?40:0),q[1]-(q[3]<0?6:0),40,6);x.fillRect(q[0]-(q[2]<0?6:0),q[1]-(q[3]<0?40:0),6,40);});
+    /* header text */
+    var top=fmt==='story'?150:112;x.textBaseline='alphabetic';x.textAlign='left';
+    function spaced(t,px,py,sp){for(var i=0;i<t.length;i++){x.fillText(t[i],px,py);px+=x.measureText(t[i]).width+sp;}return px;}
+    x.fillStyle='#D2AE55';x.font='900 '+(fmt==='story'?30:26)+'px '+SERIF;spaced(T('壁外调查记录　第 2027-11 次'),88,top,6);
+    var title=T(spot.name.split('　')[0]);var ts=fmt==='story'?124:96;x.font='900 '+ts+'px '+SERIF;while(x.measureText(title).width>W-176&&ts>56){ts-=4;x.font='900 '+ts+'px '+SERIF;}
+    x.fillStyle='rgba(0,0,0,.55)';x.fillText(title,92,top+ts+14);x.fillStyle='#F2EBDA';x.fillText(title,88,top+ts+8);
+    var sub=spot.name.split('　')[1];x.font='700 '+(fmt==='story'?36:30)+'px '+SERIF;x.fillStyle='#E3D7BA';
+    var sy=top+ts+(fmt==='story'?72:58);x.fillText(T(sub||'进击的巨人 圣地巡礼'),88,sy);
+    /* divider */
+    var dy=sy+(fmt==='story'?44:34);x.strokeStyle='#B48A3A';x.lineWidth=2;x.beginPath();x.moveTo(88,dy);x.lineTo(W-88,dy);x.stroke();
+    x.save();x.translate(W/2,dy);x.rotate(Math.PI/4);x.fillStyle='#D2AE55';x.fillRect(-8,-8,16,16);x.restore();
+    /* photo area */
+    var foot=fmt==='story'?250:190;var ax=88,ay=dy+(fmt==='story'?48:36),aw=W-176,ah=H-foot-ay;var gap=fmt==='story'?20:16;
+    var rows=layoutRows(shots.length,fmt);var rh=(ah-gap*(rows.length-1))/rows.length;var n=0,cells=[];
+    rows.forEach(function(cols,ri){var cw=(aw-gap*(cols-1))/cols;for(var ci=0;ci<cols;ci++){cells.push({x:ax+ci*(cw+gap),y:ay+ri*(rh+gap),w:cw,h:rh});}});
+    cells.forEach(function(cl,i){var im=imgs[i],mat=10;
+      x.fillStyle='rgba(0,0,0,.5)';x.fillRect(cl.x+6,cl.y+8,cl.w,cl.h);
+      x.fillStyle='#E6D9B6';x.fillRect(cl.x,cl.y,cl.w,cl.h);
+      var ix=cl.x+mat,iy=cl.y+mat,iw=cl.w-mat*2,ih=cl.h-mat*2;var s=Math.max(iw/im.naturalWidth,ih/im.naturalHeight);var sw=iw/s,shh=ih/s;
+      x.drawImage(im,(im.naturalWidth-sw)/2,(im.naturalHeight-shh)/2,sw,shh,ix,iy,iw,ih);
+      x.strokeStyle='rgba(42,36,25,.55)';x.lineWidth=2;x.strokeRect(ix,iy,iw,ih);
+      var m=shots[i].m;if(m&&cl.w>240&&cl.h>200){var lab=(m.by?m.by+' · ':'')+fmt2(shots[i].p.at);x.font='500 24px '+SANS;var lw=x.measureText(lab).width+24;
+        var gr=x.createLinearGradient(0,iy+ih-70,0,iy+ih);gr.addColorStop(0,'rgba(0,0,0,0)');gr.addColorStop(1,'rgba(0,0,0,.6)');x.fillStyle=gr;x.fillRect(ix,iy+ih-70,iw,70);
+        x.fillStyle='#F3ECDA';x.fillText(lab,ix+14,iy+ih-16);}
+    });
+    /* stamp */
+    var last=shots.map(function(s){return s.p.at;}).filter(Boolean).sort().pop();
+    var scx=ax+aw-90,scy=ay-6,R=fmt==='story'?92:78;x.save();x.translate(scx,scy);x.rotate(-0.22);x.globalAlpha=.92;
+    x.fillStyle='rgba(230,217,182,.92)';x.beginPath();x.arc(0,0,R+6,0,Math.PI*2);x.fill();
+    x.strokeStyle='#9A1F16';x.lineWidth=7;x.beginPath();x.arc(0,0,R,0,Math.PI*2);x.stroke();x.lineWidth=2.5;x.beginPath();x.arc(0,0,R-14,0,Math.PI*2);x.stroke();
+    x.fillStyle='#9A1F16';x.textAlign='center';x.font='900 '+Math.round(R*.46)+'px '+SERIF;x.fillText(T('已调查'),0,R*.12);
+    x.font='700 '+Math.round(R*.22)+'px '+SERIF;x.fillText(last?fmtDate(last):'2027',0,R*.48);
+    x.font='700 '+Math.round(R*.17)+'px '+SERIF;x.fillText('★ HITA ★',0,-R*.42);x.restore();x.textAlign='left';
+    /* footer */
+    var fy=H-foot+(fmt==='story'?70:56);var names=[];shots.forEach(function(s){if(s.m&&s.m.by&&names.indexOf(s.m.by)<0)names.push(s.m.by);});
+    x.fillStyle='#B48A3A';x.font='900 '+(fmt==='story'?26:22)+'px '+SERIF;spaced(T('调查员'),88,fy,8);
+    x.fillStyle='#EFE8D6';x.font='700 '+(fmt==='story'?40:32)+'px '+SERIF;var nm=names.join(' · ')||T('调查兵团');while(x.measureText(nm).width>W-176-260&&nm.length>4)nm=nm.slice(0,-2);x.fillText(nm,88,fy+(fmt==='story'?52:42));
+    if(spot.addr){x.fillStyle='#A99E85';x.font='500 '+(fmt==='story'?26:22)+'px '+SANS;x.fillText(T(spot.addr),88,fy+(fmt==='story'?100:80));}
+    x.textAlign='right';x.fillStyle='#D2AE55';x.font='900 '+(fmt==='story'?30:26)+'px '+SERIF;x.fillText(T('日田 · 2027'),W-88,fy+(fmt==='story'?52:42));
+    x.fillStyle='#A99E85';x.font='700 '+(fmt==='story'?22:19)+'px '+SERIF;x.fillText(T('进击的巨人 圣地巡礼'),W-88,fy+(fmt==='story'?100:80));x.textAlign='left';
+    return new Promise(function(res,rej){try{c.toBlob(function(b){if(!b){rej('taint');return;}res({blob:b,url:URL.createObjectURL(b),w:W,h:H});},'image/jpeg',.92);}catch(e){rej('taint');}});
+  });
+}
+function fmt2(iso){try{var t=new Date(iso);return (t.getMonth()+1)+'/'+t.getDate();}catch(e){return '';}}
+function fmtDate(iso){try{var t=new Date(iso);return t.getFullYear()+'.'+String(t.getMonth()+1).padStart(2,'0')+'.'+String(t.getDate()).padStart(2,'0');}catch(e){return '';}}
+function showPoster(r,id,fmt){
+  var spot=SPOTS.filter(function(s){return s.id===id;})[0];var fname=T(spot.name.split('　')[0])+'_'+T('调查记录')+'_'+(fmt==='story'?'Story':'Post')+'.jpg';
+  var ov=el('div','namebox pv-ov');ov.setAttribute('role','dialog');ov.setAttribute('aria-modal','true');
+  var box=el('div','pv-box');var sc=el('div','pv-sc');var im=el('img','pv-img');im.src=r.url;im.alt=fname;sc.appendChild(im);box.appendChild(sc);
+  var hint=el('p','pv-hint','点图片放大查看');box.appendChild(hint);
+  var row=el('div','pv-row');var cancel=el('button','pv-c','取消');cancel.type='button';var save=el('button','pv-s','保存到手机');save.type='button';row.appendChild(cancel);row.appendChild(save);box.appendChild(row);
+  ov.appendChild(box);document.body.appendChild(ov);if(lang()==='tc')convNode(ov);
+  var zoom=false;im.onclick=function(){zoom=!zoom;box.classList.toggle('zoom',zoom);hint.textContent=T(zoom?'拖动查看，点图片还原':'点图片放大查看');if(zoom)sc.scrollTo(sc.scrollWidth/2-sc.clientWidth/2,0);};
+  cancel.onclick=function(){ov.remove();URL.revokeObjectURL(r.url);};
+  save.onclick=function(){var file=null;try{file=new File([r.blob],fname,{type:'image/jpeg'});}catch(e){}
+    if(file&&navigator.canShare&&navigator.canShare({files:[file]})){navigator.share({files:[file],title:fname}).catch(function(){});return;}
+    var a=document.createElement('a');a.href=r.url;a.download=fname;document.body.appendChild(a);a.click();a.remove();};
+}
 var MQ=window.matchMedia?matchMedia('(max-width:560px)'):null;
 function shotCols(){return MQ&&MQ.matches?3:4;}
 if(MQ){var _mq=function(){build();};MQ.addEventListener?MQ.addEventListener('change',_mq):MQ.addListener(_mq);}
