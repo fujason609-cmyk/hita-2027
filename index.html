@@ -663,6 +663,34 @@ html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 130px)}
 .shots > button.more::after{border:2px solid rgba(210,174,85,.8)}
 .shots > button:focus-visible::after{border:2px solid #8E1B14}
 .shots .more .more-l{box-shadow:none}
+.lb.lb2{padding:0;background:#0B0A08 radial-gradient(ellipse at 50% 45%,#1E1A14,#060504 75%);display:flex;flex-direction:column}
+.lb-top{display:flex;align-items:center;gap:12px;padding:calc(env(safe-area-inset-top,0px) + 12px) 14px 12px;background:linear-gradient(180deg,#34432B,#202A1A);border-bottom:2px solid #B48A3A}
+.lb-info{flex:1;min-width:0}
+.lb-unit{margin:0;font-family:"Noto Serif SC",serif;font-weight:900;font-size:11.5px;letter-spacing:.3em;color:#D2AE55}
+.lb-title{margin:2px 0 0;font-family:"Noto Serif SC",serif;font-weight:900;font-size:20px;line-height:1.25;color:#EFE8D6;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.lb-meta{margin:3px 0 0;font-size:13px;color:#C9BD9C;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.lb-tools{display:flex;gap:8px;flex:0 0 auto}
+.lb-ico{position:relative;display:flex;align-items:center;justify-content:center;gap:6px;width:46px;height:46px;padding:0;border-radius:50%;cursor:pointer;
+  background:rgba(0,0,0,.3);border:1.5px solid rgba(180,138,58,.8);color:#EFE8D6;transition:width .2s,border-radius .2s,background .2s}
+.lb-ico svg{width:22px;height:22px;fill:none;stroke:#E8D9A8;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round;flex:0 0 auto}
+.lb-del{border-color:rgba(194,57,44,.85)}.lb-del svg{stroke:#F2B8AA}
+.lb-dt{display:none;font-family:"Noto Serif SC",serif;font-weight:900;font-size:14px;white-space:nowrap}
+.lb-del.armed{width:auto;padding:0 14px;border-radius:23px;background:linear-gradient(180deg,#A2241B,#6E140E);border-color:#F2D38A}
+.lb-del.armed svg{stroke:#F6EEDB}.lb-del.armed .lb-dt{display:inline}
+.lb-stage{flex:1;min-height:0;display:flex;align-items:center;justify-content:center;padding:16px 14px;touch-action:pan-y}
+.lb-frame{margin:0;max-width:100%;max-height:100%;display:flex;padding:6px;background:#D9CBA8;box-shadow:0 0 0 1px #7A6440,0 0 0 4px #2A2219,0 0 0 5px #B48A3A,0 24px 50px rgba(0,0,0,.65)}
+.lb-frame img{display:block;max-width:calc(100vw - 52px);max-height:calc(100vh - 230px);max-height:calc(100dvh - 230px - env(safe-area-inset-top,0px) - env(safe-area-inset-bottom,0px));object-fit:contain}
+.lb-frame.flip{animation:lbin .3s cubic-bezier(.2,.8,.2,1)}
+@keyframes lbin{from{opacity:0;transform:translateY(10px) rotate(-.8deg)}to{opacity:1;transform:none}}
+.lb-bot{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 18px calc(env(safe-area-inset-bottom,0px) + 16px)}
+.lb-nav{display:flex;align-items:center;justify-content:center;width:58px;height:58px;padding:0;border-radius:50%;cursor:pointer;
+  background:linear-gradient(180deg,#2F3B27,#1F271A);border:1.5px solid #B48A3A}
+.lb-nav svg{width:26px;height:26px;fill:none;stroke:#E8D9A8;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.lb-nav:disabled{opacity:.25;cursor:default}
+.lb-nav:not(:disabled):active,.lb-ico:active{transform:scale(.94)}
+.lb-count{font-family:"Noto Serif SC",serif;color:#C9BD9C;font-size:15px;letter-spacing:.1em}
+.lb-count b{font-size:24px;font-weight:900;color:#EFE8D6}
+@media (prefers-reduced-motion:reduce){.lb-frame.flip{animation:none}}
 </style></head><body><template id="shell">
 <header class="wall pending">
   <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><filter id="keywhite" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB"><feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  -6 -6 -6 0 16.8" result="m"/><feMorphology in="m" operator="erode" radius="1.5" result="me"/><feComposite in="SourceGraphic" in2="me" operator="in" result="c"/><feComposite in="c" in2="SourceAlpha" operator="in"/></filter></svg>
@@ -1025,14 +1053,36 @@ var lb=null;
 function openLB(id,kind,i){
   var st=S(id),list=st[kind];if(!list.length)return;
   var spot=SPOTS.filter(function(s){return s.id===id;})[0];
-  closeLB();lb=el('div','lb');lb.setAttribute('role','dialog');lb.setAttribute('aria-modal','true');
-  var top=el('div','top');var cap=el('span');top.appendChild(cap);var right=el('div');right.style.display='flex';right.style.gap='8px';
-  if(art){var del=el('button','del','删除这张');del.type='button';var armed=false,tmr=null;del.onclick=function(){if(!armed){armed=true;del.textContent='再按一次确认删除';tmr=setTimeout(function(){armed=false;del.textContent='删除这张';},4000);return;}clearTimeout(tmr);var meta=(kind==='refs'?st.refsMeta:st.shotsMeta)[i];if(!meta){del.textContent='内建照片不能删除';return;}closeLB();closeGallery();saving(true);ghDelete(meta).then(function(){return loadRemote(true);}).then(function(){saving(false);build();}).catch(function(){saving(false);msg('删除失败，请检查网络或金钥后再试。');});};right.appendChild(del);}
-  var x=el('button',null,'关闭');x.type='button';x.onclick=closeLB;right.appendChild(x);top.appendChild(right);lb.appendChild(top);
-  var fig=el('figure');var im=el('img');fig.appendChild(im);lb.appendChild(fig);
-  var bot=el('div','bot');var pv=el('button',null,'上一张');pv.type='button';var nx=el('button',null,'下一张');nx.type='button';bot.appendChild(pv);bot.appendChild(nx);lb.appendChild(bot);
-  function show(){var it=list[i];im.src=kind==='refs'?it:it.src;im.alt=spot.name;var mt=(kind==='refs'?st.refsMeta:st.shotsMeta)[i];var by=mt&&mt.by?'　由 '+mt.by+' 上传':'';cap.textContent=spot.name+'　'+(kind==='refs'?'目的地照片':'打卡照片 '+fmt(it.at))+by+'　'+(i+1)+' / '+list.length;pv.disabled=i<=0;nx.disabled=i>=list.length-1;}
+  closeLB();lb=el('div','lb lb2');lb.setAttribute('role','dialog');lb.setAttribute('aria-modal','true');
+  var SV=function(d){return '<svg viewBox="0 0 24 24" aria-hidden="true">'+d+'</svg>';};
+  var top=el('div','lb-top');var info=el('div','lb-info');
+  var unit=el('p','lb-unit',kind==='refs'?'调查记录　目的地照片':'调查记录　打卡照片');var ttl=el('h3','lb-title',spot.name.split('　')[0]);var meta=el('p','lb-meta');
+  info.appendChild(unit);info.appendChild(ttl);info.appendChild(meta);top.appendChild(info);
+  var tools=el('div','lb-tools');
+  var del=null;
+  if(art){del=el('button','lb-ico lb-del');del.type='button';del.setAttribute('aria-label','删除这张照片');del.innerHTML=SV('<path d="M4 7h16"/><path d="M9 7V4.5h6V7"/><path d="M6.5 7l1 13h9l1-13"/><path d="M10 11v6M14 11v6"/>')+'<span class="lb-dt">确认删除？</span>';
+    var armed=false,tmr=null;
+    del.onclick=function(){if(!armed){armed=true;del.classList.add('armed');tmr=setTimeout(function(){armed=false;del.classList.remove('armed');},4000);return;}
+      clearTimeout(tmr);var mt=(kind==='refs'?st.refsMeta:st.shotsMeta)[i];if(!mt){del.querySelector('.lb-dt').textContent='内建照片不能删';return;}
+      closeLB();closeGallery();saving(true);ghDelete(mt).then(function(){return loadRemote(true);}).then(function(){saving(false);build();}).catch(function(){saving(false);msg('删除失败，请检查网络或金钥后再试。');});};
+    tools.appendChild(del);}
+  var x=el('button','lb-ico lb-x');x.type='button';x.setAttribute('aria-label','关闭');x.innerHTML=SV('<path d="M6 6l12 12M18 6 6 18"/>');x.onclick=closeLB;tools.appendChild(x);
+  top.appendChild(tools);lb.appendChild(top);
+  var stage=el('div','lb-stage');var fr=el('figure','lb-frame');var im=el('img');fr.appendChild(im);stage.appendChild(fr);lb.appendChild(stage);
+  var bot=el('div','lb-bot');
+  var pv=el('button','lb-nav');pv.type='button';pv.setAttribute('aria-label','上一张');pv.innerHTML=SV('<path d="M15 5l-7 7 7 7"/>');
+  var ct=el('div','lb-count');var nx=el('button','lb-nav');nx.type='button';nx.setAttribute('aria-label','下一张');nx.innerHTML=SV('<path d="M9 5l7 7-7 7"/>');
+  bot.appendChild(pv);bot.appendChild(ct);bot.appendChild(nx);lb.appendChild(bot);
+  function show(){var it=list[i];im.src=kind==='refs'?it:it.src;im.alt=spot.name;var mt=(kind==='refs'?st.refsMeta:st.shotsMeta)[i];
+    var parts=[];if(kind!=='refs'&&it.at)parts.push(fmt(it.at));if(mt&&mt.by)parts.push('由 '+mt.by+' 上传');meta.textContent=parts.join('　·　');meta.style.display=parts.length?'':'none';
+    ct.innerHTML='';ct.appendChild(el('b',null,String(i+1)));ct.appendChild(el('span',null,' / '+list.length));
+    pv.disabled=i<=0;nx.disabled=i>=list.length-1;bot.style.visibility=list.length>1?'visible':'hidden';
+    if(del){del.classList.remove('armed');}
+    fr.classList.remove('flip');void fr.offsetWidth;fr.classList.add('flip');}
   pv.onclick=function(){if(i>0){i--;show();}};nx.onclick=function(){if(i<list.length-1){i++;show();}};
+  var sx=null,sy=null;stage.addEventListener('touchstart',function(e){var t=e.touches[0];sx=t.clientX;sy=t.clientY;},{passive:true});
+  stage.addEventListener('touchend',function(e){if(sx===null)return;var t=e.changedTouches[0],dx=t.clientX-sx,dy=t.clientY-sy;sx=null;if(Math.abs(dx)>50&&Math.abs(dx)>Math.abs(dy)*1.3){if(dx<0)nx.click();else pv.click();}else if(dy>90&&Math.abs(dy)>Math.abs(dx)*1.5)closeLB();},{passive:true});
+  stage.addEventListener('click',function(e){if(e.target===stage)closeLB();});
   lb.addEventListener('keydown',function(e){if(e.key==='Escape')closeLB();if(e.key==='ArrowLeft')pv.click();if(e.key==='ArrowRight')nx.click();});
   document.body.appendChild(lb);show();x.focus();
 }
