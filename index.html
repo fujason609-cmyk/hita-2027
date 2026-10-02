@@ -729,6 +729,11 @@ html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 130px)}
 .nb-line .langsw.sm button{min-height:36px;font-size:14px;color:#3A2F1C;padding:0 14px}
 .nb-line .langsw.sm button+button{border-left-color:#6B5A3A}
 .nb-line .langsw.sm button.on{color:#F6EEDB}
+.nb-line.ln{align-items:center}
+.nb-line.ln b{padding-bottom:0}
+.nb-line .langsw.sm{padding:0!important;margin:6px 0;align-items:stretch;height:38px;font-size:0}
+.nb-line .langsw.sm button{min-height:0;height:100%;display:flex;align-items:center;justify-content:center;padding:0 16px;font-size:14px;line-height:1}
+.langsw button{padding-top:5px!important;padding-bottom:0!important}
 </style></head><body><template id="shell">
 <header class="wall pending">
   <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><filter id="keywhite" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB"><feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  -6 -6 -6 0 16.8" result="m"/><feMorphology in="m" operator="erode" radius="1.5" result="me"/><feComposite in="SourceGraphic" in2="me" operator="in" result="c"/><feComposite in="c" in2="SourceAlpha" operator="in"/></filter></svg>
@@ -856,10 +861,11 @@ function lang(){try{return localStorage.getItem('aot-lang')==='tc'?'tc':'sc';}ca
 function tcv(s){if(!s||!/[\u4e00-\u9fff]/.test(s))return s;var out='',i=0;
   outer:while(i<s.length){for(var k=0;k<TCP.length;k++){var w=TCP[k];if(s.substr(i,w.length)===w){out+=TC.p[w];i+=w.length;continue outer;}}var c=s[i];out+=TC.c[c]||c;i++;}return out;}
 var ATTRS=['placeholder','aria-label','title','data-t','alt'];
+var ORIG=new WeakMap(),ORIGA=new WeakMap(),ORIGT=null,TCN=[];
 function convNode(n){
-  if(n.nodeType===3){var v=n.nodeValue,t=tcv(v);if(t!==v)n.nodeValue=t;return;}
+  if(n.nodeType===3){var v=n.nodeValue,t=tcv(v);if(t!==v){if(!ORIG.has(n))TCN.push(n);ORIG.set(n,v);n.nodeValue=t;}return;}
   if(n.nodeType!==1)return;var tg=n.tagName;if(tg==='SCRIPT'||tg==='STYLE'||tg==='TEMPLATE'||tg==='TEXTAREA')return;
-  ATTRS.forEach(function(a){if(n.hasAttribute&&n.hasAttribute(a)){var v=n.getAttribute(a),t=tcv(v);if(t!==v)n.setAttribute(a,t);}});
+  ATTRS.forEach(function(a){if(n.hasAttribute&&n.hasAttribute(a)){var v=n.getAttribute(a),t=tcv(v);if(t!==v){var o=ORIGA.get(n);if(!o){o={};ORIGA.set(n,o);TCN.push(n);}o[a]=v;n.setAttribute(a,t);}}});
   if(tg==='INPUT')return;
   for(var c=n.firstChild;c;c=c.nextSibling)convNode(c);
 }
@@ -868,15 +874,20 @@ function applyLang(){
   var L=lang();document.documentElement.lang=L==='tc'?'zh-Hant':'zh-CN';
   [].forEach.call(document.querySelectorAll('.langsw button'),function(b){var on=b.getAttribute('data-lang')===L;b.classList.toggle('on',on);b.setAttribute('aria-pressed',on?'true':'false');});
   if(L!=='tc')return;
-  convNode(document.body);document.title=tcv(document.title);
+  convNode(document.body);if(ORIGT===null)ORIGT=document.title;document.title=tcv(document.title);
   if(!tcObs&&window.MutationObserver){tcObs=new MutationObserver(function(ms){ms.forEach(function(m){
       if(m.type==='characterData')convNode(m.target);
       else if(m.type==='attributes')convNode(m.target);
       else m.addedNodes.forEach(function(x){convNode(x);});});});
     tcObs.observe(document.body,{childList:true,subtree:true,characterData:true,attributes:true,attributeFilter:ATTRS});}
 }
+function restoreSC(){
+  if(tcObs){tcObs.disconnect();tcObs=null;}
+  TCN.forEach(function(n){if(!n.isConnected)return;if(n.nodeType===3){var o=ORIG.get(n);if(o!=null)n.nodeValue=o;ORIG.delete(n);}else{var oa=ORIGA.get(n);if(oa){Object.keys(oa).forEach(function(a){if(n.hasAttribute(a))n.setAttribute(a,oa[a]);});ORIGA.delete(n);}}});
+  TCN=[];if(ORIGT!==null){document.title=ORIGT;ORIGT=null;}
+}
 function setLang(L){var cur=lang();if(L===cur)return;try{localStorage.setItem('aot-lang',L);}catch(e){}
-  if(L==='sc'){location.reload();return;}applyLang();}
+  if(L==='sc'){restoreSC();}applyLang();}
 document.addEventListener('click',function(e){var b=e.target.closest&&e.target.closest('.langsw button');if(b)setLang(b.getAttribute('data-lang'));});
 function myName(){try{return (localStorage.getItem('aot-name')||'').trim();}catch(e){return '';}}
 function b64u(s){return btoa(unescape(encodeURIComponent(s))).replace(/\+/g,'-').replace(/\//g,'_').replace(/=+$/,'');}
@@ -1301,7 +1312,7 @@ build();setupAdmin();hero();applyLang();
     var l1=document.createElement('label');l1.className='nb-line';l1.innerHTML='<b>姓名</b>';l1.appendChild(inp);
     var l2=document.createElement('div');l2.className='nb-line';l2.innerHTML='<b>所属</b><span>调查兵团</span>';
     var l3=document.createElement('div');l3.className='nb-line';l3.innerHTML='<b>任务</b><span>第 2027-11 次壁外调查　日田</span>';
-    var l4=document.createElement('div');l4.className='nb-line';l4.innerHTML='<b>文字</b><span class="langsw sm" role="group" aria-label="文字"><button type="button" data-lang="sc">简体</button><button type="button" data-lang="tc">繁體</button></span>';
+    var l4=document.createElement('div');l4.className='nb-line ln';l4.innerHTML='<b>文字</b><span class="langsw sm" role="group" aria-label="文字"><button type="button" data-lang="sc">简体</button><button type="button" data-lang="tc">繁體</button></span>';
     form.appendChild(l1);form.appendChild(l2);form.appendChild(l3);form.appendChild(l4);
     var err=document.createElement('p');err.className='nb-err';
     var row=document.createElement('div');row.className='nb-row';
