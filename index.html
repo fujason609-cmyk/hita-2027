@@ -770,6 +770,13 @@ html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 130px)}
 .pv-row button{min-height:52px;font:inherit;font-family:"Noto Serif SC",serif;font-weight:900;font-size:16px;letter-spacing:.15em;border-radius:2px;cursor:pointer}
 .pv-c{color:#EFE8D6;background:transparent;border:1px solid rgba(180,138,58,.7)}
 .pv-s{color:#F6EEDB;background:linear-gradient(180deg,#9E2219,#6A130D);border:1px solid rgba(242,211,138,.6)}
+.sh-style{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px}
+.sh-style button{display:flex;align-items:baseline;justify-content:center;gap:8px;min-height:44px;padding:0 10px;font:inherit;color:#C9BD9C;background:rgba(0,0,0,.25);border:1.5px solid #3E3A31;border-radius:2px;cursor:pointer}
+.sh-style button b{font-family:"Noto Serif SC",serif;font-weight:900;font-size:15px;color:#EFE8D6}
+.sh-style button small{font-size:12px;color:#8C8170}
+.sh-style button.on{border-color:#D2AE55;background:linear-gradient(180deg,#34432B,#202A1A)}
+.glabel{margin-bottom:10px!important;min-height:36px}
+.glabel .sh-btn{margin:0!important}
 </style></head><body><template id="shell">
 <header class="wall pending">
   <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><filter id="keywhite" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB"><feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  -6 -6 -6 0 16.8" result="m"/><feMorphology in="m" operator="erode" radius="1.5" result="me"/><feComposite in="SourceGraphic" in2="me" operator="in" result="c"/><feComposite in="c" in2="SourceAlpha" operator="in"/></filter></svg>
@@ -891,7 +898,7 @@ var art=null;
 function el(t,c,txt){var e=document.createElement(t);if(c)e.className=c;if(txt!=null)e.textContent=txt;return e;}
 function lnk(c,txt,href){var a=el('a',c,txt);a.href=href;a.target='_blank';a.rel='noopener';return a;}
 
-var TC={"c":{"点":"點","饮":"飲","楼":"樓","游":"遊","戏":"戲","个":"個","预":"預","订":"訂","红":"紅","叶":"葉","机":"機","储":"儲","间":"間","这":"這","没":"沒","里":"裡","从":"從","现":"現","导":"導","两":"兩","标":"標","计":"計","离":"離","时":"時","图":"圖","会":"會","圣":"聖","无":"無","读":"讀","请":"請","换":"換","贴":"貼","车":"車","须":"須","与":"與","内":"內","费":"費","调":"調","记":"記","录":"錄","进":"進","击":"擊","乌":"烏","题":"題","周":"週","驿":"驛","报":"報","团":"團","张":"張","发":"發","关":"關","坝":"壩","铜":"銅","页":"頁","评":"評","论":"論","场":"場","联":"聯","约":"約","画":"畫","后":"後","开":"開","过":"過","网":"網","络":"絡","钟":"鐘","制":"製","价":"價","浓":"濃","雾":"霧","结":"結","带":"帶","议":"議","办":"辦","动":"動","帐":"帳","号":"號","则":"則","实":"實","况":"況","线":"線","显":"顯","际":"際","电":"電","话":"話","绘":"繪","玛":"瑪","亚":"亞","墙":"牆","纹":"紋","灯":"燈","谜":"謎","树":"樹","险":"險","风":"風","装":"裝","员":"員","帮":"幫","确":"確","认":"認","还":"還","档":"檔","异":"異","试":"試","详":"詳","兽":"獸","饭":"飯","当":"當","师":"師","来":"來","贺":"賀","礼":"禮","询":"詢","问":"問","国":"國","驾":"駕","负":"負","责":"責","传":"傳","设":"設","补":"補","给":"給","备":"備","鸡":"雞","签":"簽","纸":"紙","远":"遠","暂":"暫","绝":"絕","几":"幾","钥":"鑰","写":"寫","权":"權","闭":"閉","门":"門","馆":"館","属":"屬","恋":"戀","败":"敗","检":"檢","丰":"豐","处":"處","轻":"輕","载":"載","厂":"廠","园":"園","区":"區","马":"馬","觉":"覺","么":"麼","样":"樣","删":"刪","双":"雙","学":"學","旧":"舊","冲":"沖","台":"臺","转":"轉","编":"編","辑":"輯","尔":"爾","书":"書","经":"經","冈":"岡","达":"達","兑":"兌","奖":"獎","营":"營","业":"業","观":"觀","资":"資","简":"簡","体":"體","头":"頭","军":"軍","优":"優","厅":"廳","谁":"誰","随":"隨","选":"選","干":"乾","产":"產","顺":"順","广":"廣","长":"長","变":"變","单":"單","让":"讓","态":"態","尽":"儘","钮":"鈕","较":"較","数":"數","温":"溫","弹":"彈","护":"護","证":"證","复":"複","齐":"齊","买":"買","奥":"奧","滚":"滾","轮":"輪","满":"滿","们":"們","欢":"歡","驶":"駛","对":"對","为":"為","规":"規","划":"劃","务":"務","骑":"騎","课":"課","环":"環","绕":"繞","宫":"宮","兴":"興","亲":"親","额":"額","谏":"諫","创":"創","乡":"鄉","黄":"黃"},"p":{"公里，":"公里，","限制）":"限制）","剪发的":"剪髮的","公里":"公里","新干线":"新幹線"}};
+var TC={"c":{"从":"從","编":"編","辑":"輯","评":"評","价":"價","区":"區","营":"營","业":"業","内":"內","时":"時","这":"這","环":"環","绕":"繞","周":"週","钥":"鑰","无":"無","请":"請","复":"複","制":"製","还":"還","没":"沒","来":"來","调":"調","过":"過","页":"頁","会":"會","载":"載","传":"傳","发":"發","红":"紅","叶":"葉","馆":"館","点":"點","里":"裡","开":"開","台":"臺","机":"機","经":"經","删":"刪","导":"導","进":"進","击":"擊","简":"簡","败":"敗","试":"試","钟":"鐘","选":"選","详":"詳","后":"後","个":"個","网":"網","设":"設","亲":"親","绘":"繪","计":"計","双":"雙","滚":"滾","轮":"輪","动":"動","温":"溫","马":"馬","与":"與","兽":"獸","团":"團","鸡":"雞","签":"簽","画":"畫","纸":"紙","远":"遠","车":"車","转":"轉","约":"約","暂":"暫","绝":"絕","询":"詢","络":"絡","几":"幾","记":"記","录":"錄","国":"國","际":"際","驾":"駕","玛":"瑪","亚":"亞","墙":"牆","纹":"紋","灯":"燈","谜":"謎","写":"寫","权":"權","张":"張","饮":"飲","楼":"樓","游":"遊","戏":"戲","奖":"獎","兑":"兌","换":"換","检":"檢","议":"議","现":"現","读":"讀","学":"學","旧":"舊","帐":"帳","号":"號","图":"圖","礼":"禮","问":"問","额":"額","满":"滿","数":"數","顺":"順","浓":"濃","雾":"霧","结":"結","带":"帶","欢":"歡","办":"辦","确":"確","认":"認","树":"樹","显":"顯","谁":"誰","订":"訂","干":"幹","线":"線","乌":"烏","题":"題","书":"書","务":"務","驿":"驛","较":"較","黄":"黃","谏":"諫","创":"創","师":"師","乡":"鄉","场":"場","预":"預","险":"險","风":"風","装":"裝","员":"員","帮":"幫","联":"聯","丰":"豐","间":"間","变":"變","贴":"貼","圣":"聖","饭":"飯","产":"產","兴":"興","电":"電","观":"觀","纯":"純","关":"關","门":"門","单":"單","让":"讓","护":"護","证":"證","档":"檔","优":"優","实":"實","尔":"爾","离":"離","话":"話","处":"處","广":"廣","长":"長","铜":"銅","则":"則","对":"對","为":"為","规":"規","划":"劃","坝":"壩","当":"當","贺":"賀","补":"補","给":"給","备":"備","骑":"騎","课":"課","园":"園","冲":"沖","恋":"戀","资":"資","费":"費","异":"異","厅":"廳","买":"買","两":"兩","轻":"輕","奥":"奧","厂":"廠","须":"須","论":"論","闭":"閉","冈":"岡","达":"達","军":"軍","觉":"覺","么":"麼","样":"樣","随":"隨","报":"報","们":"們","况":"況","弹":"彈","负":"負","责":"責","属":"屬","尽":"儘","钮":"鈕","态":"態","体":"體","储":"儲","齐":"齊","标":"標","宫":"宮","头":"頭","驶":"駛"},"p":{"限制）":"限制）","公里，":"公里，","剪发的":"剪髮的","公里":"公里","梅干等":"梅乾等"}};
 var TCP=Object.keys(TC.p).sort(function(a,b){return b.length-a.length;});
 function lang(){try{return localStorage.getItem('aot-lang')==='tc'?'tc':'sc';}catch(e){return 'sc';}}
 function tcv(s){if(!s||!/[\u4e00-\u9fff]/.test(s))return s;var out='',i=0;
@@ -1244,14 +1251,17 @@ function T(s){return lang()==='tc'?tcv(s):s;}
 function loadCORS(src){return new Promise(function(res,rej){var im=new Image();im.crossOrigin='anonymous';im.onload=function(){res(im);};im.onerror=function(){rej(src);};im.src=src+(src.indexOf('?')<0?'?':'&')+'cv=1';});}
 function openSharePicker(id){
   var st=S(id),spot=SPOTS.filter(function(s){return s.id===id;})[0];if(!st.shots.length)return;
-  var sel=st.shots.slice(0,9).map(function(_,i){return i;}),fmtSel='story';
+  var sel=st.shots.slice(0,9).map(function(_,i){return i;}),fmtSel='story',styleSel='aot';
   var ov=el('div','gal-ov sh-ov');ov.setAttribute('role','dialog');ov.setAttribute('aria-modal','true');
   var hd=el('div','gal-hd');var ht=el('div','gal-ht');ht.appendChild(el('p','gal-unit','调查记录　制作分享图'));ht.appendChild(el('h3',null,spot.name.split('　')[0]));var cnt=el('span','gal-n');ht.appendChild(cnt);hd.appendChild(ht);
   var x=el('button','gal-x','取消');x.type='button';x.onclick=function(){ov.remove();document.documentElement.style.overflow='';};hd.appendChild(x);ov.appendChild(hd);
   var opts=el('div','sh-opts');var fm=el('div','sh-fmt');
   [['story','限时动态','9:16'],['post','贴文','4:5']].forEach(function(o){var b=el('button',o[0]===fmtSel?'on':'');b.type='button';var fr=el('i','sh-shape '+o[0]);b.appendChild(fr);var t=el('span');t.appendChild(el('b',null,'IG '+o[1]));t.appendChild(el('small',null,o[2]));b.appendChild(t);
     b.onclick=function(){fmtSel=o[0];[].forEach.call(fm.children,function(c){c.classList.toggle('on',c===b);});};fm.appendChild(b);});
-  opts.appendChild(fm);opts.appendChild(el('p','sh-tip','点选照片，最多 9 张，数字是排列顺序。'));ov.appendChild(opts);
+  opts.appendChild(fm);
+  var sy=el('div','sh-style');[['aot','调查记录','主题设计'],['plain','纯拼图','只拼照片']].forEach(function(o){var b=el('button',o[0]===styleSel?'on':'');b.type='button';b.appendChild(el('b',null,o[1]));b.appendChild(el('small',null,o[2]));
+    b.onclick=function(){styleSel=o[0];[].forEach.call(sy.children,function(c){c.classList.toggle('on',c===b);});};sy.appendChild(b);});
+  opts.appendChild(sy);opts.appendChild(el('p','sh-tip','点选照片，最多 9 张，数字是排列顺序。'));ov.appendChild(opts);
   var g=el('div','gal-grid sh-grid');
   function paint(){cnt.textContent='已选 '+sel.length+' / 9';[].forEach.call(g.children,function(b,i){var k=sel.indexOf(i);b.classList.toggle('picked',k>=0);b.querySelector('.sh-no').textContent=k>=0?String(k+1):'';b.classList.toggle('dim',k<0&&sel.length>=9);});go.disabled=!sel.length;}
   st.shots.forEach(function(p,i){var b=el('button','gal-it');b.type='button';var im=el('img');im.src=p.src;im.alt='';im.loading='lazy';b.appendChild(im);b.appendChild(el('span','sh-no'));
@@ -1259,12 +1269,22 @@ function openSharePicker(id){
   ov.appendChild(g);
   var ft=el('div','sh-foot');var go=el('button','sh-go');go.type='button';go.textContent='生成分享图';ft.appendChild(go);ov.appendChild(ft);
   go.onclick=function(){if(!sel.length)return;go.disabled=true;go.textContent='制作中…';
-    makePoster(id,sel.map(function(i){return i;}),fmtSel).then(function(r){go.disabled=false;go.textContent='生成分享图';showPoster(r,id,fmtSel);})
+    (styleSel==='plain'?makePlain:makePoster)(id,sel.slice(),fmtSel).then(function(r){go.disabled=false;go.textContent='生成分享图';showPoster(r,id,fmtSel,styleSel);})
     .catch(function(e){go.disabled=false;go.textContent='生成分享图';msg(e==='taint'?'照片无法读取（跨网站限制），请稍后再试。':'制作失败，请检查网络后再试。');});};
   document.body.appendChild(ov);document.documentElement.style.overflow='hidden';paint();markLoaded();
   if(lang()==='tc')convNode(ov);
 }
 function layoutRows(n,fmt){var S9={1:[1],2:[1,1],3:[1,2],4:[2,2],5:[1,2,2],6:[2,2,2],7:[1,3,3],8:[2,3,3],9:[3,3,3]};var P9={1:[1],2:[2],3:[1,2],4:[2,2],5:[2,3],6:[3,3],7:[2,2,3],8:[3,2,3],9:[3,3,3]};return (fmt==='story'?S9:P9)[n];}
+function makePlain(id,idxs,fmt){
+  var st=S(id);var W=1080,H=fmt==='story'?1920:1350,G=8;
+  return Promise.all(idxs.map(function(i){return loadCORS(st.shots[i].src);})).then(function(imgs){
+    var c=document.createElement('canvas');c.width=W;c.height=H;var x=c.getContext('2d');x.fillStyle='#FFFFFF';x.fillRect(0,0,W,H);
+    var rows=layoutRows(imgs.length,fmt),rh=(H-G*(rows.length+1))/rows.length,k=0;
+    rows.forEach(function(cols,ri){var cw=(W-G*(cols+1))/cols;for(var ci=0;ci<cols;ci++){var im=imgs[k++];var cx=G+ci*(cw+G),cy=G+ri*(rh+G);
+      var s=Math.max(cw/im.naturalWidth,rh/im.naturalHeight),sw=cw/s,sh=rh/s;x.drawImage(im,(im.naturalWidth-sw)/2,(im.naturalHeight-sh)/2,sw,sh,cx,cy,cw,rh);}});
+    return new Promise(function(res,rej){try{c.toBlob(function(b){if(!b){rej('taint');return;}res({blob:b,url:URL.createObjectURL(b),w:W,h:H});},'image/jpeg',.92);}catch(e){rej('taint');}});
+  });
+}
 function makePoster(id,idxs,fmt){
   var st=S(id),spot=SPOTS.filter(function(s){return s.id===id;})[0];
   var W=1080,H=fmt==='story'?1920:1350;
@@ -1305,9 +1325,6 @@ function makePoster(id,idxs,fmt){
       var ix=cl.x+mat,iy=cl.y+mat,iw=cl.w-mat*2,ih=cl.h-mat*2;var s=Math.max(iw/im.naturalWidth,ih/im.naturalHeight);var sw=iw/s,shh=ih/s;
       x.drawImage(im,(im.naturalWidth-sw)/2,(im.naturalHeight-shh)/2,sw,shh,ix,iy,iw,ih);
       x.strokeStyle='rgba(42,36,25,.55)';x.lineWidth=2;x.strokeRect(ix,iy,iw,ih);
-      var m=shots[i].m;if(m&&cl.w>240&&cl.h>200){var lab=(m.by?m.by+' · ':'')+fmt2(shots[i].p.at);x.font='500 24px '+SANS;var lw=x.measureText(lab).width+24;
-        var gr=x.createLinearGradient(0,iy+ih-70,0,iy+ih);gr.addColorStop(0,'rgba(0,0,0,0)');gr.addColorStop(1,'rgba(0,0,0,.6)');x.fillStyle=gr;x.fillRect(ix,iy+ih-70,iw,70);
-        x.fillStyle='#F3ECDA';x.fillText(lab,ix+14,iy+ih-16);}
     });
     /* stamp */
     var last=shots.map(function(s){return s.p.at;}).filter(Boolean).sort().pop();
@@ -1318,10 +1335,9 @@ function makePoster(id,idxs,fmt){
     x.font='700 '+Math.round(R*.22)+'px '+SERIF;x.fillText(last?fmtDate(last):'2027',0,R*.48);
     x.font='700 '+Math.round(R*.17)+'px '+SERIF;x.fillText('★ HITA ★',0,-R*.42);x.restore();x.textAlign='left';
     /* footer */
-    var fy=H-foot+(fmt==='story'?70:56);var names=[];shots.forEach(function(s){if(s.m&&s.m.by&&names.indexOf(s.m.by)<0)names.push(s.m.by);});
-    x.fillStyle='#B48A3A';x.font='900 '+(fmt==='story'?26:22)+'px '+SERIF;spaced(T('调查员'),88,fy,8);
-    x.fillStyle='#EFE8D6';x.font='700 '+(fmt==='story'?40:32)+'px '+SERIF;var nm=names.join(' · ')||T('调查兵团');while(x.measureText(nm).width>W-176-260&&nm.length>4)nm=nm.slice(0,-2);x.fillText(nm,88,fy+(fmt==='story'?52:42));
-    if(spot.addr){x.fillStyle='#A99E85';x.font='500 '+(fmt==='story'?26:22)+'px '+SANS;x.fillText(T(spot.addr),88,fy+(fmt==='story'?100:80));}
+    var fy=H-foot+(fmt==='story'?70:56);
+    x.fillStyle='#B48A3A';x.font='900 '+(fmt==='story'?26:22)+'px '+SERIF;spaced(T('调查地点'),88,fy,8);
+    if(spot.addr){x.fillStyle='#EFE8D6';x.font='700 '+(fmt==='story'?34:28)+'px '+SERIF;var ad=T(spot.addr);while(x.measureText(ad).width>W-176-300&&ad.length>4)ad=ad.slice(0,-1);x.fillText(ad,88,fy+(fmt==='story'?52:42));}
     x.textAlign='right';x.fillStyle='#D2AE55';x.font='900 '+(fmt==='story'?30:26)+'px '+SERIF;x.fillText(T('日田 · 2027'),W-88,fy+(fmt==='story'?52:42));
     x.fillStyle='#A99E85';x.font='700 '+(fmt==='story'?22:19)+'px '+SERIF;x.fillText(T('进击的巨人 圣地巡礼'),W-88,fy+(fmt==='story'?100:80));x.textAlign='left';
     return new Promise(function(res,rej){try{c.toBlob(function(b){if(!b){rej('taint');return;}res({blob:b,url:URL.createObjectURL(b),w:W,h:H});},'image/jpeg',.92);}catch(e){rej('taint');}});
@@ -1329,8 +1345,8 @@ function makePoster(id,idxs,fmt){
 }
 function fmt2(iso){try{var t=new Date(iso);return (t.getMonth()+1)+'/'+t.getDate();}catch(e){return '';}}
 function fmtDate(iso){try{var t=new Date(iso);return t.getFullYear()+'.'+String(t.getMonth()+1).padStart(2,'0')+'.'+String(t.getDate()).padStart(2,'0');}catch(e){return '';}}
-function showPoster(r,id,fmt){
-  var spot=SPOTS.filter(function(s){return s.id===id;})[0];var fname=T(spot.name.split('　')[0])+'_'+T('调查记录')+'_'+(fmt==='story'?'Story':'Post')+'.jpg';
+function showPoster(r,id,fmt,sty){
+  var spot=SPOTS.filter(function(s){return s.id===id;})[0];var fname=T(spot.name.split('　')[0])+'_'+T(sty==='plain'?'拼图':'调查记录')+'_'+(fmt==='story'?'Story':'Post')+'.jpg';
   var ov=el('div','namebox pv-ov');ov.setAttribute('role','dialog');ov.setAttribute('aria-modal','true');
   var box=el('div','pv-box');var sc=el('div','pv-sc');var im=el('img','pv-img');im.src=r.url;im.alt=fname;sc.appendChild(im);box.appendChild(sc);
   var hint=el('p','pv-hint','点图片放大查看');box.appendChild(hint);
