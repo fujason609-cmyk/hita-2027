@@ -471,6 +471,83 @@ html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 130px)}
 .vli .vv{font-size:14px;color:#7A6A4A}.vli .vv.like{color:#2B5A28;font-weight:700}.vli .vv.dis{color:#8E1B14;font-weight:700}
 .vsheet .vbtn{margin:6px 0 4px}.vsheet .vbtn button{min-height:52px;font-size:16px}
 .vsheet .nb-row .vclose{flex:1}
+/* ===== dialogs v2: field documents ===== */
+.namebox{background:radial-gradient(ellipse at 50% 40%,rgba(40,14,10,.72),rgba(8,7,5,.94) 70%);padding:18px;
+  -webkit-backdrop-filter:blur(2px);backdrop-filter:blur(2px)}
+.namebox::before{content:"";position:fixed;left:50%;top:18%;width:120vw;height:50vh;transform:translateX(-50%);pointer-events:none;
+  background:radial-gradient(closest-side,rgba(220,210,190,.10),transparent);filter:blur(10px);animation:steam 9s ease-in-out infinite alternate}
+.nb-card{position:relative;max-width:380px;padding:0 0 18px;color:#2A2419;border:none;
+  background:
+    radial-gradient(ellipse at 50% 50%,transparent 55%,rgba(92,62,26,.32) 100%),
+    radial-gradient(circle at 12% 88%,rgba(120,80,30,.18),transparent 30%),
+    radial-gradient(circle at 92% 14%,rgba(120,80,30,.14),transparent 26%),
+    repeating-linear-gradient(0deg,rgba(80,60,30,.035) 0 2px,transparent 2px 5px),
+    linear-gradient(180deg,#E6D9B6,#D3C197);
+  box-shadow:0 0 0 1px #7A6440,0 0 0 5px #2A2219,0 0 0 6px #B48A3A,0 28px 50px rgba(0,0,0,.7);
+  animation:dealt .5s cubic-bezier(.2,.9,.3,1.15) both}
+@keyframes dealt{0%{transform:translateY(40px) rotate(-4deg) scale(.96);opacity:0}100%{transform:rotate(-.6deg);opacity:1}}
+.nb-card .nb-unit{position:relative;margin:0 0 4px;padding:12px 18px 11px 18px;font-family:"Noto Serif SC",serif;font-weight:900;font-size:13px;letter-spacing:.32em;
+  color:#E8D9A8;background:linear-gradient(180deg,#34432B,#202A1A);border-bottom:2px solid #B48A3A;
+  box-shadow:inset 0 -6px 10px rgba(0,0,0,.35)}
+.nb-card .nb-unit::before,.nb-card .nb-unit::after{content:"";position:absolute;top:50%;width:8px;height:8px;margin-top:-4px;border-radius:50%;
+  background:radial-gradient(circle at 35% 35%,#F2D38A,#8C6A26 70%);box-shadow:0 1px 1px rgba(0,0,0,.6)}
+.nb-card .nb-unit::before{right:14px}.nb-card .nb-unit::after{right:30px}
+.nb-card h3{margin:14px 18px 4px;font-family:"Noto Serif SC",serif;font-weight:900;font-size:28px;line-height:1.2;letter-spacing:.04em;color:#1E1A12}
+.nb-card .nb-sub{margin:0 18px 10px;font-size:14px;color:#5A4A30;line-height:1.6}
+.nb-card .nb-err{margin:4px 18px 0;min-height:18px;font-size:13px;color:#8E1B14;font-weight:700}
+/* wax seal */
+.nb-card .seal{position:absolute;right:16px;top:44px;width:62px;height:62px;border-radius:50%;
+  background:radial-gradient(circle at 38% 34%,#C2392C,#8E1B14 55%,#5E0F0A 100%);
+  box-shadow:0 3px 6px rgba(0,0,0,.45),inset 0 0 0 5px rgba(0,0,0,.12),inset 0 0 0 7px rgba(255,180,160,.18);
+  transform:rotate(-14deg);animation:sealin .55s cubic-bezier(.3,1.6,.5,1) .25s both}
+.nb-card .seal::before{content:"";position:absolute;inset:12px;border-radius:50%;border:2px solid rgba(255,210,190,.35)}
+.nb-card .seal::after{content:attr(data-t);position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+  font-family:"Noto Serif SC",serif;font-weight:900;font-size:19px;color:rgba(255,226,210,.85);text-shadow:0 -1px 0 rgba(0,0,0,.35)}
+@keyframes sealin{0%{transform:rotate(-14deg) scale(2.2);opacity:0}60%{transform:rotate(-16deg) scale(.92);opacity:1}100%{transform:rotate(-14deg) scale(1)}}
+.nb-card .seal ~ h3,.nb-card .seal ~ .nb-sub{margin-right:90px}
+/* enlistment form lines */
+.nb-form{margin:6px 18px 0;border-top:1px solid rgba(90,70,40,.45)}
+.nb-line{display:flex;align-items:flex-end;gap:12px;min-height:46px;border-bottom:1px solid rgba(90,70,40,.45)}
+.nb-line b{flex:0 0 3.2em;padding-bottom:9px;font-family:"Noto Serif SC",serif;font-size:13px;letter-spacing:.2em;color:#6B4A2F}
+.nb-line span{padding-bottom:9px;font-family:"Noto Serif SC",serif;font-weight:700;font-size:16px;color:#2A2419}
+.nb-card .nb-line input{flex:1;min-height:44px;padding:0 2px;margin:0;border:none;border-radius:0;background:transparent;
+  font-family:"Noto Serif SC",serif;font-weight:900;font-size:20px;color:#1E1A12;border-bottom:2px solid transparent}
+.nb-card .nb-line input:focus{outline:none;border-bottom-color:#8E1B14;background:rgba(255,255,255,.18)}
+.nb-card .nb-line input::placeholder{color:rgba(90,70,40,.45);font-weight:700}
+/* actions */
+.nb-card .nb-row{display:flex;flex-direction:column;gap:6px;margin:14px 18px 0}
+.nb-card .nb-row .nb-ok{--trim:#F2D38A;--p1:#9E2219;--p2:#6A130D;position:relative;min-height:54px;border:1px solid rgba(242,211,138,.5);border-radius:2px;
+  color:#F6EEDB;font-family:"Noto Serif SC",serif;font-weight:900;font-size:18px;letter-spacing:.3em;text-shadow:0 1px 0 rgba(0,0,0,.6);
+  background:linear-gradient(var(--trim),var(--trim)) left top/12px 2px no-repeat,linear-gradient(var(--trim),var(--trim)) left top/2px 12px no-repeat,
+    linear-gradient(var(--trim),var(--trim)) right top/12px 2px no-repeat,linear-gradient(var(--trim),var(--trim)) right top/2px 12px no-repeat,
+    linear-gradient(var(--trim),var(--trim)) left bottom/12px 2px no-repeat,linear-gradient(var(--trim),var(--trim)) left bottom/2px 12px no-repeat,
+    linear-gradient(var(--trim),var(--trim)) right bottom/12px 2px no-repeat,linear-gradient(var(--trim),var(--trim)) right bottom/2px 12px no-repeat,
+    linear-gradient(180deg,var(--p1),var(--p2));box-shadow:0 2px 0 rgba(0,0,0,.35)}
+.nb-card .nb-row .nb-cancel,.nb-card .nb-row .vclose{min-height:44px;border:none;background:none;color:#5A4A30;font-family:"Noto Serif SC",serif;font-weight:700;font-size:15px;letter-spacing:.2em;text-decoration:underline;text-underline-offset:4px;cursor:pointer}
+/* vote ledger */
+.vsheet .vlist{margin:6px 18px 4px;border-top:2px solid #2A2219}
+.vsheet .vli{min-height:54px;gap:14px;border-bottom:1px solid rgba(90,70,40,.45)}
+.vsheet .vli::before{content:attr(data-n);flex:0 0 1.6em;font-family:"Noto Serif SC",serif;font-weight:900;font-size:13px;color:#8C7B55}
+.vsheet .vli .vn{font-size:17px}
+.vsheet .vli .vv{font-family:"Noto Serif SC",serif;font-weight:900;font-size:14px;letter-spacing:.15em;padding:2px 8px;border:2px solid currentColor;transform:rotate(-4deg)}
+.vsheet .vli .vv:not(.like):not(.dis){border:none;transform:none;color:#A89A78}
+.vsheet .vli .vv.like{color:#2B5A28}.vsheet .vli .vv.dis{color:#8E1B14}
+/* wax dots everywhere */
+.vd{width:22px;height:22px;border:2px dashed #8C7B55;background:rgba(255,255,255,.15)}
+.vd.like{border:none;background:radial-gradient(circle at 36% 32%,#6FA35F,#3E7C3A 55%,#244B21);box-shadow:0 1px 2px rgba(0,0,0,.45),inset 0 0 0 3px rgba(0,0,0,.12)}
+.vd.dis{border:none;background:radial-gradient(circle at 36% 32%,#C2392C,#8E1B14 55%,#5E0F0A);box-shadow:0 1px 2px rgba(0,0,0,.45),inset 0 0 0 3px rgba(0,0,0,.12)}
+.vd.mine{box-shadow:0 0 0 2px #E6D9B6,0 0 0 4px #B48A3A,0 1px 2px rgba(0,0,0,.45)}
+/* vote choice plates */
+.vsheet .vbtn{margin:12px 18px 0;gap:10px}
+.vsheet .vbtn button{position:relative;min-height:64px;flex-direction:column;gap:4px;border:1px solid rgba(90,70,40,.6);border-radius:2px;background:rgba(255,255,255,.22);
+  font-family:"Noto Serif SC",serif;font-weight:900;font-size:17px;letter-spacing:.2em;color:#2A2419}
+.vsheet .vbtn button::before{width:22px;height:22px;border:none}
+.vsheet .vbtn .vl::before{background:radial-gradient(circle at 36% 32%,#6FA35F,#3E7C3A 55%,#244B21)}
+.vsheet .vbtn .vx::before{background:radial-gradient(circle at 36% 32%,#C2392C,#8E1B14 55%,#5E0F0A)}
+.vsheet .vbtn .vl.on{background:linear-gradient(180deg,#3E7C3A,#26511F);color:#F3ECDA;border-color:#B48A3A;box-shadow:inset 0 0 0 2px #B48A3A}
+.vsheet .vbtn .vx.on{background:linear-gradient(180deg,#A2241B,#6E140E);color:#F3ECDA;border-color:#B48A3A;box-shadow:inset 0 0 0 2px #B48A3A}
+.vsheet .vbtn .on::before{box-shadow:0 0 0 2px #F3ECDA}
+@media (prefers-reduced-motion:reduce){.nb-card,.nb-card .seal,.namebox::before{animation:none!important}}
 </style></head><body><template id="shell">
 <header class="wall pending">
   <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><filter id="keywhite" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB"><feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  -6 -6 -6 0 16.8" result="m"/><feMorphology in="m" operator="erode" radius="1.5" result="me"/><feComposite in="SourceGraphic" in2="me" operator="in" result="c"/><feComposite in="c" in2="SourceAlpha" operator="in"/></filter></svg>
@@ -599,7 +676,7 @@ function parseVotes(tree){var out={};(tree||[]).forEach(function(n){var m=n.type
   Object.keys(out).forEach(function(k){out[k].sort(function(a,b){return a.path<b.path?-1:1;});});return out;}
 function sheet(title,sub){
   var ov=el('div','namebox vsheet');ov.setAttribute('role','dialog');ov.setAttribute('aria-modal','true');
-  var c=el('div','nb-card');c.appendChild(el('p','nb-unit','调查员评价'));c.appendChild(el('h3',null,title));if(sub)c.appendChild(el('p','nb-sub',sub));
+  var c=el('div','nb-card');c.appendChild(el('p','nb-unit','调查报告　评价'));var sl=el('span','seal');sl.setAttribute('data-t','评');sl.setAttribute('aria-hidden','true');c.appendChild(sl);c.appendChild(el('h3',null,title));if(sub)c.appendChild(el('p','nb-sub',sub));
   ov.appendChild(c);ov.addEventListener('click',function(e){if(e.target===ov)ov.remove();});
   document.body.appendChild(ov);
   var x=el('button','nb-cancel vclose','关闭');x.type='button';x.onclick=function(){ov.remove();};
@@ -608,7 +685,7 @@ function sheet(title,sub){
 function showVotes(s){
   var vs=VOTES[s.id]||[];var sh=sheet(s.name.split('　')[0],vs.length?vs.length+' / '+VMAX+' 人已评价':'还没有人评价');
   var ul=el('div','vlist');
-  for(var i=0;i<VMAX;i++){var v=vs[i];var r=el('div','vli');var d=el('i','vd'+(v?(v.val==='L'?' like':' dis'):''));r.appendChild(d);
+  for(var i=0;i<VMAX;i++){var v=vs[i];var r=el('div','vli');r.setAttribute('data-n','0'+(i+1));var d=el('i','vd'+(v?(v.val==='L'?' like':' dis'):''));r.appendChild(d);
     r.appendChild(el('span','vn',v?(v.by||'某人'):'空位'));r.appendChild(el('span','vv'+(v?(v.val==='L'?' like':' dis'):''),v?(v.val==='L'?'喜欢':'不喜欢'):'—'));ul.appendChild(r);}
   sh.card.appendChild(ul);var row=el('div','nb-row');row.appendChild(sh.closeBtn);sh.card.appendChild(row);
 }
@@ -924,14 +1001,19 @@ build();setupAdmin();hero();
   function ask(force){
     var ov=document.createElement('div');ov.className='namebox';ov.setAttribute('role','dialog');ov.setAttribute('aria-modal','true');
     var card=document.createElement('div');card.className='nb-card';
-    card.innerHTML='<p class="nb-unit">调查兵团　入团登记</p><h3>报上你的名字</h3><p class="nb-sub">名字会存在这台手机，上传照片时会显示是谁上传的。</p>';
-    var inp=document.createElement('input');inp.type='text';inp.maxLength=20;inp.placeholder='例如：Jason';inp.value=myName();inp.autocomplete='nickname';
+    card.innerHTML='<p class="nb-unit">调查兵团　入团登记</p><span class="seal" data-t="入团" aria-hidden="true"></span><h3>报上你的名字</h3><p class="nb-sub">名字会存在这台手机，上传照片时会显示是谁上传的。</p>';
+    var inp=document.createElement('input');inp.type='text';inp.maxLength=20;inp.placeholder='写下你的名字';inp.value=myName();inp.autocomplete='nickname';inp.setAttribute('aria-label','名字');
+    var form=document.createElement('div');form.className='nb-form';
+    var l1=document.createElement('label');l1.className='nb-line';l1.innerHTML='<b>姓名</b>';l1.appendChild(inp);
+    var l2=document.createElement('div');l2.className='nb-line';l2.innerHTML='<b>所属</b><span>调查兵团</span>';
+    var l3=document.createElement('div');l3.className='nb-line';l3.innerHTML='<b>任务</b><span>第 2027-11 次壁外调查　日田</span>';
+    form.appendChild(l1);form.appendChild(l2);form.appendChild(l3);
     var err=document.createElement('p');err.className='nb-err';
     var row=document.createElement('div');row.className='nb-row';
-    var ok=document.createElement('button');ok.type='button';ok.className='nb-ok';ok.textContent='确定';
+    var ok=document.createElement('button');ok.type='button';ok.className='nb-ok';ok.textContent='宣誓入团';
     row.appendChild(ok);
     if(!force){var cc=document.createElement('button');cc.type='button';cc.className='nb-cancel';cc.textContent='取消';cc.onclick=function(){ov.remove();};row.appendChild(cc);}
-    card.appendChild(inp);card.appendChild(err);card.appendChild(row);ov.appendChild(card);document.body.appendChild(ov);
+    card.appendChild(form);card.appendChild(err);card.appendChild(row);ov.appendChild(card);document.body.appendChild(ov);
     function save(){var v=inp.value.trim().slice(0,20);if(!v){err.textContent='请填写名字';inp.focus();return;}try{localStorage.setItem('aot-name',v);}catch(e){}ov.remove();paint();build();}
     ok.onclick=save;inp.addEventListener('keydown',function(e){if(e.key==='Enter')save();});
     setTimeout(function(){inp.focus();},50);
