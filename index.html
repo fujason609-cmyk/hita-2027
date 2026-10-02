@@ -777,6 +777,22 @@ html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 130px)}
 .sh-style button.on{border-color:#D2AE55;background:linear-gradient(180deg,#34432B,#202A1A)}
 .glabel{margin-bottom:10px!important;min-height:36px}
 .glabel .sh-btn{margin:0!important}
+.gal-hd,.sh-ov .sh-opts,.sh-foot{flex:0 0 auto}
+.gal-grid{min-height:0}
+.gal-grid > .gal-it{position:relative;display:block;width:100%;height:0!important;padding:0 0 100% 0!important;aspect-ratio:auto!important;overflow:hidden;box-sizing:border-box;border:none;outline:none}
+.gal-grid > .gal-it::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;border:1px solid #3E3A31}
+.gal-grid > .gal-it > img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.gal-grid > .gal-it .gal-cap{z-index:2}
+.sh-grid > .gal-it.picked{outline:none}
+.sh-grid > .gal-it.picked::after{border:3px solid #D2AE55}
+.sh-grid .gal-it .sh-no{z-index:3}
+.sh-style button{align-items:center!important;min-height:46px}
+.sh-style button b,.sh-style button small{line-height:1.2}
+.sh-ov .sh-opts{padding-bottom:10px}
+.sh-tip{margin-bottom:0!important}
+.sh-ov .sh-style button{display:grid!important;place-items:center;height:46px;min-height:0!important;padding:0 8px!important;-webkit-appearance:none;appearance:none}
+.sh-ov .sh-style .sty-in{display:flex;align-items:center;gap:8px;line-height:1.2;white-space:nowrap}
+.sh-ov .sh-style .sty-in b,.sh-ov .sh-style .sty-in small{line-height:1.2!important}
 </style></head><body><template id="shell">
 <header class="wall pending">
   <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><filter id="keywhite" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB"><feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  -6 -6 -6 0 16.8" result="m"/><feMorphology in="m" operator="erode" radius="1.5" result="me"/><feComposite in="SourceGraphic" in2="me" operator="in" result="c"/><feComposite in="c" in2="SourceAlpha" operator="in"/></filter></svg>
@@ -898,7 +914,7 @@ var art=null;
 function el(t,c,txt){var e=document.createElement(t);if(c)e.className=c;if(txt!=null)e.textContent=txt;return e;}
 function lnk(c,txt,href){var a=el('a',c,txt);a.href=href;a.target='_blank';a.rel='noopener';return a;}
 
-var TC={"c":{"从":"從","编":"編","辑":"輯","评":"評","价":"價","区":"區","营":"營","业":"業","内":"內","时":"時","这":"這","环":"環","绕":"繞","周":"週","钥":"鑰","无":"無","请":"請","复":"複","制":"製","还":"還","没":"沒","来":"來","调":"調","过":"過","页":"頁","会":"會","载":"載","传":"傳","发":"發","红":"紅","叶":"葉","馆":"館","点":"點","里":"裡","开":"開","台":"臺","机":"機","经":"經","删":"刪","导":"導","进":"進","击":"擊","简":"簡","败":"敗","试":"試","钟":"鐘","选":"選","详":"詳","后":"後","个":"個","网":"網","设":"設","亲":"親","绘":"繪","计":"計","双":"雙","滚":"滾","轮":"輪","动":"動","温":"溫","马":"馬","与":"與","兽":"獸","团":"團","鸡":"雞","签":"簽","画":"畫","纸":"紙","远":"遠","车":"車","转":"轉","约":"約","暂":"暫","绝":"絕","询":"詢","络":"絡","几":"幾","记":"記","录":"錄","国":"國","际":"際","驾":"駕","玛":"瑪","亚":"亞","墙":"牆","纹":"紋","灯":"燈","谜":"謎","写":"寫","权":"權","张":"張","饮":"飲","楼":"樓","游":"遊","戏":"戲","奖":"獎","兑":"兌","换":"換","检":"檢","议":"議","现":"現","读":"讀","学":"學","旧":"舊","帐":"帳","号":"號","图":"圖","礼":"禮","问":"問","额":"額","满":"滿","数":"數","顺":"順","浓":"濃","雾":"霧","结":"結","带":"帶","欢":"歡","办":"辦","确":"確","认":"認","树":"樹","显":"顯","谁":"誰","订":"訂","干":"幹","线":"線","乌":"烏","题":"題","书":"書","务":"務","驿":"驛","较":"較","黄":"黃","谏":"諫","创":"創","师":"師","乡":"鄉","场":"場","预":"預","险":"險","风":"風","装":"裝","员":"員","帮":"幫","联":"聯","丰":"豐","间":"間","变":"變","贴":"貼","圣":"聖","饭":"飯","产":"產","兴":"興","电":"電","观":"觀","纯":"純","关":"關","门":"門","单":"單","让":"讓","护":"護","证":"證","档":"檔","优":"優","实":"實","尔":"爾","离":"離","话":"話","处":"處","广":"廣","长":"長","铜":"銅","则":"則","对":"對","为":"為","规":"規","划":"劃","坝":"壩","当":"當","贺":"賀","补":"補","给":"給","备":"備","骑":"騎","课":"課","园":"園","冲":"沖","恋":"戀","资":"資","费":"費","异":"異","厅":"廳","买":"買","两":"兩","轻":"輕","奥":"奧","厂":"廠","须":"須","论":"論","闭":"閉","冈":"岡","达":"達","军":"軍","觉":"覺","么":"麼","样":"樣","随":"隨","报":"報","们":"們","况":"況","弹":"彈","负":"負","责":"責","属":"屬","尽":"儘","钮":"鈕","态":"態","体":"體","储":"儲","齐":"齊","标":"標","宫":"宮","头":"頭","驶":"駛"},"p":{"限制）":"限制）","公里，":"公里，","剪发的":"剪髮的","公里":"公里","梅干等":"梅乾等"}};
+var TC={"c":{"图":"圖","离":"離","显":"顯","点":"點","选":"選","冈":"岡","页":"頁","过":"過","调":"調","进":"進","确":"確","认":"認","删":"刪","饮":"飲","楼":"樓","游":"遊","戏":"戲","坝":"壩","为":"為","墙":"牆","现":"現","话":"話","场":"場","记":"記","录":"錄","较":"較","远":"遠","车":"車","线":"線","简":"簡","传":"傳","这":"這","张":"張","观":"觀","内":"內","计":"計","导":"導","实":"實","时":"時","况":"況","关":"關","门":"門","里":"裡","周":"週","团":"團","与":"與","费":"費","号":"號","馆":"館","换":"換","数":"數","顺":"順","开":"開","黄":"黃","签":"簽","纸":"紙","务":"務","浓":"濃","雾":"霧","结":"結","带":"帶","议":"議","钟":"鐘","机":"機","头":"頭","钥":"鑰","设":"設","亲":"親","绘":"繪","制":"製","评":"評","论":"論","联":"聯","电":"電","检":"檢","发":"發","区":"區","从":"從","约":"約","欢":"歡","价":"價","驿":"驛","当":"當","骑":"騎","学":"學","没":"沒","课":"課","园":"園","广":"廣","尔":"爾","长":"長","铜":"銅","个":"個","额":"額","经":"經","满":"滿","师":"師","来":"來","贺":"賀","礼":"禮","询":"詢","问":"問","两":"兩","达":"達","后":"後","丰":"豐","画":"畫","营":"營","业":"業","间":"間","动":"動","变":"變","无":"無","会":"會","台":"臺","谁":"誰","败":"敗","请":"請","网":"網","络":"絡","试":"試","标":"標","暂":"暫","处":"處","贴":"貼","驾":"駕","属":"屬","还":"還","书":"書","载":"載","马":"馬","读":"讀","旧":"舊","写":"寫","权":"權","转":"轉","觉":"覺","么":"麼","样":"樣","绝":"絕","几":"幾","档":"檔","须":"須","环":"環","绕":"繞","际":"際","树":"樹","击":"擊","饭":"飯","双":"雙","滚":"滾","轮":"輪","驶":"駛","亚":"亞","圣":"聖","负":"負","责":"責","报":"報","闭":"閉","随":"隨","订":"訂","干":"幹","异":"異","办":"辦","红":"紅","叶":"葉","买":"買","兑":"兌","奖":"獎","体":"體","复":"複","齐":"齊","补":"補","给":"給","装":"裝","备":"備","奥":"奧","温":"溫","资":"資","题":"題","险":"險","风":"風","员":"員","帮":"幫","预":"預","产":"產","态":"態","谏":"諫","创":"創","乡":"鄉","恋":"戀","冲":"沖","厅":"廳","鸡":"雞","则":"則","兴":"興","宫":"宮","们":"們","对":"對","规":"規","划":"劃","军":"軍","尽":"儘","钮":"鈕","储":"儲","兽":"獸","纯":"純","优":"優","单":"單","让":"讓","弹":"彈","编":"編","辑":"輯","国":"國","护":"護","证":"證","乌":"烏","详":"詳","玛":"瑪","纹":"紋","灯":"燈","谜":"謎","厂":"廠","轻":"輕","帐":"帳"},"p":{"剪发的":"剪髮的","梅干等":"梅乾等","公里":"公里","限制）":"限制）","公里，":"公里，"}};
 var TCP=Object.keys(TC.p).sort(function(a,b){return b.length-a.length;});
 function lang(){try{return localStorage.getItem('aot-lang')==='tc'?'tc':'sc';}catch(e){return 'sc';}}
 function tcv(s){if(!s||!/[\u4e00-\u9fff]/.test(s))return s;var out='',i=0;
@@ -1259,7 +1275,7 @@ function openSharePicker(id){
   [['story','限时动态','9:16'],['post','贴文','4:5']].forEach(function(o){var b=el('button',o[0]===fmtSel?'on':'');b.type='button';var fr=el('i','sh-shape '+o[0]);b.appendChild(fr);var t=el('span');t.appendChild(el('b',null,'IG '+o[1]));t.appendChild(el('small',null,o[2]));b.appendChild(t);
     b.onclick=function(){fmtSel=o[0];[].forEach.call(fm.children,function(c){c.classList.toggle('on',c===b);});};fm.appendChild(b);});
   opts.appendChild(fm);
-  var sy=el('div','sh-style');[['aot','调查记录','主题设计'],['plain','纯拼图','只拼照片']].forEach(function(o){var b=el('button',o[0]===styleSel?'on':'');b.type='button';b.appendChild(el('b',null,o[1]));b.appendChild(el('small',null,o[2]));
+  var sy=el('div','sh-style');[['aot','调查记录','主题设计'],['plain','纯拼图','只拼照片']].forEach(function(o){var b=el('button',o[0]===styleSel?'on':'');b.type='button';var si=el('span','sty-in');si.appendChild(el('b',null,o[1]));si.appendChild(el('small',null,o[2]));b.appendChild(si);
     b.onclick=function(){styleSel=o[0];[].forEach.call(sy.children,function(c){c.classList.toggle('on',c===b);});};sy.appendChild(b);});
   opts.appendChild(sy);opts.appendChild(el('p','sh-tip','点选照片，最多 9 张，数字是排列顺序。'));ov.appendChild(opts);
   var g=el('div','gal-grid sh-grid');
@@ -1276,7 +1292,7 @@ function openSharePicker(id){
 }
 function layoutRows(n,fmt){var S9={1:[1],2:[1,1],3:[1,2],4:[2,2],5:[1,2,2],6:[2,2,2],7:[1,3,3],8:[2,3,3],9:[3,3,3]};var P9={1:[1],2:[2],3:[1,2],4:[2,2],5:[2,3],6:[3,3],7:[2,2,3],8:[3,2,3],9:[3,3,3]};return (fmt==='story'?S9:P9)[n];}
 function makePlain(id,idxs,fmt){
-  var st=S(id);var W=1080,H=fmt==='story'?1920:1350,G=8;
+  var st=S(id);var W=1080,H=fmt==='story'?1920:1350,G=0;
   return Promise.all(idxs.map(function(i){return loadCORS(st.shots[i].src);})).then(function(imgs){
     var c=document.createElement('canvas');c.width=W;c.height=H;var x=c.getContext('2d');x.fillStyle='#FFFFFF';x.fillRect(0,0,W,H);
     var rows=layoutRows(imgs.length,fmt),rh=(H-G*(rows.length+1))/rows.length,k=0;
