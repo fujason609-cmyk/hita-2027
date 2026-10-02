@@ -577,6 +577,37 @@ html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 130px)}
 @media (prefers-reduced-motion:reduce){.vsheet .vbtn.vstamps button.press .stp{animation:none}}
 .vsheet .vbtn.vstamps .vl.on,.vsheet .vbtn.vstamps .vx.on{background:rgba(255,255,255,.3);color:inherit;box-shadow:inset 0 0 0 1px rgba(90,70,40,.35)}
 .vsheet .vbtn.vstamps .vl.on .stp-cap::before,.vsheet .vbtn.vstamps .vx.on .stp-cap::before{content:none}
+/* ===== signal flares ===== */
+.votes .vrow{gap:10px}
+.votes .vlab{display:flex;flex-direction:column;line-height:1.15;font-family:"Noto Serif SC",serif;font-weight:900;font-size:15px;color:#3A2F1C;letter-spacing:.08em}
+.votes .vlab small{font-family:"Noto Sans SC",sans-serif;font-weight:500;font-size:11.5px;letter-spacing:.02em;color:#7A6A4A}
+.votes .vdots{gap:4px;padding:2px 10px 0;min-height:52px;align-items:flex-end;background:linear-gradient(180deg,transparent 60%,rgba(60,45,25,.10));border-bottom:2px solid rgba(90,70,40,.35)}
+.votes .vd,.vlist .vd{position:relative;display:inline-block;width:30px;height:48px;border:none!important;border-radius:0;background:none!important;box-shadow:none!important;flex:0 0 auto}
+/* cartridge */
+.votes .vd::before,.vlist .vd::before{content:"";position:absolute;left:50%;bottom:0;width:10px;height:14px;margin-left:-5px;border-radius:2px 2px 1px 1px;
+  border:1.5px dashed #8C7B55;background:rgba(255,255,255,.18);box-sizing:border-box}
+.votes .vd.like::before,.votes .vd.dis::before,.vlist .vd.like::before,.vlist .vd.dis::before{border:none;
+  background:linear-gradient(90deg,#6B5A3A,#C9A55A 45%,#7A6440);box-shadow:inset 0 3px 0 rgba(0,0,0,.35)}
+/* smoke plume */
+.votes .vd.like::after,.votes .vd.dis::after,.vlist .vd.like::after,.vlist .vd.dis::after{content:"";position:absolute;left:50%;bottom:12px;width:30px;height:38px;margin-left:-15px;
+  background:
+    radial-gradient(circle at 50% 22%,var(--sm) 0 7px,transparent 8px),
+    radial-gradient(circle at 34% 38%,var(--sm2) 0 6px,transparent 7px),
+    radial-gradient(circle at 64% 44%,var(--sm2) 0 6px,transparent 7px),
+    radial-gradient(circle at 48% 62%,var(--sm2) 0 5px,transparent 6px),
+    linear-gradient(var(--sm2),var(--sm2)) 50% 100%/3px 46% no-repeat;
+  filter:blur(.6px);transform-origin:50% 100%;animation:plume 3.2s ease-in-out infinite alternate}
+.votes .vd.like,.vlist .vd.like{--sm:#5FA352;--sm2:rgba(72,140,62,.78)}
+.votes .vd.dis,.vlist .vd.dis{--sm:#D2463A;--sm2:rgba(178,40,30,.78)}
+@keyframes plume{0%{transform:translateX(-1px) scaleY(.96) skewX(-3deg)}100%{transform:translateX(1.5px) scaleY(1.04) skewX(4deg)}}
+/* own flare */
+.votes .vd.mine::before,.vlist .vd.mine::before{box-shadow:inset 0 3px 0 rgba(0,0,0,.35),0 0 0 2px #E6D9B6,0 0 0 3.5px #B48A3A}
+/* list rows: smaller flares */
+.vlist .vd{width:26px;height:40px;transform:scale(.9);transform-origin:50% 100%}
+/* pencil plate */
+.votes .vpen{width:44px;height:44px;border:1px solid rgba(180,138,58,.6);background:linear-gradient(180deg,#2F3B27,#1F271A);box-shadow:0 2px 0 rgba(0,0,0,.3)}
+.votes .vpen svg{stroke:#D2AE55}
+@media (prefers-reduced-motion:reduce){.votes .vd::after,.vlist .vd::after{animation:none}}
 </style></head><body><template id="shell">
 <header class="wall pending">
   <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><filter id="keywhite" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB"><feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  -6 -6 -6 0 16.8" result="m"/><feMorphology in="m" operator="erode" radius="1.5" result="me"/><feComposite in="SourceGraphic" in2="me" operator="in" result="c"/><feComposite in="c" in2="SourceAlpha" operator="in"/></filter></svg>
@@ -733,7 +764,7 @@ function editVote(s){
 }
 function voteBox(s){
   var vs=VOTES[s.id]||[],me=devId();
-  var box=el('div','votes');var row=el('div','vrow');row.appendChild(el('span','vlab','调查员评价'));
+  var box=el('div','votes');var row=el('div','vrow');var lb=el('span','vlab','信号弹');lb.appendChild(el('small',null,'调查员评价'));row.appendChild(lb);
   var dots=el('button','vdots');dots.type='button';dots.setAttribute('aria-label','查看评价详情');dots.onclick=function(){showVotes(s);};
   for(var i=0;i<VMAX;i++){var v=vs[i];var d=el('i','vd'+(v?(v.val==='L'?' like':' dis'):'')+(v&&v.dev===me?' mine':''));dots.appendChild(d);}
   row.appendChild(dots);
