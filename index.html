@@ -719,6 +719,16 @@ html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 130px)}
 .shots > button.more.ok img{opacity:1}
 @keyframes shim{from{background-position:120% 0}to{background-position:-120% 0}}
 @media (prefers-reduced-motion:reduce){.lb-load svg,.lb-load span,.shots > button,.gal-it,.gal .lead{animation:none!important}}
+.langsw{display:inline-flex;gap:0;border:1.5px solid rgba(210,174,85,.75);border-radius:2px;overflow:hidden;background:rgba(10,9,7,.45)}
+.langsw button{min-width:44px;min-height:40px;padding:0 10px;margin:0;font:inherit;font-family:"Noto Serif SC",serif;font-weight:900;font-size:16px;line-height:1;
+  color:#D9CBA8;background:transparent;border:none;cursor:pointer;transition:background .2s,color .2s}
+.langsw button+button{border-left:1.5px solid rgba(210,174,85,.5)}
+.langsw button.on{color:#F6EEDB;background:radial-gradient(circle at 38% 34%,#C2392C,#8E1B14 60%,#5E0F0A)}
+.wall .langsw{position:absolute;z-index:5;top:calc(env(safe-area-inset-top,0px) + 14px);right:14px}
+.nb-line .langsw.sm{margin-bottom:6px;background:transparent;border-color:#6B5A3A}
+.nb-line .langsw.sm button{min-height:36px;font-size:14px;color:#3A2F1C;padding:0 14px}
+.nb-line .langsw.sm button+button{border-left-color:#6B5A3A}
+.nb-line .langsw.sm button.on{color:#F6EEDB}
 </style></head><body><template id="shell">
 <header class="wall pending">
   <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><filter id="keywhite" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB"><feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  -6 -6 -6 0 16.8" result="m"/><feMorphology in="m" operator="erode" radius="1.5" result="me"/><feComposite in="SourceGraphic" in2="me" operator="in" result="c"/><feComposite in="c" in2="SourceAlpha" operator="in"/></filter></svg>
@@ -730,6 +740,7 @@ html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 130px)}
   <div class="breach" aria-hidden="true"><img class="bimg" alt="" data-deco="breach"></div>
   <img class="deco-side deco-l" alt="" data-deco="wall-left"><img class="deco-side deco-r" alt="" data-deco="wall-right">
   <div class="rubble" aria-hidden="true"></div><div class="wire w1" aria-hidden="true"></div><div class="wire w2" aria-hidden="true"></div><div class="dust" aria-hidden="true"></div>
+  <div class="langsw" role="group" aria-label="文字"><button type="button" data-lang="sc">简</button><button type="button" data-lang="tc">繁</button></div>
   <div class="inner">
     <p class="unit">壁外调查记录　第 2027-11 次</p>
     <h1>日田<span>进击的巨人 圣地巡礼</span></h1>
@@ -838,6 +849,35 @@ var art=null;
 
 function el(t,c,txt){var e=document.createElement(t);if(c)e.className=c;if(txt!=null)e.textContent=txt;return e;}
 function lnk(c,txt,href){var a=el('a',c,txt);a.href=href;a.target='_blank';a.rel='noopener';return a;}
+
+var TC={"c":{"欢":"歡","饮":"飲","没":"沒","尔":"爾","来":"來","从":"從","发":"發","档":"檔","馆":"館","点":"點","宫":"宮","则":"則","钟":"鐘","进":"進","击":"擊","题":"題","树":"樹","险":"險","风":"風","装":"裝","员":"員","会":"會","帮":"幫","录":"錄","确":"確","认":"認","联":"聯","还":"還","预":"預","约":"約","周":"週","评":"評","页":"頁","过":"過","车":"車","圣":"聖","礼":"禮","价":"價","广":"廣","场":"場","驾":"駕","动":"動","与":"與","开":"開","区":"區","资":"資","浓":"濃","雾":"霧","结":"結","带":"帶","议":"議","顺":"順","图":"圖","书":"書","内":"內","删":"刪","旧":"舊","学":"學","现":"現","兴":"興","护":"護","证":"證","复":"複","时":"時","载":"載","请":"請","传":"傳","这":"這","几":"幾","张":"張","号":"號","异":"異","写":"寫","观":"觀","冲":"沖","签":"簽","纸":"紙","离":"離","恋":"戀","乌":"烏","里":"裡","败":"敗","试":"試","论":"論","调":"調","记":"記","检":"檢","网":"網","络":"絡","后":"後","单":"單","让":"讓","对":"對","为":"為","个":"個","规":"規","划":"劃","无":"無","关":"關","满":"滿","们":"們","钥":"鑰","台":"臺","机":"機","冈":"岡","达":"達","订":"訂","红":"紅","叶":"葉","墙":"牆","报":"報","实":"實","厅":"廳","环":"環","绕":"繞","干":"乾","产":"產","温":"溫","驿":"驛","当":"當","师":"師","贺":"賀","询":"詢","问":"問","谏":"諫","创":"創","乡":"鄉","马":"馬","线":"線","坝":"壩","铜":"銅","较":"較","远":"遠","设":"設","亲":"親","绘":"繪","制":"製","计":"計","电":"電","话":"話","编":"編","辑":"輯","简":"簡","体":"體","军":"軍","黄":"黃","双":"雙","滚":"滾","轮":"輪","经":"經","属":"屬","随":"隨","轻":"輕","鸡":"雞","画":"畫","导":"導","况":"況","头":"頭","显":"顯","际":"際","间":"間","权":"權","费":"費","觉":"覺","么":"麼","样":"樣","团":"團","厂":"廠","园":"園","办":"辦","驶":"駛","亚":"亞","门":"門","额":"額","须":"須","详":"詳","齐":"齊","暂":"暫","绝":"絕","两":"兩","饭":"飯","闭":"閉","丰":"豐","务":"務","长":"長","兽":"獸","楼":"樓","游":"遊","戏":"戲","换":"換","弹":"彈","读":"讀","优":"優","兑":"兌","奖":"獎","骑":"騎","课":"課","标":"標","奥":"奧","储":"儲","业":"業","转":"轉","谁":"誰","尽":"儘","钮":"鈕","贴":"貼","帐":"帳","买":"買","国":"國","营":"營","补":"補","给":"給","备":"備","负":"負","责":"責","变":"變","玛":"瑪","纹":"紋","灯":"燈","谜":"謎","处":"處"},"p":{"剪发的":"剪髮的","新干线":"新幹線","公里":"公里","公里，":"公里，"}};
+var TCP=Object.keys(TC.p).sort(function(a,b){return b.length-a.length;});
+function lang(){try{return localStorage.getItem('aot-lang')==='tc'?'tc':'sc';}catch(e){return 'sc';}}
+function tcv(s){if(!s||!/[\u4e00-\u9fff]/.test(s))return s;var out='',i=0;
+  outer:while(i<s.length){for(var k=0;k<TCP.length;k++){var w=TCP[k];if(s.substr(i,w.length)===w){out+=TC.p[w];i+=w.length;continue outer;}}var c=s[i];out+=TC.c[c]||c;i++;}return out;}
+var ATTRS=['placeholder','aria-label','title','data-t','alt'];
+function convNode(n){
+  if(n.nodeType===3){var v=n.nodeValue,t=tcv(v);if(t!==v)n.nodeValue=t;return;}
+  if(n.nodeType!==1)return;var tg=n.tagName;if(tg==='SCRIPT'||tg==='STYLE'||tg==='TEMPLATE'||tg==='TEXTAREA')return;
+  ATTRS.forEach(function(a){if(n.hasAttribute&&n.hasAttribute(a)){var v=n.getAttribute(a),t=tcv(v);if(t!==v)n.setAttribute(a,t);}});
+  if(tg==='INPUT')return;
+  for(var c=n.firstChild;c;c=c.nextSibling)convNode(c);
+}
+var tcObs=null;
+function applyLang(){
+  var L=lang();document.documentElement.lang=L==='tc'?'zh-Hant':'zh-CN';
+  [].forEach.call(document.querySelectorAll('.langsw button'),function(b){var on=b.getAttribute('data-lang')===L;b.classList.toggle('on',on);b.setAttribute('aria-pressed',on?'true':'false');});
+  if(L!=='tc')return;
+  convNode(document.body);document.title=tcv(document.title);
+  if(!tcObs&&window.MutationObserver){tcObs=new MutationObserver(function(ms){ms.forEach(function(m){
+      if(m.type==='characterData')convNode(m.target);
+      else if(m.type==='attributes')convNode(m.target);
+      else m.addedNodes.forEach(function(x){convNode(x);});});});
+    tcObs.observe(document.body,{childList:true,subtree:true,characterData:true,attributes:true,attributeFilter:ATTRS});}
+}
+function setLang(L){var cur=lang();if(L===cur)return;try{localStorage.setItem('aot-lang',L);}catch(e){}
+  if(L==='sc'){location.reload();return;}applyLang();}
+document.addEventListener('click',function(e){var b=e.target.closest&&e.target.closest('.langsw button');if(b)setLang(b.getAttribute('data-lang'));});
 function myName(){try{return (localStorage.getItem('aot-name')||'').trim();}catch(e){return '';}}
 function b64u(s){return btoa(unescape(encodeURIComponent(s))).replace(/\+/g,'-').replace(/\//g,'_').replace(/=+$/,'');}
 function unb64u(s){try{s=s.replace(/-/g,'+').replace(/_/g,'/');while(s.length%4)s+='=';return decodeURIComponent(escape(atob(s)));}catch(e){return '';}}
@@ -1248,7 +1288,7 @@ function setupAdmin(){
   show();
 }
 art=token()?{gh:true}:null;
-build();setupAdmin();hero();
+build();setupAdmin();hero();applyLang();
 (function(){
   var chip=document.getElementById('me');
   function paint(){var n=myName();if(chip){chip.textContent='';var s=document.createElement('span');s.className='me-ic';s.innerHTML='<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3.6"/><path d="M5 20c1.2-3.8 4-5.6 7-5.6s5.8 1.8 7 5.6"/></svg>';chip.appendChild(s);chip.appendChild(document.createTextNode(n||'未登记'));var e=document.createElement('i');e.textContent='✎';chip.appendChild(e);}}
@@ -1261,13 +1301,14 @@ build();setupAdmin();hero();
     var l1=document.createElement('label');l1.className='nb-line';l1.innerHTML='<b>姓名</b>';l1.appendChild(inp);
     var l2=document.createElement('div');l2.className='nb-line';l2.innerHTML='<b>所属</b><span>调查兵团</span>';
     var l3=document.createElement('div');l3.className='nb-line';l3.innerHTML='<b>任务</b><span>第 2027-11 次壁外调查　日田</span>';
-    form.appendChild(l1);form.appendChild(l2);form.appendChild(l3);
+    var l4=document.createElement('div');l4.className='nb-line';l4.innerHTML='<b>文字</b><span class="langsw sm" role="group" aria-label="文字"><button type="button" data-lang="sc">简体</button><button type="button" data-lang="tc">繁體</button></span>';
+    form.appendChild(l1);form.appendChild(l2);form.appendChild(l3);form.appendChild(l4);
     var err=document.createElement('p');err.className='nb-err';
     var row=document.createElement('div');row.className='nb-row';
     var ok=document.createElement('button');ok.type='button';ok.className='nb-ok';ok.textContent='宣誓入团';
     row.appendChild(ok);
     if(!force){var cc=document.createElement('button');cc.type='button';cc.className='nb-cancel';cc.textContent='取消';cc.onclick=function(){ov.remove();};row.appendChild(cc);}
-    card.appendChild(form);card.appendChild(err);card.appendChild(row);ov.appendChild(card);document.body.appendChild(ov);
+    card.appendChild(form);card.appendChild(err);card.appendChild(row);ov.appendChild(card);document.body.appendChild(ov);applyLang();
     function save(){var v=inp.value.trim().slice(0,20);if(!v){err.textContent='请填写名字';inp.focus();return;}try{localStorage.setItem('aot-name',v);}catch(e){}ov.remove();paint();build();}
     ok.onclick=save;inp.addEventListener('keydown',function(e){if(e.key==='Enter')save();});
     setTimeout(function(){inp.focus();},50);
