@@ -658,8 +658,10 @@ html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 130px)}
 .nb-card .nb-row .nb-ok,.vsheet .vbtn button,.gal-x,.status nav a,.me{box-shadow:none!important}
 .vsheet .vbtn .vl.on,.vsheet .vbtn .vx.on{box-shadow:inset 0 0 0 2px #B48A3A!important}
 .vsheet .vbtn.vstamps .vl.on,.vsheet .vbtn.vstamps .vx.on{box-shadow:inset 0 0 0 1px rgba(90,70,40,.35)!important}
-.shots > button{border:none!important;outline:1px solid #6b5d40;outline-offset:-1px}
-.shots > button.more{outline:2px solid rgba(210,174,85,.75);outline-offset:-2px}
+.shots > button{border:none!important;outline:none}
+.shots > button::after{content:"";position:absolute;inset:0;z-index:2;pointer-events:none;border:1px solid #6b5d40}
+.shots > button.more::after{border:2px solid rgba(210,174,85,.8)}
+.shots > button:focus-visible::after{border:2px solid #8E1B14}
 .shots .more .more-l{box-shadow:none}
 </style></head><body><template id="shell">
 <header class="wall pending">
