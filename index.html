@@ -811,7 +811,7 @@ html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 130px)}
     <p class="unit">壁外调查记录　第 2027-11 次</p>
     <h1>日田<span>进击的巨人 圣地巡礼</span></h1>
     <p class="sub">谏山创老师的故乡。每到一个地点，上传现场照片完成调查。</p>
-    <p class="meta">2027 年 11 月 18 日 – 23 日　福冈入境　自驾 11/19 – 11/22</p>
+    <p class="meta">2027 年秋　11 天　日田 3 天 · 京都 7 晚　福冈入境、关西出境</p>
   </div>
 </header>
 
@@ -826,7 +826,7 @@ html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 130px)}
 <section id="route">
   <div class="shead"><h2>行军路线</h2><small>按顺路排好</small></div>
   <p class="note">每天的地点都按顺路排列。每张档案的「Google Maps 去这里」和「Waze 去这里」都是从你现在的位置导航到这个地点。两个地点之间标出估计的距离和时间，按「查看地图距离」会在 Google Maps 打开这一站到下一站的路线，显示实际距离和时间。地址和电话可以直接点。</p>
-  <p class="note warn">大山一带的博物馆本馆、想夫恋、CLOVER 周三休；市区的うどん たかむら、SLOWcafe、Link、淡窓图书馆周一休；大山公民馆周末休。这份路线已经全部避开。</p>
+  <p class="note warn">日期还没定，排日期时注意：第 2 天（大山）不能是周三或周末，博物馆本馆、想夫恋、CLOVER 周三休，大山公民馆周末休；第 3 天不能是周一，たかむら、SLOWcafe、Link 周一休；第 5 天（轻音少女）不能是周一，豊郷小学校周一休，JEUGIA 周四休、レトロビーバー周三休。</p>
   <div class="iptip"><b>用 Safari 打开，加入主画面</b>在「照片管理」设定了 GitHub 金钥的手机可以上传和删除照片，上传后所有人打开这个网址都看得到，每 3 分钟自动更新，也可以按「↻ 更新照片」马上刷新。建议用 Safari 打开后按「分享 → 加入主画面」，之后从主画面打开；看过一次后，没有网络也能看行程和看过的照片。</div><p class="note meter hidden" id="meter"></p>
   <div id="days"></div>
   <div class="bulletin">
@@ -841,7 +841,7 @@ html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 130px)}
     <tr><th>丰田租车日田店</th><td>日田市十二町前田 550-4，0973-24-0117。日田站与市内酒店免费接送（9:00–18:00），可异地还车，可租 ETC 卡。
       <br><a href="https://www.google.com/maps/search/?api=1&query=%E3%83%88%E3%83%A8%E3%82%BF%E3%83%AC%E3%83%B3%E3%82%BF%E3%82%AB%E3%83%BC%20%E6%97%A5%E7%94%B0%E5%BA%97&query_place_id=ChIJn3vAyTNqQTURaPgHhaSeJ80" target="_blank" rel="noopener">Google Maps</a>　<a href="https://waze.com/ul?ll=33.322671,130.9224044" target="_blank" rel="noopener">Waze</a></td></tr>
     <tr><th>駅レンタカー日田</th><td>出站右转约 50 米，和观光案内所在一起。</td></tr>
-    <tr><th>租期</th><td>11/19 – 11/22，提早 1–2 个月预订（红叶旺季）。</td></tr>
+    <tr><th>租期</th><td>第 2～3 天（第 2 天早上取车，第 3 天傍晚还车），提早 1–2 个月预订（红叶旺季）。</td></tr>
     <tr><th>开车</th><td>靠左行驶，和马来西亚一样。11 月早上盆地多浓雾、可能结霜，山路慢开。大山一带山路窄，建议小型车。不需要雪胎。</td></tr>
   </tbody></table></div>
   <div id="admin" class="admin">
@@ -860,7 +860,7 @@ var HEAD='<meta charset="utf-8"><meta name="viewport" content="width=device-widt
 var C='https://maps.google.com/?cid=';
 // kind: spot (check-in) | util (no check-in)
 var DAYS=[
- {d:'18',w:'周四',title:'市区　步行',sub:'从日田站出发，全程步行',mode:'walking',stops:[
+ {d:'1',lab:'第1天',w:'日田',title:'市区　步行',sub:'福冈入境，从日田站出发，全程步行',mode:'walking',stops:[
   {id:'station',jp:'日田駅',addr:'日田市元町11-1',pid:'ChIJG4EC2BdqQTURjvPBA4DW9Yg',t:'中午',name:'日田站　角色立牌与兽之巨人 AR',note:'从福冈到达后第一站。站内有角色立牌，站前用官方 App 看 AR。站旁的观光案内所拿地图、开始集章。',lat:33.3170211,lng:130.9387325,off:'https://shingeki-hita.com/index.html',ginfo:'Google 评分 4.2（457 则）'},
   {id:'levi',jp:'リヴァイ兵長銅像 日田駅',addr:'日田市元町11-1（日田站南广场）',pid:'ChIJDRsM-ptrQTUR5xDEcH_01gc',t:'中午',name:'日田站南广场　利威尔兵长铜像',note:'2021 年 3 月设立，作者亲自绘制的设计。',lat:33.3168,lng:130.9383166,gmap:C+'564907631471497447',off:'https://shingeki-hita.com/spot/016.html',ginfo:'Google 评分 4.6（289 则）　24 小时'},
   {id:'cafe',jp:'進撃の日田カフェ',addr:'日田市中央1丁目1-16',pid:'ChIJn5rg0MFrQTURrjjcF3AnFSY',t:'午餐',flag:'轻食',name:'进击的日田咖啡馆',note:'只有饮料和冰淇淋，没有正餐。利威尔、艾尔文 AR，点饮料送限定杯套，二楼有小游戏。',lat:33.3185434,lng:130.9366947,gmap:C+'2744142910342314158',off:'https://shingeki-hita.com/spot/021.html',ginfo:'Google 评分 4.3（146 则）　10:00–18:00，可能只收电子支付'},
@@ -869,7 +869,7 @@ var DAYS=[
   {id:'mameda',jp:'豆田町 日田',addr:'日田市豆田町',pid:'ChIJnSUPRCBqQTURsoj9e71RGFk',t:'傍晚',name:'豆田町',note:'白墙老街，作者高中时的上学路线。',lat:33.3272617,lng:130.9365976,gmap:C+'6419971143087524018',off:'https://shingeki-hita.com/spot/014.html'},
   {id:'torisen',jp:'TORISEN 若宮店 日田',addr:'日田市東町2-609-1',pid:'ChIJOyESsD9qQTURfqgCqkfmx0s',t:'晚餐',flag:'餐厅',name:'TORISEN 若宫店',note:'大分鸡肉料理，有签名和插画色纸。从豆田町走过去偏远，可以打车。',tel:'0973-22-0106',lat:33.3120283,lng:130.9368964,off:'https://shingeki-hita.com/spot/010.html',ginfo:'Google 评分 4.1（117 则）　10:00–20:00',taxi:true}
  ]},
- {d:'19',w:'周五',title:'大山町　自驾',sub:'由北往南进大山，最后到温泉',mode:'driving',stops:[
+ {d:'2',lab:'第2天',w:'日田',title:'大山町　自驾',sub:'由北往南进大山，最后到温泉',mode:'driving',stops:[
   {id:'rental',jp:'トヨタレンタカー 日田店',addr:'日田市十二町前田550-4',pid:'ChIJn3vAyTNqQTURaPgHhaSeJ80',kind:'util',t:'09:00',name:'取车　丰田租车日田店',note:'打电话请他们到酒店或日田站接你。0973-24-0117，8:00–18:00。',lat:33.322671,lng:130.9224044},
   {id:'clover',jp:'クローバー 美容室 日田市大山町',addr:'日田市大山町西大山857-3',pid:'ChIJpdUNOR5AQTUREWEbW7KzQ-E',t:'09:30',official:'官方资料：日田站开车约 16 分钟（租车店在车站附近）',offMin:16,flag:'营业中的店',name:'CLOVER 美容院',note:'作者小时候去的美容院，有签名色纸。先礼貌询问再拍照。周一、周三休。',tel:'0973-52-2232',lat:33.2608816,lng:130.9598489,off:'https://shingeki-hita.com/spot/004.html'},
   {id:'school',jp:'日田市大山振興局',addr:'日田市大山町西大山3494-1',pid:'ChIJ-Xx43DRBQTURzw7Qc7U7xwY',t:'09:50',name:'旧大山小学校（现大山振兴局）',note:'作者就读的小学旧址。',tel:'0973-52-3101',lat:33.2573936,lng:130.9645657,off:'https://shingeki-hita.com/spot/008.html'},
@@ -881,27 +881,39 @@ var DAYS=[
   {id:'tree',jp:'田来原美しい森づくり公園',addr:'日田市大山町西大山1595-6',pid:'ChIJJ46yhRUVQTURQGqRv82FDow',t:'14:30',name:'那山丘上的树',note:'田来原美しい森づくり公園。山路窄，慢慢开。黄昏很漂亮，但梅酒蔵 17:00 关门，所以这里不要待太晚。',lat:33.2353987,lng:130.936573,gmap:C+'10092150933712628288',off:'https://shingeki-hita.com/spot/023.html',ginfo:'Google 评分 4.2（88 则）'},
   {id:'umehibiki',jp:'奥日田温泉うめひびき',addr:'日田市大山町西大山4587',pid:'ChIJc0shDHRAQTURaWhxgCY1_bY',t:'16:00',name:'奥日田温泉うめひびき ／ 梅酒蔵おおやま',note:'先逛梅酒蔵（9:00–17:00），再泡温泉。今晚可以直接住这里。',tel:'0973-52-3700',lat:33.2406418,lng:130.9830145,gmap:C+'13185753723490625641',off:'https://shingeki-hita.com/spot/007.html',ginfo:'Google 评分 4.3（826 则）'}
  ]},
- {d:'20',w:'周六',title:'ANNEX 与豆田一带',sub:'从大山开回市区，沿路完成',mode:'driving',stops:[
+ {d:'3',lab:'第3天',w:'日田',title:'ANNEX 与豆田一带',sub:'从大山开回市区，沿路完成，傍晚还车',mode:'driving',stops:[
   {id:'annex',jp:'進撃の巨人 in HITA ミュージアム ANNEX',addr:'日田市高瀬（サッポロビール九州日田工場内）',pid:'ChIJ_19PrkNrQTURBMZvxYb7lcQ',t:'10:00',from:[33.2406418,130.9830145],fromNote:'从うめひびき出发；如果住市区，从酒店开过去约 10 分钟',name:'博物馆 ANNEX',note:'札幌啤酒九州日田工厂园区内。三面屏幕沉浸式漫画、86 页附作者评论的原稿，入场可抽角色卡。联票隔天有效。',lat:33.2986117,lng:130.9435722,gmap:C+'14165504759220389380',off:'https://shingeki-hita.com/spot/022.html',ginfo:'Google 评分 4.5（572 则）　10:00–19:00'},
   {id:'takamura',jp:'うどん たかむら 日田',addr:'日田市丸山2丁目2-13',pid:'ChIJwYf8bh5pQTURFWiRWS4thCY',t:'午餐',flag:'餐厅',name:'うどん たかむら',note:'招牌「进击的奶油芝士」乌冬，店里有巨人主题的座位。周一休。',tel:'0973-22-2316',lat:33.3334684,lng:130.9359146,off:null,ginfo:'Google 评分 4.4（235 则）　11:00–15:00，周一休'},
   {id:'slow',jp:'SLOWcafe 日田',addr:'日田市丸山2丁目1-26',pid:'ChIJvTM8aotpQTURULmUUVepr28',t:'饭后',flag:'餐厅',name:'SLOWcafe',note:'有联名菜单「让的 Om-Om」，出示官方 App 的集章优惠券送一杯饮料。和たかむら很近，一家吃正餐、一家喝饮料。周一休。',tel:'0973-28-8322',lat:33.3325311,lng:130.9371401,walkFromPrev:true,off:'https://shingeki-hita.com/spot/011.html',ginfo:'Google 评分 4.4（149 则）　11:00–16:30，周一休'},
   {id:'rinko',jp:'日田林工高校',addr:'日田市吹上町30',pid:'ChIJT8ZKIoppQTURBE-A7URaZDQ',t:'下午',name:'日田林工高中（校外）',note:'作者的高中，当年从大山町骑小摩托上学。周六没上课，只在校门外看，不要进入校园。',lat:33.3314442,lng:130.9339416,off:'https://shingeki-hita.com/spot/013.html',walkFromPrev:true},
-  {id:'link',jp:'Link 美容室 日田',addr:'日田市中央2丁目2-16',pid:'ChIJhd6sdjxqQTURufFEsyJ4clU',t:'下午',flag:'营业中的店',name:'Link 美容院',note:'当年替作者剪发的美容师在这里，店里有作者寄来的贺年卡。先礼貌询问。周一休。',tel:'0973-28-6100',lat:33.317613,lng:130.933753,off:'https://shingeki-hita.com/spot/009.html',ginfo:'Google 评分 4.7（61 则）'}
+  {id:'link',jp:'Link 美容室 日田',addr:'日田市中央2丁目2-16',pid:'ChIJhd6sdjxqQTURufFEsyJ4clU',t:'下午',flag:'营业中的店',name:'Link 美容院',note:'当年替作者剪发的美容师在这里，店里有作者寄来的贺年卡。先礼貌询问。周一休。',tel:'0973-28-6100',lat:33.317613,lng:130.933753,off:'https://shingeki-hita.com/spot/009.html',ginfo:'Google 评分 4.7（61 则）'},
+  {id:'return',jp:'トヨタレンタカー 日田店',addr:'日田市十二町前田550-4',pid:'ChIJn3vAyTNqQTURaPgHhaSeJ80',kind:'util',t:'傍晚',name:'还车　丰田租车日田店',note:'还车前加满油，请他们送你回日田站或酒店。',lat:33.322671,lng:130.9224044}
  ]},
- {d:'21',w:'周日',title:'耶马溪红叶',sub:'不是圣地，但 11 月中下旬正值红叶',mode:'driving',stops:[
-  {id:'yabakei',kind:'util',t:'全天',name:'耶马溪',note:'周日人多，尽早出发。点下面按钮查从日田站过去的实际路线和时间。',q:'耶馬溪',from:[33.3170211,130.9387325]}
+ {d:'4',lab:'第4天',w:'移动',title:'日田 → 京都',sub:'JR 到博多，再坐新干线到京都',mode:'transit',stops:[
+  {id:'tokyoto',kind:'util',t:'上午',name:'日田 → 博多 → 京都',note:'JR 久大本线到博多约 1.5 小时，新干线到京都约 2 小时 40 分钟。中午前出发，下午就能到京都放行李。',q:'京都駅',from:[33.3170211,130.9387325],transit:true}
  ]},
- {d:'22',w:'周一',title:'限定活动与还车',sub:'市区很多店周一休，所以安排去较远的地方',mode:'driving',stops:[
-  {id:'forest',jp:'フォレストアドベンチャー 奥日田',addr:'日田市中津江村合瀬3750',pid:'ChIJ4S7uRdMXQTURwgWNkq9Ro1w',t:'09:00',flag:'期间限定',name:'Forest Adventure 奥日田',note:'进击的巨人主题树上冒险，有披风和刀的装扮，工作人员会帮忙拍照录影。出发前确认联名还在、先预约。周三休。',lat:33.1284106,lng:130.8828022,off:'https://shingeki-hita.com/spot/018.html',ginfo:'Google 评分 4.8（70 则）　9:00–17:00',from:[33.3170211,130.9387325],official:'官方资料：日田站开车约 57 分钟',offMin:57},
-  {id:'return',jp:'トヨタレンタカー 日田店',addr:'日田市十二町前田550-4',pid:'ChIJn3vAyTNqQTURaPgHhaSeJ80',kind:'util',t:'傍晚',name:'还车　丰田租车日田店',note:'还车前加满油。他们可以送你回日田站。',lat:33.322671,lng:130.9224044}
+ {d:'5',lab:'第5天',w:'京都',title:'轻音少女圣地',sub:'上午去学校，下午沿叡山电车往北走',mode:'transit',stops:[
+  {id:'kyotost',kind:'util',jp:'京都駅',pid:'ChIJ7wKLka4IAWARCByidG5EGrY',t:'08:30',name:'京都站出发',note:'坐 JR 新快速到彦根（约 50 分钟），转近江铁道到豊郷站（约 20 分钟）。近江铁道班次不多，出发前先查好时刻表。',lat:34.985849,lng:135.7587667},
+  {id:'toyosato',jp:'豊郷小学校旧校舎群',addr:'滋賀県犬上郡豊郷町石畑518',pid:'ChIJ837RttzVA2ARkMNnRNngMYM',t:'10:00',name:'豊郷小学校旧校舎群　樱丘高中原型',note:'轻音少女里樱丘高中的原型，免费参观。轻音部的社团教室重现了动画里的茶具和摆设，楼梯扶手上还有兔子和乌龟的铜像。从豊郷站走路约 10 分钟。',tel:'0749-35-3737',lat:35.2033297,lng:136.2327954,mode:'transit',offMin:75,official:'JR 新快速＋近江铁道，约 1 小时 15 分钟',off:'https://toyosato-kanko.jp/spot/toyosatoelementaryschool/',ginfo:'Google 评分 4.5（1,847 则）　10:00–17:00，周一休'},
+  {id:'jeugia',jp:'JEUGIA 三条本店',addr:'京都市中京区三条通寺町東入石橋町11 B1',pid:'ChIJGy-LtJMIAWAR7SfGlEhU9_0',t:'14:00',name:'JEUGIA 三条本店 Stage　唯买吉他的乐器店',note:'第 2 话里唯和吉他「ギー太」相遇的乐器店，在地下一楼。从豊郷回京都后，在京都市役所前站下车走路约 5 分钟。周四休。',tel:'075-254-3700',lat:35.008598,lng:135.7676941,mode:'transit',offMin:90,official:'近江铁道＋JR＋地铁，约 1 小时 30 分钟（含午餐另计）',ginfo:'Google 评分 4.0（429 则）　周四休'},
+  {id:'teramachi',jp:'寺町京極商店街',addr:'京都市中京区寺町通',pid:'ChIJDW-ECZIIAWARetuHCbkUwT0',t:'14:30',name:'寺町京极商店街',note:'片中常出现的放学后逛街和假日集合的地方，就在乐器店旁边的有顶商店街。',lat:35.0037877,lng:135.7668754,mode:'walking',ginfo:'Google 评分 4.2（1,720 则）'},
+  {id:'kamodelta',jp:'鴨川デルタ',addr:'京都市左京区下鴨宮河町',pid:'ChIJYfiJTR0JAWAR6aLRNJZqn-k',t:'15:15',name:'鸭川三角洲　出町的跳石',note:'鸭川和高野川的汇流点，第 1 季片头有出现。坐京阪到出町柳站，走路几分钟就到，跳石可以直接踩过河。',lat:35.0298585,lng:135.7717641,mode:'transit',offMin:20,official:'京阪 三条→出町柳，约 20 分钟',ginfo:'Google 评分 4.6（970 则）　24 小时'},
+  {id:'kua',jp:'京都芸術大学',addr:'京都市左京区北白川瓜生山2-116',pid:'ChIJJfF1jawJAWARfCDJw4xhtPw',t:'15:50',name:'京都芸术大学前的大阶梯',note:'片头里四个人跳起来的那段大阶梯，是粉丝拍照的经典点。从出町柳坐叡山电车到茶山站，再走路约 10 分钟。这里是学校，拍照时注意不要妨碍学生。',lat:35.0370489,lng:135.792983,mode:'transit',offMin:20,official:'叡山电车 出町柳→茶山，再步行，约 20 分钟'},
+  {id:'mcd',jp:'マクドナルド 北白川店',addr:'京都市左京区一乗寺中ノ田町73',pid:'ChIJM3vqHbMJAWARRMDlZfG2uUc',t:'16:15',flag:'可选',name:'マクドナルド北白川店',note:'唯入部前，四个人在这家麦当劳擦肩而过。沿白川通往北走就到，可以在这里休息一下。',lat:35.0419259,lng:135.7916011,mode:'walking',ginfo:'Google 评分 3.4（1,081 则）　24 小时'},
+  {id:'shugakuin',jp:'修学院駅',addr:'京都市左京区山端壱町田町',pid:'ChIJveHUKcsJAWARrVqi3hm_MUo',t:'16:40',name:'叡山电车 修学院站　唯的通学车站',note:'唯通学用的车站原型，片头里的车站和平交道都在这里。无人车站，坐叡山电车的话是下车时在车上付钱。',lat:35.0502851,lng:135.7903833,mode:'walking'},
+  {id:'matsugasaki',jp:'松ヶ崎橋',addr:'京都市左京区松ヶ崎',pid:'ChIJu_EXYjMIAWARKzcCmVBoTe0',t:'16:50',name:'松ヶ崎桥　片头的那座桥',note:'第 1 季片头里成员走过的桥，跨过高野川。11 月下旬京都约 5 点前天黑，排在最后刚好拍黄昏。',lat:35.0516393,lng:135.7886118,mode:'walking'},
+  {id:'retro',jp:'レトロビーバー',addr:'京都市左京区松ヶ崎河原田町8-6',pid:'ChIJK8OicDMIAWAR1C2c7FnJ-lU',t:'17:00',flag:'营业中的店',name:'レトロビーバー　片头背景的咖啡馆',note:'片头里律和唯那几个镜头背景的咖啡馆，门口的展示柜里还放着轻音少女的文件夹。现在是现场音乐空间兼咖啡馆，营业到 18:00，周三休。',tel:'075-712-0357',lat:35.0518904,lng:135.788039,mode:'walking',ginfo:'Google 评分 4.1（17 则）　13:00–18:00，周三休'}
  ]},
- {d:'23',w:'周二',title:'撤离',sub:'日本假日',mode:'driving',stops:[
-  {id:'leave',kind:'util',t:'上午',name:'日田 → 福冈',note:'JR 提前订座，隔天坐新干线去京都。',q:'博多駅',from:[33.3170211,130.9387325],transit:true}
+ {d:'6',lab:'第6～10天',w:'京都',title:'京都自由行',sub:'红叶、寺庙，或奈良、大阪一日游（待排）',mode:'transit',stops:[
+  {id:'kyotofree',kind:'util',t:'待定',name:'京都自由行',note:'确定日期和住宿后再排。南禅寺水路阁、金阁寺、北野天满宫、嵐山这些地方也出现在轻音少女里，可以顺路去。',q:'京都駅',from:[34.985849,135.7587667],transit:true}
+ ]},
+ {d:'11',lab:'第11天',w:'回国',title:'京都 → 关西机场',sub:'坐 HARUKA 到关西机场',mode:'transit',stops:[
+  {id:'tokix',kind:'util',t:'出发',name:'京都 → 关西机场',note:'JR HARUKA 特急约 1 小时 20 分钟，国际线建议起飞前 2.5 小时到机场。',q:'関西国際空港',from:[34.985849,135.7587667],transit:true}
  ]}
 ];
 var ANY=[
  {id:'panels',name:'市内各处角色立牌',note:'散落在市内多个地点，遇到就拍一张。',off:'https://shingeki-hita.com/spot/015.html'},
- {id:'stamp',name:'集章完成，兑换奖品',note:'部分奖品只能在博物馆本馆兑换，所以 18 号就在市区集好，19 号去本馆换。',off:'https://shingeki-hita.com/guidance/sr/index.html'}
+ {id:'stamp',name:'集章完成，兑换奖品',note:'部分奖品只能在博物馆本馆兑换，所以第 1 天就在市区集好，第 2 天去本馆换。',off:'https://shingeki-hita.com/guidance/sr/index.html'}
 ];
 var SPOTS=[];DAYS.forEach(function(d){d.stops.forEach(function(s){if(s.kind!=='util')SPOTS.push(s);});});ANY.forEach(function(s){SPOTS.push(s);});
 
@@ -916,7 +928,7 @@ var art=null;
 function el(t,c,txt){var e=document.createElement(t);if(c)e.className=c;if(txt!=null)e.textContent=txt;return e;}
 function lnk(c,txt,href){var a=el('a',c,txt);a.href=href;a.target='_blank';a.rel='noopener';return a;}
 
-var TC={"c":{"图":"圖","离":"離","显":"顯","点":"點","选":"選","冈":"岡","页":"頁","过":"過","调":"調","进":"進","确":"確","认":"認","删":"刪","饮":"飲","楼":"樓","游":"遊","戏":"戲","坝":"壩","为":"為","墙":"牆","现":"現","话":"話","场":"場","记":"記","录":"錄","较":"較","远":"遠","车":"車","线":"線","简":"簡","传":"傳","这":"這","张":"張","观":"觀","内":"內","计":"計","导":"導","实":"實","时":"時","况":"況","关":"關","门":"門","里":"裡","周":"週","团":"團","与":"與","费":"費","号":"號","馆":"館","换":"換","数":"數","顺":"順","开":"開","黄":"黃","签":"簽","纸":"紙","务":"務","浓":"濃","雾":"霧","结":"結","带":"帶","议":"議","钟":"鐘","机":"機","头":"頭","钥":"鑰","设":"設","亲":"親","绘":"繪","制":"製","评":"評","论":"論","联":"聯","电":"電","检":"檢","发":"發","区":"區","从":"從","约":"約","欢":"歡","价":"價","驿":"驛","当":"當","骑":"騎","学":"學","没":"沒","课":"課","园":"園","广":"廣","尔":"爾","长":"長","铜":"銅","个":"個","额":"額","经":"經","满":"滿","师":"師","来":"來","贺":"賀","礼":"禮","询":"詢","问":"問","两":"兩","达":"達","后":"後","丰":"豐","画":"畫","营":"營","业":"業","间":"間","动":"動","变":"變","无":"無","会":"會","台":"臺","谁":"誰","败":"敗","请":"請","网":"網","络":"絡","试":"試","标":"標","暂":"暫","处":"處","贴":"貼","驾":"駕","属":"屬","还":"還","书":"書","载":"載","马":"馬","读":"讀","旧":"舊","写":"寫","权":"權","转":"轉","觉":"覺","么":"麼","样":"樣","绝":"絕","几":"幾","档":"檔","须":"須","环":"環","绕":"繞","际":"際","树":"樹","击":"擊","饭":"飯","双":"雙","滚":"滾","轮":"輪","驶":"駛","亚":"亞","圣":"聖","负":"負","责":"責","报":"報","闭":"閉","随":"隨","订":"訂","干":"幹","异":"異","办":"辦","红":"紅","叶":"葉","买":"買","兑":"兌","奖":"獎","体":"體","复":"複","齐":"齊","补":"補","给":"給","装":"裝","备":"備","奥":"奧","温":"溫","资":"資","题":"題","险":"險","风":"風","员":"員","帮":"幫","预":"預","产":"產","态":"態","谏":"諫","创":"創","乡":"鄉","恋":"戀","冲":"沖","厅":"廳","鸡":"雞","则":"則","兴":"興","宫":"宮","们":"們","对":"對","规":"規","划":"劃","军":"軍","尽":"儘","钮":"鈕","储":"儲","兽":"獸","纯":"純","优":"優","单":"單","让":"讓","弹":"彈","编":"編","辑":"輯","国":"國","护":"護","证":"證","乌":"烏","详":"詳","玛":"瑪","纹":"紋","灯":"燈","谜":"謎","厂":"廠","轻":"輕","帐":"帳"},"p":{"剪发的":"剪髮的","梅干等":"梅乾等","公里":"公里","限制）":"限制）","公里，":"公里，"}};
+var TC={"c":{"术":"術","学":"學","阶":"階","钥":"鑰","无":"無","没":"沒","写":"寫","权":"權","调":"調","记":"記","录":"錄","还":"還","评":"評","价":"價","买":"買","乐":"樂","周":"週","馆":"館","区":"區","铁":"鐵","与":"與","兽":"獸","机":"機","带":"帶","传":"傳","败":"敗","请":"請","检":"檢","网":"網","络":"絡","后":"後","试":"試","厂":"廠","园":"園","内":"內","画":"畫","条":"條","页":"頁","过":"過","从":"從","开":"開","较":"較","远":"遠","车":"車","约":"約","点":"點","选":"選","这":"這","里":"裡","现":"現","导":"導","个":"個","两":"兩","间":"間","标":"標","计":"計","离":"離","时":"時","图":"圖","会":"會","坝":"壩","铜":"銅","钟":"鐘","简":"簡","体":"體","确":"確","禅":"禪","阁":"閣","满":"滿","宫":"宮","轻":"輕","顺":"順","电":"電","复":"複","制":"製","刚":"剛","黄":"黃","书":"書","鸭":"鴨","汇":"匯","显":"顯","极":"極","广":"廣","场":"場","尔":"爾","长":"長","当":"當","发":"發","师":"師","来":"來","贺":"賀","礼":"禮","询":"詢","问":"問","墙":"牆","线":"線","删":"刪","台":"臺","随":"隨","丰":"豐","头":"頭","进":"進","击":"擊","则":"則","奖":"獎","兑":"兌","换":"換","储":"儲","干":"幹","关":"關","门":"門","营":"營","业":"業","动":"動","变":"變","麦":"麥","劳":"勞","红":"紅","叶":"葉","庙":"廟","游":"遊","国":"國","论":"論","联":"聯","产":"產","旧":"舊","樱":"櫻","为":"為","话":"話","编":"編","辑":"輯","读":"讀","驿":"驛","费":"費","参":"參","观":"觀","团":"團","摆":"擺","设":"設","楼":"樓","乌":"烏","龟":"龜","题":"題","钱":"錢","浓":"濃","雾":"霧","结":"結","议":"議","态":"態","认":"認","欢":"歡","号":"號","弹":"彈","档":"檔","载":"載","暂":"暫","优":"優","饮":"飲","对":"對","规":"規","划":"劃","温":"溫","员":"員","桥":"橋","恋":"戀","谁":"誰","冈":"岡","树":"樹","绝":"絕","几":"幾","贴":"貼","单":"單","让":"讓","张":"張","马":"馬","们":"們","驾":"駕","兴":"興","闭":"閉","报":"報","环":"環","绕":"繞","签":"簽","纸":"紙","实":"實","况":"況","圣":"聖","达":"達","双":"雙","数":"數","额":"額","经":"經","务":"務","彦":"彥","边":"邊","顶":"頂","预":"預","订":"訂","饭":"飯","转":"轉","觉":"覺","么":"麼","样":"樣","际":"際","滚":"滾","轮":"輪","厅":"廳","鸡":"雞","奥":"奧","碍":"礙","齐":"齊","纯":"純","绘":"繪","玛":"瑪","亚":"亞","纹":"紋","灯":"燈","谜":"謎","冲":"沖","须":"須","异":"異","帐":"帳","详":"詳","谏":"諫","创":"創","乡":"鄉","负":"負","责":"責","飞":"飛","骑":"騎","课":"課","镜":"鏡","柜":"櫃","着":"著","夹":"夾","丝":"絲","军":"軍","亲":"親","驶":"駛","处":"處","办":"辦","补":"補","给":"給","装":"裝","备":"備","资":"資","护":"護","证":"證","属":"屬","戏":"戲"},"p":{"剪发的":"剪髮的","梅干等":"梅乾等","公里，":"公里，","公里":"公里","限制）":"限制）"}};
 var TCP=Object.keys(TC.p).sort(function(a,b){return b.length-a.length;});
 function lang(){try{return localStorage.getItem('aot-lang')==='tc'?'tc':'sc';}catch(e){return 'sc';}}
 function tcv(s){if(!s||!/[\u4e00-\u9fff]/.test(s))return s;var out='',i=0;
@@ -1043,6 +1055,7 @@ function waze(p){return 'https://waze.com/ul?ll='+ll(p)+'';}
 function hav(a,b){var R=6371,r=Math.PI/180,dl=(b[0]-a[0])*r,dg=(b[1]-a[1])*r;var x=Math.sin(dl/2)*Math.sin(dl/2)+Math.cos(a[0]*r)*Math.cos(b[0]*r)*Math.sin(dg/2)*Math.sin(dg/2);return 2*R*Math.asin(Math.sqrt(x));}
 function est(a,b,mode){
   var km=hav(a,b);
+  if(mode==='transit'){var dt=km*1.3;return {km:dt,min:Math.max(5,Math.round(dt/22*60)+8)};}
   var mountain=(a[0]<33.29||b[0]<33.29);
   if(mode==='walking'){var d=km*1.3;return {km:d,min:Math.max(1,Math.round(d/4.5*60))};}
   var dd=km*(mountain?1.55:1.35);return {km:dd,min:Math.max(2,Math.round(dd/(mountain?32:25)*60)+2)};
@@ -1105,11 +1118,11 @@ function utilCard(s,prev,mode,next){
 }
 
 function leg(a,b,mode,s){
-  var m=s.walkFromPrev?'walking':mode;
+  var m=s.mode||(s.walkFromPrev?'walking':mode);
   var e=est([a.lat,a.lng],[b.lat,b.lng],m);if(s.offMin&&(!s.from||a.lat===s.from[0]||s.id==='clover'))e.min=s.offMin;
   var box=el('div','leg');var nm=el('div','lgn');nm.appendChild(el('span',null,short(a.name||'出发点')));nm.appendChild(el('i',null,' → '));nm.appendChild(el('span',null,short(b.name)));box.appendChild(nm);var t=el('div','lg');
   if(s.same){t.appendChild(el('b',null,'同一地点'));t.appendChild(el('small',null,'博物馆就在道之驿里面'));box.appendChild(t);return box;}
-  var how=m==='walking'?'步行':'开车';
+  var how=m==='walking'?'步行':(m==='transit'?'电车':'开车');
   t.appendChild(el('b',null,how+' 约 '+e.min+' 分钟'));t.appendChild(document.createTextNode('　'+kmTxt(e.km)));
   var note=s.official?s.official:(s.fromNote&&!s._inner?s.fromNote+'。估计值':'估计值，按导航看实时路况');
   if(s.taxi)note='步行较远，打车约 '+Math.max(5,Math.round(e.km/25*60)+3)+' 分钟。'+note;
@@ -1124,15 +1137,15 @@ function build(){
   var no=0,done=0;
   DAYS.forEach(function(D){
     var sec=el('div');sec.id='day-'+D.d;
-    if(dn){var a=el('a',null,'11/'+D.d+' '+D.w);a.href='#day-'+D.d;dn.appendChild(a);}
-    var hd=el('div','dayhead');hd.appendChild(el('span','dd','11/'+D.d));hd.appendChild(el('h3',null,D.w+'　'+D.title));hd.appendChild(el('small',null,D.sub));sec.appendChild(hd);
+    if(dn){var a=el('a',null,D.lab+' '+D.w);a.href='#day-'+D.d;dn.appendChild(a);}
+    var hd=el('div','dayhead');hd.appendChild(el('span','dd',D.lab));hd.appendChild(el('h3',null,D.w+'　'+D.title));hd.appendChild(el('small',null,D.sub));sec.appendChild(hd);
     var pts=D.stops.filter(function(s){return s.lat;});
     var tools=el('div','daytools');
-    if(pts.length>=2){
+    if(pts.length>=2&&D.mode!=='transit'){
       var wps=pts.slice(1,-1).map(ll).filter(function(v,i,arr){return arr.indexOf(v)===i;}).slice(0,9);
       tools.appendChild(plate(null,'route','整天路线',dayRoute(pts,D.mode)));
-      var tot=0,tm=0;if(pts[0].from){var e0=est(pts[0].from,[pts[0].lat,pts[0].lng],D.mode);tot+=e0.km;tm+=e0.min;}for(var i=1;i<pts.length;i++){if(pts[i].same)continue;var e=est([pts[i-1].lat,pts[i-1].lng],[pts[i].lat,pts[i].lng],pts[i].walkFromPrev?'walking':D.mode);tot+=e.km;tm+=e.min;}
-      tools.appendChild(el('span',null,'全天移动约 '+tot.toFixed(1)+' 公里，'+(D.mode==='walking'?'步行':'车程')+'约 '+tm+' 分钟（估计）'));
+      var tot=0,tm=0;if(pts[0].from){var e0=est(pts[0].from,[pts[0].lat,pts[0].lng],D.mode);tot+=e0.km;tm+=e0.min;}for(var i=1;i<pts.length;i++){if(pts[i].same)continue;var e=est([pts[i-1].lat,pts[i-1].lng],[pts[i].lat,pts[i].lng],pts[i].mode||(pts[i].walkFromPrev?'walking':D.mode));if(pts[i].offMin)e.min=pts[i].offMin;tot+=e.km;tm+=e.min;}
+      tools.appendChild(el('span',null,'全天移动约 '+tot.toFixed(1)+' 公里，'+(D.mode==='walking'?'步行':(D.mode==='transit'?'交通':'车程'))+'约 '+tm+' 分钟（估计）'));
     }
     if(tools.children.length)sec.appendChild(tools);
     var r=el('div','route');var prev=null;
@@ -1484,7 +1497,7 @@ build();setupAdmin();hero();applyLang();
     var form=document.createElement('div');form.className='nb-form';
     var l1=document.createElement('label');l1.className='nb-line';l1.innerHTML='<b>姓名</b>';l1.appendChild(inp);
     var l2=document.createElement('div');l2.className='nb-line';l2.innerHTML='<b>所属</b><span>调查兵团</span>';
-    var l3=document.createElement('div');l3.className='nb-line';l3.innerHTML='<b>任务</b><span>第 2027-11 次壁外调查　日田</span>';
+    var l3=document.createElement('div');l3.className='nb-line';l3.innerHTML='<b>任务</b><span>第 2027-11 次壁外调查　日田 · 京都</span>';
     var l4=document.createElement('div');l4.className='nb-line ln';l4.innerHTML='<b>文字</b><span class="langsw sm" role="group" aria-label="文字"><button type="button" data-lang="sc">简体</button><button type="button" data-lang="tc">繁體</button></span>';
     form.appendChild(l1);form.appendChild(l2);form.appendChild(l3);form.appendChild(l4);
     var err=document.createElement('p');err.className='nb-err';
