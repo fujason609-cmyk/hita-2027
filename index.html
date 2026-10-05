@@ -795,6 +795,8 @@ html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 130px)}
 .sh-ov .sh-style .sty-in b,.sh-ov .sh-style .sty-in small{line-height:1.2!important}
 .glabel{margin-bottom:4px!important}
 .glabel + .shots{margin-top:0!important}
+.nx-b.one{grid-template-columns:1fr!important;max-width:420px}
+.util .nx-b.one{margin-top:12px}
 </style></head><body><template id="shell">
 <header class="wall pending">
   <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><filter id="keywhite" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB"><feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  -6 -6 -6 0 16.8" result="m"/><feMorphology in="m" operator="erode" radius="1.5" result="me"/><feComposite in="SourceGraphic" in2="me" operator="in" result="c"/><feComposite in="c" in2="SourceAlpha" operator="in"/></filter></svg>
@@ -1112,7 +1114,7 @@ function card(s,no,prev,next,mode){
 function utilCard(s,prev,mode,next){
   var d=el('div','util');var hh=el('h4');if(s.t)hh.appendChild(el('span','time',s.t));hh.appendChild(document.createTextNode(s.name));d.appendChild(hh);d.appendChild(el('p',null,s.note));
   if(s.addr){d.appendChild(lnk('addr','📍 '+s.addr,place(s)));}
-  if(s.q){var nb=el('div','nx-b');nb.appendChild(lnk(null,'Google Maps 查路线',s.transit?dir(s.from.join(','),s.q,'transit'):go({q:s.q},mode)));d.appendChild(nb);}
+  if(s.q){var nb=el('div','nx-b one');nb.appendChild(plate(null,'route','Google Maps 查路线',s.transit?dir(s.from.join(','),s.q,'transit'):go({q:s.q},mode)));d.appendChild(nb);}
   else if(s.lat){d.appendChild(goBlock(s,mode));}
   return d;
 }
