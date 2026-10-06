@@ -1059,8 +1059,10 @@ body.kon-on .status nav a{transition:background .3s,color .3s,border-color .3s}
 html,body{max-width:100%;overflow-x:hidden;overscroll-behavior-x:none}
 @supports (overflow:clip){html,body{overflow-x:clip}}
 body{position:relative}
-main,#days,.route,.anytime{max-width:100%;overflow-x:clip}
-.kon{max-width:calc(100% + 16px)}
+@media(max-width:560px){
+  .kon{margin:44px -12px 0!important;max-width:none!important;border-radius:0!important;padding:6px 14px 26px 26px!important;box-shadow:none!important;border-top:3px solid #FFE1EA;border-bottom:3px solid #FFE1EA}
+  .kon .k-stk{right:-6px!important}
+}
 </style></head><body><template id="shell">
 <header class="wall pending">
   <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><filter id="keywhite" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB"><feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  -6 -6 -6 0 16.8" result="m"/><feMorphology in="m" operator="erode" radius="1.5" result="me"/><feComposite in="SourceGraphic" in2="me" operator="in" result="c"/><feComposite in="c" in2="SourceAlpha" operator="in"/></filter></svg>
