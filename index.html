@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta name="theme-color" content="#2E3B26"><link rel="apple-touch-icon" href="icon-180.png"><link rel="manifest" href="manifest.json"><link rel="icon" href="icon-180.png"><title>日田 · 壁外调查记录 2027</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;700;900&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet"><style id="css">
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta name="theme-color" content="#2E3B26"><link rel="apple-touch-icon" href="icon-180.png"><link rel="manifest" href="manifest.json"><link rel="icon" href="icon-180.png"><title>日田 · 壁外调查记录 2027</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;700;900&family=Noto+Sans+SC:wght@400;500;700&family=ZCOOL+KuaiLe&display=swap" rel="stylesheet"><style id="css">
 :root{
   --night:#1B1914; --bark:#26231C; --stone:#6E6A60; --stone-d:#4A4740; --mortar:#34312A;
   --paper:#D9CBA8; --paper-d:#C7B68E; --ink:#2A2419; --ink-soft:#5A4E3A;
@@ -880,6 +880,38 @@ body.kon-on .status{border-bottom-color:transparent;background-image:linear-grad
 body.kon-on .status nav a.on{background:#FF8FB1;border-color:#FF8FB1;color:#fff}
 @media(max-width:560px){.kon{margin:44px -8px 0;padding:6px 10px 26px 22px}.kon .k-notes span{font-size:20px}}
 @media (prefers-reduced-motion:reduce){.kon .k-notes span{animation:none}}
+/* ===== K-ON theme v2 ===== */
+.kon{background:
+    radial-gradient(circle at 12px 12px,rgba(255,143,177,.13) 2.5px,transparent 3px) 0 0/26px 26px,
+    linear-gradient(90deg,transparent 15px,rgba(255,143,177,.55) 15px,rgba(255,143,177,.55) 17px,transparent 17px),
+    repeating-linear-gradient(180deg,var(--k-paper) 0 31px,var(--k-line) 31px 32px)}
+.kon .dayhead h3,.kon .body h4,.kon .util h4,.kon .leg .lgn{font-family:"ZCOOL KuaiLe","Noto Sans SC",sans-serif!important;font-weight:400!important;letter-spacing:.03em}
+.kon .dayhead h3{font-size:clamp(26px,5vw,34px)}
+.kon .body h4,.kon .util h4{font-size:21px}
+.kon .k-band{display:flex;align-items:flex-end;justify-content:center;gap:clamp(6px,2.4vw,18px);margin:6px 0 4px;padding:10px 6px 8px;border-radius:16px;
+  background:linear-gradient(180deg,#FFF0F5,#FFE3EC);box-shadow:inset 0 0 0 2px #FFD3E0}
+.kon .k-band svg{width:clamp(40px,11vw,58px);height:clamp(40px,11vw,58px);flex:0 0 auto;filter:drop-shadow(0 2px 0 rgba(0,0,0,.08))}
+.kon .k-band svg:nth-child(odd){transform:rotate(-6deg)}.kon .k-band svg:nth-child(even){transform:rotate(5deg)}
+.kon .k-band .k-cap{display:block;width:100%;text-align:center;font-family:"ZCOOL KuaiLe",sans-serif;font-size:15px;color:#C9789A;margin-top:4px}
+.kon .k-bandw{display:flex;flex-direction:column;align-items:stretch}
+.kon .k-stk{position:absolute;right:-10px;top:-16px;z-index:4;width:48px;height:48px;border-radius:50%;background:#fff;box-shadow:0 0 0 3px #FFE1EA,0 3px 0 rgba(0,0,0,.08);display:flex;align-items:center;justify-content:center;transform:rotate(10deg)}
+.kon .k-stk svg{width:36px;height:36px}
+.kon .dossier .file{padding-right:44px}
+/* ===== header transforms on K-ON day ===== */
+.status{transition:background-color .35s,color .35s}
+body.kon-on .status{background-color:#FFE6EE!important;background-image:radial-gradient(circle at 10px 10px,rgba(255,255,255,.75) 2.5px,transparent 3px),linear-gradient(90deg,#FF8FB1 0 25%,#FFD66B 25% 50%,#7ED7C1 50% 75%,#7CC3F0 75%)!important;
+  background-size:22px 22px,100% 5px!important;background-repeat:repeat,no-repeat!important;background-position:0 0,bottom!important;border-bottom:none!important;color:#4A3B4F}
+body.kon-on .status #count{color:#4A3B4F;font-family:"ZCOOL KuaiLe","Noto Sans SC",sans-serif;font-weight:400;font-size:18px}
+body.kon-on .status .curday{color:#FF6F9C}
+body.kon-on .status .me{background:#fff;border:2px solid #FFC2D4;border-radius:999px;color:#4A3B4F}
+body.kon-on .status .me svg{stroke:#FF6F9C}body.kon-on .status .me i{color:#FF6F9C}
+body.kon-on .status .refresh{background:#FFD66B!important;color:#5A3D00;border-radius:999px;box-shadow:0 3px 0 #F0B932!important;--cut:0px;clip-path:none}
+body.kon-on .status .gauge{background:#fff;border:2px solid #FFC2D4;border-radius:999px;height:12px;overflow:hidden}
+body.kon-on .status .gauge i{background:repeating-linear-gradient(45deg,#FF8FB1 0 8px,#FFB3C9 8px 16px)!important;animation:none;border-radius:999px}
+body.kon-on .status nav a{background:#fff;border:2px solid #FFD3E0!important;border-radius:999px;color:#7A6A7E}
+body.kon-on .status nav a.on{background:#FF8FB1!important;border-color:#FF8FB1!important;color:#fff!important}
+body.kon-on .status nav a{transition:background .3s,color .3s,border-color .3s}
+.kon .k-bandw{margin-bottom:26px}
 </style></head><body><template id="shell">
 <header class="wall pending">
   <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><filter id="keywhite" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB"><feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  -6 -6 -6 0 16.8" result="m"/><feMorphology in="m" operator="erode" radius="1.5" result="me"/><feComposite in="SourceGraphic" in2="me" operator="in" result="c"/><feComposite in="c" in2="SourceAlpha" operator="in"/></filter></svg>
@@ -896,7 +928,7 @@ body.kon-on .status nav a.on{background:#FF8FB1;border-color:#FF8FB1;color:#fff}
     <p class="unit">壁外调查记录　第 2027-11 次</p>
     <h1>日田<span>进击的巨人 圣地巡礼</span></h1>
     <p class="sub">谏山创老师的故乡。每到一个地点，上传现场照片完成调查。</p>
-    <p class="meta">2027 年秋　11 天　日田 3 天 · 京都 7 晚　福冈入境、关西出境</p>
+    <p class="meta">2027 年秋　11 天　日田 3 天 · 京都 6 晚 · 福冈 2 天　福冈进出</p>
   </div>
 </header>
 
@@ -995,11 +1027,15 @@ var DAYS=[
   {id:'kimono',kind:'util',t:'待定',name:'和服租借（待定）',note:'还没决定要不要穿和服。要的话 08:30 到伏见稻荷站附近的店换装，男女都要服装、化妆和发型，订的时候确认方案里三样都有（有些店不做男生发型）。',q:'伏見稲荷駅',from:[34.985849,135.7587667],transit:true},
   {id:'fushimi',jp:'伏見稲荷大社',addr:'京都市伏見区深草藪之内町68',pid:'ChIJIW0uPRUPAWAR6eI6dRzKGns',t:'09:30',name:'伏见稻荷大社　千本鸟居',note:'本殿 → 千本鸟居 → 奥社奉拜所，体力够再往上走到四ツ辻看京都市景，来回约 1.5～2 小时。千本鸟居中午前后人非常多，越早到越好拍。24 小时开放，免费参拜。',tel:'075-641-7331',lat:34.9676945,lng:135.7791876,ginfo:'Google 评分 4.6（92,112 则）　24 小时'}
  ]},
- {d:'7',lab:'第7～10天',w:'京都',title:'京都自由行',sub:'红叶、寺庙，或奈良、大阪一日游（待排）',mode:'transit',stops:[
+ {d:'7',lab:'第7～9天',w:'京都',title:'京都自由行',sub:'红叶、寺庙，或奈良、大阪一日游（待排）',mode:'transit',stops:[
   {id:'kyotofree',kind:'util',t:'待定',name:'京都自由行',note:'确定日期和住宿后再排。南禅寺水路阁、金阁寺、北野天满宫、嵐山这些地方也出现在轻音少女里，可以顺路去。',q:'京都駅',from:[34.985849,135.7587667],transit:true}
  ]},
- {d:'11',lab:'第11天',w:'回国',title:'京都 → 关西机场',sub:'坐 HARUKA 到关西机场',mode:'transit',stops:[
-  {id:'tokix',kind:'util',t:'出发',name:'京都 → 关西机场',note:'JR HARUKA 特急约 1 小时 20 分钟，国际线建议起飞前 2.5 小时到机场。',q:'関西国際空港',from:[34.985849,135.7587667],transit:true}
+ {d:'10',lab:'第10天',w:'福冈',title:'京都 → 福冈',sub:'早上坐新干线回福冈，下午开始玩',mode:'transit',stops:[
+  {id:'tofuk',kind:'util',t:'上午',name:'京都 → 博多',note:'新干线京都到博多约 2 小时 40 分钟。行李可以先寄放在博多的酒店，下午开始在福冈玩（行程待排）。',q:'博多駅',from:[34.985849,135.7587667],transit:true}
+ ]},
+ {d:'11',lab:'第11天',w:'回国',title:'福冈自由行 → 回国',sub:'白天在福冈玩，之后从福冈机场回国',mode:'transit',stops:[
+  {id:'fukfree',kind:'util',t:'白天',name:'福冈自由行',note:'行程待排。福冈机场离博多站只要地铁 5 分钟，玩到傍晚再去机场也来得及。',q:'博多駅',from:[33.5897,130.4207],transit:true},
+  {id:'tofukair',kind:'util',t:'出发',name:'博多 → 福冈机场',note:'地铁空港线博多站到福冈机场约 5 分钟，国际线航厦要再坐接驳巴士约 15 分钟。建议起飞前 2.5 小时到机场。',q:'福岡空港 国際線ターミナル',from:[33.5897,130.4207],transit:true}
  ]}
 ];
 var ANY=[
@@ -1019,7 +1055,7 @@ var art=null;
 function el(t,c,txt){var e=document.createElement(t);if(c)e.className=c;if(txt!=null)e.textContent=txt;return e;}
 function lnk(c,txt,href){var a=el('a',c,txt);a.href=href;a.target='_blank';a.rel='noopener';return a;}
 
-var TC={"c":{"区":"區","评":"評","价":"價","钟":"鐘","钥":"鑰","无":"無","请":"請","复":"複","制":"製","学":"學","旧":"舊","樱":"櫻","饮":"飲","周":"週","厂":"廠","园":"園","内":"內","画":"畫","鸡":"雞","签":"簽","纸":"紙","从":"從","过":"過","远":"遠","车":"車","国":"國","点":"點","图":"圖","个":"個","这":"這","里":"裡","买":"買","两":"兩","馆":"館","联":"聯","兑":"兌","换":"換","奖":"獎","鸭":"鴨","汇":"匯","确":"確","后":"後","禅":"禪","阁":"閣","满":"滿","宫":"宮","现":"現","轻":"輕","顺":"順","张":"張","写":"寫","观":"觀","兴":"興","纯":"純","发":"發","编":"編","辑":"輯","读":"讀","网":"網","试":"試","动":"動","头":"頭","来":"來","阶":"階","丝":"絲","经":"經","电":"電","约":"約","干":"幹","产":"產","坝":"壩","铜":"銅","开":"開","没":"沒","络":"絡","调":"調","记":"記","录":"錄","几":"幾","镜":"鏡","门":"門","柜":"櫃","还":"還","着":"著","夹":"夾","场":"場","乐":"樂","间":"間","营":"營","业":"業","驶":"駛","马":"馬","亚":"亞","样":"樣","时":"時","广":"廣","铁":"鐵","与":"與","兽":"獸","关":"關","机":"機","尔":"爾","条":"條","处":"處","办":"辦","认":"認","权":"權","随":"隨","须":"須","楼":"樓","书":"書","树":"樹","贴":"貼","储":"儲","页":"頁","鸟":"鳥","费":"費","参":"參","团":"團","摆":"擺","设":"設","乌":"烏","龟":"龜","奥":"奧","体":"體","够":"夠","游":"遊","戏":"戲","选":"選","见":"見","丰":"豐","员":"員","别":"別","挡":"擋","进":"進","当":"當","骑":"騎","课":"課","简":"簡","线":"線","双":"雙","击":"擊","暂":"暫","绝":"絕","询":"詢","台":"臺","会":"會","传":"傳","删":"刪","军":"軍","际":"際","议":"議","飞":"飛","额":"額","冲":"沖","齐":"齊","礼":"禮","觉":"覺","么":"麼","闭":"閉","离":"離","属":"屬","温":"溫","实":"實","圣":"聖","桥":"橋","补":"補","给":"給","装":"裝","备":"備","驿":"驛","厅":"廳","欢":"歡","黄":"黃","败":"敗","检":"檢","对":"對","边":"邊","静":"靜","筑":"築","范":"範","围":"圍","报":"報","妆":"妝","订":"訂","冈":"岡","红":"紅","叶":"葉","庙":"廟","单":"單","让":"讓","详":"詳","导":"導","则":"則","题":"題","数":"數","为":"為","墙":"牆","话":"話","彦":"彥","转":"轉","谏":"諫","创":"創","师":"師","乡":"鄉","资":"資","档":"檔","绘":"繪","玛":"瑪","纹":"紋","灯":"燈","谜":"謎","显":"顯","谁":"誰","务":"務","亲":"親","计":"計","异":"異","带":"帶","们":"們","况":"況","负":"負","责":"責","较":"較","驾":"駕","达":"達","论":"論","钱":"錢","顶":"頂","刚":"剛","预":"預","帐":"帳","号":"號","饭":"飯","恋":"戀","环":"環","绕":"繞","规":"規","划":"劃","决":"決","滚":"滾","轮":"輪","问":"問","弹":"彈","优":"優","载":"載","标":"標","态":"態","护":"護","证":"證","长":"長","术":"術","贺":"賀","麦":"麥","劳":"勞","碍":"礙","浓":"濃","雾":"霧","结":"結","变":"變"},"p":{"限制）":"限制）","梅干等":"梅乾等","公里，":"公里，","公里":"公里","和发型":"和髮型","生发型":"生髮型","剪发的":"剪髮的"}};
+var TC={"c":{"来":"來","计":"計","导":"導","实":"實","时":"時","况":"況","饮":"飲","没":"沒","尔":"爾","内":"內","约":"約","坝":"壩","后":"後","鸭":"鴨","汇":"匯","点":"點","区":"區","动":"動","页":"頁","过":"過","机":"機","储":"儲","间":"間","这":"這","双":"雙","击":"擊","还":"還","国":"國","负":"負","责":"責","传":"傳","设":"設","贴":"貼","见":"見","换":"換","装":"裝","妆":"妝","发":"發","订":"訂","确":"確","认":"認","里":"裡","样":"樣","台":"臺","制":"製","败":"敗","请":"請","检":"檢","网":"網","络":"絡","试":"試","周":"週","馆":"館","则":"則","属":"屬","楼":"樓","调":"調","记":"記","录":"錄","图":"圖","钟":"鐘","画":"畫","从":"從","开":"開","墙":"牆","学":"學","线":"線","观":"觀","鸡":"雞","签":"簽","纸":"紙","远":"遠","车":"車","丰":"豐","团":"團","暂":"暫","无":"無","顺":"順","干":"幹","广":"廣","场":"場","现":"現","旧":"舊","樱":"櫻","对":"對","为":"為","个":"個","规":"規","划":"劃","与":"與","关":"關","营":"營","业":"業","变":"變","书":"書","冈":"岡","厅":"廳","觉":"覺","么":"麼","轻":"輕","费":"費","参":"參","摆":"擺","乌":"烏","龟":"龜","铜":"銅","删":"刪","钥":"鑰","复":"複","题":"題","联":"聯","单":"單","让":"讓","买":"買","两":"兩","兑":"兌","奖":"獎","环":"環","绕":"繞","话":"話","离":"離","铁":"鐵","禅":"禪","阁":"閣","满":"滿","宫":"宮","评":"評","价":"價","选":"選","优":"優","条":"條","亲":"親","绘":"繪","异":"異","黄":"黃","彦":"彥","转":"轉","档":"檔","张":"張","头":"頭","恋":"戀","会":"會","显":"顯","谁":"誰","乐":"樂","写":"寫","权":"權","议":"議","飞":"飛","驿":"驛","态":"態","处":"處","电":"電","马":"馬","进":"進","当":"當","师":"師","贺":"賀","礼":"禮","询":"詢","问":"問","游":"遊","戏":"戲","数":"數","温":"溫","阶":"階","丝":"絲","经":"經","几":"幾","玛":"瑪","亚":"亞","纹":"紋","灯":"燈","谜":"謎","决":"決","们":"們","论":"論","刚":"剛","读":"讀","简":"簡","麦":"麥","劳":"勞","闭":"閉","门":"門","鸟":"鳥","际":"際","厦":"廈","驳":"駁","圣":"聖","骑":"騎","课":"課","园":"園","办":"辦","驾":"駕","厂":"廠","产":"產","兴":"興","静":"靜","帐":"帳","号":"號","额":"額","饭":"飯","详":"詳","欢":"歡","补":"補","给":"給","备":"備","奥":"奧","驶":"駛","桥":"橋","顶":"頂","资":"資","报":"報","碍":"礙","纯":"純","术":"術","长":"長","带":"帶","须":"須","较":"較","兽":"獸","护":"護","证":"證","齐":"齊","达":"達","载":"載","军":"軍","体":"體","够":"夠","弹":"彈","编":"編","辑":"輯","红":"紅","叶":"葉","庙":"廟","员":"員","冲":"沖","滚":"滾","轮":"輪","镜":"鏡","柜":"櫃","着":"著","夹":"夾","别":"別","挡":"擋","边":"邊","筑":"築","范":"範","围":"圍","浓":"濃","雾":"霧","结":"結","树":"樹","绝":"絕","谏":"諫","创":"創","乡":"鄉","预":"預","务":"務","钱":"錢","标":"標","随":"隨"},"p":{"和发型":"和髮型","生发型":"生髮型","公里，":"公里，","剪发的":"剪髮的","限制）":"限制）","公里":"公里","梅干等":"梅乾等"}};
 var TCP=Object.keys(TC.p).sort(function(a,b){return b.length-a.length;});
 function lang(){try{return localStorage.getItem('aot-lang')==='tc'?'tc':'sc';}catch(e){return 'sc';}}
 function tcv(s){if(!s||!/[\u4e00-\u9fff]/.test(s))return s;var out='',i=0;
@@ -1129,6 +1165,7 @@ function place(s){if(!s.lat)return null;var u=GW+'search/?api=1&query='+encodeUR
 var ICN={"pin": "<path d=\"M12 21s-6.5-6.2-6.5-11A6.5 6.5 0 0 1 18.5 10c0 4.8-6.5 11-6.5 11z\"/><circle cx=\"12\" cy=\"10\" r=\"2.4\"/>", "nav": "<path d=\"M4 11.5 20 4l-7.5 16-2.2-6.3z\"/>", "photo": "<rect x=\"3.5\" y=\"5\" width=\"17\" height=\"14\" rx=\"1.5\"/><circle cx=\"9\" cy=\"10\" r=\"1.8\"/><path d=\"m4 17 5-5 4 4 2.5-2.5L20 17\"/>", "scroll": "<path d=\"M7 4h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H7\"/><path d=\"M7 4a2 2 0 0 0-2 2v2h4V6a2 2 0 0 0-2-2z\"/><path d=\"M9 9h7M9 12.5h7M9 16h5\"/>", "camera": "<path d=\"M4 8h3l1.6-2.5h6.8L17 8h3v11H4z\"/><circle cx=\"12\" cy=\"13.2\" r=\"3.4\"/>", "plus": "<path d=\"M12 5v14M5 12h14\"/>", "route": "<circle cx=\"6\" cy=\"18\" r=\"2.2\"/><circle cx=\"18\" cy=\"6\" r=\"2.2\"/><path d=\"M8 17c6 0 2-10 8-10\"/>"};
 function ic(n){var s=el('span','ic');s.innerHTML='<svg viewBox="0 0 24 24" aria-hidden="true">'+ICN[n]+'</svg>';return s;}
 function plate(c,n,txt,href){var a=lnk(c,'',href);a.appendChild(ic(n));a.appendChild(el('span','tx',txt));return a;}
+var KICN={"guitar": "<svg viewBox=\"0 0 48 48\"><rect x=\"27\" y=\"4\" width=\"5\" height=\"22\" rx=\"2\" transform=\"rotate(35 29.5 15)\" fill=\"#B98552\"/><rect x=\"33\" y=\"1\" width=\"8\" height=\"7\" rx=\"2\" transform=\"rotate(35 37 4.5)\" fill=\"#8A5E33\"/><circle cx=\"16\" cy=\"33\" r=\"10\" fill=\"#FF8FB1\"/><circle cx=\"23\" cy=\"25\" r=\"7\" fill=\"#FF8FB1\"/><circle cx=\"17.5\" cy=\"31\" r=\"3\" fill=\"#4A3B4F\"/><rect x=\"11\" y=\"37\" width=\"9\" height=\"3\" rx=\"1.5\" fill=\"#fff\" transform=\"rotate(35 15.5 38.5)\"/></svg>", "bass": "<svg viewBox=\"0 0 48 48\"><rect x=\"25\" y=\"2\" width=\"4.5\" height=\"26\" rx=\"2\" transform=\"rotate(30 27 15)\" fill=\"#B98552\"/><circle cx=\"15\" cy=\"34\" r=\"9.5\" fill=\"#7CC3F0\"/><circle cx=\"21\" cy=\"26\" r=\"6.5\" fill=\"#7CC3F0\"/><circle cx=\"16\" cy=\"32\" r=\"2.6\" fill=\"#4A3B4F\"/><rect x=\"30\" y=\"0\" width=\"8\" height=\"8\" rx=\"2\" transform=\"rotate(30 34 4)\" fill=\"#3E6E8E\"/></svg>", "keys": "<svg viewBox=\"0 0 48 48\"><rect x=\"3\" y=\"14\" width=\"42\" height=\"22\" rx=\"4\" fill=\"#B9A6F0\"/><rect x=\"6\" y=\"22\" width=\"36\" height=\"11\" rx=\"1.5\" fill=\"#fff\"/><g fill=\"#4A3B4F\"><rect x=\"10\" y=\"22\" width=\"2.5\" height=\"6\"/><rect x=\"15\" y=\"22\" width=\"2.5\" height=\"6\"/><rect x=\"23\" y=\"22\" width=\"2.5\" height=\"6\"/><rect x=\"28\" y=\"22\" width=\"2.5\" height=\"6\"/><rect x=\"33\" y=\"22\" width=\"2.5\" height=\"6\"/></g><circle cx=\"10\" cy=\"18\" r=\"1.6\" fill=\"#FFD66B\"/><circle cx=\"15\" cy=\"18\" r=\"1.6\" fill=\"#7ED7C1\"/></svg>", "drums": "<svg viewBox=\"0 0 48 48\"><ellipse cx=\"24\" cy=\"31\" rx=\"12\" ry=\"12\" fill=\"#FFD66B\"/><ellipse cx=\"24\" cy=\"31\" rx=\"8\" ry=\"8\" fill=\"#fff\"/><ellipse cx=\"9\" cy=\"20\" rx=\"7\" ry=\"3\" fill=\"#7ED7C1\"/><rect x=\"2\" y=\"20\" width=\"14\" height=\"6\" fill=\"#7ED7C1\"/><ellipse cx=\"39\" cy=\"20\" rx=\"7\" ry=\"3\" fill=\"#FF8FB1\"/><rect x=\"32\" y=\"20\" width=\"14\" height=\"6\" fill=\"#FF8FB1\"/><path d=\"M5 9l9 6M43 9l-9 6\" stroke=\"#B98552\" stroke-width=\"2.5\" stroke-linecap=\"round\"/></svg>", "tea": "<svg viewBox=\"0 0 48 48\"><path d=\"M8 22h26v6a11 11 0 0 1-11 11h-4A11 11 0 0 1 8 28z\" fill=\"#fff\" stroke=\"#FF8FB1\" stroke-width=\"2.5\"/><path d=\"M34 25h3a4 4 0 0 1 0 8h-4\" fill=\"none\" stroke=\"#FF8FB1\" stroke-width=\"2.5\"/><ellipse cx=\"22\" cy=\"42\" rx=\"16\" ry=\"3\" fill=\"#FFD3E0\"/><path d=\"M16 8c-3 4 3 6 0 10M23 6c-3 4 3 6 0 10\" stroke=\"#C9B6D9\" stroke-width=\"2\" fill=\"none\" stroke-linecap=\"round\"/><circle cx=\"21\" cy=\"30\" r=\"3\" fill=\"#FFB3C9\"/></svg>", "cake": "<svg viewBox=\"0 0 48 48\"><path d=\"M6 36L40 24v14H6z\" fill=\"#FFE9C7\"/><path d=\"M6 36L40 24v4L6 40z\" fill=\"#fff\"/><path d=\"M6 30L40 18v6L6 36z\" fill=\"#FFF7EE\" stroke=\"#FFD3E0\" stroke-width=\"1.5\"/><rect x=\"6\" y=\"38\" width=\"34\" height=\"3\" fill=\"#FFB3C9\"/><path d=\"M28 14c0-4 6-4 6 0 0 3-3 5-3 5s-3-2-3-5z\" fill=\"#FF6F9C\"/><path d=\"M30 10l1 2 2-2\" stroke=\"#7ED7C1\" stroke-width=\"1.6\" fill=\"none\"/></svg>"};var KSEQ=['guitar','bass','keys','drums','tea','cake'];
 function goBlock(s,mode){var w=el('div');var b=el('div','nx-b go');b.appendChild(plate(null,'pin','Google Maps',go(s,mode)));b.appendChild(plate('waze','nav','Waze',waze(s)));w.appendChild(b);return w;}
 function short(n){return n.split('（')[0].split(' ／ ')[0];}
 function nextBlock(s,next,mode){
@@ -1236,7 +1273,7 @@ function build(){
   DAYS.forEach(function(D){
     var sec=el('div');sec.id='day-'+D.d;if(D.theme)sec.className=D.theme;
     if(dn){var a=el('a',null,D.lab+' '+D.w);a.href='#day-'+D.d;dn.appendChild(a);}
-    var hd=el('div','dayhead');hd.appendChild(el('span','dd',D.lab));hd.appendChild(el('h3',null,D.w+'　'+D.title));hd.appendChild(el('small',null,D.sub));sec.appendChild(hd);if(D.theme==='kon'){var kn=el('div','k-notes');kn.setAttribute('aria-hidden','true');['♪','♫','♪','♬'].forEach(function(c){kn.appendChild(el('span',null,c));});sec.appendChild(kn);var tp=el('div','k-tape');tp.setAttribute('aria-hidden','true');for(var q=0;q<4;q++)tp.appendChild(el('i'));sec.appendChild(tp);}
+    var hd=el('div','dayhead');hd.appendChild(el('span','dd',D.lab));hd.appendChild(el('h3',null,D.w+'　'+D.title));hd.appendChild(el('small',null,D.sub));sec.appendChild(hd);if(D.theme==='kon'){var kn=el('div','k-notes');kn.setAttribute('aria-hidden','true');['♪','♫','♪','♬'].forEach(function(c){kn.appendChild(el('span',null,c));});sec.appendChild(kn);var tp=el('div','k-tape');tp.setAttribute('aria-hidden','true');for(var q=0;q<4;q++)tp.appendChild(el('i'));sec.appendChild(tp);var bw=el('div','k-bandw');var band=el('div','k-band');band.setAttribute('aria-hidden','true');band.innerHTML=KSEQ.map(function(k){return KICN[k];}).join('');bw.appendChild(band);bw.appendChild(el('span','k-cap','放学后的社团活动，开始！'));sec.appendChild(bw);}
     var pts=D.stops.filter(function(s){return s.lat;});
     var tools=el('div','daytools');
     if(pts.length>=2&&D.mode!=='transit'){
@@ -1252,7 +1289,7 @@ function build(){
       if(prev&&s.lat)r.appendChild(leg(prev,s,D.mode,s));
       var next=null;for(var j=idx+1;j<D.stops.length;j++){if(D.stops[j].lat){next=D.stops[j];break;}}
       if(s.kind==='util')r.appendChild(utilCard(s,prev,D.mode,next));
-      else{no++;if(S(s.id).shots.length)done++;r.appendChild(card(s,String(no).padStart(2,'0'),prev,next,D.mode));}
+      else{no++;if(S(s.id).shots.length)done++;var cd=card(s,String(no).padStart(2,'0'),prev,next,D.mode);if(D.theme==='kon'){var stk=el('span','k-stk');stk.setAttribute('aria-hidden','true');stk.innerHTML=KICN[KSEQ[(no)%KSEQ.length]];cd.appendChild(stk);}r.appendChild(cd);}
       if(s.lat)prev=s;
     });
     sec.appendChild(r);root.appendChild(sec);
