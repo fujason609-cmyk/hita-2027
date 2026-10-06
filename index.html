@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta name="theme-color" content="#2E3B26"><link rel="apple-touch-icon" href="icon-180.png"><link rel="manifest" href="manifest.json"><link rel="icon" href="icon-180.png"><title>日田 · 壁外调查记录 2027</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;700;900&family=Noto+Sans+SC:wght@400;500;700&family=ZCOOL+KuaiLe&display=swap" rel="stylesheet"><style id="css">
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta name="theme-color" content="#2E3B26"><link rel="apple-touch-icon" href="icon-180.png"><link rel="manifest" href="manifest.json"><link rel="icon" href="icon-180.png"><title>日田 · 壁外调查记录 2027</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;700;900&family=Noto+Sans+SC:wght@400;500;700&family=ZCOOL+KuaiLe&family=Ma+Shan+Zheng&display=swap" rel="stylesheet"><style id="css">
 :root{
   --night:#1B1914; --bark:#26231C; --stone:#6E6A60; --stone-d:#4A4740; --mortar:#34312A;
   --paper:#D9CBA8; --paper-d:#C7B68E; --ink:#2A2419; --ink-soft:#5A4E3A;
@@ -1063,6 +1063,148 @@ body{position:relative}
   .kon{margin:44px -12px 0!important;max-width:none!important;border-radius:0!important;padding:6px 14px 26px 26px!important;box-shadow:none!important;border-top:3px solid #FFE1EA;border-bottom:3px solid #FFE1EA}
   .kon .k-stk{right:-6px!important}
 }
+/* ===== Kyoto theme: washi & vermilion ===== */
+.kyo{--ve:#C8402B;--ve2:#A8331F;--in:#2E4A7D;--in2:#1F3358;--go:#B0894F;--ma:#6E8B3D;--wa:#F4EEE2;--ink:#2A2620;
+  position:relative;margin:48px -6px 0;padding:8px 14px 30px;border-radius:4px;color:var(--ink);overflow:hidden;
+  background:linear-gradient(180deg,rgba(255,255,255,.35),transparent 30%),repeating-linear-gradient(17deg,rgba(160,140,110,.05) 0 2px,transparent 2px 9px),repeating-linear-gradient(-23deg,rgba(160,140,110,.04) 0 1px,transparent 1px 7px),var(--wa);
+  box-shadow:0 0 0 2px var(--go),0 0 0 6px var(--wa),0 0 0 7px var(--in),0 18px 40px rgba(0,0,0,.35)}
+.kyo::before{content:"";position:absolute;left:0;right:0;top:0;height:46px;background:radial-gradient(circle at 50% 100%,transparent 9px,rgba(244,238,226,.28) 10px,transparent 11px,transparent 15px,rgba(244,238,226,.28) 16px,transparent 17px,transparent 21px,rgba(244,238,226,.28) 22px,transparent 23px) 0 0/48px 24px,var(--in)}
+.kyo::after{content:"";position:absolute;left:0;right:0;top:46px;height:4px;background:var(--go)}
+.kyo .dayhead{position:relative;z-index:1;border-top:none;margin-top:62px;padding-top:0;align-items:center}
+.kyo .dayhead .dd{display:inline-block;padding:6px 10px;background:var(--ve);color:#fff;font-family:"Ma Shan Zheng","Noto Serif SC",serif;font-weight:400;font-size:clamp(22px,4vw,28px);letter-spacing:.06em;box-shadow:inset 0 0 0 2px rgba(255,255,255,.35)}
+.kyo .dayhead h3{font-family:"Ma Shan Zheng","Noto Serif SC",serif;font-weight:400;color:var(--ink);font-size:clamp(28px,5.4vw,38px);letter-spacing:.04em}
+.kyo .dayhead small{color:#7A6F5E}
+.kyo .ky-torii{position:relative;z-index:1;display:grid;grid-template-columns:repeat(8,minmax(0,1fr));gap:0;margin:8px 0 6px;padding:0 4px;opacity:.95}
+.kyo .ky-torii svg{width:100%;height:auto;aspect-ratio:1;filter:drop-shadow(0 2px 0 rgba(0,0,0,.08))}
+.kyo .ky-torii svg:nth-child(n){transform:scale(calc(1 - var(--i,0)*.0))}
+.kyo .ky-leaves{position:absolute;inset:0;pointer-events:none;z-index:0;overflow:hidden}
+.kyo .ky-leaves span{position:absolute;top:-40px;width:22px;height:22px;opacity:.85;animation:kyfall linear infinite}
+.kyo .ky-leaves span svg{width:100%;height:100%}
+@keyframes kyfall{0%{transform:translate(0,0) rotate(0)}100%{transform:translate(60px,105vh) rotate(540deg)}}
+.kyo .daytools > span{color:#7A6F5E}
+.kyo .route{position:relative;z-index:1}
+/* cards */
+.kyo .dossier,.kyo .util{position:relative;border-radius:3px;border:1px solid rgba(46,74,125,.45);border-top:4px solid var(--ve);background:#FFFDF8;color:var(--ink);box-shadow:0 4px 0 rgba(46,74,125,.12);overflow:visible}
+.kyo .dossier .file{border-bottom:1px dashed rgba(46,74,125,.35);color:#7A6F5E;padding-right:44px}
+.kyo .dossier .file b{color:var(--ve);font-family:"Ma Shan Zheng","Noto Serif SC",serif;font-weight:400;font-size:16px}
+.kyo .body h4,.kyo .util h4{font-family:"Ma Shan Zheng","Noto Serif SC",serif;font-weight:400;color:var(--ink);font-size:23px;letter-spacing:.03em}
+.kyo .body p,.kyo .util p{color:#5A5246}
+.kyo .time{background:var(--in);color:#fff;border-radius:2px}
+.kyo .flag{color:var(--ve);border-color:var(--ve)}
+.kyo .addr,.kyo .telk{color:#4A4338;border-top-color:rgba(46,74,125,.2)}
+.kyo .ginfo{color:#8A7E6A}
+.kyo .glabel{color:#7A6F5E}
+.kyo .shots .none{color:#8A7E6A;border-top-color:rgba(46,74,125,.2)}
+.kyo .gal .lead{border-radius:2px;border:1px solid rgba(46,74,125,.3);background:#EDE6D6}
+.kyo .gal .lead .empty{background:repeating-linear-gradient(135deg,#F1EBDD 0 12px,#E8E0CE 12px 24px)!important;color:#8A7E6A!important}
+.kyo .gal .lead .empty strong{color:var(--in)!important}
+.kyo .stamp.kyst{border:3px solid var(--ve);border-radius:2px;color:var(--ve);background:rgba(255,253,248,.92);font-family:"Ma Shan Zheng","Noto Serif SC",serif;font-weight:400;font-size:22px;box-shadow:0 0 0 2px rgba(255,253,248,.92),inset 0 0 0 2px rgba(200,64,43,.35);transform:rotate(-6deg)}
+.kyo .stamp.kyst small{color:var(--ve)}
+.kyo .ky-stk{position:absolute;right:-8px;top:-18px;z-index:4;width:46px;height:46px;border-radius:50%;background:var(--wa);box-shadow:0 0 0 2px var(--go),0 3px 0 rgba(0,0,0,.08);display:flex;align-items:center;justify-content:center;transform:rotate(-8deg)}
+.kyo .ky-stk svg{width:34px;height:34px}
+.kyo .shots > button.more::after,.kyo .gal .rthumbs > button.more::after{border-color:var(--ve)!important}
+/* buttons */
+.kyo .next .nx-b a,.kyo .nx-b a,.kyo .leg .lgbtn,.kyo .acts .up{--trim:transparent;border:none!important;border-radius:4px!important;color:#fff!important;text-shadow:none!important;justify-content:center;gap:8px;padding:0 14px!important;
+  background:linear-gradient(180deg,var(--p1),var(--p2))!important;font-family:"Noto Serif SC",serif!important;font-weight:700!important;letter-spacing:.08em}
+.kyo .nx-b a{--p1:#D24A33;--p2:#A8331F;box-shadow:0 3px 0 #7E2414!important}
+.kyo .nx-b a.waze{--p1:#3A5A91;--p2:#24406E;box-shadow:0 3px 0 #18294A!important}
+.kyo .acts .up{--p1:#7C9A47;--p2:#5C7A2E;box-shadow:0 3px 0 #405620!important;min-height:52px}
+.kyo .leg .lgbtn{--p1:#C29A5E;--p2:#9C7840;box-shadow:0 3px 0 #6E5228!important}
+.kyo .util .nx-b.one a{--p1:#8A5E8E;--p2:#6B4470;box-shadow:0 3px 0 #4A2E4E!important}
+.kyo .nx-b a .ic,.kyo .lgbtn .ic,.kyo .acts .up .ic{flex:0 0 auto!important;width:auto;background:none!important;border:none!important;padding:0}
+.kyo .nx-b a .tx,.kyo .lgbtn .tx,.kyo .acts .up .tx{flex:0 0 auto!important;padding:0!important;font-size:16px}
+.kyo .ic svg{stroke:#fff!important;width:19px;height:19px}
+.kyo .tools3 .tool{border-radius:3px;border:1px solid rgba(46,74,125,.35);background:#FBF7EE;color:var(--ink);box-shadow:none;font-family:"Noto Serif SC",serif}
+.kyo .tools3 .tool .ic svg{stroke:var(--in)!important}
+.kyo .glabel .sh-btn{border-radius:3px;border:none;background:var(--ve);color:#fff;font-family:"Noto Serif SC",serif}
+.kyo .glabel .sh-btn svg{stroke:#fff}
+.kyo .votes{border-top-color:rgba(46,74,125,.2)}
+.kyo .votes .vlab{font-family:"Ma Shan Zheng","Noto Serif SC",serif;font-weight:400;font-size:20px;color:var(--ve)}
+.kyo .votes .vlab small{font-family:"Noto Sans SC",sans-serif;color:#8A7E6A}
+.kyo .votes .vpen{border-radius:3px;border:none;background:var(--in)}
+.kyo .votes .vpen svg{stroke:#fff}
+/* maple votes */
+.kyo .votes .vd,.kyosheet .vlist .vd{width:30px!important;height:32px!important;transform:none}
+.kyo .votes .vd::after,.kyosheet .vlist .vd::after{display:none!important;content:none!important}
+.kyo .votes .vd::before,.kyosheet .vlist .vd::before{left:50%!important;top:50%!important;bottom:auto!important;width:28px!important;height:28px!important;margin:-14px 0 0 -14px!important;border:none!important;border-radius:0!important;box-shadow:none!important;
+  background:#E3D9C6!important;-webkit-mask:url("data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2048%2048%22%3E%3Cpath%20d%3D%22M24%203l3.5%209%206-4-1.5%208.5%209-2-5%207%207%203-8%203%203%207-8-3-2%209-3-6-3%206-2-9-8%203%203-7-8-3%207-3-5-7%209%202L14.5%208l6%204z%22/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2048%2048%22%3E%3Cpath%20d%3D%22M24%203l3.5%209%206-4-1.5%208.5%209-2-5%207%207%203-8%203%203%207-8-3-2%209-3-6-3%206-2-9-8%203%203-7-8-3%207-3-5-7%209%202L14.5%208l6%204z%22/%3E%3C/svg%3E") center/contain no-repeat}
+.kyo .votes .vd.like::before,.kyosheet .vlist .vd.like::before{background:linear-gradient(160deg,#F2853B,#C8402B)!important}
+.kyo .votes .vd.dis::before,.kyosheet .vlist .vd.dis::before{background:linear-gradient(160deg,#9C8A6E,#5E5242)!important}
+.kyo .votes .vd.mine{filter:drop-shadow(0 0 3px #E6C46A)}
+.kyo .votes .vd.like,.kyo .votes .vd.dis{animation:kysway 3s ease-in-out infinite}
+@keyframes kysway{0%,100%{transform:rotate(-8deg)}50%{transform:rotate(8deg)}}
+/* legs */
+.kyo .leg{border-left:none!important;margin-left:10px;padding-left:34px;position:relative}
+.kyo .leg::before{content:"";position:absolute;left:3px;top:12px;width:18px;height:18px;background:var(--ve);-webkit-mask:url("data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2048%2048%22%3E%3Cpath%20d%3D%22M24%203l3.5%209%206-4-1.5%208.5%209-2-5%207%207%203-8%203%203%207-8-3-2%209-3-6-3%206-2-9-8%203%203-7-8-3%207-3-5-7%209%202L14.5%208l6%204z%22/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2048%2048%22%3E%3Cpath%20d%3D%22M24%203l3.5%209%206-4-1.5%208.5%209-2-5%207%207%203-8%203%203%207-8-3-2%209-3-6-3%206-2-9-8%203%203-7-8-3%207-3-5-7%209%202L14.5%208l6%204z%22/%3E%3C/svg%3E") center/contain no-repeat}
+.kyo .leg::after{content:"";position:absolute;left:11px;top:36px;bottom:8px;width:2px;background:repeating-linear-gradient(180deg,rgba(200,64,43,.55) 0 8px,transparent 8px 14px)}
+.kyo .leg .lgn{color:var(--ink);font-family:"Ma Shan Zheng","Noto Serif SC",serif;font-weight:400;font-size:18px}
+.kyo .leg .lgn i{color:var(--ve)}
+.kyo .leg .lg{color:var(--ink)}.kyo .leg .lg b{color:var(--ve)}.kyo .leg .lg small{color:#8A7E6A}
+/* header */
+body.kyo-on .status{background:radial-gradient(circle at 50% 100%,transparent 9px,rgba(244,238,226,.28) 10px,transparent 11px,transparent 15px,rgba(244,238,226,.28) 16px,transparent 17px,transparent 21px,rgba(244,238,226,.28) 22px,transparent 23px) 0 0/48px 24px,#2E4A7D!important;border-bottom:4px solid #B0894F!important}
+body.kyo-on .status #count{color:#F4EEE2;font-family:"Ma Shan Zheng","Noto Serif SC",serif;font-weight:400;font-size:20px;letter-spacing:.06em}
+body.kyo-on .status .me{background:rgba(244,238,226,.12);border:1px solid #B0894F;border-radius:3px;color:#F4EEE2}
+body.kyo-on .status .me svg{stroke:#E6C46A}body.kyo-on .status .me i{color:#E6C46A}
+body.kyo-on .status .refresh{background:#C8402B!important;color:#fff;border-radius:3px;--cut:0px;clip-path:none;box-shadow:0 3px 0 #7E2414!important}
+body.kyo-on .status .gauge{background:rgba(0,0,0,.25);border:1px solid #B0894F;border-radius:2px}
+body.kyo-on .status .gauge i{background:linear-gradient(90deg,#C8402B,#F2853B)!important;animation:none}
+body.kyo-on .status nav a{background:rgba(244,238,226,.1);border:1px solid rgba(176,137,79,.6)!important;border-radius:3px;color:#F4EEE2}
+body.kyo-on .status nav a.on{background:#C8402B!important;border-color:#C8402B!important;color:#fff!important}
+/* sheets */
+.kyosheet .nb-card{background:repeating-linear-gradient(17deg,rgba(160,140,110,.05) 0 2px,transparent 2px 9px),#F4EEE2!important;box-shadow:0 0 0 2px #B0894F,0 0 0 6px #F4EEE2,0 0 0 7px #2E4A7D,0 24px 50px rgba(0,0,0,.5)!important;border-radius:3px}
+.kyosheet .nb-card .nb-unit{background:radial-gradient(circle at 50% 100%,transparent 9px,rgba(244,238,226,.28) 10px,transparent 11px,transparent 15px,rgba(244,238,226,.28) 16px,transparent 17px,transparent 21px,rgba(244,238,226,.28) 22px,transparent 23px) 0 0/48px 24px,#2E4A7D!important;color:#F4EEE2!important;border-bottom:3px solid #B0894F!important;box-shadow:none!important;font-family:"Noto Serif SC",serif}
+.kyosheet .nb-card .nb-unit::before,.kyosheet .nb-card .nb-unit::after{background:#E6C46A!important}
+.kyosheet .nb-card h3{font-family:"Ma Shan Zheng","Noto Serif SC",serif;font-weight:400;color:#2A2620}
+.kyosheet .nb-card .seal{border-radius:3px!important;background:#C8402B!important;box-shadow:0 0 0 3px #F4EEE2,0 3px 6px rgba(0,0,0,.25)!important}
+.kyosheet .nb-card .seal::before{border-radius:2px!important;border-color:rgba(255,255,255,.55)!important}
+.kyosheet .nb-card .seal::after{font-family:"Ma Shan Zheng","Noto Serif SC",serif;font-weight:400;color:#fff!important;font-size:30px!important}
+.kyosheet .vli .vn{font-family:"Ma Shan Zheng","Noto Serif SC",serif;font-weight:400;font-size:20px}
+.kyosheet .vli .vv.like{color:#C8402B!important}.kyosheet .vli .vv.dis{color:#5E5242!important}
+.kyosheet .stp{--ink:#C8402B}.kyosheet .vx .stp{--ink:#2E4A7D}
+.kyosheet .vbtn.vstamps button{border-color:rgba(46,74,125,.35)!important;background:#FFFDF8!important}
+.kyosheet .vbtn.vstamps .vl.on,.kyosheet .vbtn.vstamps .vx.on{box-shadow:0 0 0 2px #B0894F!important}
+/* overlays: picker / editor / gallery */
+.kyoov{background:repeating-linear-gradient(17deg,rgba(160,140,110,.05) 0 2px,transparent 2px 9px),#F4EEE2!important}
+.kyoov .gal-hd{background:radial-gradient(circle at 50% 100%,transparent 9px,rgba(244,238,226,.28) 10px,transparent 11px,transparent 15px,rgba(244,238,226,.28) 16px,transparent 17px,transparent 21px,rgba(244,238,226,.28) 22px,transparent 23px) 0 0/48px 24px,#2E4A7D!important;border-bottom:4px solid #B0894F!important}
+.kyoov .gal-unit{color:#E6C46A!important}.kyoov .gal-ht h3{font-family:"Ma Shan Zheng","Noto Serif SC",serif;font-weight:400;color:#F4EEE2;font-size:26px}.kyoov .gal-n{color:#D9CFBC}
+.kyoov .gal-x{border:1px solid #B0894F!important;background:rgba(244,238,226,.1)!important;color:#F4EEE2!important;border-radius:3px}
+.kyoov .sh-opts,.kyoov .sh-foot,.kyoov .ed-tip,.kyoov .ed-ctl{background:#EFE8D8!important;border-color:rgba(46,74,125,.25)!important;color:#5A5246}
+.kyoov .sh-fmt button,.kyoov .sh-style button{background:#FFFDF8!important;border:1px solid rgba(46,74,125,.35)!important;border-radius:3px!important;color:#5A5246}
+.kyoov .sh-fmt button b,.kyoov .sh-style button b{color:#2A2620}
+.kyoov .sh-fmt button.on,.kyoov .sh-style button.on{border:2px solid #C8402B!important;background:#FBEDE6!important}
+.kyoov .sh-fmt button.on .sh-shape{border-color:#C8402B;background:rgba(200,64,43,.15)}
+.kyoov .sh-tip{color:#7A6F5E}
+.kyoov .gal-grid > .gal-it::after{border-color:rgba(46,74,125,.35)!important}
+.kyoov .sh-grid > .gal-it.picked::after{border:3px solid #C8402B!important}
+.kyoov .sh-grid .gal-it.picked .sh-no{background:#C8402B!important;border-color:#F4EEE2!important;border-radius:3px}
+.kyoov .sh-go{border-radius:4px!important;background:linear-gradient(180deg,#D24A33,#A8331F)!important;border:none!important;box-shadow:0 3px 0 #7E2414;color:#fff}
+.kyoov .gal-cap{background:linear-gradient(180deg,transparent,rgba(46,74,125,.8))!important}
+.kyoov .ed-board{box-shadow:0 0 0 2px #B0894F,0 14px 30px rgba(0,0,0,.25)}
+.kyoov .ed-cell.on::after{border-color:#C8402B}.kyoov .ed-cell.on .ed-no{background:#C8402B}
+.kyoov .ed-zl{color:#7A6F5E}.kyoov .ed-rng{accent-color:#C8402B}
+.kyoov .ed-rs{border-radius:3px;border-color:#2E4A7D;color:#2E4A7D;background:#FFFDF8}
+.kyoov .ed-load{color:#2E4A7D}
+/* lightbox */
+.lb.lb2.kyolb{background:repeating-linear-gradient(17deg,rgba(160,140,110,.05) 0 2px,transparent 2px 9px),#F4EEE2!important}
+.kyolb .lb-top{background:radial-gradient(circle at 50% 100%,transparent 9px,rgba(244,238,226,.28) 10px,transparent 11px,transparent 15px,rgba(244,238,226,.28) 16px,transparent 17px,transparent 21px,rgba(244,238,226,.28) 22px,transparent 23px) 0 0/48px 24px,#2E4A7D!important;border-bottom:4px solid #B0894F!important}
+.kyolb .lb-unit{color:#E6C46A!important}.kyolb .lb-title{font-family:"Ma Shan Zheng","Noto Serif SC",serif;font-weight:400;color:#F4EEE2;font-size:24px}.kyolb .lb-meta{color:#D9CFBC}
+.kyolb .lb-ico{background:rgba(244,238,226,.12)!important;border:1px solid #B0894F!important}
+.kyolb .lb-del{border-color:#C8402B!important}.kyolb .lb-del.armed{background:#C8402B!important}
+.lb.lb2.kyolb .lb-frame{background:#FFFDF8;padding:10px;box-shadow:0 0 0 1px #2E4A7D,0 0 0 5px #F4EEE2,0 0 0 6px #B0894F,0 16px 34px rgba(0,0,0,.25)!important}
+.kyolb .lb-nav{background:#2E4A7D!important;border:none!important;box-shadow:0 3px 0 #18294A}
+.kyolb .lb-nav:disabled{background:#CFC6B4!important;box-shadow:none}
+.kyolb .lb-count{color:#7A6F5E}.kyolb .lb-count b{color:#C8402B;font-family:"Ma Shan Zheng","Noto Serif SC",serif;font-weight:400}
+.kyolb .lb-hint{color:#8A7E6A}
+.kyolb .lb-load .g1{stroke:#C8402B}.kyolb .lb-load .g2{stroke:#2E4A7D}.kyolb .lb-load .g3{fill:#B0894F}
+.kyolb .lb-load span{color:#2E4A7D}
+/* poster preview */
+.kyopv{background:repeating-linear-gradient(17deg,rgba(160,140,110,.06) 0 2px,transparent 2px 9px),rgba(244,238,226,.98)!important}
+.kyopv .pv-img{box-shadow:0 0 0 2px #B0894F,0 0 0 6px #F4EEE2,0 0 0 7px #2E4A7D,0 18px 40px rgba(0,0,0,.25)!important}
+.kyopv .pv-hint{color:#7A6F5E}
+.kyopv .pv-c{border-radius:4px!important;border:1px solid #2E4A7D!important;background:#FFFDF8!important;color:#2E4A7D!important}
+.kyopv .pv-s{border-radius:4px!important;border:none!important;background:linear-gradient(180deg,#D24A33,#A8331F)!important;box-shadow:0 3px 0 #7E2414;color:#fff!important}
+@media(max-width:560px){.kyo{margin:44px -12px 0!important;border-radius:0!important;box-shadow:none!important;border-top:3px solid #B0894F;border-bottom:3px solid #B0894F}.kyo .ky-stk{right:-6px!important}}
+@media (prefers-reduced-motion:reduce){.kyo .ky-leaves span,.kyo .votes .vd{animation:none!important}.kyo .ky-leaves{display:none}}
 </style></head><body><template id="shell">
 <header class="wall pending">
   <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><filter id="keywhite" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB"><feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  -6 -6 -6 0 16.8" result="m"/><feMorphology in="m" operator="erode" radius="1.5" result="me"/><feComposite in="SourceGraphic" in2="me" operator="in" result="c"/><feComposite in="c" in2="SourceAlpha" operator="in"/></filter></svg>
@@ -1174,12 +1316,18 @@ var DAYS=[
   {id:'matsugasaki',jp:'松ヶ崎橋',addr:'京都市左京区松ヶ崎',pid:'ChIJu_EXYjMIAWARKzcCmVBoTe0',t:'17:00',name:'松ヶ崎桥　片头的那座桥',note:'第 1 季片头里成员走过的桥，跨过高野川。11 月下旬京都约 5 点前天黑，排在最后刚好拍黄昏。',lat:35.0516393,lng:135.7886118,mode:'walking'},
   {id:'retro',jp:'レトロビーバー',addr:'京都市左京区松ヶ崎河原田町8-6',pid:'ChIJK8OicDMIAWAR1C2c7FnJ-lU',t:'17:10',flag:'营业中的店',name:'レトロビーバー　片头背景的咖啡馆',note:'片头里律和唯那几个镜头背景的咖啡馆，门口的展示柜里还放着轻音少女的文件夹。现在是现场音乐空间兼咖啡馆，营业到 18:00，周三休。',tel:'075-712-0357',lat:35.0518904,lng:135.788039,mode:'walking',ginfo:'Google 评分 4.1（17 则）　13:00–18:00，周三休'}
  ]},
- {d:'6',lab:'第6天',w:'京都',title:'伏见稻荷',sub:'千本鸟居，和服待定；下午自由',mode:'transit',stops:[
+ {d:'6',lab:'第6天',w:'京都',theme:'kyo',title:'伏见稻荷',sub:'千本鸟居，和服待定；下午自由',mode:'transit',stops:[
   {id:'kimono',kind:'util',t:'待定',name:'和服租借（待定）',note:'还没决定要不要穿和服。要的话 08:30 到伏见稻荷站附近的店换装，男女都要服装、化妆和发型，订的时候确认方案里三样都有（有些店不做男生发型）。',q:'伏見稲荷駅',from:[34.985849,135.7587667],transit:true},
   {id:'fushimi',jp:'伏見稲荷大社',addr:'京都市伏見区深草藪之内町68',pid:'ChIJIW0uPRUPAWAR6eI6dRzKGns',t:'09:30',name:'伏见稻荷大社　千本鸟居',note:'本殿 → 千本鸟居 → 奥社奉拜所，体力够再往上走到四ツ辻看京都市景，来回约 1.5～2 小时。千本鸟居中午前后人非常多，越早到越好拍。24 小时开放，免费参拜。',tel:'075-641-7331',lat:34.9676945,lng:135.7791876,ginfo:'Google 评分 4.6（92,112 则）　24 小时'}
  ]},
- {d:'7',lab:'第7～9天',w:'京都',title:'京都自由行',sub:'红叶、寺庙，或奈良、大阪一日游（待排）',mode:'transit',stops:[
-  {id:'kyotofree',kind:'util',t:'待定',name:'京都自由行',note:'确定日期和住宿后再排。南禅寺水路阁、金阁寺、北野天满宫、嵐山这些地方也出现在轻音少女里，可以顺路去。',q:'京都駅',from:[34.985849,135.7587667],transit:true}
+ {d:'7',lab:'第7天',w:'京都',theme:'kyo',title:'京都自由行',sub:'红叶、寺庙，或奈良、大阪一日游（待排）',mode:'transit',stops:[
+  {id:'kyotofree7',kind:'util',t:'待定',name:'京都自由行',note:'确定日期和住宿后再排。南禅寺水路阁、金阁寺、北野天满宫、嵐山这些地方也出现在轻音少女里，可以顺路去。',q:'京都駅',from:[34.985849,135.7587667],transit:true}
+ ]},
+ {d:'8',lab:'第8天',w:'京都',theme:'kyo',title:'京都自由行',sub:'红叶、寺庙，或奈良、大阪一日游（待排）',mode:'transit',stops:[
+  {id:'kyotofree8',kind:'util',t:'待定',name:'京都自由行',note:'确定日期和住宿后再排。南禅寺水路阁、金阁寺、北野天满宫、嵐山这些地方也出现在轻音少女里，可以顺路去。',q:'京都駅',from:[34.985849,135.7587667],transit:true}
+ ]},
+ {d:'9',lab:'第9天',w:'京都',theme:'kyo',title:'京都自由行',sub:'红叶、寺庙，或奈良、大阪一日游（待排）',mode:'transit',stops:[
+  {id:'kyotofree9',kind:'util',t:'待定',name:'京都自由行',note:'确定日期和住宿后再排。南禅寺水路阁、金阁寺、北野天满宫、嵐山这些地方也出现在轻音少女里，可以顺路去。',q:'京都駅',from:[34.985849,135.7587667],transit:true}
  ]},
  {d:'10',lab:'第10天',w:'福冈',title:'京都 → 福冈',sub:'早上坐新干线回福冈，下午开始玩',mode:'transit',stops:[
   {id:'tofuk',kind:'util',t:'上午',name:'京都 → 博多',note:'新干线京都到博多约 2 小时 40 分钟。行李可以先寄放在博多的酒店，下午开始在福冈玩（行程待排）。',q:'博多駅',from:[34.985849,135.7587667],transit:true}
@@ -1206,7 +1354,7 @@ var art=null;
 function el(t,c,txt){var e=document.createElement(t);if(c)e.className=c;if(txt!=null)e.textContent=txt;return e;}
 function lnk(c,txt,href){var a=el('a',c,txt);a.href=href;a.target='_blank';a.rel='noopener';return a;}
 
-var TC={"c":{"则":"則","周":"週","干":"幹","线":"線","馆":"館","恋":"戀","钥":"鑰","饭":"飯","后":"後","调":"調","报":"報","评":"評","价":"價","时":"時","开":"開","费":"費","参":"參","记":"記","动":"動","点":"點","图":"圖","还":"還","张":"張","丰":"豐","车":"車","载":"載","败":"敗","优":"優","饮":"飲","发":"發","术":"術","学":"學","阶":"階","无":"無","没":"沒","尔":"爾","从":"從","选":"選","电":"電","话":"話","请":"請","们":"們","团":"團","顺":"順","删":"刪","这":"這","员":"員","里":"裡","纯":"純","笔":"筆","机":"機","传":"傳","个":"個","网":"網","钟":"鐘","鸟":"鳥","与":"與","内":"內","计":"計","导":"導","实":"實","况":"況","双":"雙","杆":"桿","缩":"縮","国":"國","际":"際","驾":"駕","预":"預","订":"訂","红":"紅","叶":"葉","换":"換","铁":"鐵","约":"約","进":"進","温":"溫","头":"頭","几":"幾","镜":"鏡","门":"門","柜":"櫃","着":"著","轻":"輕","夹":"夾","现":"現","场":"場","乐":"樂","间":"間","营":"營","业":"業","录":"錄","楼":"樓","圣":"聖","礼":"禮","区":"區","制":"製","检":"檢","络":"絡","试":"試","签":"簽","纸":"紙","询":"詢","问":"問","议":"議","飞":"飛","来":"來","游":"遊","戏":"戲","浓":"濃","雾":"霧","结":"結","带":"帶","转":"轉","击":"擊","两":"兩","标":"標","离":"離","会":"會","碍":"礙","页":"頁","彦":"彥","厅":"廳","设":"設","亲":"親","绘":"繪","题":"題","详":"詳","驶":"駛","马":"馬","亚":"亞","样":"樣","冈":"岡","暂":"暫","绝":"絕","过":"過","条":"條","坝":"壩","铜":"銅","见":"見","装":"裝","妆":"妝","确":"確","认":"認","准":"準","备":"備","鸭":"鴨","处":"處","关":"關","办":"辦","静":"靜","档":"檔","墙":"牆","闭":"閉","读":"讀","买":"買","樱":"櫻","观":"觀","画":"畫","摆":"擺","乌":"烏","龟":"龜","当":"當","师":"師","贺":"賀","号":"號","弹":"彈","帐":"帳","别":"別","挡":"擋","旧":"舊","觉":"覺","么":"麼","黄":"黃","台":"臺","经":"經","护":"護","证":"證","复":"複","写":"寫","练":"練","补":"補","给":"給","为":"為","桥":"橋","顶":"頂","书":"書","奥":"奧","联":"聯","单":"單","让":"讓","编":"編","辑":"輯","兑":"兌","奖":"獎","权":"權","数":"數","广":"廣","体":"體","够":"夠","态":"態","显":"顯","谁":"誰","属":"屬","满":"滿","纪":"紀","宫":"宮","军":"軍","齐":"齊","负":"負","责":"責","贴":"貼","资":"資","驿":"驛","丝":"絲","厂":"廠","园":"園","欢":"歡","庙":"廟","务":"務","储":"儲","兽":"獸","简":"簡","厦":"廈","驳":"駁","谏":"諫","创":"創","乡":"鄉","论":"論","滚":"滾","轮":"輪","树":"樹","汇":"匯","异":"異","冲":"沖","随":"隨","麦":"麥","劳":"勞","玛":"瑪","纹":"紋","灯":"燈","谜":"謎","产":"產","较":"較","远":"遠","骑":"騎","课":"課","须":"須","决":"決","达":"達","禅":"禪","阁":"閣","鸡":"雞","对":"對","边":"邊","筑":"築","范":"範","围":"圍","额":"額","长":"長","环":"環","绕":"繞","兴":"興","吗":"嗎","变":"變","刚":"剛","规":"規","划":"劃","钱":"錢"},"p":{"公里，":"公里，","公里":"公里","和发型":"和髮型","生发型":"生髮型","剪发的":"剪髮的","梅干等":"梅乾等","限制）":"限制）"}};
+var TC={"c":{"动":"動","计":"計","导":"導","实":"實","时":"時","况":"況","异":"異","还":"還","车":"車","学":"學","后":"後","团":"團","圣":"聖","礼":"禮","点":"點","区":"區","周":"週","签":"簽","纸":"紙","馆":"館","驿":"驛","里":"裡","这":"這","买":"買","两":"兩","联":"聯","兑":"兌","换":"換","奖":"獎","楼":"樓","营":"營","则":"則","乐":"樂","从":"從","约":"約","档":"檔","调":"調","干":"幹","线":"線","彦":"彥","转":"轉","铁":"鐵","询":"詢","问":"問","双":"雙","杆":"桿","缩":"縮","进":"進","击":"擊","张":"張","冈":"岡","达":"達","内":"內","员":"員","评":"評","价":"價","补":"補","给":"給","与":"與","装":"裝","备":"備","资":"資","开":"開","处":"處","记":"記","钟":"鐘","负":"負","责":"責","传":"傳","设":"設","贴":"貼","费":"費","参":"參","广":"廣","场":"場","鸟":"鳥","观":"觀","图":"圖","饮":"飲","电":"電","厂":"廠","园":"園","画":"畫","确":"確","禅":"禪","阁":"閣","满":"滿","宫":"宮","现":"現","轻":"輕","顺":"順","书":"書","机":"機","删":"刪","条":"條","显":"顯","检":"檢","谏":"諫","创":"創","师":"師","乡":"鄉","个":"個","旧":"舊","樱":"櫻","国":"國","际":"際","驾":"駕","来":"來","办":"辦","对":"對","请":"請","马":"馬","边":"邊","静":"靜","筑":"築","范":"範","围":"圍","台":"臺","经":"經","录":"錄","须":"須","没":"沒","尔":"爾","兴":"興","纪":"紀","选":"選","过":"過","关":"關","样":"樣","间":"間","别":"別","挡":"擋","门":"門","见":"見","鸭":"鴨","写":"寫","着":"著","亲":"親","绘":"繪","制":"製","带":"帶","务":"務","简":"簡","体":"體","离":"離","败":"敗","网":"網","络":"絡","钥":"鑰","试":"試","墙":"牆","产":"產","题":"題","吗":"嗎","冲":"沖","们":"們","详":"詳","驶":"駛","亚":"亞","发":"發","权":"權","奥":"奧","够":"夠","笔":"筆","觉":"覺","么":"麼","无":"無","读":"讀","齐":"齊","话":"話","汇":"匯","页":"頁","论":"論","丰":"豐","温":"溫","帐":"帳","号":"號","游":"遊","戏":"戲","属":"屬","妆":"妝","订":"訂","认":"認","暂":"暫","绝":"絕","几":"幾","单":"單","让":"讓","储":"儲","头":"頭","镜":"鏡","柜":"櫃","夹":"夾","业":"業","厦":"廈","驳":"駁","会":"會","谁":"誰","刚":"剛","黄":"黃","纯":"純","决":"決","闭":"閉","优":"優","恋":"戀","编":"編","辑":"輯","标":"標","乌":"烏","龟":"龜","练":"練","弹":"彈","坝":"壩","摆":"擺","铜":"銅","术":"術","阶":"階","浓":"濃","雾":"霧","结":"結","议":"議","随":"隨","红":"紅","叶":"葉","庙":"廟","载":"載","桥":"橋","麦":"麥","当":"當","劳":"勞","鸡":"雞","远":"遠","准":"準","玛":"瑪","纹":"紋","灯":"燈","谜":"謎","欢":"歡","复":"複","护":"護","证":"證","骑":"騎","课":"課","贺":"賀","厅":"廳","态":"態","滚":"滾","轮":"輪","钱":"錢","为":"為","变":"變","额":"額","兽":"獸","碍":"礙","报":"報","预":"預","规":"規","划":"劃","丝":"絲","较":"較","树":"樹","军":"軍","飞":"飛","长":"長","数":"數","顶":"頂","饭":"飯","环":"環","绕":"繞"},"p":{"梅干等":"梅乾等","限制）":"限制）","和发型":"和髮型","生发型":"生髮型","公里":"公里","剪发的":"剪髮的","公里，":"公里，"}};
 var TCP=Object.keys(TC.p).sort(function(a,b){return b.length-a.length;});
 function lang(){try{return localStorage.getItem('aot-lang')==='tc'?'tc':'sc';}catch(e){return 'sc';}}
 function tcv(s){if(!s||!/[\u4e00-\u9fff]/.test(s))return s;var out='',i=0;
@@ -1248,15 +1396,15 @@ var VOTES={},VMAX=3;
 function parseVotes(tree){var out={};(tree||[]).forEach(function(n){var m=n.type==='blob'&&/^votes\/([^\/]+)\/([a-z0-9]+)__([A-Za-z0-9_-]*)__(L|D)\.txt$/.exec(n.path);if(!m)return;(out[m[1]]=out[m[1]]||[]).push({dev:m[2],by:unb64u(m[3]),val:m[4],path:n.path,sha:n.sha});});
   Object.keys(out).forEach(function(k){out[k].sort(function(a,b){return a.path<b.path?-1:1;});});return out;}
 function sheet(title,sub,kon){
-  var ov=el('div','namebox vsheet'+(kon?' konsheet':''));ov.setAttribute('role','dialog');ov.setAttribute('aria-modal','true');
-  var c=el('div','nb-card');c.appendChild(el('p','nb-unit',kon?'社团笔记　评价':'调查报告　评价'));var sl=el('span','seal');sl.setAttribute('data-t',kon?'♪':'评');sl.setAttribute('aria-hidden','true');c.appendChild(sl);c.appendChild(el('h3',null,title));if(sub)c.appendChild(el('p','nb-sub',sub));
+  var ov=el('div','namebox vsheet'+(kon?' '+kon+'sheet':''));ov.setAttribute('role','dialog');ov.setAttribute('aria-modal','true');
+  var c=el('div','nb-card');c.appendChild(el('p','nb-unit',(TH[kon||'']||TH['']).sunit));var sl=el('span','seal');sl.setAttribute('data-t',(TH[kon||'']||TH['']).seal);sl.setAttribute('aria-hidden','true');c.appendChild(sl);c.appendChild(el('h3',null,title));if(sub)c.appendChild(el('p','nb-sub',sub));
   ov.appendChild(c);ov.addEventListener('click',function(e){if(e.target===ov)ov.remove();});
   document.body.appendChild(ov);
   var x=el('button','nb-cancel vclose','关闭');x.type='button';x.onclick=function(){ov.remove();};
   return {ov:ov,card:c,close:function(){ov.remove();},closeBtn:x};
 }
 function showVotes(s){
-  var vs=VOTES[s.id]||[];var sh=sheet(s.name.split('　')[0],vs.length?vs.length+' / '+VMAX+' 人已评价':'还没有人评价',themeOf(s.id)==='kon');
+  var vs=VOTES[s.id]||[];var sh=sheet(s.name.split('　')[0],vs.length?vs.length+' / '+VMAX+' 人已评价':'还没有人评价',themeOf(s.id));
   var ul=el('div','vlist');
   for(var i=0;i<VMAX;i++){var v=vs[i];var r=el('div','vli');r.setAttribute('data-n','0'+(i+1));var d=el('i','vd'+(v?(v.val==='L'?' like':' dis'):''));r.appendChild(d);
     r.appendChild(el('span','vn',v?(v.by||'某人'):'空位'));r.appendChild(el('span','vv'+(v?(v.val==='L'?' like':' dis'):''),v?(v.val==='L'?'喜欢':'不喜欢'):'—'));ul.appendChild(r);}
@@ -1266,7 +1414,7 @@ function editVote(s){
   if(!token()){msg('要先在「照片管理」设定金钥才能评价。');return;}
   var vs=VOTES[s.id]||[],me=devId(),mine=vs.filter(function(v){return v.dev===me;})[0];
   var full=vs.length>=VMAX&&!mine;
-  var sh=sheet(s.name.split('　')[0],(themeOf(s.id)==='kon')?(full?'三个名额已经满了':(mine?'你目前的评价：'+(mine.val==='L'?'喜欢':'不喜欢')+'。再按一次同一个可以取消。':'这个地方好玩吗？')):full?'三个名额已经满了':(mine?'你目前的评价：'+(mine.val==='L'?'喜欢':'不喜欢')+'。再按一次同一个可以取消。':'你觉得这个地方怎么样？'),themeOf(s.id)==='kon');
+  var sh=sheet(s.name.split('　')[0],full?'三个名额已经满了':(mine?'你目前的评价：'+(mine.val==='L'?'喜欢':'不喜欢')+'。再按一次同一个可以取消。':TT(s.id).ask),themeOf(s.id));
   var bt=el('div','vbtn');
   bt.className='vbtn vstamps';
   [['L','喜欢','值得一去'],['D','不喜欢','可以跳过']].forEach(function(o){var on=mine&&mine.val===o[0];var b=el('button',(o[0]==='L'?'vl':'vx')+(on?' on':''));b.type='button';b.disabled=full;b.setAttribute('aria-pressed',on?'true':'false');
@@ -1277,7 +1425,7 @@ function editVote(s){
 }
 function voteBox(s){
   var vs=VOTES[s.id]||[],me=devId();
-  var box=el('div','votes');var row=el('div','vrow');var KV=themeOf(s.id)==='kon';var lb=el('span','vlab',KV?'音符评价':'信号弹');lb.appendChild(el('small',null,KV?'社团成员评价':'调查员评价'));row.appendChild(lb);
+  var box=el('div','votes');var row=el('div','vrow');var KT=TT(s.id);var lb=el('span','vlab',KT.vlab);lb.appendChild(el('small',null,KT.vsub));row.appendChild(lb);
   var dots=el('button','vdots');dots.type='button';dots.setAttribute('aria-label','查看评价详情');dots.onclick=function(){showVotes(s);};
   for(var i=0;i<VMAX;i++){var v=vs[i];var d=el('i','vd'+(v?(v.val==='L'?' like':' dis'):'')+(v&&v.dev===me?' mine':''));dots.appendChild(d);}
   row.appendChild(dots);
@@ -1317,6 +1465,7 @@ var ICN={"pin": "<path d=\"M12 21s-6.5-6.2-6.5-11A6.5 6.5 0 0 1 18.5 10c0 4.8-6.
 function ic(n){var s=el('span','ic');s.innerHTML='<svg viewBox="0 0 24 24" aria-hidden="true">'+ICN[n]+'</svg>';return s;}
 function plate(c,n,txt,href){var a=lnk(c,'',href);a.appendChild(ic(n));a.appendChild(el('span','tx',txt));return a;}
 var KICN={"guitar": "<svg viewBox=\"0 0 48 48\"><defs><radialGradient id=\"kgg\" cx=\".42\" cy=\".58\" r=\".62\"><stop offset=\"0\" stop-color=\"#FFC06B\"/><stop offset=\".5\" stop-color=\"#E5483F\"/><stop offset=\"1\" stop-color=\"#8E1B2C\"/></radialGradient></defs><rect x=\"25\" y=\"3\" width=\"4.5\" height=\"22\" rx=\"1.5\" transform=\"rotate(35 27 14)\" fill=\"#C7955F\"/><path d=\"M33 0.5l6.5 3.2-3 5.2-6.5-3.2z\" fill=\"#4A2E1B\"/><path d=\"M14 22c4-3 9-2 10 2 1 2 4 2 5 4 2 5-3 13-10 15C11 45 6 39 7 33c1-4 3-5 3-7 0-2 2-3 4-4z\" fill=\"url(#kgg)\" stroke=\"#5A1A20\" stroke-width=\"1\"/><path d=\"M11.5 29.5l8.5 5.5\" stroke=\"#F5E6C8\" stroke-width=\"2.4\" stroke-linecap=\"round\"/><circle cx=\"14\" cy=\"38\" r=\"1.7\" fill=\"#F5E6C8\"/><circle cx=\"18.5\" cy=\"40\" r=\"1.7\" fill=\"#F5E6C8\"/></svg>", "bass": "<svg viewBox=\"0 0 48 48\"><rect x=\"18\" y=\"1\" width=\"4.5\" height=\"27\" rx=\"1.5\" transform=\"rotate(-32 20 14)\" fill=\"#C7955F\"/><path d=\"M8 0h7v7H8z\" transform=\"rotate(-32 11.5 3.5)\" fill=\"#2B2B2B\"/><path d=\"M30 24c-5-2-10 0-10 4 0 2-3 3-3 6 0 6 6 11 13 10 8-1 12-7 11-13-1-4-4-5-5-7-1-1-3-1-6 0z\" fill=\"#26232A\" stroke=\"#000\" stroke-width=\".8\"/><path d=\"M23.5 30c3-2.2 7.5-1.2 9.5 2 1.2 3-.8 7-4 8.2\" fill=\"none\" stroke=\"#F3EEE6\" stroke-width=\"3.2\" stroke-linecap=\"round\"/><path d=\"M27 33.5l7 4\" stroke=\"#BDBDBD\" stroke-width=\"1.6\"/></svg>", "keys": "<svg viewBox=\"0 0 48 48\"><rect x=\"3\" y=\"14\" width=\"42\" height=\"22\" rx=\"4\" fill=\"#B9A6F0\"/><rect x=\"6\" y=\"22\" width=\"36\" height=\"11\" rx=\"1.5\" fill=\"#fff\"/><g fill=\"#4A3B4F\"><rect x=\"10\" y=\"22\" width=\"2.5\" height=\"6\"/><rect x=\"15\" y=\"22\" width=\"2.5\" height=\"6\"/><rect x=\"23\" y=\"22\" width=\"2.5\" height=\"6\"/><rect x=\"28\" y=\"22\" width=\"2.5\" height=\"6\"/><rect x=\"33\" y=\"22\" width=\"2.5\" height=\"6\"/></g><circle cx=\"10\" cy=\"18\" r=\"1.6\" fill=\"#FFD66B\"/><circle cx=\"15\" cy=\"18\" r=\"1.6\" fill=\"#7ED7C1\"/></svg>", "drums": "<svg viewBox=\"0 0 48 48\"><ellipse cx=\"24\" cy=\"31\" rx=\"12\" ry=\"12\" fill=\"#FFD66B\"/><ellipse cx=\"24\" cy=\"31\" rx=\"8\" ry=\"8\" fill=\"#fff\"/><ellipse cx=\"9\" cy=\"20\" rx=\"7\" ry=\"3\" fill=\"#7ED7C1\"/><rect x=\"2\" y=\"20\" width=\"14\" height=\"6\" fill=\"#7ED7C1\"/><ellipse cx=\"39\" cy=\"20\" rx=\"7\" ry=\"3\" fill=\"#FF8FB1\"/><rect x=\"32\" y=\"20\" width=\"14\" height=\"6\" fill=\"#FF8FB1\"/><path d=\"M5 9l9 6M43 9l-9 6\" stroke=\"#B98552\" stroke-width=\"2.5\" stroke-linecap=\"round\"/></svg>", "tea": "<svg viewBox=\"0 0 48 48\"><path d=\"M8 22h26v6a11 11 0 0 1-11 11h-4A11 11 0 0 1 8 28z\" fill=\"#fff\" stroke=\"#FF8FB1\" stroke-width=\"2.5\"/><path d=\"M34 25h3a4 4 0 0 1 0 8h-4\" fill=\"none\" stroke=\"#FF8FB1\" stroke-width=\"2.5\"/><ellipse cx=\"22\" cy=\"42\" rx=\"16\" ry=\"3\" fill=\"#FFD3E0\"/><path d=\"M16 8c-3 4 3 6 0 10M23 6c-3 4 3 6 0 10\" stroke=\"#C9B6D9\" stroke-width=\"2\" fill=\"none\" stroke-linecap=\"round\"/><circle cx=\"21\" cy=\"30\" r=\"3\" fill=\"#FFB3C9\"/></svg>", "cake": "<svg viewBox=\"0 0 48 48\"><path d=\"M6 36L40 24v14H6z\" fill=\"#FFE9C7\"/><path d=\"M6 36L40 24v4L6 40z\" fill=\"#fff\"/><path d=\"M6 30L40 18v6L6 36z\" fill=\"#FFF7EE\" stroke=\"#FFD3E0\" stroke-width=\"1.5\"/><rect x=\"6\" y=\"38\" width=\"34\" height=\"3\" fill=\"#FFB3C9\"/><path d=\"M28 14c0-4 6-4 6 0 0 3-3 5-3 5s-3-2-3-5z\" fill=\"#FF6F9C\"/><path d=\"M30 10l1 2 2-2\" stroke=\"#7ED7C1\" stroke-width=\"1.6\" fill=\"none\"/></svg>", "turtle": "<svg viewBox=\"0 0 48 48\"><ellipse cx=\"13\" cy=\"38\" rx=\"3.4\" ry=\"2.5\" fill=\"#8BC48A\"/><ellipse cx=\"32\" cy=\"38.5\" rx=\"3.4\" ry=\"2.5\" fill=\"#8BC48A\"/><ellipse cx=\"23\" cy=\"31\" rx=\"15\" ry=\"9.5\" fill=\"#6FAE6E\"/><path d=\"M10 31a13 9 0 0 1 26 0z\" fill=\"#5A9A5E\"/><g fill=\"#A8D8A0\"><circle cx=\"17\" cy=\"27\" r=\"2.6\"/><circle cx=\"23.5\" cy=\"25\" r=\"2.8\"/><circle cx=\"30\" cy=\"27.5\" r=\"2.4\"/></g><circle cx=\"40\" cy=\"27.5\" r=\"5.2\" fill=\"#8BC48A\"/><circle cx=\"41.6\" cy=\"26.2\" r=\"1.1\" fill=\"#2B2B2B\"/><path d=\"M39.5 30c1 .8 2.4.8 3.2 0\" stroke=\"#2B2B2B\" stroke-width=\".9\" fill=\"none\" stroke-linecap=\"round\"/></svg>", "rabbit": "<svg viewBox=\"0 0 48 48\"><ellipse cx=\"19\" cy=\"10\" rx=\"3.6\" ry=\"9.5\" fill=\"#F3E3D3\" transform=\"rotate(-12 19 10)\"/><ellipse cx=\"29\" cy=\"10\" rx=\"3.6\" ry=\"9.5\" fill=\"#F3E3D3\" transform=\"rotate(12 29 10)\"/><ellipse cx=\"19\" cy=\"11\" rx=\"1.6\" ry=\"6\" fill=\"#FFB3C9\" transform=\"rotate(-12 19 11)\"/><ellipse cx=\"29\" cy=\"11\" rx=\"1.6\" ry=\"6\" fill=\"#FFB3C9\" transform=\"rotate(12 29 11)\"/><ellipse cx=\"24\" cy=\"35\" rx=\"13\" ry=\"10\" fill=\"#F3E3D3\"/><circle cx=\"24\" cy=\"23\" r=\"9\" fill=\"#F3E3D3\"/><circle cx=\"20.5\" cy=\"22\" r=\"1.4\" fill=\"#2B2B2B\"/><circle cx=\"27.5\" cy=\"22\" r=\"1.4\" fill=\"#2B2B2B\"/><ellipse cx=\"24\" cy=\"26\" rx=\"1.7\" ry=\"1.2\" fill=\"#FF8FB1\"/><circle cx=\"17.5\" cy=\"25.5\" r=\"1.8\" fill=\"#FFC9D8\"/><circle cx=\"30.5\" cy=\"25.5\" r=\"1.8\" fill=\"#FFC9D8\"/></svg>", "tape": "<svg viewBox=\"0 0 48 48\"><rect x=\"4\" y=\"11\" width=\"40\" height=\"27\" rx=\"3.5\" fill=\"#7CC3F0\"/><rect x=\"9\" y=\"15\" width=\"30\" height=\"12\" rx=\"2\" fill=\"#fff\"/><circle cx=\"17\" cy=\"21\" r=\"3.4\" fill=\"#4A3B4F\"/><circle cx=\"31\" cy=\"21\" r=\"3.4\" fill=\"#4A3B4F\"/><rect x=\"20.5\" y=\"19.5\" width=\"7\" height=\"3\" rx=\"1\" fill=\"#C9B6D9\"/><path d=\"M13 38l3-6.5h16l3 6.5z\" fill=\"#5FB4E8\"/><rect x=\"10\" y=\"28.5\" width=\"28\" height=\"2.2\" rx=\"1\" fill=\"#FFD66B\"/></svg>"};var KSEQ=["guitar", "bass", "keys", "drums", "tea", "cake", "rabbit", "turtle", "tape"];
+var KYI={"torii": "<svg viewBox=\"0 0 48 48\"><path d=\"M4 9c8 2 32 2 40 0l-1 5c-8 1.5-30 1.5-38 0z\" fill=\"#C8402B\"/><rect x=\"6\" y=\"13\" width=\"36\" height=\"3\" fill=\"#2B2B2B\"/><rect x=\"9\" y=\"19\" width=\"30\" height=\"3.5\" fill=\"#C8402B\"/><rect x=\"11\" y=\"14\" width=\"4.5\" height=\"30\" fill=\"#C8402B\"/><rect x=\"32.5\" y=\"14\" width=\"4.5\" height=\"30\" fill=\"#C8402B\"/><rect x=\"22\" y=\"16\" width=\"4\" height=\"3.5\" fill=\"#C8402B\"/><rect x=\"10\" y=\"42\" width=\"6.5\" height=\"3\" fill=\"#2B2B2B\"/><rect x=\"31.5\" y=\"42\" width=\"6.5\" height=\"3\" fill=\"#2B2B2B\"/></svg>", "maple": "<svg viewBox=\"0 0 48 48\"><path d=\"M24 3l3.5 9 6-4-1.5 8.5 9-2-5 7 7 3-8 3 3 7-8-3-2 9-3-6-3 6-2-9-8 3 3-7-8-3 7-3-5-7 9 2L14.5 8l6 4z\" fill=\"#D9472B\"/><path d=\"M24 14v31\" stroke=\"#8E2A1A\" stroke-width=\"1.6\" stroke-linecap=\"round\"/></svg>", "lantern": "<svg viewBox=\"0 0 48 48\"><rect x=\"18\" y=\"3\" width=\"12\" height=\"4\" rx=\"1\" fill=\"#2B2B2B\"/><ellipse cx=\"24\" cy=\"25\" rx=\"14\" ry=\"17\" fill=\"#E9573F\"/><g stroke=\"#B8341F\" stroke-width=\"1.2\" fill=\"none\"><path d=\"M10.5 18h27M10 25h28M10.5 32h27\"/></g><rect x=\"18\" y=\"41\" width=\"12\" height=\"4\" rx=\"1\" fill=\"#2B2B2B\"/><text x=\"24\" y=\"29\" font-size=\"10\" text-anchor=\"middle\" fill=\"#fff\" font-family=\"serif\" font-weight=\"700\">京</text></svg>", "fan": "<svg viewBox=\"0 0 48 48\"><path d=\"M24 40L4 18a28 28 0 0 1 40 0z\" fill=\"#2E4A7D\"/><path d=\"M24 40L9 21a22 22 0 0 1 30 0z\" fill=\"#F4EEE2\"/><g stroke=\"#2E4A7D\" stroke-width=\"1\"><path d=\"M24 40L12 19M24 40L18 16M24 40V15M24 40l6-24M24 40l12-21\"/></g><circle cx=\"17\" cy=\"22\" r=\"3\" fill=\"#D9472B\"/><circle cx=\"24\" cy=\"40\" r=\"2.2\" fill=\"#B0894F\"/></svg>", "omamori": "<svg viewBox=\"0 0 48 48\"><path d=\"M24 2c-3 0-5 3-5 5\" stroke=\"#C8402B\" stroke-width=\"2\" fill=\"none\"/><path d=\"M14 12l10-6 10 6v30H14z\" fill=\"#B23A5B\"/><rect x=\"17\" y=\"16\" width=\"14\" height=\"18\" rx=\"1\" fill=\"#F4EEE2\"/><path d=\"M19 20h10M19 24h10M19 28h7\" stroke=\"#B0894F\" stroke-width=\"1.6\"/><path d=\"M14 38h20\" stroke=\"#E6C46A\" stroke-width=\"2\"/></svg>", "dango": "<svg viewBox=\"0 0 48 48\"><path d=\"M8 42L40 6\" stroke=\"#B0894F\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><circle cx=\"17\" cy=\"32\" r=\"7\" fill=\"#F7C6D0\"/><circle cx=\"24.5\" cy=\"23.5\" r=\"7\" fill=\"#FFFDF6\"/><circle cx=\"32\" cy=\"15\" r=\"7\" fill=\"#9CC28A\"/></svg>"};var KYSEQ=['maple','torii','lantern','fan','omamori','dango'];
 function goBlock(s,mode){var w=el('div');var b=el('div','nx-b go');b.appendChild(plate(null,'pin','Google Maps',go(s,mode)));b.appendChild(plate('waze','nav','Waze',waze(s)));w.appendChild(b);return w;}
 function short(n){return n.split('（')[0].split(' ／ ')[0];}
 function nextBlock(s,next,mode){
@@ -1354,7 +1503,7 @@ function gallery(s,st){
     if(g){var ov=lnk(null,'',g);ov.setAttribute('aria-label','在 Google Maps 看 '+s.name+' 的照片');ov.style.cssText='position:absolute;inset:0;z-index:1';lead.style.cursor='pointer';lead.appendChild(ov);}else lead.style.cursor='default';
     lead.appendChild(e);
   }
-  if(st.shots.length){var KN=themeOf(s.id)==='kon';var sp=el('div','stamp'+(KN?' kst':''),KN?'部活完成 ♪':'已调查');sp.appendChild(el('small',null,fmt(st.shots[0].at)));lead.appendChild(sp);}
+  if(st.shots.length){var KT2=TT(s.id);var sp=el('div','stamp'+KT2.stc,KT2.stamp);sp.appendChild(el('small',null,fmt(st.shots[0].at)));lead.appendChild(sp);}
   gal.appendChild(lead);
   if(st.refs.length>1){
     var cols=(MQ&&MQ.matches)?4:6,rest=st.refs.length-1,showN=rest>cols?cols-1:rest;
@@ -1370,7 +1519,7 @@ function gallery(s,st){
 function card(s,no,prev,next,mode){
   var st=S(s.id);
   var d=el('article','dossier');d.id='spot-'+s.id;
-  var f=el('div','file');f.appendChild(el('b',null,(themeOf(s.id)==='kon'?'部活笔记 ':'档案 ')+no));f.appendChild(el('span',null,st.shots.length?(themeOf(s.id)==='kon'?'已打卡 ♪':'已调查'):(themeOf(s.id)==='kon'?'未打卡':'未调查')));d.appendChild(f);
+  var f=el('div','file');f.appendChild(el('b',null,TT(s.id).file+no));f.appendChild(el('span',null,st.shots.length?TT(s.id).done:TT(s.id).undone));d.appendChild(f);
   d.appendChild(gallery(s,st));
   var body=el('div','body');var h4=el('h4');if(s.t)h4.appendChild(el('span','time',s.t));h4.appendChild(document.createTextNode(s.name));if(s.flag)h4.appendChild(el('span','flag',s.flag));
   body.appendChild(h4);body.appendChild(el('p',null,s.note));
@@ -1424,7 +1573,8 @@ function build(){
   DAYS.forEach(function(D){
     var sec=el('div');sec.id='day-'+D.d;if(D.theme)sec.className=D.theme;
     if(dn){var a=el('a',null,D.lab+' '+D.w);a.href='#day-'+D.d;dn.appendChild(a);}
-    var hd=el('div','dayhead');hd.appendChild(el('span','dd',D.lab));hd.appendChild(el('h3',null,D.w+'　'+D.title));hd.appendChild(el('small',null,D.sub));sec.appendChild(hd);if(D.theme==='kon'){var kn=el('div','k-notes');kn.setAttribute('aria-hidden','true');['♪','♫','♪','♬'].forEach(function(c){kn.appendChild(el('span',null,c));});sec.appendChild(kn);var tp=el('div','k-tape');tp.setAttribute('aria-hidden','true');for(var q=0;q<4;q++)tp.appendChild(el('i'));sec.appendChild(tp);var wb=el('div','k-wb');var wi=el('div','k-wb-in');wi.appendChild(el('p','k-wb-t','本日部活 ♪'));var ol=el('ol');var items=D.stops.filter(function(z){return z.kind!=='util';});
+    var hd=el('div','dayhead');hd.appendChild(el('span','dd',D.lab));hd.appendChild(el('h3',null,D.w+'　'+D.title));hd.appendChild(el('small',null,D.sub));sec.appendChild(hd);if(D.theme==='kyo'){var lv=el('div','ky-leaves');lv.setAttribute('aria-hidden','true');for(var li=0;li<6;li++){var lf=el('span');lf.innerHTML=KYI.maple;lf.style.left=(8+li*16)+'%';lf.style.animationDelay=(li*1.7)+'s';lf.style.animationDuration=(9+li%3*2)+'s';lv.appendChild(lf);}sec.appendChild(lv);var tb=el('div','ky-torii');tb.setAttribute('aria-hidden','true');tb.innerHTML=new Array(9).join(KYI.torii);sec.appendChild(tb);}
+    if(D.theme==='kon'){var kn=el('div','k-notes');kn.setAttribute('aria-hidden','true');['♪','♫','♪','♬'].forEach(function(c){kn.appendChild(el('span',null,c));});sec.appendChild(kn);var tp=el('div','k-tape');tp.setAttribute('aria-hidden','true');for(var q=0;q<4;q++)tp.appendChild(el('i'));sec.appendChild(tp);var wb=el('div','k-wb');var wi=el('div','k-wb-in');wi.appendChild(el('p','k-wb-t','本日部活 ♪'));var ol=el('ol');var items=D.stops.filter(function(z){return z.kind!=='util';});
       items.slice(0,6).forEach(function(z,ii){var li=el('li','m'+(ii%3));li.textContent=z.name.split('　')[0].replace(/（.*?）/,'');ol.appendChild(li);});if(items.length>6)ol.appendChild(el('li','m2','…还有 '+(items.length-6)+' 处'));
       wi.appendChild(ol);wi.appendChild(el('p','k-wb-s','放課後ティータイム'));var dood=el('span','k-wb-d');dood.innerHTML=KICN.tea;wi.appendChild(dood);wb.appendChild(wi);var tray=el('div','k-wb-tray');['#2D6FD1','#E2556A','#333'].forEach(function(c){var mk=el('i');mk.style.background=c;tray.appendChild(mk);});wb.appendChild(tray);sec.appendChild(wb);
       var bw=el('div','k-bandw');var band=el('div','k-band');band.setAttribute('aria-hidden','true');band.innerHTML=['rabbit','guitar','bass','keys','drums','tea','turtle'].map(function(k){return KICN[k];}).join('');bw.appendChild(band);bw.appendChild(el('span','k-cap','楼梯扶手上的兔子和乌龟，也在等你们练团 ♪'));sec.appendChild(bw);}
@@ -1443,7 +1593,7 @@ function build(){
       if(prev&&s.lat)r.appendChild(leg(prev,s,D.mode,s));
       var next=null;for(var j=idx+1;j<D.stops.length;j++){if(D.stops[j].lat){next=D.stops[j];break;}}
       if(s.kind==='util')r.appendChild(utilCard(s,prev,D.mode,next));
-      else{no++;if(S(s.id).shots.length)done++;var cd=card(s,String(no).padStart(2,'0'),prev,next,D.mode);if(D.theme==='kon'){var stk=el('span','k-stk');stk.setAttribute('aria-hidden','true');stk.innerHTML=KICN[KSEQ[(no)%KSEQ.length]];cd.appendChild(stk);}r.appendChild(cd);}
+      else{no++;if(S(s.id).shots.length)done++;var cd=card(s,String(no).padStart(2,'0'),prev,next,D.mode);if(D.theme==='kon'){var stk=el('span','k-stk');stk.setAttribute('aria-hidden','true');stk.innerHTML=KICN[KSEQ[(no)%KSEQ.length]];cd.appendChild(stk);}if(D.theme==='kyo'){var ys=el('span','ky-stk');ys.setAttribute('aria-hidden','true');ys.innerHTML=KYI[KYSEQ[no%KYSEQ.length]];cd.appendChild(ys);}r.appendChild(cd);}
       if(s.lat)prev=s;
     });
     sec.appendChild(r);root.appendChild(sec);
@@ -1495,10 +1645,10 @@ var lb=null;
 function openLB(id,kind,i){
   var st=S(id),list=st[kind];if(!list.length)return;
   var spot=SPOTS.filter(function(s){return s.id===id;})[0];
-  var LK=themeOf(id)==='kon';closeLB();lb=el('div','lb lb2'+(LK?' konlb':''));lb.setAttribute('role','dialog');lb.setAttribute('aria-modal','true');
+  var LT=themeOf(id);closeLB();lb=el('div','lb lb2'+(LT?' '+LT+'lb':''));lb.setAttribute('role','dialog');lb.setAttribute('aria-modal','true');
   var SV=function(d){return '<svg viewBox="0 0 24 24" aria-hidden="true">'+d+'</svg>';};
   var top=el('div','lb-top');var info=el('div','lb-info');
-  info.appendChild(el('p','lb-unit',LK?(kind==='refs'?'部活笔记　目的地照片':'部活笔记　打卡照片'):(kind==='refs'?'调查记录　目的地照片':'调查记录　打卡照片')));info.appendChild(el('h3','lb-title',spot.name.split('　')[0]));var meta=el('p','lb-meta');info.appendChild(meta);top.appendChild(info);
+  info.appendChild(el('p','lb-unit',(TH[LT]||TH['']).unit+'　'+(kind==='refs'?'目的地照片':'打卡照片')));info.appendChild(el('h3','lb-title',spot.name.split('　')[0]));var meta=el('p','lb-meta');info.appendChild(meta);top.appendChild(info);
   var tools=el('div','lb-tools');var del=null;
   if(art){del=el('button','lb-ico lb-del');del.type='button';del.setAttribute('aria-label','删除这张照片');del.innerHTML=SV('<path d="M4 7h16"/><path d="M9 7V4.5h6V7"/><path d="M6.5 7l1 13h9l1-13"/><path d="M10 11v6M14 11v6"/>')+'<span class="lb-dt">确认删除？</span>';
     var armed=false,tmr=null;
@@ -1551,7 +1701,7 @@ function openLB(id,kind,i){
   function show(){var it=list[i];reset();lb.classList.add('loading');im.classList.remove('ok');im.style.width='';im.style.height='';
     im.onload=function(){lb.classList.remove('loading');fit();im.classList.add('ok');fr.classList.remove('flip');void fr.offsetWidth;fr.classList.add('flip');};
     im.onerror=function(){lb.classList.remove('loading');ld.querySelector('span').textContent='照片载入失败';lb.classList.add('failed');};
-    lb.classList.remove('failed');ld.querySelector('span').textContent=LK?'调音中…':'冲洗照片中…';
+    lb.classList.remove('failed');ld.querySelector('span').textContent=(TH[LT]||TH['']).lbload;
     im.src=kind==='refs'?it:it.src;im.alt=spot.name;if(im.complete&&im.naturalWidth)im.onload();
     var mt=(kind==='refs'?st.refsMeta:st.shotsMeta)[i];var parts=[];if(kind!=='refs'&&it.at)parts.push(fmt(it.at));if(mt&&mt.by)parts.push('由 '+mt.by+' 上传');meta.textContent=parts.join('　·　');meta.style.display=parts.length?'':'none';
     ct.innerHTML='';ct.appendChild(el('b',null,String(i+1)));ct.appendChild(el('span',null,' / '+list.length));
@@ -1561,7 +1711,7 @@ function openLB(id,kind,i){
   lb.addEventListener('keydown',function(e){if(e.key==='Escape')closeLB();if(e.key==='ArrowLeft')pv.click();if(e.key==='ArrowRight')nx.click();});
   document.body.appendChild(lb);document.documentElement.style.overflow='hidden';show();x.focus();
 }
-function paintCount(){var c=document.getElementById('count');if(!c||!window._cnt)return;var k=document.body.classList.contains('kon-on');c.textContent=(k?'轻音部 ♪ ':'调查进度 ')+window._cnt[0]+' / '+window._cnt[1];}
+function paintCount(){var c=document.getElementById('count');if(!c||!window._cnt)return;var t=document.body.getAttribute('data-th')||'';c.textContent=(TH[t]||TH['']).cnt+window._cnt[0]+' / '+window._cnt[1];}
 function closeLB(){if(lb){if(lb._cleanup)lb._cleanup();lb.remove();lb=null;if(!gov)document.documentElement.style.overflow='';}}
 function markImg(img){var p=img.closest&&img.closest('.shots > button,.gal-it,.gal .lead');if(p)p.classList.add('ok');}
 document.addEventListener('load',function(e){if(e.target&&e.target.tagName==='IMG')markImg(e.target);},true);
@@ -1572,15 +1722,15 @@ function T(s){return lang()==='tc'?tcv(s):s;}
 function loadCORS(src){return new Promise(function(res,rej){var im=new Image();im.crossOrigin='anonymous';im.onload=function(){res(im);};im.onerror=function(){rej(src);};im.src=src+(src.indexOf('?')<0?'?':'&')+'cv=1';});}
 function openSharePicker(id){
   var st=S(id),spot=SPOTS.filter(function(s){return s.id===id;})[0];if(!st.shots.length)return;
-  var sel=[],fmtSel='story',styleSel='aot',isKon=themeOf(id)==='kon';
-  var ov=el('div','gal-ov sh-ov'+(isKon?' konov':''));ov.setAttribute('role','dialog');ov.setAttribute('aria-modal','true');
-  var hd=el('div','gal-hd');var ht=el('div','gal-ht');ht.appendChild(el('p','gal-unit',isKon?'社团笔记　制作分享图':'调查记录　制作分享图'));ht.appendChild(el('h3',null,spot.name.split('　')[0]));var cnt=el('span','gal-n');ht.appendChild(cnt);hd.appendChild(ht);
+  var sel=[],fmtSel='story',styleSel='aot',isKon=themeOf(id);
+  var ov=el('div','gal-ov sh-ov'+(isKon?' '+isKon+'ov':''));ov.setAttribute('role','dialog');ov.setAttribute('aria-modal','true');
+  var hd=el('div','gal-hd');var ht=el('div','gal-ht');ht.appendChild(el('p','gal-unit',(TH[isKon]||TH['']).unit+'　制作分享图'));ht.appendChild(el('h3',null,spot.name.split('　')[0]));var cnt=el('span','gal-n');ht.appendChild(cnt);hd.appendChild(ht);
   var x=el('button','gal-x','取消');x.type='button';x.onclick=function(){ov.remove();document.documentElement.style.overflow='';};hd.appendChild(x);ov.appendChild(hd);
   var opts=el('div','sh-opts');var fm=el('div','sh-fmt');
   [['story','限时动态','9:16'],['post','贴文','4:5']].forEach(function(o){var b=el('button',o[0]===fmtSel?'on':'');b.type='button';var fr=el('i','sh-shape '+o[0]);b.appendChild(fr);var t=el('span');t.appendChild(el('b',null,'IG '+o[1]));t.appendChild(el('small',null,o[2]));b.appendChild(t);
     b.onclick=function(){fmtSel=o[0];[].forEach.call(fm.children,function(c){c.classList.toggle('on',c===b);});};fm.appendChild(b);});
   opts.appendChild(fm);
-  var sy=el('div','sh-style');[['aot',isKon?'社团纪录':'调查记录','主题设计'],['plain','纯拼图','只拼照片']].forEach(function(o){var b=el('button',o[0]===styleSel?'on':'');b.type='button';var si=el('span','sty-in');si.appendChild(el('b',null,o[1]));si.appendChild(el('small',null,o[2]));b.appendChild(si);
+  var sy=el('div','sh-style');[['aot',(TH[isKon]||TH['']).sty,'主题设计'],['plain','纯拼图','只拼照片']].forEach(function(o){var b=el('button',o[0]===styleSel?'on':'');b.type='button';var si=el('span','sty-in');si.appendChild(el('b',null,o[1]));si.appendChild(el('small',null,o[2]));b.appendChild(si);
     b.onclick=function(){styleSel=o[0];[].forEach.call(sy.children,function(c){c.classList.toggle('on',c===b);});};sy.appendChild(b);});
   opts.appendChild(sy);opts.appendChild(el('p','sh-tip','从零开始点选照片，最多 9 张，数字是排列顺序。'));ov.appendChild(opts);
   var g=el('div','gal-grid sh-grid');
@@ -1594,8 +1744,60 @@ function openSharePicker(id){
   if(lang()==='tc')convNode(ov);
 }
 function layoutRows(n,fmt){var S9={1:[1],2:[1,1],3:[1,2],4:[2,2],5:[1,2,2],6:[2,2,2],7:[1,3,3],8:[2,3,3],9:[3,3,3]};var P9={1:[1],2:[2],3:[1,2],4:[2,2],5:[2,3],6:[3,3],7:[2,2,3],8:[3,2,3],9:[3,3,3]};return (fmt==='story'?S9:P9)[n];}
+var TH={'':{file:'档案 ',done:'已调查',undone:'未调查',stamp:'已调查',stc:'',vlab:'信号弹',vsub:'调查员评价',unit:'调查记录',lbload:'冲洗照片中…',cnt:'调查进度 ',sty:'调查记录',ask:'你觉得这个地方怎么样？',sunit:'调查报告　评价',seal:'评'},
+ kon:{file:'部活笔记 ',done:'已打卡 ♪',undone:'未打卡',stamp:'部活完成 ♪',stc:' kst',vlab:'音符评价',vsub:'社团成员评价',unit:'部活笔记',lbload:'调音中…',cnt:'轻音部 ♪ ',sty:'社团纪录',ask:'这个地方好玩吗？',sunit:'社团笔记　评价',seal:'♪'},
+ kyo:{file:'旅帖 ',done:'已参拜',undone:'未参拜',stamp:'参拜完成',stc:' kyst',vlab:'红叶评价',vsub:'旅人评价',unit:'京都旅帖',lbload:'研墨中…',cnt:'京都巡礼 ',sty:'京都旅帖',ask:'这里值得再来吗？',sunit:'京都旅帖　评价',seal:'京'}};
+function TT(id){return TH[themeOf(id)]||TH[''];}
 function themeOf(id){for(var i=0;i<DAYS.length;i++){var D=DAYS[i];for(var j=0;j<D.stops.length;j++)if(D.stops[j].id===id)return D.theme||'';}return '';}
 function svgImg(svg){return new Promise(function(res){var im=new Image();im.onload=function(){res(im);};im.onerror=function(){res(null);};im.src='data:image/svg+xml;charset=utf-8,'+encodeURIComponent(svg.replace('<svg ','<svg xmlns="http://www.w3.org/2000/svg" '));});}
+
+function makeKyoPoster(id,idxs,fmt,adj,mode){
+  var st=S(id),spot=SPOTS.filter(function(s){return s.id===id;})[0];var W=1080,H=fmt==='story'?1920:1350;
+  var shots=idxs.map(function(i){return st.shots[i];});
+  var fontsP=(document.fonts&&document.fonts.load)?Promise.all(['400 120px "Ma Shan Zheng"','700 34px "Noto Serif SC"'].map(function(f){return document.fonts.load(f,T(spot.name)+'京都旅帖参拜完成地点');})).catch(function(){}):Promise.resolve();
+  var keys=Object.keys(KYI);var iconsP=Promise.all(keys.map(function(k){return svgImg(KYI[k]);})).then(function(a){var o={};keys.forEach(function(k,i){o[k]=a[i];});return o;});
+  return Promise.all([fontsP,iconsP].concat(shots.map(function(s){return loadCORS(s.src);}))).then(function(rs){
+    var ic=rs[1],imgs=rs.slice(2);var c=document.createElement('canvas');c.width=W;c.height=H;var x=c.getContext('2d');
+    var BRUSH='"Ma Shan Zheng","Noto Serif SC",serif',SERIF='"Noto Serif SC","Songti SC",serif';var VER='#C8402B',IND='#2E4A7D',INK='#2A2620',GOLD='#B0894F';
+    x.fillStyle='#F4EEE2';x.fillRect(0,0,W,H);
+    for(var q=0;q<1800;q++){x.strokeStyle='rgba(160,140,110,'+(Math.random()*.08)+')';x.lineWidth=1;var fx=Math.random()*W,fy=Math.random()*H,fl=8+Math.random()*26,fa=Math.random()*Math.PI;x.beginPath();x.moveTo(fx,fy);x.lineTo(fx+Math.cos(fa)*fl,fy+Math.sin(fa)*fl);x.stroke();}
+    /* seigaiha band */
+    var bh=fmt==='story'?120:90;x.save();x.beginPath();x.rect(0,0,W,bh);x.clip();x.fillStyle=IND;x.fillRect(0,0,W,bh);x.strokeStyle='rgba(244,238,226,.35)';x.lineWidth=2;
+    for(var ry=bh+20,row=0;ry>-40;ry-=18,row++){for(var rx=(row%2?0:30);rx<W+60;rx+=60){for(var rr=26;rr>4;rr-=7){x.beginPath();x.arc(rx,ry,rr,Math.PI,0);x.stroke();}}}x.restore();
+    x.fillStyle=GOLD;x.fillRect(0,bh,W,6);
+    /* frame */
+    x.strokeStyle=IND;x.lineWidth=2;x.strokeRect(40,bh+30,W-80,H-bh-70);x.strokeStyle='rgba(46,74,125,.35)';x.strokeRect(50,bh+40,W-100,H-bh-90);
+    /* title */
+    var title=T(spot.name.split('　')[0]);var ts=fmt==='story'?140:110;x.font='400 '+ts+'px '+BRUSH;while(x.measureText(title).width>W-360&&ts>60){ts-=4;x.font='400 '+ts+'px '+BRUSH;}
+    var ty=bh+60+ts;x.fillStyle=INK;x.fillText(title,96,ty);
+    var sub=spot.name.split('　')[1]||'';x.font='700 '+(fmt==='story'?38:30)+'px '+SERIF;x.fillStyle=IND;var sy=ty+(fmt==='story'?62:48);x.fillText(T(sub),100,sy);
+    x.font='700 '+(fmt==='story'?26:22)+'px '+SERIF;x.fillStyle=GOLD;var tag=T('京都旅帖　二〇二七　秋');var tx=100;for(var t=0;t<tag.length;t++){x.fillText(tag[t],tx,sy+(fmt==='story'?48:38));tx+=x.measureText(tag[t]).width+6;}
+    var isz=fmt==='story'?120:96;if(ic.torii)x.drawImage(ic.torii,W-96-isz,bh+50,isz,isz);if(ic.maple){x.save();x.translate(W-96-isz-40,bh+60+isz);x.rotate(-.4);x.drawImage(ic.maple,-30,-30,60,60);x.restore();}
+    x.strokeStyle=VER;x.lineWidth=3;x.beginPath();x.moveTo(100,sy+(fmt==='story'?78:62));x.lineTo(W-100,sy+(fmt==='story'?78:62));x.stroke();
+    /* photos */
+    var foot=fmt==='story'?220:170;var ax=100,ay=sy+(fmt==='story'?112:88),aw=W-200,ah=H-foot-ay,gap=fmt==='story'?24:20;
+    var rows=layoutRows(imgs.length,fmt),rh=(ah-gap*(rows.length-1))/rows.length,k=0,inner=[];
+    rows.forEach(function(cols,ri){var cw=(aw-gap*(cols-1))/cols;for(var ci=0;ci<cols;ci++){var im=imgs[k];var px=ax+ci*(cw+gap),py=ay+ri*(rh+gap);
+      x.fillStyle='rgba(42,38,32,.12)';x.fillRect(px+5,py+6,cw,rh);x.fillStyle='#FFFDF8';x.fillRect(px,py,cw,rh);x.strokeStyle=IND;x.lineWidth=1.5;x.strokeRect(px,py,cw,rh);
+      var m=10,ix=px+m,iy=py+m,iw=cw-m*2,ih=rh-m*2;inner.push({x:ix,y:iy,w:iw,h:ih});
+      if(mode!=='bg')drawAdj(x,im,ix,iy,iw,ih,adj&&adj[k]);else{x.fillStyle='#E8E0D0';x.fillRect(ix,iy,iw,ih);}
+      x.fillStyle=GOLD;[[px,py],[px+cw-14,py],[px,py+rh-14],[px+cw-14,py+rh-14]].forEach(function(q){x.fillRect(q[0],q[1],14,3);x.fillRect(q[0]+(q[0]>px?11:0),q[1],3,14);});k++;}});
+    /* falling leaves */
+    if(ic.maple){[[0.12,0.62,.6,38],[0.88,0.45,-.5,44],[0.07,0.86,.2,30]].forEach(function(q){x.save();x.translate(W*q[0],H*q[1]);x.rotate(q[2]);x.globalAlpha=.9;x.drawImage(ic.maple,-q[3]/2,-q[3]/2,q[3],q[3]);x.restore();});}
+    /* hanko */
+    var last=shots.map(function(s){return s.at;}).filter(Boolean).sort().pop();var S2=fmt==='story'?150:124,hx=W-110-S2,hy=ay-S2*.55;
+    x.save();x.translate(hx+S2/2,hy+S2/2);x.rotate(-.08);x.globalAlpha=.92;x.strokeStyle=VER;x.lineWidth=6;x.strokeRect(-S2/2,-S2/2,S2,S2);x.lineWidth=2;x.strokeRect(-S2/2+9,-S2/2+9,S2-18,S2-18);
+    x.fillStyle=VER;x.textAlign='center';x.font='400 '+Math.round(S2*.3)+'px '+BRUSH;var t1=T('参拜'),t2=T('完成');x.fillText(t1,0,-S2*.04);x.fillText(t2,0,S2*.28);
+    x.font='700 '+Math.round(S2*.1)+'px '+SERIF;x.fillText(last?fmtDate(last):'2027',0,S2*.42);x.restore();x.textAlign='left';
+    /* footer */
+    var fy=H-foot+(fmt==='story'?70:54);x.fillStyle=VER;x.font='700 '+(fmt==='story'?24:20)+'px '+SERIF;x.fillText(T('参拜地点'),100,fy);
+    if(spot.addr){x.fillStyle=INK;x.font='700 '+(fmt==='story'?32:26)+'px '+SERIF;var ad=T(spot.addr);while(x.measureText(ad).width>W-560&&ad.length>4)ad=ad.slice(0,-1);x.fillText(ad,100,fy+(fmt==='story'?48:38));}
+    var bi=fmt==='story'?56:44,bx=W-100-bi*4-30;['lantern','fan','omamori','dango'].forEach(function(n,i){if(ic[n])x.drawImage(ic[n],bx+i*(bi+10),fy-bi*.6,bi,bi);});
+    x.textAlign='right';x.font='400 '+(fmt==='story'?34:28)+'px '+BRUSH;x.fillStyle=IND;x.fillText(T('京都 · 2027'),W-100,fy+(fmt==='story'?60:48));x.textAlign='left';
+    return finishCanvas(c,mode,inner,imgs,W,H);
+  });
+}
+
 function makeKonPoster(id,idxs,fmt,adj,mode){
   var st=S(id),spot=SPOTS.filter(function(s){return s.id===id;})[0];var W=1080,H=fmt==='story'?1920:1350;
   var shots=idxs.map(function(i){return st.shots[i];});
@@ -1648,9 +1850,9 @@ function drawAdj(x,im,rx,ry,rw,rh,a){a=a||{s:1,ox:0,oy:0};var nw=im.naturalWidth
   x.save();x.beginPath();x.rect(rx,ry,rw,rh);x.clip();x.drawImage(im,rx+(rw-dw)/2+px,ry+(rh-dh)/2+py,dw,dh);x.restore();}
 function openShareEditor(id,sel,fmt,style,isKon,back){
   var spot=SPOTS.filter(function(s){return s.id===id;})[0];var adj=sel.map(function(){return {s:1,ox:0,oy:0};});
-  var maker=style==='plain'?makePlain:(isKon?makeKonPoster:makePoster);
-  var ov=el('div','gal-ov sh-ov sh-ed'+(isKon?' konov':''));ov.setAttribute('role','dialog');ov.setAttribute('aria-modal','true');
-  var hd=el('div','gal-hd');var ht=el('div','gal-ht');ht.appendChild(el('p','gal-unit',(isKon?'社团笔记':'调查记录')+'　调整照片'));ht.appendChild(el('h3',null,spot.name.split('　')[0]));hd.appendChild(ht);
+  var maker=style==='plain'?makePlain:(isKon==='kon'?makeKonPoster:(isKon==='kyo'?makeKyoPoster:makePoster));
+  var ov=el('div','gal-ov sh-ov sh-ed'+(isKon?' '+isKon+'ov':''));ov.setAttribute('role','dialog');ov.setAttribute('aria-modal','true');
+  var hd=el('div','gal-hd');var ht=el('div','gal-ht');ht.appendChild(el('p','gal-unit',(TH[isKon]||TH['']).unit+'　调整照片'));ht.appendChild(el('h3',null,spot.name.split('　')[0]));hd.appendChild(ht);
   var bk=el('button','gal-x','上一步');bk.type='button';hd.appendChild(bk);ov.appendChild(hd);
   var tip=el('p','sh-tip ed-tip','点一格照片：拖动调整位置，双指或下方滑杆放大缩小。');ov.appendChild(tip);
   var stage=el('div','ed-stage');var board=el('div','ed-board');stage.appendChild(board);ov.appendChild(stage);
@@ -1764,8 +1966,8 @@ function makePoster(id,idxs,fmt,adj,mode){
 function fmt2(iso){try{var t=new Date(iso);return (t.getMonth()+1)+'/'+t.getDate();}catch(e){return '';}}
 function fmtDate(iso){try{var t=new Date(iso);return t.getFullYear()+'.'+String(t.getMonth()+1).padStart(2,'0')+'.'+String(t.getDate()).padStart(2,'0');}catch(e){return '';}}
 function showPoster(r,id,fmt,sty,kon){
-  var spot=SPOTS.filter(function(s){return s.id===id;})[0];var fname=T(spot.name.split('　')[0])+'_'+T(sty==='plain'?'拼图':(kon?'社团纪录':'调查记录'))+'_'+(fmt==='story'?'Story':'Post')+'.jpg';
-  var ov=el('div','namebox pv-ov'+(kon?' konpv':''));ov.setAttribute('role','dialog');ov.setAttribute('aria-modal','true');
+  var spot=SPOTS.filter(function(s){return s.id===id;})[0];var fname=T(spot.name.split('　')[0])+'_'+T(sty==='plain'?'拼图':(TH[kon||'']||TH['']).sty)+'_'+(fmt==='story'?'Story':'Post')+'.jpg';
+  var ov=el('div','namebox pv-ov'+(kon?' '+kon+'pv':''));ov.setAttribute('role','dialog');ov.setAttribute('aria-modal','true');
   var box=el('div','pv-box');var sc=el('div','pv-sc');var im=el('img','pv-img');im.src=r.url;im.alt=fname;sc.appendChild(im);box.appendChild(sc);
   var hint=el('p','pv-hint','点图片放大查看');box.appendChild(hint);
   var row=el('div','pv-row');var cancel=el('button','pv-c','取消');cancel.type='button';var save=el('button','pv-s','保存到手机');save.type='button';row.appendChild(cancel);row.appendChild(save);box.appendChild(row);
@@ -1783,8 +1985,8 @@ var gov=null;
 function closeGallery(){if(gov){gov.remove();gov=null;document.documentElement.style.overflow='';}}
 function openGallery(id,kind){
   kind=kind||'shots';closeGallery();var st=S(id),spot=SPOTS.filter(function(s){return s.id===id;})[0];var list=st[kind],meta=kind==='refs'?st.refsMeta:st.shotsMeta;
-  gov=el('div','gal-ov'+(themeOf(id)==='kon'?' konov':''));gov.setAttribute('role','dialog');gov.setAttribute('aria-modal','true');
-  var hd=el('div','gal-hd');var ht=el('div','gal-ht');ht.appendChild(el('p','gal-unit',(themeOf(id)==='kon'?'部活笔记　':'调查记录　')+(kind==='refs'?'目的地照片':'打卡照片')));ht.appendChild(el('h3',null,spot.name.split('　')[0]));ht.appendChild(el('span','gal-n',list.length+' 张'));hd.appendChild(ht);
+  gov=el('div','gal-ov'+(themeOf(id)?' '+themeOf(id)+'ov':''));gov.setAttribute('role','dialog');gov.setAttribute('aria-modal','true');
+  var hd=el('div','gal-hd');var ht=el('div','gal-ht');ht.appendChild(el('p','gal-unit',TT(id).unit+'　'+(kind==='refs'?'目的地照片':'打卡照片')));ht.appendChild(el('h3',null,spot.name.split('　')[0]));ht.appendChild(el('span','gal-n',list.length+' 张'));hd.appendChild(ht);
   var x=el('button','gal-x','关闭');x.type='button';x.onclick=closeGallery;hd.appendChild(x);gov.appendChild(hd);
   var g=el('div','gal-grid');
   list.forEach(function(p,i){var b=el('button','gal-it');b.type='button';var im=el('img');im.src=kind==='refs'?p:p.src;im.alt='';im.loading='lazy';b.appendChild(im);
@@ -1803,7 +2005,7 @@ function spy(){
   secs.forEach(function(s){if(s.getBoundingClientRect().top<=off)act=s.id;});
   var route=document.getElementById('route');
   if(!act&&secs.length&&route&&route.getBoundingClientRect().top<=off)act=secs[0].id;
-  if(act===curDay)return;curDay=act;document.body.classList.toggle('kon-on',!!act&&!!document.getElementById(act)&&document.getElementById(act).classList.contains('kon'));paintCount();
+  if(act===curDay)return;curDay=act;var se=act&&document.getElementById(act);var th=se?(se.classList.contains('kon')?'kon':(se.classList.contains('kyo')?'kyo':'')):'';document.body.classList.toggle('kon-on',th==='kon');document.body.classList.toggle('kyo-on',th==='kyo');document.body.setAttribute('data-th',th);paintCount();
   var links=[].slice.call(document.querySelectorAll('#daynav a'));
   links.forEach(function(a){var on=act&&a.getAttribute('href')==='#'+act;a.classList.toggle('on',!!on);if(on){a.setAttribute('aria-current','true');var nav=a.parentNode;var l=a.offsetLeft-(nav.clientWidth-a.offsetWidth)/2;nav.scrollTo?nav.scrollTo({left:l,behavior:'smooth'}):(nav.scrollLeft=l);}else a.removeAttribute('aria-current');});
   var lbl=document.getElementById('curday');if(lbl){var a2=links.filter(function(x){return x.classList.contains('on');})[0];lbl.textContent=a2?'现在：'+a2.textContent:'';}
