@@ -1035,6 +1035,27 @@ body.kon-on .status nav a{transition:background .3s,color .3s,border-color .3s}
 .konov .gal-x{color:#fff!important;font-family:"ZCOOL KuaiLe","Noto Sans SC",sans-serif;font-weight:400}
 .kon .k-band{display:grid!important;grid-template-columns:repeat(7,minmax(0,1fr));gap:4px!important;justify-items:center;align-items:end;padding:10px 8px 8px!important;overflow:hidden}
 .kon .k-band svg{width:100%!important;max-width:56px;height:auto!important;aspect-ratio:1}
+.sh-ed .ed-tip{margin:0;padding:10px 14px;background:#1C1A15;border-bottom:1px solid #3E3A31}
+.ed-stage{flex:1;min-height:0;display:flex;align-items:center;justify-content:center;padding:12px;overflow:hidden}
+.ed-board{position:relative;background:#26231C center/100% 100% no-repeat;box-shadow:0 0 0 1px #3E3A31,0 14px 30px rgba(0,0,0,.5);touch-action:none}
+.ed-load{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#C9BD9C;font-size:14px;letter-spacing:.2em;min-width:200px;min-height:300px}
+.ed-cell{position:absolute;overflow:hidden;cursor:grab;touch-action:none;background:#333}
+.ed-cell img{position:absolute;max-width:none!important;user-select:none;-webkit-user-select:none;pointer-events:none}
+.ed-cell::after{content:"";position:absolute;inset:0;border:1px dashed rgba(255,255,255,.45);pointer-events:none}
+.ed-cell.on{z-index:2}.ed-cell.on::after{border:3px solid #D2AE55}
+.ed-no{position:absolute;top:4px;left:4px;z-index:3;min-width:20px;height:20px;padding:0 5px;border-radius:10px;background:rgba(0,0,0,.55);color:#fff;font-size:12px;font-weight:700;line-height:20px;text-align:center;pointer-events:none}
+.ed-cell.on .ed-no{background:#8E1B14}
+.ed-ctl{display:flex;align-items:center;gap:12px;padding:10px 16px;background:#1C1A15;border-top:1px solid #3E3A31}
+.ed-zl{color:#C9BD9C;font-size:13px;flex:0 0 auto}
+.ed-rng{flex:1;accent-color:#D2AE55;height:30px}
+.ed-rs{flex:0 0 auto;min-height:36px;padding:0 14px;font:inherit;font-size:13px;color:#EFE8D6;background:transparent;border:1px solid rgba(180,138,58,.7);border-radius:2px;cursor:pointer}
+.ed-rs:disabled{opacity:.4}
+.konov .ed-tip,.konov .ed-ctl{background:#FFFBF4!important;border-color:#FFD3E0!important;color:#9A8A9E}
+.konov .ed-board{box-shadow:0 0 0 3px #FFD3E0,0 14px 30px rgba(255,111,156,.2)}
+.konov .ed-cell.on::after{border-color:#FF8FB1}.konov .ed-cell.on .ed-no{background:#FF6F9C}
+.konov .ed-zl{color:#B98AA0}.konov .ed-rng{accent-color:#FF8FB1}
+.konov .ed-rs{border-radius:999px;border-color:#FFC2D4;color:#FF6F9C;background:#fff}
+.konov .ed-load{color:#FF6F9C}
 </style></head><body><template id="shell">
 <header class="wall pending">
   <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><filter id="keywhite" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB"><feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  -6 -6 -6 0 16.8" result="m"/><feMorphology in="m" operator="erode" radius="1.5" result="me"/><feComposite in="SourceGraphic" in2="me" operator="in" result="c"/><feComposite in="c" in2="SourceAlpha" operator="in"/></filter></svg>
@@ -1178,7 +1199,7 @@ var art=null;
 function el(t,c,txt){var e=document.createElement(t);if(c)e.className=c;if(txt!=null)e.textContent=txt;return e;}
 function lnk(c,txt,href){var a=el('a',c,txt);a.href=href;a.target='_blank';a.rel='noopener';return a;}
 
-var TC={"c":{"确":"確","认":"認","删":"刪","会":"會","这":"這","台":"臺","机":"機","传":"傳","时":"時","显":"顯","谁":"誰","还":"還","没":"沒","设":"設","厅":"廳","帐":"帳","号":"號","页":"頁","过":"過","营":"營","业":"業","来":"來","里":"裡","办":"辦","楼":"樓","对":"對","开":"開","请":"請","马":"馬","边":"邊","静":"靜","观":"觀","进":"進","筑":"築","范":"範","围":"圍","员":"員","周":"週","馆":"館","恋":"戀","调":"調","记":"記","录":"錄","团":"團","检":"檢","鸭":"鴨","汇":"匯","点":"點","区":"區","动":"動","态":"態","国":"國","际":"際","驾":"駕","关":"關","门":"門","买":"買","两":"兩","联":"聯","兑":"兌","换":"換","奖":"獎","钥":"鑰","后":"後","个":"個","现":"現","张":"張","数":"數","顺":"順","内":"內","额":"額","经":"經","满":"滿","禅":"禪","阁":"閣","宫":"宮","轻":"輕","温":"溫","笔":"筆","浓":"濃","雾":"霧","结":"結","带":"帶","议":"議","车":"車","学":"學","约":"約","旧":"舊","樱":"櫻","双":"雙","击":"擊","当":"當","从":"從","骑":"騎","课":"課","园":"園","广":"廣","场":"場","贴":"貼","干":"幹","线":"線","发":"發","写":"寫","则":"則","单":"單","让":"讓","绘":"繪","玛":"瑪","亚":"亞","墙":"牆","纹":"紋","画":"畫","灯":"燈","谜":"謎","乐":"樂","档":"檔","决":"決","话":"話","处":"處","制":"製","图":"圖","见":"見","鸟":"鳥","铁":"鐵","冈":"岡","评":"評","价":"價","尔":"爾","长":"長","铜":"銅","圣":"聖","礼":"禮","间":"間","别":"別","挡":"擋","钟":"鐘","桥":"橋","头":"頭","装":"裝","妆":"妝","订":"訂","样":"樣","实":"實","务":"務","书":"書","条":"條","费":"費","参":"參","摆":"擺","乌":"烏","龟":"龜","读":"讀","权":"權","驶":"駛","彦":"彥","转":"轉","奥":"奧","体":"體","够":"夠","优":"優","饮":"飲","电":"電","简":"簡","阶":"階","丝":"絲","较":"較","远":"遠","属":"屬","离":"離","冲":"沖","师":"師","贺":"賀","询":"詢","问":"問","谏":"諫","创":"創","乡":"鄉","为":"為","规":"規","划":"劃","与":"與","无":"無","导":"導","标":"標","计":"計","丰":"豐","储":"儲","着":"著","驿":"驛","们":"們","题":"題","载":"載","达":"達","觉":"覺","么":"麼","环":"環","绕":"繞","游":"遊","戏":"戲","坝":"壩","签":"簽","纸":"紙","齐":"齊","网":"網","络":"絡","败":"敗","试":"試","论":"論","随":"隨","暂":"暫","绝":"絕","几":"幾","欢":"歡","补":"補","给":"給","备":"備","变":"變","纯":"純","树":"樹","选":"選","练":"練","异":"異","亲":"親","闭":"閉","碍":"礙","弹":"彈","须":"須","报":"報","厦":"廈","驳":"駁","鸡":"雞","刚":"剛","黄":"黃","详":"詳","术":"術","复":"複","护":"護","证":"證","兴":"興","军":"軍","饭":"飯","况":"況","负":"負","责":"責","飞":"飛","产":"產","厂":"廠","顶":"頂","钱":"錢","预":"預","红":"紅","叶":"葉","纪":"紀","庙":"廟","镜":"鏡","柜":"櫃","夹":"夾","资":"資","麦":"麥","劳":"勞","吗":"嗎","兽":"獸","滚":"滾","轮":"輪","编":"編","辑":"輯"},"p":{"公里，":"公里，","和发型":"和髮型","生发型":"生髮型","公里":"公里","剪发的":"剪髮的","梅干等":"梅乾等","限制）":"限制）"}};
+var TC={"c":{"则":"則","周":"週","干":"幹","线":"線","馆":"館","恋":"戀","钥":"鑰","饭":"飯","后":"後","调":"調","报":"報","评":"評","价":"價","时":"時","开":"開","费":"費","参":"參","记":"記","动":"動","点":"點","图":"圖","还":"還","张":"張","丰":"豐","车":"車","载":"載","败":"敗","优":"優","饮":"飲","发":"發","术":"術","学":"學","阶":"階","无":"無","没":"沒","尔":"爾","从":"從","选":"選","电":"電","话":"話","请":"請","们":"們","团":"團","顺":"順","删":"刪","这":"這","员":"員","里":"裡","纯":"純","笔":"筆","机":"機","传":"傳","个":"個","网":"網","钟":"鐘","鸟":"鳥","与":"與","内":"內","计":"計","导":"導","实":"實","况":"況","双":"雙","杆":"桿","缩":"縮","国":"國","际":"際","驾":"駕","预":"預","订":"訂","红":"紅","叶":"葉","换":"換","铁":"鐵","约":"約","进":"進","温":"溫","头":"頭","几":"幾","镜":"鏡","门":"門","柜":"櫃","着":"著","轻":"輕","夹":"夾","现":"現","场":"場","乐":"樂","间":"間","营":"營","业":"業","录":"錄","楼":"樓","圣":"聖","礼":"禮","区":"區","制":"製","检":"檢","络":"絡","试":"試","签":"簽","纸":"紙","询":"詢","问":"問","议":"議","飞":"飛","来":"來","游":"遊","戏":"戲","浓":"濃","雾":"霧","结":"結","带":"帶","转":"轉","击":"擊","两":"兩","标":"標","离":"離","会":"會","碍":"礙","页":"頁","彦":"彥","厅":"廳","设":"設","亲":"親","绘":"繪","题":"題","详":"詳","驶":"駛","马":"馬","亚":"亞","样":"樣","冈":"岡","暂":"暫","绝":"絕","过":"過","条":"條","坝":"壩","铜":"銅","见":"見","装":"裝","妆":"妝","确":"確","认":"認","准":"準","备":"備","鸭":"鴨","处":"處","关":"關","办":"辦","静":"靜","档":"檔","墙":"牆","闭":"閉","读":"讀","买":"買","樱":"櫻","观":"觀","画":"畫","摆":"擺","乌":"烏","龟":"龜","当":"當","师":"師","贺":"賀","号":"號","弹":"彈","帐":"帳","别":"別","挡":"擋","旧":"舊","觉":"覺","么":"麼","黄":"黃","台":"臺","经":"經","护":"護","证":"證","复":"複","写":"寫","练":"練","补":"補","给":"給","为":"為","桥":"橋","顶":"頂","书":"書","奥":"奧","联":"聯","单":"單","让":"讓","编":"編","辑":"輯","兑":"兌","奖":"獎","权":"權","数":"數","广":"廣","体":"體","够":"夠","态":"態","显":"顯","谁":"誰","属":"屬","满":"滿","纪":"紀","宫":"宮","军":"軍","齐":"齊","负":"負","责":"責","贴":"貼","资":"資","驿":"驛","丝":"絲","厂":"廠","园":"園","欢":"歡","庙":"廟","务":"務","储":"儲","兽":"獸","简":"簡","厦":"廈","驳":"駁","谏":"諫","创":"創","乡":"鄉","论":"論","滚":"滾","轮":"輪","树":"樹","汇":"匯","异":"異","冲":"沖","随":"隨","麦":"麥","劳":"勞","玛":"瑪","纹":"紋","灯":"燈","谜":"謎","产":"產","较":"較","远":"遠","骑":"騎","课":"課","须":"須","决":"決","达":"達","禅":"禪","阁":"閣","鸡":"雞","对":"對","边":"邊","筑":"築","范":"範","围":"圍","额":"額","长":"長","环":"環","绕":"繞","兴":"興","吗":"嗎","变":"變","刚":"剛","规":"規","划":"劃","钱":"錢"},"p":{"公里，":"公里，","公里":"公里","和发型":"和髮型","生发型":"生髮型","剪发的":"剪髮的","梅干等":"梅乾等","限制）":"限制）"}};
 var TCP=Object.keys(TC.p).sort(function(a,b){return b.length-a.length;});
 function lang(){try{return localStorage.getItem('aot-lang')==='tc'?'tc':'sc';}catch(e){return 'sc';}}
 function tcv(s){if(!s||!/[\u4e00-\u9fff]/.test(s))return s;var out='',i=0;
@@ -1544,7 +1565,7 @@ function T(s){return lang()==='tc'?tcv(s):s;}
 function loadCORS(src){return new Promise(function(res,rej){var im=new Image();im.crossOrigin='anonymous';im.onload=function(){res(im);};im.onerror=function(){rej(src);};im.src=src+(src.indexOf('?')<0?'?':'&')+'cv=1';});}
 function openSharePicker(id){
   var st=S(id),spot=SPOTS.filter(function(s){return s.id===id;})[0];if(!st.shots.length)return;
-  var sel=st.shots.slice(0,9).map(function(_,i){return i;}),fmtSel='story',styleSel='aot',isKon=themeOf(id)==='kon';
+  var sel=[],fmtSel='story',styleSel='aot',isKon=themeOf(id)==='kon';
   var ov=el('div','gal-ov sh-ov'+(isKon?' konov':''));ov.setAttribute('role','dialog');ov.setAttribute('aria-modal','true');
   var hd=el('div','gal-hd');var ht=el('div','gal-ht');ht.appendChild(el('p','gal-unit',isKon?'社团笔记　制作分享图':'调查记录　制作分享图'));ht.appendChild(el('h3',null,spot.name.split('　')[0]));var cnt=el('span','gal-n');ht.appendChild(cnt);hd.appendChild(ht);
   var x=el('button','gal-x','取消');x.type='button';x.onclick=function(){ov.remove();document.documentElement.style.overflow='';};hd.appendChild(x);ov.appendChild(hd);
@@ -1554,23 +1575,21 @@ function openSharePicker(id){
   opts.appendChild(fm);
   var sy=el('div','sh-style');[['aot',isKon?'社团纪录':'调查记录','主题设计'],['plain','纯拼图','只拼照片']].forEach(function(o){var b=el('button',o[0]===styleSel?'on':'');b.type='button';var si=el('span','sty-in');si.appendChild(el('b',null,o[1]));si.appendChild(el('small',null,o[2]));b.appendChild(si);
     b.onclick=function(){styleSel=o[0];[].forEach.call(sy.children,function(c){c.classList.toggle('on',c===b);});};sy.appendChild(b);});
-  opts.appendChild(sy);opts.appendChild(el('p','sh-tip','点选照片，最多 9 张，数字是排列顺序。'));ov.appendChild(opts);
+  opts.appendChild(sy);opts.appendChild(el('p','sh-tip','从零开始点选照片，最多 9 张，数字是排列顺序。'));ov.appendChild(opts);
   var g=el('div','gal-grid sh-grid');
   function paint(){cnt.textContent='已选 '+sel.length+' / 9';[].forEach.call(g.children,function(b,i){var k=sel.indexOf(i);b.classList.toggle('picked',k>=0);b.querySelector('.sh-no').textContent=k>=0?String(k+1):'';b.classList.toggle('dim',k<0&&sel.length>=9);});go.disabled=!sel.length;}
   st.shots.forEach(function(p,i){var b=el('button','gal-it');b.type='button';var im=el('img');im.src=p.src;im.alt='';im.loading='lazy';b.appendChild(im);b.appendChild(el('span','sh-no'));
     b.onclick=function(){var k=sel.indexOf(i);if(k>=0)sel.splice(k,1);else if(sel.length<9)sel.push(i);paint();};g.appendChild(b);});
   ov.appendChild(g);
-  var ft=el('div','sh-foot');var go=el('button','sh-go');go.type='button';go.textContent='生成分享图';ft.appendChild(go);ov.appendChild(ft);
-  go.onclick=function(){if(!sel.length)return;go.disabled=true;go.textContent='制作中…';
-    (styleSel==='plain'?makePlain:(isKon?makeKonPoster:makePoster))(id,sel.slice(),fmtSel).then(function(r){go.disabled=false;go.textContent='生成分享图';showPoster(r,id,fmtSel,styleSel,isKon);})
-    .catch(function(e){go.disabled=false;go.textContent='生成分享图';msg(e==='taint'?'照片无法读取（跨网站限制），请稍后再试。':'制作失败，请检查网络后再试。');});};
+  var ft=el('div','sh-foot');var go=el('button','sh-go');go.type='button';go.textContent='下一步：调整照片';ft.appendChild(go);ov.appendChild(ft);
+  go.onclick=function(){if(!sel.length)return;ov.style.display='none';openShareEditor(id,sel.slice(),fmtSel,styleSel,isKon,function(){ov.style.display='';document.documentElement.style.overflow='hidden';});};
   document.body.appendChild(ov);document.documentElement.style.overflow='hidden';paint();markLoaded();
   if(lang()==='tc')convNode(ov);
 }
 function layoutRows(n,fmt){var S9={1:[1],2:[1,1],3:[1,2],4:[2,2],5:[1,2,2],6:[2,2,2],7:[1,3,3],8:[2,3,3],9:[3,3,3]};var P9={1:[1],2:[2],3:[1,2],4:[2,2],5:[2,3],6:[3,3],7:[2,2,3],8:[3,2,3],9:[3,3,3]};return (fmt==='story'?S9:P9)[n];}
 function themeOf(id){for(var i=0;i<DAYS.length;i++){var D=DAYS[i];for(var j=0;j<D.stops.length;j++)if(D.stops[j].id===id)return D.theme||'';}return '';}
 function svgImg(svg){return new Promise(function(res){var im=new Image();im.onload=function(){res(im);};im.onerror=function(){res(null);};im.src='data:image/svg+xml;charset=utf-8,'+encodeURIComponent(svg.replace('<svg ','<svg xmlns="http://www.w3.org/2000/svg" '));});}
-function makeKonPoster(id,idxs,fmt){
+function makeKonPoster(id,idxs,fmt,adj,mode){
   var st=S(id),spot=SPOTS.filter(function(s){return s.id===id;})[0];var W=1080,H=fmt==='story'?1920:1350;
   var shots=idxs.map(function(i){return st.shots[i];});
   var fontsP=(document.fonts&&document.fonts.load)?Promise.all(['400 120px "ZCOOL KuaiLe"','700 34px "Noto Sans SC"'].map(function(f){return document.fonts.load(f,T(spot.name)+'放学后的社团活动圣地巡礼京都活动地点');})).catch(function(){}):Promise.resolve();
@@ -1595,12 +1614,12 @@ function makeKonPoster(id,idxs,fmt){
     var isz=fmt==='story'?92:74;[[icons.guitar,W-140,top+ts*.55+40,-.2],[icons.tea,W-140-isz-10,top+ts*.55+60,.15]].forEach(function(q){if(!q[0])return;x.save();x.translate(q[1],q[2]);x.rotate(q[3]);x.drawImage(q[0],-isz/2,-isz/2,isz,isz);x.restore();});
     /* photos */
     var foot=fmt==='story'?230:170;var ax=120,ay=sy+(fmt==='story'?96:76),aw=W-200,ah=H-foot-ay,gap=fmt==='story'?34:28;
-    var rows=layoutRows(imgs.length,fmt),rh=(ah-gap*(rows.length-1))/rows.length,k=0;var tcols=[YEL,MINT,SKY,PINK];
+    var rows=layoutRows(imgs.length,fmt),rh=(ah-gap*(rows.length-1))/rows.length,k=0;var tcols=[YEL,MINT,SKY,PINK];var inner=[];
     rows.forEach(function(cols,ri){var cw=(aw-gap*(cols-1))/cols;for(var ci=0;ci<cols;ci++){var im=imgs[k];var px=ax+ci*(cw+gap),py=ay+ri*(rh+gap);var rot=((k%3)-1)*0.012;
       x.save();x.translate(px+cw/2,py+rh/2);x.rotate(rot);
       x.fillStyle='rgba(74,59,79,.12)';x.fillRect(-cw/2+6,-rh/2+8,cw,rh);
       x.fillStyle='#fff';x.fillRect(-cw/2,-rh/2,cw,rh);x.strokeStyle='#FFD3E0';x.lineWidth=3;x.strokeRect(-cw/2,-rh/2,cw,rh);
-      var m=12,iw=cw-m*2,ih=rh-m*2;var s=Math.max(iw/im.naturalWidth,ih/im.naturalHeight),sw=iw/s,sh=ih/s;x.drawImage(im,(im.naturalWidth-sw)/2,(im.naturalHeight-sh)/2,sw,sh,-cw/2+m,-rh/2+m,iw,ih);
+      var m=12,iw=cw-m*2,ih=rh-m*2;inner.push({x:px+m,y:py+m,w:iw,h:ih});if(mode!=='bg')drawAdj(x,im,-cw/2+m,-rh/2+m,iw,ih,adj&&adj[k]);else{x.fillStyle='#FFE6EE';x.fillRect(-cw/2+m,-rh/2+m,iw,ih);}
       x.restore();tape(px+cw/2,py+4,Math.min(130,cw*.42),30,((k%2)?.06:-.07),tcols[k%4]);k++;}});
     /* sticker stamp */
     var last=shots.map(function(s){return s.at;}).filter(Boolean).sort().pop();var R=fmt==='story'?86:72,scx=W-150,scy=ay-6;
@@ -1613,20 +1632,71 @@ function makeKonPoster(id,idxs,fmt){
     if(spot.addr){x.font='700 '+(fmt==='story'?32:26)+'px '+SANS;x.fillStyle=INK;var ad=T(spot.addr);while(x.measureText(ad).width>W-560&&ad.length>4)ad=ad.slice(0,-1);x.fillText(ad,122,fy+(fmt==='story'?48:38));}
     var bi=fmt==='story'?58:46,bx=W-80-bi*4-30;[icons.rabbit,icons.bass,icons.keys,icons.turtle].forEach(function(icn,i){if(icn)x.drawImage(icn,bx+i*(bi+10),fy-bi*.55,bi,bi);});
     x.textAlign='right';x.font='400 '+(fmt==='story'?26:22)+'px '+CUTE;x.fillStyle='#B98AA0';x.fillText(T('京都 · 2027　轻音少女 圣地巡礼'),W-80,fy+(fmt==='story'?60:48));x.textAlign='left';
-    return new Promise(function(res,rej){try{c.toBlob(function(b){if(!b){rej('taint');return;}res({blob:b,url:URL.createObjectURL(b),w:W,h:H});},'image/jpeg',.92);}catch(e){rej('taint');}});
+    return finishCanvas(c,mode,inner,imgs,W,H);
   });
 }
-function makePlain(id,idxs,fmt){
+/* draw image into rect with user adjustment a={s,ox,oy}; ox/oy in fraction of rect size */
+function drawAdj(x,im,rx,ry,rw,rh,a){a=a||{s:1,ox:0,oy:0};var nw=im.naturalWidth,nh=im.naturalHeight;var sc=Math.max(rw/nw,rh/nh)*(a.s||1);var dw=nw*sc,dh=nh*sc;
+  var mx=(dw-rw)/2,my=(dh-rh)/2;var px=Math.max(-mx,Math.min(mx,(a.ox||0)*rw)),py=Math.max(-my,Math.min(my,(a.oy||0)*rh));
+  x.save();x.beginPath();x.rect(rx,ry,rw,rh);x.clip();x.drawImage(im,rx+(rw-dw)/2+px,ry+(rh-dh)/2+py,dw,dh);x.restore();}
+function openShareEditor(id,sel,fmt,style,isKon,back){
+  var spot=SPOTS.filter(function(s){return s.id===id;})[0];var adj=sel.map(function(){return {s:1,ox:0,oy:0};});
+  var maker=style==='plain'?makePlain:(isKon?makeKonPoster:makePoster);
+  var ov=el('div','gal-ov sh-ov sh-ed'+(isKon?' konov':''));ov.setAttribute('role','dialog');ov.setAttribute('aria-modal','true');
+  var hd=el('div','gal-hd');var ht=el('div','gal-ht');ht.appendChild(el('p','gal-unit',(isKon?'社团笔记':'调查记录')+'　调整照片'));ht.appendChild(el('h3',null,spot.name.split('　')[0]));hd.appendChild(ht);
+  var bk=el('button','gal-x','上一步');bk.type='button';hd.appendChild(bk);ov.appendChild(hd);
+  var tip=el('p','sh-tip ed-tip','点一格照片：拖动调整位置，双指或下方滑杆放大缩小。');ov.appendChild(tip);
+  var stage=el('div','ed-stage');var board=el('div','ed-board');stage.appendChild(board);ov.appendChild(stage);
+  var ld=el('div','ed-load','准备中…');board.appendChild(ld);
+  var ctl=el('div','ed-ctl');var zl=el('span','ed-zl','缩放');var rng=el('input','ed-rng');rng.type='range';rng.min='100';rng.max='300';rng.value='100';rng.disabled=true;var rs=el('button','ed-rs','重置');rs.type='button';rs.disabled=true;
+  ctl.appendChild(zl);ctl.appendChild(rng);ctl.appendChild(rs);ov.appendChild(ctl);
+  var ft=el('div','sh-foot');var go=el('button','sh-go');go.type='button';go.textContent='生成分享图';go.disabled=true;ft.appendChild(go);ov.appendChild(ft);
+  document.body.appendChild(ov);document.documentElement.style.overflow='hidden';if(lang()==='tc')convNode(ov);
+  bk.onclick=function(){ov.remove();back();};
+  var cur=-1,cellEls=[],imgs=[],cells=[],W=1080,H=1920,k=1;
+  function layout(){var bw=stage.clientWidth-24,bh=stage.clientHeight-24;k=Math.min(bw/W,bh/H);board.style.width=W*k+'px';board.style.height=H*k+'px';
+    cellEls.forEach(function(ce,i){var c=cells[i];ce.style.left=c.x*k+'px';ce.style.top=c.y*k+'px';ce.style.width=c.w*k+'px';ce.style.height=c.h*k+'px';paintCell(i);});}
+  function paintCell(i){var ce=cellEls[i],im=imgs[i],c=cells[i],a=adj[i];if(!ce)return;var rw=c.w*k,rh=c.h*k;var sc=Math.max(rw/im.naturalWidth,rh/im.naturalHeight)*a.s;var dw=im.naturalWidth*sc,dh=im.naturalHeight*sc;
+    var mx=(dw-rw)/2,my=(dh-rh)/2;a.ox=Math.max(-mx,Math.min(mx,a.ox*rw))/rw;a.oy=Math.max(-my,Math.min(my,a.oy*rh))/rh;
+    var img=ce.firstChild;img.style.width=dw+'px';img.style.height=dh+'px';img.style.left=((rw-dw)/2+a.ox*rw)+'px';img.style.top=((rh-dh)/2+a.oy*rh)+'px';}
+  function select(i){cur=i;cellEls.forEach(function(ce,j){ce.classList.toggle('on',j===i);});rng.disabled=rs.disabled=i<0;if(i>=0)rng.value=String(Math.round(adj[i].s*100));}
+  rng.oninput=function(){if(cur<0)return;adj[cur].s=+rng.value/100;paintCell(cur);};
+  rs.onclick=function(){if(cur<0)return;adj[cur]={s:1,ox:0,oy:0};rng.value='100';paintCell(cur);};
+  maker(id,sel,fmt,null,'bg').then(function(r){
+    W=r.W;H=r.H;cells=r.cells;imgs=r.imgs;board.style.backgroundImage='url('+r.bg+')';ld.remove();
+    cells.forEach(function(c,i){var ce=el('div','ed-cell');var img=el('img');img.src=imgs[i].src;img.alt='';img.draggable=false;ce.appendChild(img);ce.appendChild(el('span','ed-no',String(i+1)));board.appendChild(ce);cellEls.push(ce);
+      var pts={},st0=null;
+      ce.addEventListener('pointerdown',function(e){e.preventDefault();ce.setPointerCapture(e.pointerId);select(i);pts[e.pointerId]={x:e.clientX,y:e.clientY};var ids=Object.keys(pts);
+        if(ids.length===1)st0={x:e.clientX,y:e.clientY,ox:adj[i].ox,oy:adj[i].oy};
+        else if(ids.length===2){var a=pts[ids[0]],b=pts[ids[1]];st0={d:Math.hypot(a.x-b.x,a.y-b.y),s:adj[i].s};}});
+      ce.addEventListener('pointermove',function(e){if(!pts[e.pointerId])return;pts[e.pointerId]={x:e.clientX,y:e.clientY};var ids=Object.keys(pts);var c=cells[i];
+        if(ids.length===1&&st0&&st0.x!=null){adj[i].ox=st0.ox+(e.clientX-st0.x)/(c.w*k);adj[i].oy=st0.oy+(e.clientY-st0.y)/(c.h*k);paintCell(i);}
+        else if(ids.length===2&&st0&&st0.d){var a=pts[ids[0]],b=pts[ids[1]];adj[i].s=Math.max(1,Math.min(3,st0.s*Math.hypot(a.x-b.x,a.y-b.y)/st0.d));rng.value=String(Math.round(adj[i].s*100));paintCell(i);}});
+      function up(e){delete pts[e.pointerId];var ids=Object.keys(pts);if(ids.length===1){var p=pts[ids[0]];st0={x:p.x,y:p.y,ox:adj[i].ox,oy:adj[i].oy};}else st0=null;}
+      ce.addEventListener('pointerup',up);ce.addEventListener('pointercancel',up);
+      ce.addEventListener('wheel',function(e){e.preventDefault();select(i);adj[i].s=Math.max(1,Math.min(3,adj[i].s*Math.exp(-e.deltaY*0.0015)));rng.value=String(Math.round(adj[i].s*100));paintCell(i);},{passive:false});
+    });
+    layout();select(0);go.disabled=false;window.addEventListener('resize',layout);
+  }).catch(function(e){ld.textContent=T(e==='taint'?'照片无法读取，请稍后再试。':'准备失败，请检查网络后再试。');});
+  go.onclick=function(){go.disabled=true;go.textContent=T('制作中…');
+    maker(id,sel,fmt,adj).then(function(r){go.disabled=false;go.textContent=T('生成分享图');showPoster(r,id,fmt,style,isKon);})
+    .catch(function(e){go.disabled=false;go.textContent=T('生成分享图');msg(e==='taint'?'照片无法读取（跨网站限制），请稍后再试。':'制作失败，请检查网络后再试。');});};
+}
+function finishCanvas(c,mode,cells,imgs,W,H){
+  if(mode==='bg')return Promise.resolve({bg:c.toDataURL('image/jpeg',.8),cells:cells,imgs:imgs,W:W,H:H});
+  return new Promise(function(res,rej){try{c.toBlob(function(b){if(!b){rej('taint');return;}res({blob:b,url:URL.createObjectURL(b),w:W,h:H});},'image/jpeg',.92);}catch(e){rej('taint');}});
+}
+function makePlain(id,idxs,fmt,adj,mode){
   var st=S(id);var W=1080,H=fmt==='story'?1920:1350,G=0;
   return Promise.all(idxs.map(function(i){return loadCORS(st.shots[i].src);})).then(function(imgs){
     var c=document.createElement('canvas');c.width=W;c.height=H;var x=c.getContext('2d');x.fillStyle='#FFFFFF';x.fillRect(0,0,W,H);
-    var rows=layoutRows(imgs.length,fmt),rh=(H-G*(rows.length+1))/rows.length,k=0;
-    rows.forEach(function(cols,ri){var cw=(W-G*(cols+1))/cols;for(var ci=0;ci<cols;ci++){var im=imgs[k++];var cx=G+ci*(cw+G),cy=G+ri*(rh+G);
-      var s=Math.max(cw/im.naturalWidth,rh/im.naturalHeight),sw=cw/s,sh=rh/s;x.drawImage(im,(im.naturalWidth-sw)/2,(im.naturalHeight-sh)/2,sw,sh,cx,cy,cw,rh);}});
-    return new Promise(function(res,rej){try{c.toBlob(function(b){if(!b){rej('taint');return;}res({blob:b,url:URL.createObjectURL(b),w:W,h:H});},'image/jpeg',.92);}catch(e){rej('taint');}});
+    var rows=layoutRows(imgs.length,fmt),rh=(H-G*(rows.length+1))/rows.length,k=0,cells=[];
+    rows.forEach(function(cols,ri){var cw=(W-G*(cols+1))/cols;for(var ci=0;ci<cols;ci++){var im=imgs[k];var cx=G+ci*(cw+G),cy=G+ri*(rh+G);cells.push({x:cx,y:cy,w:cw,h:rh});
+      if(mode!=='bg')drawAdj(x,im,cx,cy,cw,rh,adj&&adj[k]);else{x.fillStyle='#EEE';x.fillRect(cx,cy,cw,rh);}k++;}});
+    return finishCanvas(c,mode,cells,imgs,W,H);
   });
 }
-function makePoster(id,idxs,fmt){
+function makePoster(id,idxs,fmt,adj,mode){
   var st=S(id),spot=SPOTS.filter(function(s){return s.id===id;})[0];
   var W=1080,H=fmt==='story'?1920:1350;
   var shots=idxs.map(function(i){return {p:st.shots[i],m:st.shotsMeta[i]};});
@@ -1660,11 +1730,11 @@ function makePoster(id,idxs,fmt){
     var foot=fmt==='story'?250:190;var ax=88,ay=dy+(fmt==='story'?48:36),aw=W-176,ah=H-foot-ay;var gap=fmt==='story'?20:16;
     var rows=layoutRows(shots.length,fmt);var rh=(ah-gap*(rows.length-1))/rows.length;var n=0,cells=[];
     rows.forEach(function(cols,ri){var cw=(aw-gap*(cols-1))/cols;for(var ci=0;ci<cols;ci++){cells.push({x:ax+ci*(cw+gap),y:ay+ri*(rh+gap),w:cw,h:rh});}});
-    cells.forEach(function(cl,i){var im=imgs[i],mat=10;
+    var inner=[];cells.forEach(function(cl,i){var im=imgs[i],mat=10;
       x.fillStyle='rgba(0,0,0,.5)';x.fillRect(cl.x+6,cl.y+8,cl.w,cl.h);
       x.fillStyle='#E6D9B6';x.fillRect(cl.x,cl.y,cl.w,cl.h);
-      var ix=cl.x+mat,iy=cl.y+mat,iw=cl.w-mat*2,ih=cl.h-mat*2;var s=Math.max(iw/im.naturalWidth,ih/im.naturalHeight);var sw=iw/s,shh=ih/s;
-      x.drawImage(im,(im.naturalWidth-sw)/2,(im.naturalHeight-shh)/2,sw,shh,ix,iy,iw,ih);
+      var ix=cl.x+mat,iy=cl.y+mat,iw=cl.w-mat*2,ih=cl.h-mat*2;inner.push({x:ix,y:iy,w:iw,h:ih});
+      if(mode!=='bg')drawAdj(x,im,ix,iy,iw,ih,adj&&adj[i]);else{x.fillStyle='#3a352b';x.fillRect(ix,iy,iw,ih);}
       x.strokeStyle='rgba(42,36,25,.55)';x.lineWidth=2;x.strokeRect(ix,iy,iw,ih);
     });
     /* stamp */
@@ -1681,7 +1751,7 @@ function makePoster(id,idxs,fmt){
     if(spot.addr){x.fillStyle='#EFE8D6';x.font='700 '+(fmt==='story'?34:28)+'px '+SERIF;var ad=T(spot.addr);while(x.measureText(ad).width>W-176-300&&ad.length>4)ad=ad.slice(0,-1);x.fillText(ad,88,fy+(fmt==='story'?52:42));}
     x.textAlign='right';x.fillStyle='#D2AE55';x.font='900 '+(fmt==='story'?30:26)+'px '+SERIF;x.fillText(T('日田 · 2027'),W-88,fy+(fmt==='story'?52:42));
     x.fillStyle='#A99E85';x.font='700 '+(fmt==='story'?22:19)+'px '+SERIF;x.fillText(T('进击的巨人 圣地巡礼'),W-88,fy+(fmt==='story'?100:80));x.textAlign='left';
-    return new Promise(function(res,rej){try{c.toBlob(function(b){if(!b){rej('taint');return;}res({blob:b,url:URL.createObjectURL(b),w:W,h:H});},'image/jpeg',.92);}catch(e){rej('taint');}});
+    return finishCanvas(c,mode,inner,imgs,W,H);
   });
 }
 function fmt2(iso){try{var t=new Date(iso);return (t.getMonth()+1)+'/'+t.getDate();}catch(e){return '';}}
