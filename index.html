@@ -806,6 +806,80 @@ html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 130px)}
 .gal .rthumbs .more-l{position:absolute;inset:0;z-index:1;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#F3ECDA;font-family:"Noto Serif SC",serif;line-height:1.1}
 .gal .rthumbs .more-l b{font-size:17px;font-weight:900}.gal .rthumbs .more-l span{font-size:11px;font-weight:700;letter-spacing:.15em}
 .gal .lead .lead-n{position:absolute;right:8px;bottom:8px;z-index:3;padding:2px 9px;font-size:12px;font-weight:700;color:#F3ECDA;background:rgba(20,18,14,.7);border:1px solid rgba(210,174,85,.6);border-radius:2px;pointer-events:none}
+/* ===== K-ON day theme: after-school notebook ===== */
+.kon{--k-pink:#FF8FB1;--k-pink2:#FF6F9C;--k-mint:#7ED7C1;--k-sky:#7CC3F0;--k-yel:#FFD66B;--k-ink:#4A3B4F;--k-paper:#FFFBF4;--k-line:#DCEBF7;
+  position:relative;margin:48px -6px 0;padding:6px 14px 30px 26px;border-radius:22px;color:var(--k-ink);
+  background:
+    linear-gradient(90deg,transparent 15px,rgba(255,143,177,.55) 15px,rgba(255,143,177,.55) 17px,transparent 17px),
+    repeating-linear-gradient(180deg,var(--k-paper) 0 31px,var(--k-line) 31px 32px);
+  box-shadow:0 0 0 3px #FFE1EA,0 18px 40px rgba(0,0,0,.35)}
+.kon::before{content:"";position:absolute;left:-2px;top:28px;bottom:28px;width:10px;
+  background:radial-gradient(circle at 5px 8px,#1B1914 0 4px,transparent 4.5px) 0 0/10px 34px repeat-y}
+.kon .dayhead{border-top:none;margin-top:18px;padding-top:4px;align-items:center}
+.kon .dayhead .dd{display:inline-block;padding:4px 14px 5px;border-radius:999px;font-size:clamp(18px,3.4vw,24px);color:#fff;background:var(--k-pink);transform:rotate(-3deg);box-shadow:0 3px 0 var(--k-pink2)}
+.kon .dayhead h3{color:var(--k-ink);font-family:"Noto Sans SC",sans-serif;font-weight:900;letter-spacing:.02em}
+.kon .dayhead small{color:#8A7A8F}
+.kon .k-notes{position:absolute;right:18px;top:14px;display:flex;gap:10px;pointer-events:none}
+.kon .k-notes span{font-size:24px;line-height:1;animation:knote 2.6s ease-in-out infinite}
+.kon .k-notes span:nth-child(1){color:var(--k-pink)}.kon .k-notes span:nth-child(2){color:var(--k-sky);animation-delay:.4s}.kon .k-notes span:nth-child(3){color:var(--k-mint);animation-delay:.8s}.kon .k-notes span:nth-child(4){color:var(--k-yel);animation-delay:1.2s}
+@keyframes knote{0%,100%{transform:translateY(0) rotate(-6deg)}50%{transform:translateY(-7px) rotate(6deg)}}
+.kon .k-tape{display:flex;gap:6px;margin:4px 0 12px}
+.kon .k-tape i{height:8px;flex:1;border-radius:4px}
+.kon .k-tape i:nth-child(1){background:var(--k-pink)}.kon .k-tape i:nth-child(2){background:var(--k-yel)}.kon .k-tape i:nth-child(3){background:var(--k-mint)}.kon .k-tape i:nth-child(4){background:var(--k-sky)}
+/* cards */
+.kon .dossier,.kon .util{position:relative;border-radius:16px;border:2px solid #FFD3E0;background:#fff;color:var(--k-ink);box-shadow:0 5px 0 #FFD3E0;overflow:visible}
+.kon .dossier::before,.kon .util::before{content:"";position:absolute;left:50%;top:-11px;width:86px;height:22px;transform:translateX(-50%) rotate(-3deg);border-radius:3px;opacity:.9;
+  background:repeating-linear-gradient(45deg,var(--k-yel) 0 8px,#FFE9A6 8px 16px)}
+.kon .dossier:nth-of-type(3n+2)::before{background:repeating-linear-gradient(45deg,var(--k-mint) 0 8px,#BDEFE2 8px 16px);transform:translateX(-50%) rotate(2deg)}
+.kon .dossier:nth-of-type(3n)::before{background:repeating-linear-gradient(45deg,var(--k-sky) 0 8px,#C4E5F9 8px 16px);transform:translateX(-50%) rotate(-1deg)}
+.kon .dossier .file{border-bottom:2px dotted #FFD3E0;color:#B08AA0}
+.kon .dossier .file b{color:var(--k-pink2)}
+.kon .body h4,.kon .util h4{color:var(--k-ink);font-family:"Noto Sans SC",sans-serif;font-weight:900}
+.kon .body p,.kon .util p{color:#6E5F72}
+.kon .time{background:var(--k-sky);color:#fff;border-radius:999px;padding:1px 10px}
+.kon .flag{color:var(--k-pink2);border-color:var(--k-pink2);border-radius:999px;padding:0 7px}
+.kon .addr,.kon .telk{color:#5E5063;border-top-color:#F3D9E2}
+.kon .tel.ginfo,.kon .ginfo{color:#9A7C8C}
+.kon .glabel{color:#9A8A9E}
+.kon .shots .none{color:#9A8A9E;border-top-color:#F3D9E2}
+.kon .gal .lead{border-radius:12px;border:none;background:#FFF0F5}
+.kon .gal .lead .empty{background:repeating-linear-gradient(135deg,#FFF3F7 0 12px,#FFE8EF 12px 24px)!important;color:#C68AA2!important;border-radius:12px}
+.kon .gal .lead .empty strong{color:var(--k-pink2)!important}
+.kon .stamp{border-color:var(--k-pink2);color:var(--k-pink2);background:rgba(255,255,255,.9);border-radius:999px}
+/* buttons */
+.kon .next .nx-b a,.kon .nx-b a,.kon .leg .lgbtn,.kon .lgbtn,.kon .acts .up{--trim:transparent;border:none;border-radius:14px;
+  color:#fff;text-shadow:0 1px 0 rgba(0,0,0,.15);box-shadow:0 4px 0 rgba(0,0,0,.12)!important;font-family:"Noto Sans SC",sans-serif;font-weight:900;letter-spacing:.02em}
+.kon .nx-b a{--p1:#FF9EBB;--p2:#FF7FA6}
+.kon .nx-b a.waze{--p1:#8DD0F5;--p2:#5FB4E8}
+.kon .acts .up{--p1:#FFD66B;--p2:#FFC23D;color:#5A3D00;text-shadow:none}
+.kon .leg .lgbtn{--p1:#86DCC6;--p2:#5FC8AE}
+.kon .nx-b a .ic,.kon .lgbtn .ic,.kon .acts .up .ic{background:rgba(255,255,255,.28);border-right:none;border-radius:14px 0 0 14px}
+.kon .ic svg{stroke:#fff!important}
+.kon .acts .up .ic svg{stroke:#5A3D00!important}
+.kon .tools3 .tool{border-radius:14px;border:2px solid #FFE1EA;background:#FFF8FB;color:var(--k-ink);box-shadow:none}
+.kon .tools3 .tool .ic svg{stroke:var(--k-pink2)!important}
+.kon .glabel .sh-btn{border-radius:999px;border:none;background:var(--k-pink);color:#fff}
+.kon .glabel .sh-btn svg{stroke:#fff}
+.kon .votes{border-top-color:#F3D9E2}
+.kon .votes .vlab{color:var(--k-ink)}
+.kon .votes .vpen{border-radius:12px;border:none;background:var(--k-sky)}
+.kon .votes .vpen svg{stroke:#fff}
+/* route legs: musical staff */
+.kon .leg{border-left:none!important;margin-left:10px;padding-left:34px}
+.kon .leg::before{content:"♪";position:absolute;left:4px;top:12px;font-size:20px;color:var(--k-pink)}
+.kon .leg:nth-of-type(odd)::before{content:"♫";color:var(--k-sky)}
+.kon .leg::after{content:"";position:absolute;left:12px;top:40px;bottom:8px;width:2px;background:repeating-linear-gradient(180deg,#FFB7CB 0 6px,transparent 6px 12px)}
+.kon .leg .lgn{color:var(--k-ink);font-family:"Noto Sans SC",sans-serif;font-weight:900}
+.kon .leg .lgn i{color:var(--k-pink)}
+.kon .leg .lg{color:var(--k-ink)}
+.kon .leg .lg b{color:var(--k-pink2);font-family:"Noto Sans SC",sans-serif}
+.kon .leg .lg small{color:#9A8A9E}
+.kon .util .nx-b.one a{--p1:#B9A6F0;--p2:#9C86E6}
+/* status bar accent while on K-ON day */
+body.kon-on .status{border-bottom-color:transparent;background-image:linear-gradient(90deg,#FF8FB1 0 25%,#FFD66B 25% 50%,#7ED7C1 50% 75%,#7CC3F0 75%) ;background-size:100% 4px;background-repeat:no-repeat;background-position:bottom;background-color:var(--green)}
+body.kon-on .status nav a.on{background:#FF8FB1;border-color:#FF8FB1;color:#fff}
+@media(max-width:560px){.kon{margin:44px -8px 0;padding:6px 10px 26px 22px}.kon .k-notes span{font-size:20px}}
+@media (prefers-reduced-motion:reduce){.kon .k-notes span{animation:none}}
 </style></head><body><template id="shell">
 <header class="wall pending">
   <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><filter id="keywhite" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB"><feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  -6 -6 -6 0 16.8" result="m"/><feMorphology in="m" operator="erode" radius="1.5" result="me"/><feComposite in="SourceGraphic" in2="me" operator="in" result="c"/><feComposite in="c" in2="SourceAlpha" operator="in"/></filter></svg>
@@ -903,7 +977,7 @@ var DAYS=[
  {d:'4',lab:'第4天',w:'移动',title:'日田 → 京都',sub:'JR 到博多，再坐新干线到京都',mode:'transit',stops:[
   {id:'tokyoto',kind:'util',t:'上午',name:'日田 → 博多 → 京都',note:'JR 久大本线到博多约 1.5 小时，新干线到京都约 2 小时 40 分钟。中午前出发，下午就能到京都放行李。',q:'京都駅',from:[33.3170211,130.9387325],transit:true}
  ]},
- {d:'5',lab:'第5天',w:'京都',title:'京阿尼 ＋ 轻音少女圣地',sub:'一早京阿尼外拍，上午去学校，下午沿叡山电车往北走',mode:'transit',stops:[
+ {d:'5',lab:'第5天',w:'京都',theme:'kon',title:'京阿尼 ＋ 轻音少女圣地',sub:'一早京阿尼外拍，上午去学校，下午沿叡山电车往北走',mode:'transit',stops:[
   {id:'kyotost',kind:'util',jp:'京都駅',pid:'ChIJ7wKLka4IAWARCByidG5EGrY',t:'07:00',name:'京都站出发',note:'先坐 JR 奈良线到木幡拍京阿尼外观（约 20 分钟），再回京都站坐 JR 新快速到彦根、转近江铁道去豊郷。近江铁道班次不多，出发前先查好时刻表。',lat:34.985849,lng:135.7587667},
   {id:'kyoanihq',jp:'京都アニメーション 本社',addr:'京都府宇治市木幡大瀬戸32',pid:'ChIJ_ZOeJKwIAWARnw3mTj4EoWI',t:'07:20',flag:'只拍外观',name:'京都动画 本社　外观打卡',note:'JR 木幡站西口出来就是。这里是办公楼，不对外开放：请在马路边安静拍外观，不要进入建筑范围、不要拍员工，也不要停留太久。早上 7 点多正是员工上班时间，别挡到门口和人行道，更不要拍到进出的人。伏见区的第 1 スタジオ旧址京阿尼请大家不要前往，请勿顺路过去。',lat:34.9247558,lng:135.798616,mode:'transit',offMin:20,official:'JR 奈良线 京都→木幡，约 20 分钟',ginfo:'Google 评分 4.8（386 则）'},
   {id:'kyoani5',jp:'京都アニメーション 第5スタジオ',addr:'京都府宇治市木幡東中13',pid:'ChIJRes1l9cRAWARDpM9jDMMXUM',t:'07:30',flag:'只拍外观',name:'京都动画 第5スタジオ　2017 年的新楼',note:'2017 年落成的自社新楼，招牌写着「第5スタジオ」。一楼原本是直营店「京アニ&Doショップ！」，2022 年已关店，现在是办公室。一样只在外面安静拍照。',lat:34.9255407,lng:135.7986024,mode:'walking',ginfo:'Google 评分 4.6（21 则）'},
@@ -945,7 +1019,7 @@ var art=null;
 function el(t,c,txt){var e=document.createElement(t);if(c)e.className=c;if(txt!=null)e.textContent=txt;return e;}
 function lnk(c,txt,href){var a=el('a',c,txt);a.href=href;a.target='_blank';a.rel='noopener';return a;}
 
-var TC={"c":{"开":"開","画":"畫","约":"約","调":"調","来":"來","头":"頭","钥":"鑰","冈":"岡","从":"從","发":"發","评":"評","价":"價","广":"廣","场":"場","尔":"爾","长":"長","铜":"銅","设":"設","点":"點","员":"員","时":"時","间":"間","别":"別","挡":"擋","门":"門","进":"進","见":"見","区":"區","这":"這","里":"裡","传":"傳","属":"屬","击":"擊","图":"圖","观":"觀","内":"內","个":"個","电":"電","档":"檔","还":"還","没":"沒","团":"團","记":"記","决":"決","话":"話","过":"過","国":"國","异":"異","车":"車","张":"張","离":"離","动":"動","坝":"壩","双":"雙","馆":"館","关":"關","闭":"閉","签":"簽","纸":"紙","周":"週","奥":"奧","温":"溫","显":"顯","报":"報","机":"機","乐":"樂","楼":"樓","后":"後","护":"護","证":"證","驾":"駕","复":"複","黄":"黃","页":"頁","制":"製","败":"敗","请":"請","检":"檢","网":"網","络":"絡","试":"試","资":"資","红":"紅","叶":"葉","庙":"廟","游":"遊","号":"號","弹":"彈","帐":"帳","态":"態","办":"辦","对":"對","马":"馬","边":"邊","静":"靜","筑":"築","范":"範","围":"圍","无":"無","读":"讀","铁":"鐵","术":"術","学":"學","阶":"階","计":"計","线":"線","实":"實","际":"際","现":"現","导":"導","两":"兩","标":"標","会":"會","鸭":"鴨","转":"轉","预":"預","订":"訂","钟":"鐘","议":"議","飞":"飛","宫":"宮","则":"則","旧":"舊","确":"確","认":"認","恋":"戀","饮":"飲","营":"營","业":"業","负":"負","责":"責","贴":"貼","兴":"興","环":"環","绕":"繞","彦":"彥","简":"簡","联":"聯","齐":"齊","礼":"禮","较":"較","远":"遠","轻":"輕","圣":"聖","写":"寫","权":"權","饭":"飯","题":"題","论":"論","额":"額","经":"經","满":"滿","书":"書","丰":"豐","选":"選","乌":"烏","桥":"橋","数":"數","顺":"順","与":"與","费":"費","树":"樹","优":"優","条":"條","台":"臺","谁":"誰","顶":"頂","换":"換","删":"刪","变":"變","询":"詢","问":"問","滚":"滾","轮":"輪","几":"幾","编":"編","辑":"輯","冲":"沖","欢":"歡","况":"況","厅":"廳","随":"隨","暂":"暫","录":"錄","觉":"覺","么":"麼","样":"樣","鸟":"鳥","补":"補","给":"給","装":"裝","备":"備","干":"幹","产":"產","墙":"牆","浓":"濃","雾":"霧","结":"結","带":"帶","兑":"兌","奖":"獎","储":"儲","丝":"絲","们":"們","着":"著","处":"處","载":"載","刚":"剛","为":"為","镜":"鏡","柜":"櫃","夹":"夾","樱":"櫻","参":"參","摆":"擺","龟":"龜","麦":"麥","当":"當","劳":"勞","兽":"獸","军":"軍","妆":"妝","驶":"駛","亚":"亞","厂":"廠","园":"園","绘":"繪","玛":"瑪","纹":"紋","灯":"燈","谜":"謎","钱":"錢","亲":"親","谏":"諫","创":"創","师":"師","乡":"鄉","详":"詳","汇":"匯","鸡":"雞","买":"買","驿":"驛","达":"達","务":"務","规":"規","划":"劃","戏":"戲","骑":"騎","课":"課","须":"須","碍":"礙","贺":"賀","单":"單","让":"讓","纯":"純","绝":"絕","体":"體","够":"夠","禅":"禪","阁":"閣"},"p":{"限制）":"限制）","公里，":"公里，","公里":"公里","梅干等":"梅乾等","和发型":"和髮型","生发型":"生髮型","剪发的":"剪髮的"}};
+var TC={"c":{"区":"區","评":"評","价":"價","钟":"鐘","钥":"鑰","无":"無","请":"請","复":"複","制":"製","学":"學","旧":"舊","樱":"櫻","饮":"飲","周":"週","厂":"廠","园":"園","内":"內","画":"畫","鸡":"雞","签":"簽","纸":"紙","从":"從","过":"過","远":"遠","车":"車","国":"國","点":"點","图":"圖","个":"個","这":"這","里":"裡","买":"買","两":"兩","馆":"館","联":"聯","兑":"兌","换":"換","奖":"獎","鸭":"鴨","汇":"匯","确":"確","后":"後","禅":"禪","阁":"閣","满":"滿","宫":"宮","现":"現","轻":"輕","顺":"順","张":"張","写":"寫","观":"觀","兴":"興","纯":"純","发":"發","编":"編","辑":"輯","读":"讀","网":"網","试":"試","动":"動","头":"頭","来":"來","阶":"階","丝":"絲","经":"經","电":"電","约":"約","干":"幹","产":"產","坝":"壩","铜":"銅","开":"開","没":"沒","络":"絡","调":"調","记":"記","录":"錄","几":"幾","镜":"鏡","门":"門","柜":"櫃","还":"還","着":"著","夹":"夾","场":"場","乐":"樂","间":"間","营":"營","业":"業","驶":"駛","马":"馬","亚":"亞","样":"樣","时":"時","广":"廣","铁":"鐵","与":"與","兽":"獸","关":"關","机":"機","尔":"爾","条":"條","处":"處","办":"辦","认":"認","权":"權","随":"隨","须":"須","楼":"樓","书":"書","树":"樹","贴":"貼","储":"儲","页":"頁","鸟":"鳥","费":"費","参":"參","团":"團","摆":"擺","设":"設","乌":"烏","龟":"龜","奥":"奧","体":"體","够":"夠","游":"遊","戏":"戲","选":"選","见":"見","丰":"豐","员":"員","别":"別","挡":"擋","进":"進","当":"當","骑":"騎","课":"課","简":"簡","线":"線","双":"雙","击":"擊","暂":"暫","绝":"絕","询":"詢","台":"臺","会":"會","传":"傳","删":"刪","军":"軍","际":"際","议":"議","飞":"飛","额":"額","冲":"沖","齐":"齊","礼":"禮","觉":"覺","么":"麼","闭":"閉","离":"離","属":"屬","温":"溫","实":"實","圣":"聖","桥":"橋","补":"補","给":"給","装":"裝","备":"備","驿":"驛","厅":"廳","欢":"歡","黄":"黃","败":"敗","检":"檢","对":"對","边":"邊","静":"靜","筑":"築","范":"範","围":"圍","报":"報","妆":"妝","订":"訂","冈":"岡","红":"紅","叶":"葉","庙":"廟","单":"單","让":"讓","详":"詳","导":"導","则":"則","题":"題","数":"數","为":"為","墙":"牆","话":"話","彦":"彥","转":"轉","谏":"諫","创":"創","师":"師","乡":"鄉","资":"資","档":"檔","绘":"繪","玛":"瑪","纹":"紋","灯":"燈","谜":"謎","显":"顯","谁":"誰","务":"務","亲":"親","计":"計","异":"異","带":"帶","们":"們","况":"況","负":"負","责":"責","较":"較","驾":"駕","达":"達","论":"論","钱":"錢","顶":"頂","刚":"剛","预":"預","帐":"帳","号":"號","饭":"飯","恋":"戀","环":"環","绕":"繞","规":"規","划":"劃","决":"決","滚":"滾","轮":"輪","问":"問","弹":"彈","优":"優","载":"載","标":"標","态":"態","护":"護","证":"證","长":"長","术":"術","贺":"賀","麦":"麥","劳":"勞","碍":"礙","浓":"濃","雾":"霧","结":"結","变":"變"},"p":{"限制）":"限制）","梅干等":"梅乾等","公里，":"公里，","公里":"公里","和发型":"和髮型","生发型":"生髮型","剪发的":"剪髮的"}};
 var TCP=Object.keys(TC.p).sort(function(a,b){return b.length-a.length;});
 function lang(){try{return localStorage.getItem('aot-lang')==='tc'?'tc':'sc';}catch(e){return 'sc';}}
 function tcv(s){if(!s||!/[\u4e00-\u9fff]/.test(s))return s;var out='',i=0;
@@ -1160,9 +1234,9 @@ function build(){
   var dn=document.getElementById('daynav');if(dn){dn.textContent='';}
   var no=0,done=0;
   DAYS.forEach(function(D){
-    var sec=el('div');sec.id='day-'+D.d;
+    var sec=el('div');sec.id='day-'+D.d;if(D.theme)sec.className=D.theme;
     if(dn){var a=el('a',null,D.lab+' '+D.w);a.href='#day-'+D.d;dn.appendChild(a);}
-    var hd=el('div','dayhead');hd.appendChild(el('span','dd',D.lab));hd.appendChild(el('h3',null,D.w+'　'+D.title));hd.appendChild(el('small',null,D.sub));sec.appendChild(hd);
+    var hd=el('div','dayhead');hd.appendChild(el('span','dd',D.lab));hd.appendChild(el('h3',null,D.w+'　'+D.title));hd.appendChild(el('small',null,D.sub));sec.appendChild(hd);if(D.theme==='kon'){var kn=el('div','k-notes');kn.setAttribute('aria-hidden','true');['♪','♫','♪','♬'].forEach(function(c){kn.appendChild(el('span',null,c));});sec.appendChild(kn);var tp=el('div','k-tape');tp.setAttribute('aria-hidden','true');for(var q=0;q<4;q++)tp.appendChild(el('i'));sec.appendChild(tp);}
     var pts=D.stops.filter(function(s){return s.lat;});
     var tools=el('div','daytools');
     if(pts.length>=2&&D.mode!=='transit'){
@@ -1440,7 +1514,7 @@ function spy(){
   secs.forEach(function(s){if(s.getBoundingClientRect().top<=off)act=s.id;});
   var route=document.getElementById('route');
   if(!act&&secs.length&&route&&route.getBoundingClientRect().top<=off)act=secs[0].id;
-  if(act===curDay)return;curDay=act;
+  if(act===curDay)return;curDay=act;document.body.classList.toggle('kon-on',!!act&&!!document.getElementById(act)&&document.getElementById(act).classList.contains('kon'));
   var links=[].slice.call(document.querySelectorAll('#daynav a'));
   links.forEach(function(a){var on=act&&a.getAttribute('href')==='#'+act;a.classList.toggle('on',!!on);if(on){a.setAttribute('aria-current','true');var nav=a.parentNode;var l=a.offsetLeft-(nav.clientWidth-a.offsetWidth)/2;nav.scrollTo?nav.scrollTo({left:l,behavior:'smooth'}):(nav.scrollLeft=l);}else a.removeAttribute('aria-current');});
   var lbl=document.getElementById('curday');if(lbl){var a2=links.filter(function(x){return x.classList.contains('on');})[0];lbl.textContent=a2?'现在：'+a2.textContent:'';}
