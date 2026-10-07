@@ -1420,6 +1420,12 @@ body.kyo-on .status nav a.on{background:#C8402B!important;border-color:#C8402B!i
 .sp-daycard.t-kon .sp-dl{color:#fff}.sp-daycard.t-kon .sp-dh h4,.sp-daycard.t-kon .sp-dt b{font-family:"ZCOOL KuaiLe","Noto Sans SC",sans-serif;font-weight:400}.sp-daycard.t-kon .sp-dt small{color:#FFF0F5}
 .sp-daycard.t-kyo .sp-dh{background:radial-gradient(circle at 50% 100%,transparent 9px,rgba(244,238,226,.28) 10px,transparent 11px,transparent 15px,rgba(244,238,226,.28) 16px,transparent 17px) 0 0/48px 24px,#2E4A7D;border-bottom-color:#B0894F}
 .sp-daycard.t-kyo .sp-dl{color:#E6C46A}.sp-daycard.t-kyo .sp-dh h4,.sp-daycard.t-kyo .sp-dt b{font-family:"Ma Shan Zheng","Noto Serif SC",serif;font-weight:400}
+.sp-paid.busy{position:relative;color:#5A4A30!important;background:rgba(255,255,255,.6)!important;border-color:rgba(90,70,40,.5)!important;padding-left:30px;cursor:wait;opacity:1!important}
+.sp-paid.busy::before{content:"";position:absolute;left:10px;top:50%;width:13px;height:13px;margin-top:-7px;border-radius:50%;border:2px solid #8E1B14;border-right-color:transparent;animation:turn .7s linear infinite}
+.sp-tx.busy{opacity:.75}
+.kon .sp-paid.busy::before,.t-kon .sp-paid.busy::before{border-color:#FF6F9C;border-right-color:transparent}
+.t-kyo .sp-paid.busy::before{border-color:#C8402B;border-right-color:transparent}
+@media (prefers-reduced-motion:reduce){.sp-paid.busy::before{animation-duration:2s}}
 </style></head><body><template id="shell">
 <header class="wall pending">
   <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><filter id="keywhite" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB"><feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  -6 -6 -6 0 16.8" result="m"/><feMorphology in="m" operator="erode" radius="1.5" result="me"/><feComposite in="SourceGraphic" in2="me" operator="in" result="c"/><feComposite in="c" in2="SourceAlpha" operator="in"/></filter></svg>
@@ -1573,7 +1579,7 @@ var art=null;
 function el(t,c,txt){var e=document.createElement(t);if(c)e.className=c;if(txt!=null)e.textContent=txt;return e;}
 function lnk(c,txt,href){var a=el('a',c,txt);a.href=href;a.target='_blank';a.rel='noopener';return a;}
 
-var TC={"c":{"钟":"鐘","签":"簽","纸":"紙","周":"週","旧":"舊","请":"請","顺":"順","过":"過","点":"點","饮":"飲","楼":"樓","游":"遊","戏":"戲","张":"張","档":"檔","结":"結","画":"畫","时":"時","书":"書","区":"區","简":"簡","体":"體","钥":"鑰","无":"無","没":"沒","写":"寫","权":"權","检":"檢","备":"備","冈":"岡","机":"機","场":"場","离":"離","铁":"鐵","观":"觀","内":"內","图":"圖","开":"開","动":"動","与":"與","费":"費","馆":"館","笔":"筆","记":"記","轻":"輕","学":"學","调":"調","后":"後","从":"從","国":"國","礼":"禮","车":"車","删":"刪","这":"這","处":"處","乌":"烏","龟":"龜","们":"們","练":"練","团":"團","属":"屬","该":"該","设":"設","评":"評","价":"價","显":"顯","标":"標","败":"敗","网":"網","络":"絡","来":"來","里":"裡","办":"辦","对":"對","马":"馬","边":"邊","静":"靜","进":"進","筑":"築","范":"範","围":"圍","员":"員","护":"護","证":"證","驾":"駕","复":"複","墙":"牆","线":"線","发":"發","约":"約","驿":"驛","计":"計","条":"條","冲":"沖","账":"賬","买":"買","乐":"樂","页":"頁","樱":"櫻","参":"參","现":"現","摆":"擺","还":"還","铜":"銅","欢":"歡","销":"銷","录":"錄","准":"準","较":"較","远":"遠","钱":"錢","样":"樣","谁":"誰","负":"負","责":"責","传":"傳","贴":"貼","随":"隨","带":"帶","营":"營","业":"業","载":"載","击":"擊","兑":"兌","换":"換","奖":"獎","鸭":"鴨","汇":"匯","选":"選","编":"編","辑":"輯","鸟":"鳥","头":"頭","几":"幾","个":"個","镜":"鏡","门":"門","柜":"櫃","着":"著","夹":"夾","间":"間","双":"雙","变":"變","坝":"壩","缩":"縮","枫":"楓","吗":"嗎","则":"則","试":"試","红":"紅","叶":"葉","庙":"廟","彦":"彥","转":"轉","驶":"駛","亚":"亞","树":"樹","电":"電","话":"話","桥":"橋","浓":"濃","雾":"霧","议":"議","帐":"帳","号":"號","纯":"純","达":"達","军":"軍","导":"導","实":"實","况":"況","读":"讀","制":"製","暂":"暫","绝":"絕","询":"詢","尔":"爾","资":"資","储":"儲","为":"為","规":"規","划":"劃","关":"關","杆":"桿","报":"報","干":"幹","际":"際","环":"環","绕":"繞","广":"廣","台":"臺","币":"幣","产":"產","兴":"興","滚":"滾","轮":"輪","温":"溫","圣":"聖","数":"數","长":"長","会":"會","额":"額","经":"經","满":"滿","麦":"麥","当":"當","劳":"勞","奥":"奧","够":"夠","确":"確","认":"認","弹":"彈","决":"決","务":"務","态":"態","预":"預","订":"訂","见":"見","刚":"剛","细":"細","联":"聯","齐":"齊","两":"兩","优":"優","骑":"騎","课":"課","园":"園","恋":"戀","黄":"黃","须":"須","厦":"廈","驳":"駁","鸡":"雞","装":"裝","妆":"妝","详":"詳","单":"單","让":"讓","异":"異","补":"補","给":"給","绘":"繪","玛":"瑪","纹":"紋","灯":"燈","谜":"謎","类":"類","别":"別","题":"題","丰":"豐","闭":"閉","碍":"礙","阶":"階","丝":"絲","飞":"飛","纪":"紀","术":"術","师":"師","贺":"賀","问":"問","宫":"宮","饭":"飯","论":"論","厅":"廳","顶":"頂","亲":"親","购":"購","厂":"廠","么":"麼","挡":"擋","兽":"獸","禅":"禪","阁":"閣","觉":"覺"},"p":{"备注（":"備註（","限制）":"限制）","公里，":"公里，","公里":"公里","和发型":"和髮型","生发型":"生髮型","剪发的":"剪髮的","梅干等":"梅乾等"}};
+var TC={"c":{"动":"動","点":"點","图":"圖","还":"還","这":"這","个":"個","吗":"嗎","设":"設","亲":"親","绘":"繪","制":"製","计":"計","馆":"館","驿":"驛","里":"裡","约":"約","员":"員","当":"當","从":"從","骑":"騎","学":"學","周":"週","没":"沒","课":"課","门":"門","进":"進","园":"園","实":"實","导":"導","时":"時","况":"況","恋":"戀","删":"刪","张":"張","台":"臺","机":"機","来":"來","换":"換","马":"馬","币":"幣","顺":"順","号":"號","弹":"彈","负":"負","责":"責","传":"傳","贴":"貼","区":"區","评":"評","价":"價","态":"態","与":"與","兽":"獸","页":"頁","过":"過","无":"無","读":"讀","请":"請","处":"處","营":"營","业":"業","谁":"誰","么":"麼","后":"後","给":"給","钟":"鐘","结":"結","电":"電","车":"車","头":"頭","现":"現","几":"幾","冲":"沖","丰":"豐","发":"發","开":"開","会":"會","显":"顯","标":"標","记":"記","钥":"鑰","务":"務","笔":"筆","线":"線","调":"調","录":"錄","观":"觀","旧":"舊","选":"選","费":"費","简":"簡","干":"幹","产":"產","联":"聯","额":"額","广":"廣","场":"場","尔":"爾","长":"長","铜":"銅","刚":"剛","转":"轉","钱":"錢","双":"雙","杆":"桿","缩":"縮","鸟":"鳥","补":"補","装":"裝","备":"備","败":"敗","检":"檢","网":"網","络":"絡","带":"帶","奥":"奧","温":"溫","坝":"壩","兑":"兌","奖":"獎","内":"內","经":"經","满":"滿","团":"團","厂":"廠","画":"畫","纪":"紀","参":"參","冈":"岡","异":"異","账":"賬","须":"須","两":"兩","鸭":"鴨","条":"條","见":"見","墙":"牆","签":"簽","纸":"紙","体":"體","够":"夠","则":"則","碍":"礙","数":"數","购":"購","议":"議","飞":"飛","麦":"麥","劳":"勞","击":"擊","乌":"烏","题":"題","楼":"樓","复":"複","间":"間","别":"別","挡":"擋","鸡":"雞","远":"遠","写":"寫","权":"權","档":"檔","轻":"輕","齐":"齊","礼":"禮","驶":"駛","亚":"亞","样":"樣","变":"變","对":"對","为":"為","规":"規","划":"劃","关":"關","阶":"階","丝":"絲","离":"離","觉":"覺","闭":"閉","们":"們","编":"編","辑":"輯","买":"買","乐":"樂","话":"話","该":"該","帐":"帳","樱":"櫻","滚":"滾","轮":"輪","试":"試","国":"國","销":"銷","较":"較","妆":"妝","订":"訂","确":"確","认":"認","办":"辦","单":"單","让":"讓","玛":"瑪","纹":"紋","灯":"燈","谜":"謎","达":"達","际":"際","驾":"駕","静":"靜","欢":"歡","载":"載","摆":"擺","龟":"龜","禅":"禪","阁":"閣","宫":"宮","准":"準","饮":"飲","游":"遊","戏":"戲","术":"術","询":"詢","问":"問","浓":"濃","雾":"霧","厅":"廳","纯":"純","预":"預","红":"紅","叶":"葉","庙":"廟","圣":"聖","练":"練","随":"隨","树":"樹","兴":"興","边":"邊","筑":"築","范":"範","围":"圍","饭":"飯","书":"書","优":"優","铁":"鐵","决":"決","资":"資","报":"報","桥":"橋","环":"環","绕":"繞","论":"論","着":"著","护":"護","证":"證","汇":"匯","师":"師","贺":"賀","细":"細","彦":"彥","属":"屬","镜":"鏡","柜":"櫃","夹":"夾","顶":"頂","黄":"黃","暂":"暫","详":"詳","类":"類","枫":"楓","军":"軍","绝":"絕","厦":"廈","驳":"駁","储":"儲"},"p":{"公里":"公里","梅干等":"梅乾等","和发型":"和髮型","生发型":"生髮型","限制）":"限制）","剪发的":"剪髮的","备注（":"備註（","公里，":"公里，"}};
 var TCP=Object.keys(TC.p).sort(function(a,b){return b.length-a.length;});
 function lang(){try{return localStorage.getItem('aot-lang')==='tc'?'tc':'sc';}catch(e){return 'sc';}}
 function tcv(s){if(!s||!/[\u4e00-\u9fff]/.test(s))return s;var out='',i=0;
@@ -1840,7 +1846,7 @@ var pending=null;
 function pick(id,kind){pending={id:id,kind:kind};picker.value='';picker.click();}
 picker.addEventListener('change',function(){var fs=[].slice.call(picker.files||[]);if(!fs.length||!pending)return;var p=pending;pending=null;add(p.id,p.kind,fs);});
 function shrink(file){return new Promise(function(res,rej){var fr=new FileReader();fr.onerror=function(){rej('read');};fr.onload=function(){var img=new Image();img.onload=function(){var max=1280,w=img.naturalWidth,h=img.naturalHeight,k=Math.min(1,max/Math.max(w,h));var c=document.createElement('canvas');c.width=Math.round(w*k);c.height=Math.round(h*k);c.getContext('2d').drawImage(img,0,0,c.width,c.height);res(c.toDataURL('image/jpeg',0.72));};img.onerror=function(){rej('decode');};img.src=fr.result;};fr.readAsDataURL(file);});}
-function saving(on){var o=document.getElementById('saving');if(on&&!o){o=el('div','saving','正在存档……');o.id='saving';document.body.appendChild(o);}else if(!on&&o)o.remove();}
+function saving(on,txt){var o=document.getElementById('saving');if(on){if(!o){o=el('div','saving');o.id='saving';document.body.appendChild(o);}o.textContent=T(txt||'正在存档……');}else if(o)o.remove();}
 function commit(){
   if(art&&art.local){saving(true);return idbSet('data',DATA).then(function(){saving(false);build();return true;}).catch(function(){saving(false);msg('手机储存空间不足，这次没有保存。');return false;});}
   if(size()>LIMIT){saving(false);msg('页面照片容量超过 15 MB，这次没有保存。请先删掉几张照片。');return Promise.resolve(false);}
@@ -1939,9 +1945,9 @@ function expenseEditor(old,dayD){
 }
 function delExpense(e,btn){
   if(!btn.classList.contains('armed')){btn.classList.add('armed');btn.textContent='再按一次删除';setTimeout(function(){btn.classList.remove('armed');btn.textContent='删除';},4000);return;}
-  saving(true);ghFetch('/contents/'+e.path,{method:'DELETE',headers:{'Content-Type':'application/json'},body:JSON.stringify({message:'delete expense',sha:e.sha,branch:GH.branch})}).then(function(r){if(!r.ok)throw r.status;return loadRemote(true);}).then(function(){saving(false);build();}).catch(function(){saving(false);msg('删除失败，请检查网络或金钥。');});
+  saving(true,'删除中……');ghFetch('/contents/'+e.path,{method:'DELETE',headers:{'Content-Type':'application/json'},body:JSON.stringify({message:'delete expense',sha:e.sha,branch:GH.branch})}).then(function(r){if(!r.ok)throw r.status;return loadRemote(true);}).then(function(){saving(false);build();}).catch(function(){saving(false);msg('删除失败，请检查网络或金钥。');});
 }
-var PAIDS=[];var SPDAY=(function(){try{return localStorage.getItem('aot-spday')||'';}catch(e){return '';}})();
+var PAIDS=[],PEND={};var SPDAY=(function(){try{return localStorage.getItem('aot-spday')||'';}catch(e){return '';}})();
 function parsePaid(tree){var out=[];(tree||[]).forEach(function(n){var m=n.type==='blob'&&/^expenses\/_paid_([0-9]+)__([A-Za-z0-9_-]+)\.p$/.exec(n.path);if(!m)return;try{var d=JSON.parse(unb64u(m[2]));d.dy=m[1];d.path=n.path;d.sha=n.sha;out.push(d);}catch(e){}});PAIDS=out;return out;}
 function splitShares(a,w,p){var n=w.length,out=[];
   if(w.indexOf(p)>=0){var each=Math.round(a/n),used=0;w.forEach(function(x){if(x!==p){out.push([x,each]);used+=each;}});out.push([p,a-used]);return out;}
@@ -1959,11 +1965,12 @@ function paidMark(dy,t){for(var i=0;i<PAIDS.length;i++){var p=PAIDS[i];if(p.dy==
 function dayStatus(dy){var ex=dayExps(dy);if(!ex.length)return {n:0,tx:[],left:0};var s=settleList(ex);var left=0;s.tx.forEach(function(t){var m=paidMark(dy,t);if(!m||m.v!==t.v)left++;});return {n:ex.length,tx:s.tx,left:left,sum:ex.reduce(function(a,e){return a+e.a;},0)};}
 function togglePaid(dy,t,btn){
   if(!token()){msg('要先在「照片管理」设定金钥才能标记。');return;}
-  var m=paidMark(dy,t);btn.disabled=true;
+  var m=paidMark(dy,t);var undo=m&&m.v===t.v;saving(true,undo?'取消已付中……':'标记已付中……');
   var p=m?ghFetch('/contents/'+m.path,{method:'DELETE',headers:{'Content-Type':'application/json'},body:JSON.stringify({message:'unpaid',sha:m.sha,branch:GH.branch})}):Promise.resolve({ok:true});
-  p.then(function(r){if(!r.ok)throw r.status;if(m&&m.v===t.v)return;var path='expenses/_paid_'+dy+'__'+b64u(JSON.stringify({f:t.from,t:t.to,v:t.v,by:myName()}))+'.p';
+  p.then(function(r){if(!r.ok)throw r.status;if(undo)return;var path='expenses/_paid_'+dy+'__'+b64u(JSON.stringify({f:t.from,t:t.to,v:t.v,by:myName()}))+'.p';
     return ghFetch('/contents/'+path,{method:'PUT',headers:{'Content-Type':'application/json'},body:JSON.stringify({message:'paid',content:btoa('p'),branch:GH.branch})}).then(function(r2){if(!r2.ok)throw r2.status;});})
-   .then(function(){return loadRemote(true);}).then(function(){build();}).catch(function(){btn.disabled=false;msg('标记失败，请检查网络或金钥。');});
+   .then(function(){return loadRemote(true);}).then(function(){saving(false);build();})
+   .catch(function(){saving(false);msg(undo?'取消失败，请检查网络或金钥。':'标记失败，请检查网络或金钥。');loadRemote(true).then(function(){build();});});
 }
 function renderSplit(){
   var box=document.getElementById('splitbox');if(!box)return;box.textContent='';
@@ -2022,7 +2029,13 @@ function renderSplit(){
 }
 
 function stamp(){var d=new Date();function p(n){return String(n).padStart(2,'0');}return d.getUTCFullYear()+p(d.getUTCMonth()+1)+p(d.getUTCDate())+'T'+p(d.getUTCHours())+p(d.getUTCMinutes())+p(d.getUTCSeconds())+'Z';}
-function ghFetch(path,opt){opt=opt||{};opt.headers=Object.assign({'Accept':'application/vnd.github+json'},opt.headers||{});var t=token();if(t)opt.headers.Authorization='Bearer '+t;return fetch('https://api.github.com/repos/'+GH.owner+'/'+GH.repo+path,opt);}
+var WQ=Promise.resolve();
+function ghFetch(path,opt){opt=opt||{};opt.headers=Object.assign({'Accept':'application/vnd.github+json'},opt.headers||{});var t=token();if(t)opt.headers.Authorization='Bearer '+t;
+  var url='https://api.github.com/repos/'+GH.owner+'/'+GH.repo+path,m=(opt.method||'GET').toUpperCase();
+  if(m!=='PUT'&&m!=='DELETE')return fetch(url,opt);
+  /* writes go one at a time; retry when GitHub reports the branch moved underneath us */
+  function attempt(n){return fetch(url,opt).then(function(r){if((r.status===409||r.status===422||r.status>=500)&&n<4){return new Promise(function(res){setTimeout(res,700*(n+1)+Math.random()*400);}).then(function(){return attempt(n+1);});}return r;});}
+  var run=function(){return attempt(0);};var pr=WQ.then(run,run);WQ=pr.catch(function(){});return pr;}
 function add(id,kind,files){
   if(!token()){msg('要先在页面最下方的「照片管理」填入 GitHub 金钥。');return;}
   saving(true);
