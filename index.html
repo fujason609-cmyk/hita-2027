@@ -2413,6 +2413,8 @@ function spy(){
   secs.forEach(function(s){if(s.getBoundingClientRect().top<=off)act=s.id;});
   var route=document.getElementById('route');
   if(!act&&secs.length&&route&&route.getBoundingClientRect().top<=off)act=secs[0].id;
+  var sp=document.getElementById('split');if(sp&&sp.getBoundingClientRect().top<=off)act='split';
+  var sup=document.getElementById('supply');if(sup&&sup.getBoundingClientRect().top<=off)act='supply';
   if(act===curDay)return;curDay=act;var se=act&&document.getElementById(act);var th=se?(se.classList.contains('kon')?'kon':(se.classList.contains('kyo')?'kyo':'')):'';document.body.classList.toggle('kon-on',th==='kon');document.body.classList.toggle('kyo-on',th==='kyo');document.body.setAttribute('data-th',th);paintCount();
   var links=[].slice.call(document.querySelectorAll('#daynav a'));
   links.forEach(function(a){var on=act&&a.getAttribute('href')==='#'+act;a.classList.toggle('on',!!on);if(on){a.setAttribute('aria-current','true');var nav=a.parentNode;var l=a.offsetLeft-(nav.clientWidth-a.offsetWidth)/2;nav.scrollTo?nav.scrollTo({left:l,behavior:'smooth'}):(nav.scrollLeft=l);}else a.removeAttribute('aria-current');});
