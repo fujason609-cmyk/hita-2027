@@ -1211,6 +1211,103 @@ body.kyo-on .status nav a.on{background:#C8402B!important;border-color:#C8402B!i
 .kyosheet .stp{--ink:#4F8A2E}.kyosheet .vx .stp{--ink:#C8402B}
 .wall h1{font-size:clamp(84px,20vw,240px)}
 @media(max-width:560px){.wall h1{font-size:25vw!important}.wall h1 span{font-size:6vw;white-space:nowrap;letter-spacing:.04em}}
+/* ===== split ===== */
+#split .sp-top{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-bottom:14px}
+.sp-total{flex:1;min-width:200px;padding:14px 16px;background:var(--paper);color:var(--ink);border:1px solid #9C8B64;box-shadow:0 0 0 3px var(--bark)}
+.sp-total .sp-tl{display:block;font-size:12px;letter-spacing:.3em;color:var(--leather);font-family:"Noto Serif SC",serif;font-weight:900}
+.sp-total b{display:block;font-family:"Noto Serif SC",serif;font-weight:900;font-size:34px;line-height:1.2}
+.sp-total small{color:var(--ink-soft);font-size:13px}
+.sp-acts{display:flex;gap:8px}
+.sp-btn{min-height:48px;padding:0 18px;font:inherit;font-family:"Noto Serif SC",serif;font-weight:900;font-size:16px;letter-spacing:.06em;border-radius:2px;cursor:pointer;color:#F6EEDB;background:linear-gradient(180deg,#9E2219,#6A130D);border:1px solid rgba(242,211,138,.6)}
+.sp-btn.ghost{background:transparent;color:var(--text);border-color:var(--line)}
+.sp-card{margin-bottom:14px;padding:12px 16px 14px;background:var(--paper);color:var(--ink);border:1px solid #9C8B64}
+.sp-card h4{margin:0 0 8px;font-family:"Noto Serif SC",serif;font-weight:900;font-size:18px;color:#1E1A12;border-bottom:2px solid #2A2219;padding-bottom:6px}
+.sp-hint{margin:6px 0 0;font-size:13px;color:var(--ink-soft)}
+.sp-tx{display:flex;align-items:center;gap:10px;min-height:48px;border-bottom:1px dashed rgba(90,70,40,.4);font-size:16px}
+.sp-tx:last-child{border-bottom:none}
+.sp-tx i{font-style:normal;color:var(--blood);font-weight:900}
+.sp-who{font-family:"Noto Serif SC",serif;font-weight:900}
+.sp-amt2{margin-left:auto;text-align:right;line-height:1.2}.sp-amt2 b{display:block;font-size:18px;color:var(--blood)}.sp-amt2 small{font-size:12px;color:var(--ink-soft)}
+.sp-tbl{display:grid;font-size:14.5px}
+.sp-row{display:grid;grid-template-columns:1.2fr 1fr 1fr 1fr;gap:6px;padding:8px 0;border-bottom:1px solid rgba(90,70,40,.25)}
+.sp-row span:not(:first-child){text-align:right;font-variant-numeric:tabular-nums}
+.sp-row span:first-child{font-family:"Noto Serif SC",serif;font-weight:900;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.sp-row.hd{font-size:12px;color:var(--ink-soft);letter-spacing:.1em}
+.sp-row .pos{color:#2B5A28;font-weight:700}.sp-row .neg{color:var(--blood);font-weight:700}
+.sp-day{margin:12px 0 4px;font-size:12px;letter-spacing:.15em;color:var(--leather);font-weight:700}
+.sp-item{display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px dashed rgba(90,70,40,.3)}
+.sp-il{flex:1;min-width:0;display:flex;align-items:center;gap:10px}
+.sp-cat{flex:0 0 auto;min-width:52px;text-align:center;padding:3px 6px;font-size:12px;font-weight:700;color:#fff;background:#6B5A3A;border-radius:2px}
+.c-car{background:#2E4A7D}.c-gas{background:#8E5A1B}.c-toll{background:#5E5A51}.c-ticket{background:#8E1B14}.c-food{background:#3E7C3A}.c-train{background:#2C4A5A}.c-hotel{background:#6B4470}.c-shop{background:#B0894F}
+.sp-it{min-width:0}.sp-it b{display:block;font-size:15px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.sp-it small{display:block;font-size:12px;color:var(--ink-soft)}
+.sp-ir{display:flex;align-items:center;gap:6px;flex:0 0 auto}.sp-ir > b{font-size:16px;font-variant-numeric:tabular-nums;margin-right:4px}
+.sp-mini{min-height:34px;padding:0 9px;font:inherit;font-size:12.5px;color:var(--ink);background:transparent;border:1px solid rgba(90,70,40,.45);border-radius:2px;cursor:pointer}
+.sp-mini.del{color:var(--blood);border-color:rgba(142,27,20,.5)}.sp-mini.armed{background:var(--blood);color:#fff}
+.sp-empty{padding:18px;background:var(--paper);color:var(--ink);border:1px solid #9C8B64;text-align:center}
+.sp-rate{display:flex;flex-wrap:wrap;align-items:center;gap:8px;font-size:13px;color:var(--text-soft)}
+.sp-rate input{width:90px;min-height:36px;padding:0 8px;font-size:16px;background:var(--night);color:var(--text);border:1px solid var(--line)}
+/* form */
+.spsheet .nb-card{max-height:calc(100dvh - 40px);overflow-y:auto}
+.sp-form{margin:4px 18px 0}
+.sp-lab{margin:12px 0 6px;font-size:12px;letter-spacing:.2em;color:#6B4A2F;font-weight:700}
+.sp-amt{width:100%;min-height:54px;padding:0 12px;font-family:"Noto Serif SC",serif;font-weight:900;font-size:26px;color:#1E1A12;background:rgba(255,255,255,.4);border:none;border-bottom:2px solid #6B5A3A;border-radius:0}
+.sp-amt:focus,.sp-note:focus,.sp-date:focus{outline:none;border-bottom-color:#8E1B14}
+.sp-note,.sp-date{width:100%;min-height:46px;padding:0 10px;font-size:16px;color:#1E1A12;background:rgba(255,255,255,.4);border:none;border-bottom:1px solid #6B5A3A;border-radius:0;font-family:inherit}
+.sp-chips{display:flex;flex-wrap:wrap;gap:6px}
+.sp-chips button{min-height:40px;padding:0 12px;font:inherit;font-size:14px;color:#3A2F1C;background:rgba(255,255,255,.35);border:1px solid rgba(90,70,40,.5);border-radius:2px;cursor:pointer}
+.sp-chips button.on{background:#2E3B26;color:#EFE8D6;border-color:#B48A3A}
+.sp-chips.multi button.on{background:#8E1B14;border-color:#F2D38A}
+.sp-each{margin:8px 0 0;font-size:13.5px;color:#5A4A30;font-weight:700}
+.sp-mem{margin:4px 18px 0}
+.sp-mrow{display:flex;gap:8px;margin-bottom:8px}
+.sp-mrow input{flex:1;min-height:46px;padding:0 10px;font-size:17px;font-family:"Noto Serif SC",serif;font-weight:900;background:rgba(255,255,255,.4);border:none;border-bottom:2px solid #6B5A3A}
+.sp-mx{min-height:46px;padding:0 12px;font:inherit;font-size:13px;color:#8E1B14;background:transparent;border:1px solid rgba(142,27,20,.5);cursor:pointer}
+.sp-add{width:100%;min-height:44px;font:inherit;font-size:14px;color:#3A2F1C;background:transparent;border:1px dashed rgba(90,70,40,.6);cursor:pointer}
+.sp-row{grid-template-columns:minmax(0,1.1fr) repeat(3,minmax(0,1fr))!important}
+.sp-row span{white-space:nowrap}
+@media(max-width:560px){.sp-tbl{font-size:13px}.sp-row{gap:4px}}
+.sp-ir{flex-direction:column;align-items:flex-end;gap:4px!important}
+.sp-ir > b{margin-right:0!important}
+.sp-ir .sp-btns{display:flex;gap:6px}
+.sp-mini{min-height:30px!important;padding:0 8px!important;font-size:12px!important}
+.sp-it small{white-space:normal}
+.sp-strip{display:flex;align-items:center;gap:10px;margin:4px 0 16px;padding:10px 12px;background:var(--bark);border:1px solid var(--line);border-left:4px solid var(--brass)}
+.sp-st-t{flex:1;min-width:0;display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 10px}
+.sp-st-t span{font-size:12px;letter-spacing:.2em;color:var(--text-soft)}
+.sp-st-t b{font-family:"Noto Serif SC",serif;font-weight:900;font-size:22px;color:var(--text)}
+.sp-st-t small{font-size:12px;color:var(--text-soft)}
+.sp-st-b{display:flex;gap:6px;flex:0 0 auto}
+.sp-st-v{display:inline-flex;align-items:center;min-height:40px;padding:0 10px;font-size:13px;color:var(--text-soft);text-decoration:underline;text-underline-offset:3px}
+.sp-st-add{min-height:40px;padding:0 14px;font:inherit;font-family:"Noto Serif SC",serif;font-weight:900;font-size:14px;color:#F6EEDB;background:linear-gradient(180deg,#9E2219,#6A130D);border:1px solid rgba(242,211,138,.6);border-radius:2px;cursor:pointer}
+.sp-days{flex-wrap:nowrap!important;overflow-x:auto;padding-bottom:4px;-webkit-overflow-scrolling:touch}
+.sp-days button{flex:0 0 auto}
+.sp-day.t-kon{color:#FF6F9C}.sp-day.t-kyo{color:#C8402B}
+/* K-ON strip & sheet */
+.kon .sp-strip{background:#fff;border:2px solid #FFD3E0;border-left:6px solid #FF8FB1;border-radius:14px}
+.kon .sp-st-t span{color:#B98AA0;font-family:"ZCOOL KuaiLe","Noto Sans SC",sans-serif;letter-spacing:.1em;font-size:14px}
+.kon .sp-st-t b{color:#FF6F9C;font-family:"ZCOOL KuaiLe","Noto Sans SC",sans-serif;font-weight:400;font-size:24px}
+.kon .sp-st-t small,.kon .sp-st-v{color:#9A8A9E}
+.kon .sp-st-add{border-radius:999px;border:none;background:linear-gradient(180deg,#FFD66B,#FFC23D);color:#6B4500;box-shadow:0 3px 0 #F0B932;font-family:"ZCOOL KuaiLe","Noto Sans SC",sans-serif;font-weight:400;font-size:16px}
+.kon-sp .sp-lab{color:#FF6F9C}
+.kon-sp .sp-amt,.kon-sp .sp-note,.kon-sp .sp-date,.kon-sp .sp-mrow input{background:#fff;border:2px solid #FFD3E0!important;border-radius:12px;color:#4A3B4F}
+.kon-sp .sp-chips button{border-radius:999px;border:2px solid #FFD3E0;background:#fff;color:#7A6A7E}
+.kon-sp .sp-chips button.on{background:#FF8FB1;border-color:#FF8FB1;color:#fff}
+.kon-sp .sp-chips.multi button.on{background:#7ED7C1;border-color:#7ED7C1}
+.kon-sp .sp-each{color:#FF6F9C}
+.kon-sp .nb-row .nb-ok{border-radius:999px!important;background:linear-gradient(180deg,#FF9EBB,#FF7FA6)!important;border:none!important;box-shadow:0 4px 0 #E65F8A!important;font-family:"ZCOOL KuaiLe","Noto Sans SC",sans-serif;font-weight:400}
+/* Kyoto strip & sheet */
+.kyo .sp-strip{background:#FFFDF8;border:1px solid rgba(46,74,125,.45);border-left:5px solid #C8402B;border-radius:3px}
+.kyo .sp-st-t span{color:#7A6F5E}
+.kyo .sp-st-t b{color:#2A2620;font-family:"Ma Shan Zheng","Noto Serif SC",serif;font-weight:400;font-size:26px}
+.kyo .sp-st-t small,.kyo .sp-st-v{color:#8A7E6A}
+.kyo .sp-st-add{border-radius:3px;border:none;background:linear-gradient(180deg,#D24A33,#A8331F);box-shadow:0 3px 0 #7E2414}
+.kyo-sp .sp-lab{color:#C8402B}
+.kyo-sp .sp-amt,.kyo-sp .sp-note,.kyo-sp .sp-date,.kyo-sp .sp-mrow input{background:#FFFDF8;border:1px solid rgba(46,74,125,.4)!important;border-radius:3px;color:#2A2620}
+.kyo-sp .sp-chips button{border-radius:3px;border:1px solid rgba(46,74,125,.4);background:#FFFDF8;color:#4A4338}
+.kyo-sp .sp-chips button.on{background:#2E4A7D;border-color:#2E4A7D;color:#fff}
+.kyo-sp .sp-chips.multi button.on{background:#C8402B;border-color:#C8402B}
+.kyo-sp .sp-each{color:#C8402B}
+.kyo-sp .nb-row .nb-ok{border-radius:4px!important;background:linear-gradient(180deg,#D24A33,#A8331F)!important;border:none!important;box-shadow:0 3px 0 #7E2414!important}
 </style></head><body><template id="shell">
 <header class="wall pending">
   <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><filter id="keywhite" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB"><feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  -6 -6 -6 0 16.8" result="m"/><feMorphology in="m" operator="erode" radius="1.5" result="me"/><feComposite in="SourceGraphic" in2="me" operator="in" result="c"/><feComposite in="c" in2="SourceAlpha" operator="in"/></filter></svg>
@@ -1249,6 +1346,10 @@ body.kyo-on .status nav a.on{background:#C8402B!important;border-color:#C8402B!i
     <p><strong>过去办过的限定活动</strong>：久大本线特急「ゆふ」彩绘列车、隧道口玛利亚之墙纹章壁画、三隈川步道灯光秀、豆田町解谜活动。</p>
     <p>出发前一两个月关注官方 X 帐号 <a href="https://x.com/shingeki_hita" target="_blank" rel="noopener">@shingeki_hita</a>，看 2027 年 11 月有没有活动。</p>
   </div>
+</section>
+<section id="split">
+  <div class="shead"><h2>旅费分账</h2><small>谁付了什么，最后谁给谁多少</small></div>
+  <div id="splitbox"></div>
 </section>
 <section id="supply">
   <div class="shead"><h2>补给与装备</h2><small>租车须知</small></div>
@@ -1360,7 +1461,7 @@ var art=null;
 function el(t,c,txt){var e=document.createElement(t);if(c)e.className=c;if(txt!=null)e.textContent=txt;return e;}
 function lnk(c,txt,href){var a=el('a',c,txt);a.href=href;a.target='_blank';a.rel='noopener';return a;}
 
-var TC={"c":{"线":"線","观":"觀","约":"約","区":"區","车":"車","须":"須","钟":"鐘","周":"週","从":"從","这":"這","里":"裡","条":"條","补":"補","给":"給","与":"與","装":"裝","备":"備","选":"選","张":"張","传":"傳","无":"無","读":"讀","请":"請","换":"換","馆":"館","楼":"樓","营":"營","国":"國","际":"際","驾":"駕","广":"廣","场":"場","务":"務","恋":"戀","产":"產","业":"業","兴":"興","时":"時","环":"環","绕":"繞","军":"軍","页":"頁","开":"開","还":"還","乐":"樂","后":"後","内":"內","删":"刪","电":"電","画":"畫","点":"點","图":"圖","调":"調","记":"記","录":"錄","题":"題","设":"設","计":"計","干":"幹","冈":"岡","来":"來","吗":"嗎","暂":"暫","绝":"絕","询":"詢","个":"個","网":"網","络":"絡","过":"過","几":"幾","试":"試","机":"機","没":"沒","护":"護","证":"證","复":"複","发":"發","制":"製","败":"敗","检":"檢","参":"參","温":"溫","钥":"鑰","台":"臺","会":"會","现":"現","团":"團","进":"進","击":"擊","轻":"輕","圣":"聖","礼":"禮","铁":"鐵","联":"聯","简":"簡","体":"體","学":"學","旧":"舊","确":"確","认":"認","转":"轉","纯":"純","见":"見","妆":"妝","订":"訂","样":"樣","马":"馬","议":"議","浓":"濃","雾":"霧","结":"結","带":"帶","显":"顯","谁":"誰","饭":"飯","办":"辦","动":"動","鸭":"鴨","桥":"橋","顶":"頂","书":"書","关":"關","门":"門","笔":"筆","双":"雙","黄":"黃","评":"評","价":"價","滚":"滾","轮":"輪","准":"準","报":"報","决":"決","话":"話","纪":"紀","红":"紅","叶":"葉","欢":"歡","宫":"宮","员":"員","间":"間","别":"別","挡":"擋","冲":"沖","饮":"飲","厦":"廈","驳":"駁","庙":"廟","游":"遊","丰":"豐","樱":"櫻","费":"費","摆":"擺","乌":"烏","龟":"龜","铜":"銅","碍":"礙","鸟":"鳥","坝":"壩","资":"資","则":"則","为":"為","墙":"牆","贴":"貼","们":"們","彦":"彥","储":"儲","导":"導","实":"實","况":"況","签":"簽","纸":"紙","兑":"兌","奖":"獎","顺":"順","练":"練","亲":"親","绘":"繪","对":"對","边":"邊","静":"靜","筑":"築","范":"範","围":"圍","头":"頭","镜":"鏡","柜":"櫃","着":"著","夹":"夾","驿":"驛","满":"滿","觉":"覺","么":"麼","当":"當","骑":"騎","课":"課","园":"園","师":"師","贺":"賀","问":"問","较":"較","远":"遠","额":"額","经":"經","兽":"獸","属":"屬","刚":"剛","麦":"麥","劳":"勞","帐":"帳","号":"號","齐":"齊","闭":"閉","档":"檔","写":"寫","杆":"桿","缩":"縮","处":"處","禅":"禪","阁":"閣","戏":"戲","权":"權","枫":"楓","驶":"駛","亚":"亞","玛":"瑪","纹":"紋","灯":"燈","谜":"謎","详":"詳","预":"預","载":"載","优":"優","汇":"匯","数":"數","买":"買","异":"異","尔":"爾","长":"長","弹":"彈","厅":"廳","术":"術","阶":"階","变":"變","两":"兩","标":"標","离":"離","负":"負","责":"責","态":"態","论":"論","达":"達","丝":"絲","树":"樹","编":"編","辑":"輯","鸡":"雞","单":"單","让":"讓","规":"規","划":"劃","钱":"錢","随":"隨","厂":"廠","奥":"奧","飞":"飛","够":"夠"},"p":{"公里，":"公里，","梅干等":"梅乾等","和发型":"和髮型","生发型":"生髮型","限制）":"限制）","剪发的":"剪髮的","公里":"公里"}};
+var TC={"c":{"钥":"鑰","无":"無","请":"請","复":"複","制":"製","学":"學","后":"後","团":"團","动":"動","圣":"聖","礼":"禮","点":"點","败":"敗","试":"試","联":"聯","单":"單","让":"讓","钟":"鐘","开":"開","冈":"岡","还":"還","没":"沒","设":"設","钱":"錢","员":"員","笔":"筆","记":"記","评":"評","价":"價","顺":"順","馆":"館","买":"買","乐":"樂","负":"負","责":"責","传":"傳","贴":"貼","补":"補","给":"給","与":"與","装":"裝","备":"備","这":"這","里":"裡","铁":"鐵","约":"約","调":"調","线":"線","显":"顯","实":"實","际":"際","离":"離","时":"時","间":"間","电":"電","话":"話","计":"計","鸡":"雞","签":"簽","画":"畫","纸":"紙","从":"從","过":"過","远":"遠","车":"車","周":"週","观":"觀","纪":"紀","录":"錄","发":"發","参":"參","当":"當","骑":"騎","课":"課","门":"門","进":"進","园":"園","报":"報","处":"處","来":"來","两":"兩","兑":"兌","换":"換","奖":"獎","台":"臺","机":"機","轻":"輕","个":"個","预":"預","订":"訂","红":"紅","叶":"葉","内":"內","费":"費","旧":"舊","场":"場","异":"異","条":"條","会":"會","现":"現","删":"刪","页":"頁","击":"擊","双":"雙","滚":"滾","轮":"輪","谁":"誰","选":"選","读":"讀","网":"網","写":"寫","账":"賬","图":"圖","确":"確","禅":"禪","阁":"閣","满":"滿","宫":"宮","储":"儲","头":"頭","转":"轉","编":"編","辑":"輯","对":"對","为":"為","规":"規","划":"劃","关":"關","随":"隨","军":"軍","见":"見","妆":"妝","认":"認","样":"樣","刚":"剛","张":"張","温":"溫","权":"權","额":"額","数":"數","别":"別","则":"則","丰":"豐","检":"檢","络":"絡","杆":"桿","缩":"縮","纯":"純","细":"細","恋":"戀","饭":"飯","浓":"濃","雾":"霧","结":"結","带":"帶","议":"議","奥":"奧","绘":"繪","玛":"瑪","亚":"亞","墙":"牆","纹":"紋","灯":"燈","谜":"謎","驿":"驛","区":"區","黄":"黃","鸭":"鴨","桥":"橋","顶":"頂","书":"書","冲":"沖","该":"該","办":"辦","静":"靜","态":"態","麦":"麥","劳":"勞","导":"導","樱":"櫻","摆":"擺","楼":"樓","乌":"烏","龟":"龜","铜":"銅","马":"馬","币":"幣","题":"題","帐":"帳","号":"號","汇":"匯","兴":"興","坝":"壩","论":"論","么":"麼","干":"幹","营":"營","决":"決","亲":"親","销":"銷","几":"幾","暂":"暫","厅":"廳","们":"們","练":"練","鸟":"鳥","简":"簡","体":"體","详":"詳","驶":"駛","档":"檔","吗":"嗎","购":"購","经":"經","碍":"礙","环":"環","绕":"繞","较":"較","饮":"飲","尔":"爾","绝":"絕","询":"詢","驾":"駕","庙":"廟","游":"遊","树":"樹","标":"標","属":"屬","欢":"歡","产":"產","业":"業","须":"須","变":"變","载":"載","准":"準","彦":"彥","镜":"鏡","柜":"櫃","着":"著","夹":"夾","阶":"階","丝":"絲","挡":"擋","总":"總","国":"國","厦":"廈","驳":"駁","闭":"閉","边":"邊","筑":"築","范":"範","围":"圍","戏":"戲","达":"達","飞":"飛","资":"資","兽":"獸","弹":"彈","术":"術","齐":"齊","枫":"楓","师":"師","贺":"賀","问":"問","护":"護","证":"證","优":"優","广":"廣","类":"類","务":"務","觉":"覺","厂":"廠","况":"況","够":"夠","长":"長"},"p":{"限制）":"限制）","和发型":"和髮型","生发型":"生髮型","公里":"公里","梅干等":"梅乾等","公里，":"公里，","剪发的":"剪髮的","备注（":"備註（"}};
 var TCP=Object.keys(TC.p).sort(function(a,b){return b.length-a.length;});
 function lang(){try{return localStorage.getItem('aot-lang')==='tc'?'tc':'sc';}catch(e){return 'sc';}}
 function tcv(s){if(!s||!/[\u4e00-\u9fff]/.test(s))return s;var out='',i=0;
@@ -1593,6 +1694,11 @@ function build(){
       tools.appendChild(el('span',null,'全天移动约 '+tot.toFixed(1)+' 公里，'+(D.mode==='walking'?'步行':(D.mode==='transit'?'交通':'车程'))+'约 '+tm+' 分钟（估计）'));
     }
     if(tools.children.length)sec.appendChild(tools);
+    (function(D){if(!MEMS||MEMS.length<2)return;var de=EXPS.filter(function(e){return e.dy===D.d;});var sum=de.reduce(function(s,e){return s+e.a;},0);
+      var strip=el('div','sp-strip');var tx=el('div','sp-st-t');tx.appendChild(el('span',null,D.theme==='kon'?'今日社费':(D.theme==='kyo'?'本日旅费':'本日开销')));tx.appendChild(el('b',null,yen(sum)));tx.appendChild(el('small',null,de.length+' 笔　约 '+myr(sum)));strip.appendChild(tx);
+      var bx=el('div','sp-st-b');var vw=el('a','sp-st-v','明细');vw.href='#split';bx.appendChild(vw);
+      if(token()){var ad=el('button','sp-st-add','＋ 记一笔');ad.type='button';ad.onclick=function(){expenseEditor(null,D);};bx.appendChild(ad);}
+      strip.appendChild(bx);sec.appendChild(strip);})(D);
     var r=el('div','route');var prev=null;
     D.stops.forEach(function(s,idx){
       if(s.from&&s.lat&&!prev){var fromP={jp:s.from[0]===33.3170211?'日田駅':(s.from[0]===33.2406418?'奥日田温泉うめひびき':null),name:s.from[0]===33.3170211?'日田站':(s.from[0]===33.2406418?'うめひびき':'出发点'),lat:s.from[0],lng:s.from[1],pid:s.from[0]===33.3170211?'ChIJG4EC2BdqQTURjvPBA4DW9Yg':(s.from[0]===33.2406418?'ChIJc0shDHRAQTURaWhxgCY1_bY':null)};r.appendChild(leg(fromP,s,D.mode,s));}
@@ -1604,7 +1710,7 @@ function build(){
     });
     sec.appendChild(r);root.appendChild(sec);
   });
-  var any=el('div');any.id='day-any';if(dn){var aa=el('a',null,'随时');aa.href='#day-any';dn.appendChild(aa);}var hd=el('div','dayhead');hd.appendChild(el('h3',null,'随时'));hd.appendChild(el('small',null,'没有固定地点，遇到就完成'));any.appendChild(hd);
+  renderSplit();if(dn){var sa=el('a',null,'分账');sa.href='#split';dn.appendChild(sa);}var any=el('div');any.id='day-any';if(dn){var aa=el('a',null,'随时');aa.href='#day-any';dn.appendChild(aa);}var hd=el('div','dayhead');hd.appendChild(el('h3',null,'随时'));hd.appendChild(el('small',null,'没有固定地点，遇到就完成'));any.appendChild(hd);
   var ar=el('div','anytime');ANY.forEach(function(s){no++;if(S(s.id).shots.length)done++;ar.appendChild(card(s,String(no).padStart(2,'0'),null,null,'walking'));});any.appendChild(ar);root.appendChild(any);
   window._cnt=[done,SPOTS.length];paintCount();
   document.getElementById('fill').style.width=(done/SPOTS.length*100)+'%';
@@ -1628,6 +1734,119 @@ function commit(){
   saving(true);
   return art.publish(buildDoc()).then(function(){return true;}).catch(function(e){saving(false);var c=e&&e.code;msg(c==='conflict'?'有人同时在更新，页面会重新载入，请再上传一次。':'保存失败，请再试一次。');return false;});
 }
+/* ===== 旅费分账 ===== */
+var EXPS=[],MEMS=null,MEMMETA=null;
+var CATS=[['car','租车'],['gas','油费'],['toll','过路费'],['ticket','门票'],['food','餐费'],['train','交通'],['hotel','住宿'],['shop','购物'],['other','其他']];
+function catName(c){for(var i=0;i<CATS.length;i++)if(CATS[i][0]===c)return CATS[i][1];return '其他';}
+function parseExp(tree){var out=[],mem=null;(tree||[]).forEach(function(n){if(n.type!=='blob')return;
+  var m=/^expenses\/([0-9TZ]+-[a-z0-9]+)__([A-Za-z0-9_-]+)\.e$/.exec(n.path);
+  if(m){try{var d=JSON.parse(unb64u(m[2]));d.id=m[1];d.path=n.path;d.sha=n.sha;out.push(d);}catch(e){}return;}
+  var mm=/^expenses\/_members_([0-9TZ]+)__([A-Za-z0-9_-]+)\.m$/.exec(n.path);
+  if(mm){try{var arr=JSON.parse(unb64u(mm[2]));if(!mem||mm[1]>mem.t)mem={t:mm[1],list:arr,path:n.path,sha:n.sha};}catch(e){}}});
+  out.sort(function(a,b){return (b.d||'')<(a.d||'')?-1:((b.d||'')>(a.d||'')?1:(a.id<b.id?1:-1));});
+  EXPS=out;MEMS=mem?mem.list:null;MEMMETA=mem;return out;}
+function yen(n){return '¥'+Math.round(n).toLocaleString('en-US');}
+function rate(){try{var r=parseFloat(localStorage.getItem('aot-rate'));return r>0?r:0.031;}catch(e){return 0.031;}}
+function myr(n){return 'RM '+(n*rate()).toFixed(2);}
+function settle(){
+  var mem=MEMS||[],bal={},paid={},share={};mem.forEach(function(m){bal[m]=0;paid[m]=0;share[m]=0;});
+  EXPS.forEach(function(e){var w=(e.w&&e.w.length?e.w:mem).filter(function(x){return x in bal;});if(!(e.p in bal)||!w.length)return;
+    paid[e.p]+=e.a;bal[e.p]+=e.a;var s=e.a/w.length;w.forEach(function(x){share[x]+=s;bal[x]-=s;});});
+  var cr=[],db=[];mem.forEach(function(m){var b=Math.round(bal[m]);if(b>0)cr.push({m:m,v:b});else if(b<0)db.push({m:m,v:-b});});
+  cr.sort(function(a,b){return b.v-a.v;});db.sort(function(a,b){return b.v-a.v;});var tx=[];
+  while(cr.length&&db.length){var c=cr[0],d=db[0],v=Math.min(c.v,d.v);if(v>0)tx.push({from:d.m,to:c.m,v:v});c.v-=v;d.v-=v;if(c.v<=0)cr.shift();if(d.v<=0)db.shift();}
+  return {paid:paid,share:share,bal:bal,tx:tx};
+}
+function expPut(obj,oldMeta){
+  var data=JSON.stringify(obj);var path='expenses/'+stamp()+'-'+Math.random().toString(36).slice(2,6)+'__'+b64u(data)+'.e';
+  var p=Promise.resolve();
+  if(oldMeta)p=p.then(function(){return ghFetch('/contents/'+oldMeta.path,{method:'DELETE',headers:{'Content-Type':'application/json'},body:JSON.stringify({message:'edit expense',sha:oldMeta.sha,branch:GH.branch})}).then(function(r){if(!r.ok)throw r.status;});});
+  return p.then(function(){return ghFetch('/contents/'+path,{method:'PUT',headers:{'Content-Type':'application/json'},body:JSON.stringify({message:'expense',content:btoa('e'),branch:GH.branch})});}).then(function(r){if(!r.ok)throw r.status;});
+}
+function memPut(list){
+  var path='expenses/_members_'+stamp()+'__'+b64u(JSON.stringify(list))+'.m';var old=MEMMETA;
+  return ghFetch('/contents/'+path,{method:'PUT',headers:{'Content-Type':'application/json'},body:JSON.stringify({message:'members',content:btoa('m'),branch:GH.branch})}).then(function(r){if(!r.ok)throw r.status;
+    if(old)return ghFetch('/contents/'+old.path,{method:'DELETE',headers:{'Content-Type':'application/json'},body:JSON.stringify({message:'members old',sha:old.sha,branch:GH.branch})});});
+}
+function splitSheet(title,unit,th){
+  var ov=el('div','namebox vsheet spsheet'+(th?' '+th+'sheet '+th+'-sp':''));ov.setAttribute('role','dialog');ov.setAttribute('aria-modal','true');
+  var c=el('div','nb-card');c.appendChild(el('p','nb-unit',unit||'旅费分账'));var sl=el('span','seal');sl.setAttribute('data-t',th==='kon'?'♪':(th==='kyo'?'銭':'¥'));sl.setAttribute('aria-hidden','true');c.appendChild(sl);c.appendChild(el('h3',null,title));
+  ov.appendChild(c);ov.addEventListener('click',function(e){if(e.target===ov)ov.remove();});document.body.appendChild(ov);if(lang()==='tc')convNode(ov);return {ov:ov,card:c};
+}
+function memberEditor(){
+  if(!token()){msg('要先在「照片管理」设定金钥才能编辑成员。');return;}
+  var sh=splitSheet('分账成员','旅费分账　成员');var list=(MEMS||[myName()].filter(Boolean)).slice();
+  sh.card.appendChild(el('p','nb-sub','一起分钱的人，名字要和大家登记的名字一样。'));
+  var box=el('div','sp-mem');sh.card.appendChild(box);
+  function paint(){box.innerHTML='';list.forEach(function(n,i){var r=el('div','sp-mrow');var inp=el('input');inp.type='text';inp.maxLength=20;inp.value=n;inp.oninput=function(){list[i]=inp.value;};r.appendChild(inp);
+      var x=el('button','sp-mx','删除');x.type='button';x.onclick=function(){list.splice(i,1);paint();};r.appendChild(x);box.appendChild(r);});
+    if(list.length<8){var a=el('button','sp-add','＋ 加一个人');a.type='button';a.onclick=function(){list.push('');paint();box.querySelector('.sp-mrow:last-child input').focus();};box.appendChild(a);}}
+  paint();var err=el('p','nb-err');sh.card.appendChild(err);
+  var row=el('div','nb-row');var ok=el('button','nb-ok','保存成员');ok.type='button';var cc=el('button','nb-cancel','取消');cc.type='button';cc.onclick=function(){sh.ov.remove();};row.appendChild(ok);row.appendChild(cc);sh.card.appendChild(row);
+  ok.onclick=function(){var clean=[];list.forEach(function(n){n=(n||'').trim().slice(0,20);if(n&&clean.indexOf(n)<0)clean.push(n);});if(clean.length<2){err.textContent='至少要两个人。';return;}
+    ok.disabled=true;ok.textContent='保存中…';memPut(clean).then(function(){return loadRemote(true);}).then(function(){sh.ov.remove();build();}).catch(function(){ok.disabled=false;ok.textContent='保存成员';err.textContent='保存失败，请检查网络或金钥。';});};
+}
+function dayOf(d){for(var i=0;i<DAYS.length;i++)if(DAYS[i].d===d)return DAYS[i];return null;}
+var SPUNIT={'':'旅费分账','kon':'部活笔记　社费','kyo':'京都旅帖　旅费'};
+function expenseEditor(old,dayD){
+  if(!token()){msg('要先在「照片管理」设定金钥才能记账。');return;}
+  var mem=MEMS||[];if(mem.length<2){memberEditor();return;}
+  var v=old?JSON.parse(JSON.stringify(old)):{a:'',c:'food',p:(mem.indexOf(myName())>=0?myName():mem[0]),w:mem.slice(),n:'',d:new Date().toISOString().slice(0,10),dy:dayD?dayD.d:''};
+  var DD=dayOf(v.dy)||dayD;var TH2=DD&&DD.theme||'';
+  var sh=splitSheet(old?'修改这一笔':'记一笔',SPUNIT[TH2]+'　'+(DD?DD.lab:'')+(old?'　修改':'　新增'),TH2);
+  var f=el('div','sp-form');sh.card.appendChild(f);
+  function lab(t){f.appendChild(el('p','sp-lab',t));}
+  lab('金额（日元）');var amt=el('input','sp-amt');amt.type='number';amt.inputMode='numeric';amt.min='1';amt.placeholder='例如 3200';amt.value=v.a||'';f.appendChild(amt);
+  lab('类别');var cg=el('div','sp-chips');CATS.forEach(function(c){var b=el('button',c[0]===v.c?'on':'',c[1]);b.type='button';b.onclick=function(){v.c=c[0];[].forEach.call(cg.children,function(x){x.classList.toggle('on',x===b);});};cg.appendChild(b);});f.appendChild(cg);
+  lab('谁付的');var pg=el('div','sp-chips');mem.forEach(function(m){var b=el('button',m===v.p?'on':'',m);b.type='button';b.onclick=function(){v.p=m;[].forEach.call(pg.children,function(x){x.classList.toggle('on',x===b);});};pg.appendChild(b);});f.appendChild(pg);
+  lab('谁要分（可多选）');var wg=el('div','sp-chips multi');mem.forEach(function(m){var b=el('button',v.w.indexOf(m)>=0?'on':'',m);b.type='button';b.onclick=function(){var k=v.w.indexOf(m);if(k>=0)v.w.splice(k,1);else v.w.push(m);b.classList.toggle('on');upd();};wg.appendChild(b);});f.appendChild(wg);
+  var each=el('p','sp-each');f.appendChild(each);
+  lab('备注（可不填）');var note=el('input','sp-note');note.type='text';note.maxLength=20;note.placeholder='例如 大山加油';note.value=v.n||'';f.appendChild(note);
+  lab('哪一天');var dg=el('div','sp-chips sp-days');DAYS.forEach(function(D){var b=el('button',D.d===v.dy?'on':'',D.lab);b.type='button';b.onclick=function(){v.dy=D.d;[].forEach.call(dg.children,function(x){x.classList.toggle('on',x===b);});};dg.appendChild(b);});f.appendChild(dg);
+  lab('日期');var dt=el('input','sp-date');dt.type='date';dt.value=v.d||'';f.appendChild(dt);
+  function upd(){var a=+amt.value||0;each.textContent=v.w.length?('每人 '+yen(a/v.w.length)+'（约 '+myr(a/v.w.length)+'）'):'至少选一个人';}
+  amt.oninput=upd;upd();
+  var err=el('p','nb-err');sh.card.appendChild(err);
+  var row=el('div','nb-row');var ok=el('button','nb-ok',old?'保存修改':'记下来');ok.type='button';var cc=el('button','nb-cancel','取消');cc.type='button';cc.onclick=function(){sh.ov.remove();};row.appendChild(ok);row.appendChild(cc);sh.card.appendChild(row);
+  ok.onclick=function(){var a=Math.round(+amt.value);if(!(a>0)){err.textContent='请填金额。';amt.focus();return;}if(!v.w.length){err.textContent='至少选一个人分。';return;}
+    var obj={a:a,c:v.c,p:v.p,w:v.w.slice(),n:(note.value||'').trim().slice(0,20),d:dt.value||'',dy:v.dy||'',by:myName()};
+    ok.disabled=true;ok.textContent='保存中…';expPut(obj,old).then(function(){return loadRemote(true);}).then(function(){sh.ov.remove();build();}).catch(function(){ok.disabled=false;ok.textContent=old?'保存修改':'记下来';err.textContent='保存失败，请检查网络或金钥。';});};
+  setTimeout(function(){var on=dg.querySelector('.on');if(on)dg.scrollLeft=on.offsetLeft-dg.clientWidth/2+on.offsetWidth/2;amt.focus();},60);if(lang()==='tc')convNode(sh.ov);
+}
+function delExpense(e,btn){
+  if(!btn.classList.contains('armed')){btn.classList.add('armed');btn.textContent='再按一次删除';setTimeout(function(){btn.classList.remove('armed');btn.textContent='删除';},4000);return;}
+  saving(true);ghFetch('/contents/'+e.path,{method:'DELETE',headers:{'Content-Type':'application/json'},body:JSON.stringify({message:'delete expense',sha:e.sha,branch:GH.branch})}).then(function(r){if(!r.ok)throw r.status;return loadRemote(true);}).then(function(){saving(false);build();}).catch(function(){saving(false);msg('删除失败，请检查网络或金钥。');});
+}
+function renderSplit(){
+  var box=document.getElementById('splitbox');if(!box)return;box.textContent='';
+  var mem=MEMS||[];var can=!!token();
+  var top=el('div','sp-top');
+  if(mem.length<2){var em=el('div','sp-empty');em.appendChild(el('p',null,'还没设定一起分钱的成员。'));if(can){var b=el('button','sp-btn','设定成员');b.type='button';b.onclick=memberEditor;em.appendChild(b);}else em.appendChild(el('p','sp-hint','由设定了金钥的人来设定。'));box.appendChild(em);return;}
+  var S2=settle(),total=EXPS.reduce(function(s,e){return s+e.a;},0);
+  var tot=el('div','sp-total');tot.appendChild(el('span','sp-tl','旅费总计'));tot.appendChild(el('b',null,yen(total)));tot.appendChild(el('small',null,'约 '+myr(total)+'　·　'+EXPS.length+' 笔　·　'+mem.length+' 人'));top.appendChild(tot);
+  if(can){var acts=el('div','sp-acts');var add=el('button','sp-btn main','＋ 记一笔');add.type='button';add.onclick=function(){expenseEditor(null);};var me=el('button','sp-btn ghost','成员');me.type='button';me.onclick=memberEditor;acts.appendChild(add);acts.appendChild(me);top.appendChild(acts);}
+  box.appendChild(top);
+  /* settlement */
+  var st=el('div','sp-card sp-settle');st.appendChild(el('h4',null,'最后谁给谁'));
+  if(!S2.tx.length)st.appendChild(el('p','sp-hint',EXPS.length?'大家刚好打平，不用转钱。':'还没有记录。'));
+  S2.tx.forEach(function(t){var r=el('div','sp-tx');r.appendChild(el('span','sp-who',t.from));r.appendChild(el('i',null,'→'));r.appendChild(el('span','sp-who',t.to));var a=el('span','sp-amt2');a.appendChild(el('b',null,yen(t.v)));a.appendChild(el('small',null,myr(t.v)));r.appendChild(a);st.appendChild(r);});
+  box.appendChild(st);
+  /* per person */
+  var pp=el('div','sp-card sp-people');pp.appendChild(el('h4',null,'每个人'));
+  var tb=el('div','sp-tbl');[['','付了','该分','差额']].concat(mem.map(function(m){return [m,yen(S2.paid[m]),yen(S2.share[m]),(S2.bal[m]>=0?'+':'−')+yen(Math.abs(S2.bal[m])).slice(0)];})).forEach(function(r,ri){var row=el('div','sp-row'+(ri?'':' hd'));r.forEach(function(c,ci){var cell=el('span',ci===3&&ri?(S2.bal[mem[ri-1]]>=0?'pos':'neg'):'',c);row.appendChild(cell);});tb.appendChild(row);});
+  pp.appendChild(tb);pp.appendChild(el('p','sp-hint','差额是正数代表别人要还你，负数代表你要给别人。'));box.appendChild(pp);
+  /* list */
+  var ls=el('div','sp-card sp-list');ls.appendChild(el('h4',null,'明细'));
+  if(!EXPS.length)ls.appendChild(el('p','sp-hint','还没有记录。'+(can?'按「＋ 记一笔」开始。':'')));
+  var order={};DAYS.forEach(function(D,i){order[D.d]=i;});var arr=EXPS.slice().sort(function(a,b){var oa=a.dy in order?order[a.dy]:99,ob=b.dy in order?order[b.dy]:99;return oa-ob||((b.d||'')<(a.d||'')?1:-1);});var lastD=null;arr.forEach(function(e){if(e.dy!==lastD){lastD=e.dy;var DD=dayOf(e.dy);ls.appendChild(el('p','sp-day'+(DD&&DD.theme?' t-'+DD.theme:''),DD?(DD.lab+'　'+DD.w+'　'+DD.title):'未分天'));}
+    var it=el('div','sp-item');var l=el('div','sp-il');var tg=el('span','sp-cat c-'+e.c,catName(e.c));l.appendChild(tg);var t=el('div','sp-it');t.appendChild(el('b',null,e.n||catName(e.c)));
+    var w=(e.w&&e.w.length?e.w:mem);t.appendChild(el('small',null,e.p+' 付　·　'+(w.length===mem.length?'全员':w.join('、'))+' 分'+(e.d?'　·　'+e.d.slice(5).replace('-','/'):'')));l.appendChild(t);it.appendChild(l);
+    var r=el('div','sp-ir');r.appendChild(el('b',null,yen(e.a)));if(can){var bb=el('div','sp-btns');var ed=el('button','sp-mini','修改');ed.type='button';ed.onclick=function(){expenseEditor(e);};var dl=el('button','sp-mini del','删除');dl.type='button';dl.onclick=function(){delExpense(e,dl);};bb.appendChild(ed);bb.appendChild(dl);r.appendChild(bb);}it.appendChild(r);ls.appendChild(it);});
+  box.appendChild(ls);
+  /* rate */
+  var rt=el('div','sp-rate');rt.appendChild(el('span',null,'汇率：1 日元 ≈ RM'));var ri=el('input');ri.type='number';ri.step='0.001';ri.value=String(rate());ri.onchange=function(){var x=parseFloat(ri.value);if(x>0){try{localStorage.setItem('aot-rate',String(x));}catch(er){}build();}};rt.appendChild(ri);rt.appendChild(el('small',null,'只存在这台手机，用来换算马币'));box.appendChild(rt);
+}
+
 function stamp(){var d=new Date();function p(n){return String(n).padStart(2,'0');}return d.getUTCFullYear()+p(d.getUTCMonth()+1)+p(d.getUTCDate())+'T'+p(d.getUTCHours())+p(d.getUTCMinutes())+p(d.getUTCSeconds())+'Z';}
 function ghFetch(path,opt){opt=opt||{};opt.headers=Object.assign({'Accept':'application/vnd.github+json'},opt.headers||{});var t=token();if(t)opt.headers.Authorization='Bearer '+t;return fetch('https://api.github.com/repos/'+GH.owner+'/'+GH.repo+path,opt);}
 function add(id,kind,files){
@@ -2061,11 +2280,11 @@ function parseTree(tree){
 }
 function loadRemote(force){
   var cached=null;try{cached=JSON.parse(localStorage.getItem('gh-tree')||'null');}catch(e){}
-  if(cached&&!force&&Date.now()-cached.t<180000){(REMOTE=parseTree(cached.tree),VOTES=parseVotes(cached.tree));return Promise.resolve();}
+  if(cached&&!force&&Date.now()-cached.t<180000){(REMOTE=parseTree(cached.tree),VOTES=parseVotes(cached.tree),parseExp(cached.tree));return Promise.resolve();}
   return ghFetch('/git/trees/'+GH.branch+'?recursive=1&_='+Date.now(),{cache:'no-store'}).then(function(r){if(!r.ok)throw r.status;return r.json();}).then(function(j){
     try{localStorage.setItem('gh-tree',JSON.stringify({t:Date.now(),tree:j.tree}));}catch(e){}
-    (REMOTE=parseTree(j.tree),VOTES=parseVotes(j.tree));return true;
-  }).catch(function(){if(cached)(REMOTE=parseTree(cached.tree),VOTES=parseVotes(cached.tree));return false;});
+    (REMOTE=parseTree(j.tree),VOTES=parseVotes(j.tree),parseExp(j.tree));return true;
+  }).catch(function(){if(cached)(REMOTE=parseTree(cached.tree),VOTES=parseVotes(cached.tree),parseExp(cached.tree));return false;});
 }
 function setupAdmin(){
   var box=document.getElementById('admin');if(!box)return;
