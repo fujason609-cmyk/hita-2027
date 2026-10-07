@@ -1864,7 +1864,7 @@ function myr(n){return 'RM '+(n*rate()).toFixed(2);}
 function settle(){
   var mem=MEMS||[],bal={},paid={},share={};mem.forEach(function(m){bal[m]=0;paid[m]=0;share[m]=0;});
   EXPS.forEach(function(e){var w=(e.w&&e.w.length?e.w:mem).filter(function(x){return x in bal;});if(!(e.p in bal)||!w.length)return;
-    paid[e.p]+=e.a;bal[e.p]+=e.a;var s=e.a/w.length;w.forEach(function(x){share[x]+=s;bal[x]-=s;});});
+    paid[e.p]+=e.a;bal[e.p]+=e.a;splitShares(e.a,w,e.p).forEach(function(q){share[q[0]]+=q[1];bal[q[0]]-=q[1];});});
   var cr=[],db=[];mem.forEach(function(m){var b=Math.round(bal[m]);if(b>0)cr.push({m:m,v:b});else if(b<0)db.push({m:m,v:-b});});
   cr.sort(function(a,b){return b.v-a.v;});db.sort(function(a,b){return b.v-a.v;});var tx=[];
   while(cr.length&&db.length){var c=cr[0],d=db[0],v=Math.min(c.v,d.v);if(v>0)tx.push({from:d.m,to:c.m,v:v});c.v-=v;d.v-=v;if(c.v<=0)cr.shift();if(d.v<=0)db.shift();}
@@ -1943,9 +1943,12 @@ function delExpense(e,btn){
 }
 var PAIDS=[];var SPDAY=(function(){try{return localStorage.getItem('aot-spday')||'';}catch(e){return '';}})();
 function parsePaid(tree){var out=[];(tree||[]).forEach(function(n){var m=n.type==='blob'&&/^expenses\/_paid_([0-9]+)__([A-Za-z0-9_-]+)\.p$/.exec(n.path);if(!m)return;try{var d=JSON.parse(unb64u(m[2]));d.dy=m[1];d.path=n.path;d.sha=n.sha;out.push(d);}catch(e){}});PAIDS=out;return out;}
+function splitShares(a,w,p){var n=w.length,out=[];
+  if(w.indexOf(p)>=0){var each=Math.round(a/n),used=0;w.forEach(function(x){if(x!==p){out.push([x,each]);used+=each;}});out.push([p,a-used]);return out;}
+  var base=Math.floor(a/n),rem=a-base*n;w.forEach(function(x,i){out.push([x,base+(i<rem?1:0)]);});return out;}
 function settleList(list){
   var mem=MEMS||[],bal={},paid={},share={};mem.forEach(function(m){bal[m]=0;paid[m]=0;share[m]=0;});
-  list.forEach(function(e){var w=(e.w&&e.w.length?e.w:mem).filter(function(x){return x in bal;});if(!(e.p in bal)||!w.length)return;paid[e.p]+=e.a;bal[e.p]+=e.a;var s=e.a/w.length;w.forEach(function(x){share[x]+=s;bal[x]-=s;});});
+  list.forEach(function(e){var w=(e.w&&e.w.length?e.w:mem).filter(function(x){return x in bal;});if(!(e.p in bal)||!w.length)return;paid[e.p]+=e.a;bal[e.p]+=e.a;splitShares(e.a,w,e.p).forEach(function(q){share[q[0]]+=q[1];bal[q[0]]-=q[1];});});
   var cr=[],db=[];mem.forEach(function(m){var b=Math.round(bal[m]);if(b>0)cr.push({m:m,v:b});else if(b<0)db.push({m:m,v:-b});});
   cr.sort(function(a,b){return b.v-a.v;});db.sort(function(a,b){return b.v-a.v;});var tx=[];
   while(cr.length&&db.length){var c=cr[0],d=db[0],v=Math.min(c.v,d.v);if(v>0)tx.push({from:d.m,to:c.m,v:v});c.v-=v;d.v-=v;if(c.v<=0)cr.shift();if(d.v<=0)db.shift();}
