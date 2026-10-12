@@ -1788,6 +1788,34 @@ body.photo-on .status nav a{background:#FFFDF6;border:1px solid #8B6B45!importan
 .nbk-jp .nb-ok{border-radius:2px!important;background:#B5302E!important;border:none!important;box-shadow:0 4px 0 #7A1A18!important;font-family:"Ma Shan Zheng","Noto Serif SC",serif;font-weight:400;font-size:22px!important}
 .nbk-jp .nb-ok::before,.nbk-jp .nb-ok::after{display:none!important}
 .nbk-jp .nb-cancel{color:#1F2D4E!important}.nbk-jp .langsw.sm{border-color:#B5302E!important}.nbk-jp .langsw.sm button.on{background:#B5302E!important}
+/* animated progress gauges per theme */
+.gauge{overflow:hidden}
+.gauge i{position:relative;overflow:hidden}
+.gauge i::after{content:"";position:absolute;inset:0;pointer-events:none}
+@keyframes gStripe{from{background-position:0 0}to{background-position:32px 0}}
+@keyframes gFlow{from{background-position:0% 0}to{background-position:200% 0}}
+@keyframes gShine{0%{transform:translateX(-120%)}60%,100%{transform:translateX(220%)}}
+@keyframes gFilm{from{background-position:0 0}to{background-position:24px 0}}
+@keyframes gBob{0%,100%{transform:translateY(0)}50%{transform:translateY(-1px)}}
+/* K-ON: moving candy stripes + bouncing notes feel */
+body.kon-on .status .gauge i{background:repeating-linear-gradient(45deg,#FF8FB1 0 8px,#FFB3C9 8px 16px)!important;background-size:32px 100%!important;animation:gStripe .9s linear infinite!important}
+body.kon-on .status .gauge i::after{background:linear-gradient(90deg,transparent,rgba(255,255,255,.7),transparent);width:40%;animation:gShine 2.2s ease-in-out infinite}
+/* Kyoto: vermilion with a golden sheen sweeping like lacquer */
+body.kyo-on .status .gauge i{background:linear-gradient(90deg,#A8331F,#C8402B 30%,#F2853B 50%,#C8402B 70%,#A8331F)!important;background-size:200% 100%!important;animation:gFlow 3s linear infinite!important}
+body.kyo-on .status .gauge i::after{background:linear-gradient(100deg,transparent 30%,rgba(255,226,150,.85) 50%,transparent 70%);animation:gShine 2.6s ease-in-out infinite}
+/* Fukuoka: pastel rainbow flowing */
+body.fuk-on .status .gauge i{background:linear-gradient(90deg,#F4A7B9,#F9E08B,#A8D5A2,#BFE3F7,#F4A7B9)!important;background-size:200% 100%!important;animation:gFlow 2.4s linear infinite!important}
+body.fuk-on .status .gauge i::after{background:radial-gradient(circle at 6px 50%,#fff 0 2px,transparent 2.5px) 0 0/16px 100%;opacity:.8;animation:gStripe 1.2s linear infinite}
+/* Split: vermilion with gold coin glints */
+body.split-on .status .gauge i{background:linear-gradient(90deg,#8E2220,#B5302E 40%,#D24A33 60%,#B5302E)!important;background-size:200% 100%!important;animation:gFlow 3.4s linear infinite!important}
+body.split-on .status .gauge i::after{background:linear-gradient(100deg,transparent 35%,rgba(230,196,106,.9) 50%,transparent 65%);animation:gShine 2.4s ease-in-out infinite}
+/* Supply: tatami green weave moving */
+body.supply-on .status .gauge i{background:repeating-linear-gradient(90deg,#3E5C4A 0 6px,#5F8A63 6px 8px)!important;background-size:16px 100%!important;animation:gStripe 1.4s linear infinite!important}
+body.supply-on .status .gauge i::after{background:linear-gradient(90deg,transparent,rgba(201,162,74,.6),transparent);width:35%;animation:gShine 2.8s ease-in-out infinite}
+/* Photo: film strip rolling */
+body.photo-on .status .gauge i{background:radial-gradient(circle at 6px 50%,#FFFDF6 0 2px,transparent 2.5px) 0 0/12px 100%,#2C3E5C!important;animation:gFilm .8s linear infinite!important}
+body.photo-on .status .gauge i::after{background:linear-gradient(90deg,transparent,rgba(255,214,140,.55),transparent);width:30%;animation:gShine 2.2s ease-in-out infinite}
+@media (prefers-reduced-motion:reduce){.status .gauge i,.status .gauge i::after{animation:none!important}}
 </style></head><body><template id="shell">
 <header class="wall pending">
   <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><filter id="keywhite" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB"><feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  -6 -6 -6 0 16.8" result="m"/><feMorphology in="m" operator="erode" radius="1.5" result="me"/><feComposite in="SourceGraphic" in2="me" operator="in" result="c"/><feComposite in="c" in2="SourceAlpha" operator="in"/></filter></svg>
