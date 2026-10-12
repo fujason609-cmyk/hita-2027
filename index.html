@@ -1426,6 +1426,170 @@ body.kyo-on .status nav a.on{background:#C8402B!important;border-color:#C8402B!i
 .kon .sp-paid.busy::before,.t-kon .sp-paid.busy::before{border-color:#FF6F9C;border-right-color:transparent}
 .t-kyo .sp-paid.busy::before{border-color:#C8402B;border-right-color:transparent}
 @media (prefers-reduced-motion:reduce){.sp-paid.busy::before{animation-duration:2s}}
+/* ===== Fukuoka: Nakasu neon ===== */
+.fuk{--pk:#FF4FB0;--cy:#2EF2FF;--ye:#FFE14D;--gr:#39FF88;--rd:#FF4D4D;--vi:#B98CFF;--bg:#0B0A1A;--pn:#15142B;--tx:#ECE8FF;--sf:#A9A3C9;
+  position:relative;margin:48px -6px 0;padding:0 14px 34px;border-radius:6px;color:var(--tx);overflow:hidden;
+  background:radial-gradient(ellipse at 50% 0%,rgba(255,79,176,.18),transparent 55%),linear-gradient(rgba(185,140,255,.06) 2px,transparent 2px) 0 0/80px 40px,linear-gradient(90deg,rgba(185,140,255,.06) 2px,transparent 2px) 0 0/80px 80px,linear-gradient(90deg,rgba(185,140,255,.06) 2px,transparent 2px) 40px 40px/80px 80px,var(--bg);box-shadow:0 0 0 1px rgba(46,242,255,.5),0 0 24px rgba(46,242,255,.25),0 18px 40px rgba(0,0,0,.5)}
+.fuk::after{content:"";position:absolute;left:0;right:0;bottom:0;height:70px;pointer-events:none;
+  background:repeating-linear-gradient(180deg,transparent 0 6px,rgba(0,0,0,.35) 6px 8px),linear-gradient(90deg,rgba(255,79,176,.25),rgba(46,242,255,.25),rgba(255,225,77,.2),rgba(57,255,136,.2),rgba(185,140,255,.25)),linear-gradient(180deg,#0E1030,#05060F);
+  border-top:2px solid var(--cy);box-shadow:0 -6px 16px rgba(46,242,255,.35)}
+.fuk .nx-sign{position:relative;z-index:1;text-align:center;padding:26px 0 6px}
+.fuk .nx-s1{display:block;font-family:"ZCOOL KuaiLe","Noto Sans SC",sans-serif;font-size:clamp(44px,13vw,78px);letter-spacing:.12em;color:#FFE6F4;text-shadow:0 0 4px rgba(255,255,255,.6),0 0 10px #FF4FB0,0 0 22px #FF4FB0,0 0 44px #FF4FB0;animation:nxflick 6s infinite}
+.fuk .nx-s2{display:inline-block;margin-top:4px;padding:2px 14px;font-size:14px;letter-spacing:.35em;color:#E6FEFF;border:2px solid var(--cy);border-radius:999px;text-shadow:0 0 4px rgba(255,255,255,.6),0 0 10px #2EF2FF,0 0 22px #2EF2FF;box-shadow:0 0 10px #2EF2FF,inset 0 0 10px rgba(46,242,255,.4)}
+@keyframes nxflick{0%,19%,21%,23%,55%,57%,100%{opacity:1}20%,22%,56%{opacity:.55}}
+.fuk .nx-band{position:relative;z-index:1;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin:16px 0 6px}
+.fuk .nx-bi{display:flex;flex-direction:column;align-items:center;gap:4px;padding:10px 4px 8px;border-radius:12px;background:rgba(21,20,43,.85);border:1px solid rgba(255,255,255,.08)}
+.fuk .nx-bi svg{width:42px;height:42px}
+.fuk .nx-bi.ramen svg{filter:drop-shadow(0 0 4px #FF4FB0) drop-shadow(0 0 10px #FF4FB0)}.fuk .nx-bi.yatai svg{filter:drop-shadow(0 0 4px #FFE14D) drop-shadow(0 0 10px #FFE14D)}
+.fuk .nx-bi.castle svg{filter:drop-shadow(0 0 4px #2EF2FF) drop-shadow(0 0 10px #2EF2FF)}.fuk .nx-bi.train svg{filter:drop-shadow(0 0 4px #39FF88) drop-shadow(0 0 10px #39FF88)}
+.fuk .nx-bi b{font-size:12.5px;letter-spacing:.25em;color:var(--sf);font-weight:700}
+.fuk .dayhead{position:relative;z-index:1;border-top:none;margin-top:18px;padding-top:0;align-items:center}
+.fuk .dayhead .dd{display:inline-block;padding:4px 14px;border:2px solid var(--ye);border-radius:8px;color:#FFFBE0;font-family:"Noto Sans SC",sans-serif;font-weight:900;font-size:clamp(18px,3.6vw,22px);text-shadow:0 0 4px rgba(255,255,255,.6),0 0 10px #FFE14D,0 0 22px #FFE14D;box-shadow:0 0 10px #FFE14D,inset 0 0 10px rgba(255,225,77,.35)}
+.fuk .dayhead h3{font-family:"Noto Sans SC",sans-serif;font-weight:900;color:#FFE6F4;font-size:clamp(26px,5vw,34px);text-shadow:0 0 10px #FF4FB0,0 0 24px rgba(255,79,176,.6)}
+.fuk .dayhead small,.fuk .daytools > span{color:var(--sf)}
+.fuk .route,.fuk .daytools,.fuk .sp-strip{position:relative;z-index:1}
+/* cards: lit signboards */
+.fuk .dossier,.fuk .util{position:relative;border-radius:14px;border:2px solid var(--cy);background:linear-gradient(180deg,#1A1934,#121128);color:var(--tx);box-shadow:0 0 12px rgba(46,242,255,.55),inset 0 0 14px rgba(46,242,255,.12);overflow:visible}
+.fuk .dossier:nth-of-type(3n+2){border-color:var(--pk);box-shadow:0 0 12px rgba(255,79,176,.55),inset 0 0 14px rgba(255,79,176,.12)}
+.fuk .dossier:nth-of-type(3n){border-color:var(--ye);box-shadow:0 0 12px rgba(255,225,77,.5),inset 0 0 14px rgba(255,225,77,.1)}
+.fuk .util{border-color:var(--vi);box-shadow:0 0 12px rgba(185,140,255,.5),inset 0 0 14px rgba(185,140,255,.12)}
+.fuk .dossier .file{border-bottom:1px dashed rgba(255,255,255,.15);color:var(--sf);padding-right:44px}
+.fuk .dossier .file b{color:#FFE6F4;text-shadow:0 0 8px #FF4FB0;font-family:"Noto Sans SC",sans-serif;font-weight:900;letter-spacing:.1em}
+.fuk .body h4,.fuk .util h4{font-family:"Noto Sans SC",sans-serif;font-weight:900;color:#fff;font-size:21px;text-shadow:0 0 10px rgba(255,255,255,.35)}
+.fuk .body p,.fuk .util p{color:#CFC9EA}
+.fuk .time{background:transparent;color:#E6FEFF;border:1.5px solid var(--cy);border-radius:999px;padding:0 9px;text-shadow:0 0 6px #2EF2FF;box-shadow:0 0 6px #2EF2FF}
+.fuk .flag{color:var(--pk);border-color:var(--pk);border-radius:999px;text-shadow:0 0 6px #FF4FB0}
+.fuk .addr,.fuk .telk{color:#DAD5F2;border-top-color:rgba(255,255,255,.1)}.fuk .addr a,.fuk .telk a{color:#E6FEFF}
+.fuk .ginfo,.fuk .glabel{color:var(--sf)}
+.fuk .shots .none{color:var(--sf);border-top-color:rgba(255,255,255,.1)}
+.fuk .gal .lead{border:none;border-radius:10px;background:#0E0D22}
+.fuk .gal .lead .empty{background:linear-gradient(rgba(185,140,255,.06) 2px,transparent 2px) 0 0/80px 40px,linear-gradient(90deg,rgba(185,140,255,.06) 2px,transparent 2px) 0 0/80px 80px,linear-gradient(90deg,rgba(185,140,255,.06) 2px,transparent 2px) 40px 40px/80px 80px,#0E0D22!important;color:var(--sf)!important;border-radius:10px}.fuk .gal .lead .empty strong{color:#E6FEFF!important;text-shadow:0 0 8px #2EF2FF}
+.fuk .stamp.fkst{border:3px solid var(--pk);border-radius:50%;width:94px;height:94px;padding:0;display:flex;flex-direction:column;align-items:center;justify-content:center;background:rgba(11,10,26,.85);color:#FFE6F4;
+  font-family:"Noto Sans SC",sans-serif;font-weight:900;font-size:16px;transform:rotate(-12deg);text-shadow:0 0 8px #FF4FB0;box-shadow:0 0 12px #FF4FB0,inset 0 0 12px rgba(255,79,176,.4)}
+.fuk .stamp.fkst small{color:var(--ye);text-shadow:none}
+.fuk .fk-stk{position:absolute;right:-10px;top:-18px;z-index:4;width:46px;height:46px;border-radius:50%;background:var(--bg);border:1.5px solid rgba(255,255,255,.25);display:flex;align-items:center;justify-content:center;transform:rotate(-8deg)}
+.fuk .fk-stk svg{width:32px;height:32px;filter:drop-shadow(0 0 4px rgba(255,255,255,.7))}
+.fuk .shots > button.more::after,.fuk .gal .rthumbs > button.more::after{border-color:var(--pk)!important;box-shadow:0 0 10px #FF4FB0}
+/* neon buttons */
+.fuk .next .nx-b a,.fuk .nx-b a,.fuk .leg .lgbtn,.fuk .acts .up{--trim:transparent;border:2px solid var(--nc)!important;border-radius:12px!important;color:#fff!important;justify-content:center;gap:8px;padding:0 14px!important;
+  background:rgba(11,10,26,.75)!important;font-family:"Noto Sans SC",sans-serif!important;font-weight:900!important;letter-spacing:.06em;box-shadow:0 0 10px var(--nc),inset 0 0 12px color-mix(in srgb,var(--nc) 35%,transparent)!important;text-shadow:0 0 6px var(--nc)!important}
+.fuk .nx-b a{--nc:#FF4FB0}.fuk .nx-b a.waze{--nc:#2EF2FF}.fuk .acts .up{--nc:#FFE14D;min-height:52px}.fuk .leg .lgbtn{--nc:#39FF88}.fuk .util .nx-b.one a{--nc:#B98CFF}
+.fuk .nx-b a .ic,.fuk .lgbtn .ic,.fuk .acts .up .ic{flex:0 0 auto!important;width:auto;background:none!important;border:none!important;padding:0}
+.fuk .nx-b a .tx,.fuk .lgbtn .tx,.fuk .acts .up .tx{flex:0 0 auto!important;padding:0!important;font-size:16px}
+.fuk .ic svg{stroke:#fff!important;width:19px;height:19px;filter:drop-shadow(0 0 4px var(--nc))}
+.fuk .nx-b a:active,.fuk .acts .up:active,.fuk .leg .lgbtn:active{background:color-mix(in srgb,var(--nc) 25%,#0B0A1A)!important}
+.fuk .tools3 .tool{border-radius:12px;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.04);color:var(--tx);box-shadow:none}.fuk .tools3 .tool .ic svg{stroke:var(--cy)!important;filter:drop-shadow(0 0 4px #2EF2FF)}
+.fuk .glabel .sh-btn{border-radius:999px;border:1.5px solid var(--pk);background:transparent;color:#FFE6F4;text-shadow:0 0 6px #FF4FB0;box-shadow:0 0 8px #FF4FB0}.fuk .glabel .sh-btn svg{stroke:#FFE6F4}
+.fuk .votes{border-top-color:rgba(255,255,255,.1)}.fuk .votes .vlab{font-family:"Noto Sans SC",sans-serif;font-weight:900;color:#FFFBE0;text-shadow:0 0 8px #FFE14D}.fuk .votes .vlab small{color:var(--sf);text-shadow:none}
+.fuk .votes .vpen{border-radius:12px;border:1.5px solid var(--cy);background:transparent;box-shadow:0 0 8px #2EF2FF}.fuk .votes .vpen svg{stroke:#E6FEFF}
+/* neon bulb votes */
+.fuk .votes .vd,.fuksheet .vlist .vd{width:28px!important;height:34px!important;transform:none}
+.fuk .votes .vd::after,.fuksheet .vlist .vd::after{display:none!important;content:none!important}
+.fuk .votes .vd::before,.fuksheet .vlist .vd::before{left:50%!important;top:50%!important;bottom:auto!important;width:24px!important;height:30px!important;margin:-15px 0 0 -12px!important;border:none!important;border-radius:0!important;box-shadow:none!important;
+  background:#3A3858!important;-webkit-mask:url("data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2030%22%3E%3Cpath%20d%3D%22M12%201a10%2010%200%200%200-6%2018v4h12v-4A10%2010%200%200%200%2012%201z%22/%3E%3Crect%20x%3D%227%22%20y%3D%2224%22%20width%3D%2210%22%20height%3D%222.4%22%20rx%3D%221%22/%3E%3Crect%20x%3D%228%22%20y%3D%2227.4%22%20width%3D%228%22%20height%3D%222.4%22%20rx%3D%221%22/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2030%22%3E%3Cpath%20d%3D%22M12%201a10%2010%200%200%200-6%2018v4h12v-4A10%2010%200%200%200%2012%201z%22/%3E%3Crect%20x%3D%227%22%20y%3D%2224%22%20width%3D%2210%22%20height%3D%222.4%22%20rx%3D%221%22/%3E%3Crect%20x%3D%228%22%20y%3D%2227.4%22%20width%3D%228%22%20height%3D%222.4%22%20rx%3D%221%22/%3E%3C/svg%3E") center/contain no-repeat}
+.fuk .votes .vd.like::before,.fuksheet .vlist .vd.like::before{background:radial-gradient(circle at 50% 35%,#E8FFF1,#39FF88 55%)!important}
+.fuk .votes .vd.dis::before,.fuksheet .vlist .vd.dis::before{background:radial-gradient(circle at 50% 35%,#FFE8E8,#FF4D4D 55%)!important}
+.fuk .votes .vd.like{filter:drop-shadow(0 0 4px #39FF88) drop-shadow(0 0 10px #39FF88)}.fuk .votes .vd.dis{filter:drop-shadow(0 0 4px #FF4D4D) drop-shadow(0 0 10px #FF4D4D)}
+.fuksheet .vlist .vd.like{filter:drop-shadow(0 0 4px #39FF88)}.fuksheet .vlist .vd.dis{filter:drop-shadow(0 0 4px #FF4D4D)}
+.fuk .votes .vd.like,.fuk .votes .vd.dis{animation:nxbulb 3s infinite}
+@keyframes nxbulb{0%,92%,100%{opacity:1}94%{opacity:.5}96%{opacity:1}97%{opacity:.6}}
+.fuk .votes .vd.mine{outline:1.5px dashed var(--ye);outline-offset:2px;border-radius:6px}
+/* legs: neon tubes */
+.fuk .leg{border-left:none!important;margin-left:10px;padding-left:34px;position:relative}
+.fuk .leg::before{content:"";position:absolute;left:4px;top:12px;width:14px;height:14px;border-radius:50%;background:#fff;box-shadow:0 0 6px #2EF2FF,0 0 14px #2EF2FF}
+.fuk .leg::after{content:"";position:absolute;left:10px;top:30px;bottom:6px;width:3px;border-radius:2px;background:var(--cy);box-shadow:0 0 6px #2EF2FF,0 0 14px #2EF2FF}
+.fuk .leg:nth-of-type(odd)::before{box-shadow:0 0 6px #FF4FB0,0 0 14px #FF4FB0}.fuk .leg:nth-of-type(odd)::after{background:var(--pk);box-shadow:0 0 6px #FF4FB0,0 0 14px #FF4FB0}
+.fuk .leg .lgn{color:#fff;font-family:"Noto Sans SC",sans-serif;font-weight:900}.fuk .leg .lgn i{color:var(--ye);text-shadow:0 0 6px #FFE14D}
+.fuk .leg .lg{color:var(--tx)}.fuk .leg .lg b{color:#E6FEFF;text-shadow:0 0 8px #2EF2FF}.fuk .leg .lg small{color:var(--sf)}
+/* day strip */
+.fuk .sp-strip{background:rgba(21,20,43,.85);border:1.5px solid var(--ye);border-left-width:6px;border-radius:12px;box-shadow:0 0 10px rgba(255,225,77,.4)}
+.fuk .sp-st-t span,.fuk .sp-st-t small,.fuk .sp-st-v{color:var(--sf)}.fuk .sp-st-t b{color:#FFFBE0;text-shadow:0 0 8px #FFE14D}
+.fuk .sp-st-add{border-radius:12px;border:1.5px solid var(--pk);background:transparent;color:#FFE6F4;text-shadow:0 0 6px #FF4FB0;box-shadow:0 0 8px #FF4FB0}
+.fuk .sp-strip.done{border-color:var(--gr);box-shadow:0 0 10px rgba(57,255,136,.4)}
+/* header */
+body.fuk-on .status{background:linear-gradient(rgba(185,140,255,.06) 2px,transparent 2px) 0 0/80px 40px,linear-gradient(90deg,rgba(185,140,255,.06) 2px,transparent 2px) 0 0/80px 80px,linear-gradient(90deg,rgba(185,140,255,.06) 2px,transparent 2px) 40px 40px/80px 80px,#0B0A1A!important;border-bottom:none!important;box-shadow:0 2px 0 #FF4FB0,0 0 14px rgba(255,79,176,.6),0 4px 0 #2EF2FF}
+body.fuk-on .status #count{color:#FFFBE0;font-family:"ZCOOL KuaiLe","Noto Sans SC",sans-serif;font-weight:400;font-size:19px;text-shadow:0 0 8px #FFE14D,0 0 18px #FFE14D}
+body.fuk-on .status .me{background:transparent;border:1.5px solid #2EF2FF;border-radius:999px;color:#E6FEFF;box-shadow:0 0 8px #2EF2FF}body.fuk-on .status .me svg{stroke:#2EF2FF}body.fuk-on .status .me i{color:#2EF2FF}
+body.fuk-on .status .refresh{background:transparent!important;color:#FFE6F4;border:1.5px solid #FF4FB0;border-radius:999px;--cut:0px;clip-path:none;box-shadow:0 0 10px #FF4FB0!important;text-shadow:0 0 6px #FF4FB0}
+body.fuk-on .status .gauge{background:#15142B;border:1px solid rgba(255,255,255,.2);border-radius:999px}body.fuk-on .status .gauge i{background:linear-gradient(90deg,#FF4FB0,#FFE14D)!important;box-shadow:0 0 10px #FF4FB0;animation:none}
+body.fuk-on .status nav a{background:transparent;border:1px solid rgba(255,255,255,.2)!important;border-radius:999px;color:#CFC9EA}
+body.fuk-on .status nav a.on{background:transparent!important;border-color:#FFE14D!important;color:#FFFBE0!important;text-shadow:0 0 6px #FFE14D;box-shadow:0 0 10px #FFE14D}
+/* sheets */
+.fuksheet .nb-card{background:linear-gradient(rgba(185,140,255,.06) 2px,transparent 2px) 0 0/80px 40px,linear-gradient(90deg,rgba(185,140,255,.06) 2px,transparent 2px) 0 0/80px 80px,linear-gradient(90deg,rgba(185,140,255,.06) 2px,transparent 2px) 40px 40px/80px 80px,#121128!important;color:#ECE8FF;box-shadow:0 0 0 2px #2EF2FF,0 0 24px rgba(46,242,255,.45),0 24px 50px rgba(0,0,0,.6)!important;border-radius:16px;overflow:hidden}
+.fuksheet .nb-card .nb-unit{background:#0B0A1A!important;color:#FFE6F4!important;border-bottom:2px solid #FF4FB0!important;box-shadow:0 0 12px #FF4FB0!important;text-shadow:0 0 6px #FF4FB0}
+.fuksheet .nb-card .nb-unit::before,.fuksheet .nb-card .nb-unit::after{background:#FFE14D!important;box-shadow:0 0 6px #FFE14D}
+.fuksheet .nb-card h3{color:#fff;text-shadow:0 0 10px rgba(255,79,176,.6)}
+.fuksheet .nb-card .nb-sub,.fuksheet .nb-card p{color:#CFC9EA}
+.fuksheet .nb-card .seal{border-radius:50%!important;background:#0B0A1A!important;box-shadow:0 0 0 3px #FF4FB0,0 0 14px #FF4FB0,inset 0 0 10px rgba(255,79,176,.5)!important}
+.fuksheet .nb-card .seal::before{display:none}.fuksheet .nb-card .seal::after{color:#FFE6F4!important;text-shadow:0 0 8px #FF4FB0;font-family:"Noto Sans SC",sans-serif;font-weight:900;font-size:26px!important}
+.fuksheet .vli{border-bottom-color:rgba(255,255,255,.12)!important}.fuksheet .vli .vn{color:#fff}.fuksheet .vli .vno{color:var(--sf)}
+.fuksheet .vli .vv.like{color:#39FF88!important;border-color:#39FF88!important;text-shadow:0 0 6px #39FF88}.fuksheet .vli .vv.dis{color:#FF4D4D!important;border-color:#FF4D4D!important;text-shadow:0 0 6px #FF4D4D}
+.fuksheet .vlist{border-top-color:rgba(255,255,255,.2)!important}
+.fuksheet .stp{--ink:#39FF88}.fuksheet .vx .stp{--ink:#FF4D4D}.fuksheet .stp-cap{color:#CFC9EA}
+.fuksheet .vbtn.vstamps button{border-color:rgba(255,255,255,.2)!important;background:rgba(255,255,255,.04)!important;border-radius:12px!important}
+.fuksheet .vbtn.vstamps .vl.on{box-shadow:0 0 0 2px #39FF88,0 0 14px #39FF88!important}.fuksheet .vbtn.vstamps .vx.on{box-shadow:0 0 0 2px #FF4D4D,0 0 14px #FF4D4D!important}
+.fuksheet .nb-row .vclose,.fuksheet .nb-row .nb-cancel{color:#E6FEFF!important}
+/* overlays */
+.fukov{background:linear-gradient(rgba(185,140,255,.06) 2px,transparent 2px) 0 0/80px 40px,linear-gradient(90deg,rgba(185,140,255,.06) 2px,transparent 2px) 0 0/80px 80px,linear-gradient(90deg,rgba(185,140,255,.06) 2px,transparent 2px) 40px 40px/80px 80px,#0B0A1A!important}
+.fukov .gal-hd{background:#0B0A1A!important;border-bottom:2px solid #FF4FB0!important;box-shadow:0 0 14px #FF4FB0}
+.fukov .gal-unit{color:#2EF2FF!important;text-shadow:0 0 6px #2EF2FF}.fukov .gal-ht h3{color:#FFE6F4;text-shadow:0 0 10px #FF4FB0}.fukov .gal-n{color:var(--sf,#A9A3C9)}
+.fukov .gal-x{border:1.5px solid #2EF2FF!important;background:transparent!important;color:#E6FEFF!important;border-radius:999px;box-shadow:0 0 8px #2EF2FF}
+.fukov .sh-opts,.fukov .sh-foot,.fukov .ed-tip,.fukov .ed-ctl{background:#121128!important;border-color:rgba(255,255,255,.12)!important;color:#A9A3C9}
+.fukov .sh-fmt button,.fukov .sh-style button{background:rgba(255,255,255,.04)!important;border:1px solid rgba(255,255,255,.18)!important;border-radius:12px!important;color:#A9A3C9}
+.fukov .sh-fmt button b,.fukov .sh-style button b{color:#fff}
+.fukov .sh-fmt button.on,.fukov .sh-style button.on{border:1.5px solid #FFE14D!important;background:rgba(255,225,77,.08)!important;box-shadow:0 0 10px #FFE14D}
+.fukov .sh-fmt button.on .sh-shape{border-color:#FFE14D;background:rgba(255,225,77,.2)}
+.fukov .gal-grid > .gal-it::after{border-color:rgba(255,255,255,.15)!important}
+.fukov .sh-grid > .gal-it.picked::after{border:3px solid #FF4FB0!important;box-shadow:inset 0 0 12px #FF4FB0}
+.fukov .sh-grid .gal-it.picked .sh-no{background:#0B0A1A!important;border-color:#FF4FB0!important;box-shadow:0 0 8px #FF4FB0}
+.fukov .sh-go{border-radius:12px!important;background:transparent!important;border:2px solid #FF4FB0!important;box-shadow:0 0 12px #FF4FB0,inset 0 0 12px rgba(255,79,176,.35);color:#FFE6F4;text-shadow:0 0 8px #FF4FB0}
+.fukov .gal-cap{background:linear-gradient(180deg,transparent,rgba(11,10,26,.9))!important}
+.fukov .ed-board{box-shadow:0 0 0 2px #2EF2FF,0 0 24px rgba(46,242,255,.4)}
+.fukov .ed-cell.on::after{border-color:#FF4FB0;box-shadow:inset 0 0 10px #FF4FB0}.fukov .ed-cell.on .ed-no{background:#FF4FB0}
+.fukov .ed-zl{color:#A9A3C9}.fukov .ed-rng{accent-color:#FF4FB0}
+.fukov .ed-rs{border-radius:999px;border-color:#2EF2FF;color:#E6FEFF;background:transparent}.fukov .ed-load{color:#FFE14D}
+/* lightbox */
+.lb.lb2.fuklb{background:radial-gradient(ellipse at 50% 0%,rgba(255,79,176,.15),transparent 60%),linear-gradient(rgba(185,140,255,.06) 2px,transparent 2px) 0 0/80px 40px,linear-gradient(90deg,rgba(185,140,255,.06) 2px,transparent 2px) 0 0/80px 80px,linear-gradient(90deg,rgba(185,140,255,.06) 2px,transparent 2px) 40px 40px/80px 80px,#0B0A1A!important}
+.fuklb .lb-top{background:#0B0A1A!important;border-bottom:2px solid #FF4FB0!important;box-shadow:0 0 14px #FF4FB0}
+.fuklb .lb-unit{color:#2EF2FF!important;text-shadow:0 0 6px #2EF2FF}.fuklb .lb-title{color:#FFE6F4;text-shadow:0 0 8px #FF4FB0}.fuklb .lb-meta{color:#A9A3C9}
+.fuklb .lb-ico{background:transparent!important;border:1.5px solid #2EF2FF!important;box-shadow:0 0 8px #2EF2FF}
+.fuklb .lb-del{border-color:#FF4D4D!important;box-shadow:0 0 8px #FF4D4D}.fuklb .lb-del.armed{background:#FF4D4D!important}
+.lb.lb2.fuklb .lb-frame{background:#121128;padding:8px;border-radius:12px;box-shadow:0 0 0 2px #2EF2FF,0 0 24px #2EF2FF,0 0 60px rgba(46,242,255,.3)!important}
+.fuklb .lb-nav{background:transparent!important;border:2px solid #FF4FB0!important;box-shadow:0 0 12px #FF4FB0}.fuklb .lb-nav svg{stroke:#FFE6F4!important}
+.fuklb .lb-nav:disabled{border-color:#3A3858!important;box-shadow:none}
+.fuklb .lb-count{color:#A9A3C9}.fuklb .lb-count b{color:#FFFBE0;text-shadow:0 0 8px #FFE14D}.fuklb .lb-hint{color:#7E78A0}
+.fuklb .lb-load .g1{stroke:#FF4FB0}.fuklb .lb-load .g2{stroke:#2EF2FF}.fuklb .lb-load .g3{fill:#FFE14D}.fuklb .lb-load span{color:#FFFBE0;text-shadow:0 0 8px #FFE14D}
+/* preview */
+.fukpv{background:radial-gradient(ellipse at 50% 0%,rgba(255,79,176,.18),transparent 60%),rgba(11,10,26,.98)!important}
+.fukpv .pv-img{box-shadow:0 0 0 2px #2EF2FF,0 0 30px rgba(46,242,255,.45)!important;border-radius:4px}
+.fukpv .pv-hint{color:#A9A3C9}
+.fukpv .pv-c{border-radius:12px!important;border:1.5px solid #2EF2FF!important;background:transparent!important;color:#E6FEFF!important;box-shadow:0 0 8px #2EF2FF}
+.fukpv .pv-s{border-radius:12px!important;border:2px solid #FF4FB0!important;background:transparent!important;box-shadow:0 0 12px #FF4FB0,inset 0 0 12px rgba(255,79,176,.35);color:#FFE6F4!important;text-shadow:0 0 8px #FF4FB0}
+/* expense sheet */
+.fuk-sp .sp-lab{color:#2EF2FF;text-shadow:0 0 6px rgba(46,242,255,.6)}
+.fuk-sp .sp-amtbox{background:#0B0A1A;border:2px solid #FFE14D!important;border-radius:14px;box-shadow:0 0 12px rgba(255,225,77,.45)}
+.fuk-sp .sp-yen{color:#FFE14D;text-shadow:0 0 8px #FFE14D}
+.fuk-sp .sp-amtbox .sp-amt{color:#FFFBE0;font-family:"Noto Sans SC",sans-serif;font-weight:900;text-shadow:0 0 10px rgba(255,225,77,.6)}
+.fuk-sp .sp-amtbox .sp-amt::placeholder{color:#4A4768}
+.fuk-sp .sp-each,.fuk-sp .sp-each small{color:#A9A3C9}.fuk-sp .sp-each b{color:#FFE6F4;text-shadow:0 0 8px #FF4FB0}
+.fuk-sp .sp-catb,.fuk-sp .sp-dgrid button{border-radius:12px;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.04);color:#CFC9EA}
+.fuk-sp .sp-dgrid button small{color:#8E88B0}
+.fuk-sp .sp-catb.on,.fuk-sp .sp-dgrid button.on{background:rgba(255,79,176,.12);border:1.5px solid #FF4FB0;color:#FFE6F4;box-shadow:0 0 10px #FF4FB0;text-shadow:0 0 6px #FF4FB0}
+.fuk-sp .sp-dgrid button.on small{color:#FFC6E6}
+.fuk-sp .sp-note,.fuk-sp .sp-mrow input{border-radius:12px;border:1px solid rgba(255,255,255,.25)!important;background:#0B0A1A;color:#ECE8FF}
+.fuk-sp .sp-note::placeholder{color:#5A5680}
+.fuk-sp .sp-av{border:1.5px solid rgba(255,255,255,.3);background:transparent;color:#ECE8FF}.fuk-sp .sp-pn{color:#CFC9EA}
+.fuk-sp .sp-pb.on .sp-av{border-color:#2EF2FF;color:#E6FEFF;box-shadow:0 0 10px #2EF2FF;text-shadow:0 0 6px #2EF2FF;background:rgba(46,242,255,.1)}
+.fuk-sp .sp-people.multi .sp-pb.on .sp-av{border-color:#39FF88;color:#E8FFF1;box-shadow:0 0 10px #39FF88;text-shadow:0 0 6px #39FF88;background:rgba(57,255,136,.1)}
+.fuk-sp .sp-ck{background:#FFE14D;color:#0B0A1A;box-shadow:0 0 6px #FFE14D}
+.fuk-sp .sp-all{border-radius:999px;border-color:#2EF2FF;color:#E6FEFF}
+.fuk-sp .nb-err{color:#FF8A8A}
+.fuk-sp .nb-row .nb-ok{border-radius:12px!important;background:transparent!important;border:2px solid #FF4FB0!important;box-shadow:0 0 12px #FF4FB0,inset 0 0 12px rgba(255,79,176,.35)!important;color:#FFE6F4!important;text-shadow:0 0 8px #FF4FB0}
+.sp-dpb.t-fuk b{color:#FF8FCB;text-shadow:0 0 6px rgba(255,79,176,.7)}.sp-dpb.on.t-fuk b{color:#D6338C;text-shadow:none}.sp-day.t-fuk{color:#D6338C}
+.sp-daycard.t-fuk .sp-dh{background:linear-gradient(rgba(185,140,255,.06) 2px,transparent 2px) 0 0/80px 40px,linear-gradient(90deg,rgba(185,140,255,.06) 2px,transparent 2px) 0 0/80px 80px,linear-gradient(90deg,rgba(185,140,255,.06) 2px,transparent 2px) 40px 40px/80px 80px,#0B0A1A;border-bottom:2px solid #FF4FB0;box-shadow:0 0 14px #FF4FB0}
+.sp-daycard.t-fuk .sp-dl{color:#2EF2FF;text-shadow:0 0 6px #2EF2FF}.sp-daycard.t-fuk .sp-dh h4{color:#FFE6F4;text-shadow:0 0 8px #FF4FB0}.sp-daycard.t-fuk .sp-dt b{color:#FFFBE0;text-shadow:0 0 8px #FFE14D}
+@media(max-width:560px){.fuk{margin:44px -12px 0!important;border-radius:0!important;box-shadow:none!important;border-top:2px solid #2EF2FF;border-bottom:2px solid #2EF2FF}.fuk .fk-stk{right:-6px!important}.fuk .nx-bi svg{width:36px;height:36px}}
+@media (prefers-reduced-motion:reduce){.fuk .nx-s1,.fuk .votes .vd{animation:none!important}}
 </style></head><body><template id="shell">
 <header class="wall pending">
   <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><filter id="keywhite" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB"><feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  -6 -6 -6 0 16.8" result="m"/><feMorphology in="m" operator="erode" radius="1.5" result="me"/><feComposite in="SourceGraphic" in2="me" operator="in" result="c"/><feComposite in="c" in2="SourceAlpha" operator="in"/></filter></svg>
@@ -1554,10 +1718,10 @@ var DAYS=[
  {d:'9',lab:'第9天',w:'京都',theme:'kyo',title:'京都自由行',sub:'红叶、寺庙，或奈良、大阪一日游（待排）',mode:'transit',stops:[
   {id:'kyotofree9',kind:'util',t:'待定',name:'京都自由行',note:'确定日期和住宿后再排。南禅寺水路阁、金阁寺、北野天满宫、嵐山这些地方也出现在轻音少女里，可以顺路去。',q:'京都駅',from:[34.985849,135.7587667],transit:true}
  ]},
- {d:'10',lab:'第10天',w:'福冈',title:'京都 → 福冈',sub:'早上坐新干线回福冈，下午开始玩',mode:'transit',stops:[
+ {d:'10',lab:'第10天',w:'福冈',theme:'fuk',title:'京都 → 福冈',sub:'早上坐新干线回福冈，下午开始玩',mode:'transit',stops:[
   {id:'tofuk',kind:'util',t:'上午',name:'京都 → 博多',note:'新干线京都到博多约 2 小时 40 分钟。行李可以先寄放在博多的酒店，下午开始在福冈玩（行程待排）。',q:'博多駅',from:[34.985849,135.7587667],transit:true}
  ]},
- {d:'11',lab:'第11天',w:'回国',title:'福冈自由行 → 回国',sub:'白天在福冈玩，之后从福冈机场回国',mode:'transit',stops:[
+ {d:'11',lab:'第11天',w:'回国',theme:'fuk',title:'福冈自由行 → 回国',sub:'白天在福冈玩，之后从福冈机场回国',mode:'transit',stops:[
   {id:'fukfree',kind:'util',t:'白天',name:'福冈自由行',note:'行程待排。福冈机场离博多站只要地铁 5 分钟，玩到傍晚再去机场也来得及。',q:'博多駅',from:[33.5897,130.4207],transit:true},
   {id:'tofukair',kind:'util',t:'出发',name:'博多 → 福冈机场',note:'地铁空港线博多站到福冈机场约 5 分钟，国际线航厦要再坐接驳巴士约 15 分钟。建议起飞前 2.5 小时到机场。',q:'福岡空港 国際線ターミナル',from:[33.5897,130.4207],transit:true}
  ]}
@@ -1576,7 +1740,7 @@ var art=null;
 function el(t,c,txt){var e=document.createElement(t);if(c)e.className=c;if(txt!=null)e.textContent=txt;return e;}
 function lnk(c,txt,href){var a=el('a',c,txt);a.href=href;a.target='_blank';a.rel='noopener';return a;}
 
-var TC={"c":{"馆":"館","彦":"彥","转":"轉","铁":"鐵","约":"約","页":"頁","参":"參","点":"點","设":"設","钥":"鑰","评":"評","价":"價","过":"過","周":"週","调":"調","团":"團","轻":"輕","树":"樹","记":"記","录":"錄","驿":"驛","里":"裡","个":"個","亲":"親","绘":"繪","制":"製","计":"計","该":"該","开":"開","后":"後","费":"費","驶":"駛","马":"馬","来":"來","亚":"亞","样":"樣","线":"線","观":"觀","冈":"岡","从":"從","发":"發","旧":"舊","学":"學","现":"現","兴":"興","导":"導","与":"與","带":"帶","选":"選","删":"刪","败":"敗","请":"請","检":"檢","网":"網","络":"絡","结":"結","门":"門","账":"賬","试":"試","广":"廣","场":"場","尔":"爾","长":"長","铜":"銅","干":"幹","这":"這","张":"張","报":"報","顺":"順","双":"雙","击":"擊","异":"異","还":"還","车":"車","条":"條","细":"細","玛":"瑪","墙":"牆","纹":"紋","画":"畫","灯":"燈","谜":"謎","动":"動","显":"顯","实":"實","际":"際","离":"離","时":"時","间":"間","电":"電","话":"話","机":"機","储":"儲","没":"沒","区":"區","刚":"剛","楼":"樓","乌":"烏","龟":"龜","们":"們","练":"練","当":"當","写":"寫","着":"著","恋":"戀","态":"態","资":"資","国":"國","额":"額","经":"經","满":"滿","会":"會","载":"載","传":"傳","简":"簡","头":"頭","几":"幾","镜":"鏡","柜":"櫃","夹":"夾","乐":"樂","营":"營","业":"業","较":"較","远":"遠","台":"臺","换":"換","币":"幣","钱":"錢","阶":"階","丝":"絲","暂":"暫","绝":"絕","询":"詢","钟":"鐘","笔":"筆","鸡":"雞","签":"簽","纸":"紙","进":"進","销":"銷","联":"聯","单":"單","让":"讓","见":"見","纯":"純","图":"圖","厂":"廠","园":"園","内":"內","补":"補","给":"給","装":"裝","备":"備","员":"員","两":"兩","标":"標","详":"詳","论":"論","桥":"橋","无":"無","复":"複","妆":"妝","订":"訂","确":"確","认":"認","负":"負","责":"責","贴":"貼","冲":"沖","圣":"聖","礼":"禮","鸟":"鳥","滚":"滾","轮":"輪","谁":"誰","关":"關","办":"辦","静":"靜","吗":"嗎","体":"體","宫":"宮","买":"買","黄":"黃","读":"讀","决":"決","鸭":"鴨","汇":"匯","枫":"楓","欢":"歡","环":"環","绕":"繞","预":"預","红":"紅","叶":"葉","碍":"礙","闭":"閉","奥":"奧","够":"夠","编":"編","辑":"輯","达":"達","变":"變","属":"屬","樱":"櫻","护":"護","证":"證","驾":"駕","处":"處","别":"別","挡":"擋","缩":"縮","议":"議","温":"溫","准":"準","权":"權","丰":"豐","杆":"桿","帐":"帳","号":"號","饮":"飲","飞":"飛","师":"師","贺":"賀","问":"問","则":"則","档":"檔","务":"務","兑":"兌","奖":"獎","优":"優","产":"產","觉":"覺","么":"麼","庙":"廟","游":"遊","书":"書","坝":"壩","饭":"飯","厦":"廈","驳":"駁","厅":"廳","齐":"齊","兽":"獸","浓":"濃","雾":"霧","弹":"彈","骑":"騎","课":"課","题":"題","摆":"擺","况":"況","对":"對","边":"邊","筑":"築","范":"範","围":"圍","纪":"紀","类":"類","麦":"麥","劳":"勞","军":"軍","须":"須","为":"為","规":"規","划":"劃","术":"術","数":"數","戏":"戲","禅":"禪","阁":"閣","顶":"頂","购":"購"},"p":{"和发型":"和髮型","生发型":"生髮型","剪发的":"剪髮的","梅干等":"梅乾等","备注（":"備註（","限制）":"限制）","公里，":"公里，","公里":"公里"}};
+var TC={"c":{"制":"製","鸟":"鳥","这":"這","个":"個","点":"點","评":"評","价":"價","额":"額","经":"經","满":"滿","吗":"嗎","员":"員","时":"時","间":"間","别":"別","挡":"擋","门":"門","进":"進","见":"見","区":"區","约":"約","团":"團","笔":"筆","记":"記","较":"較","远":"遠","车":"車","须":"須","访":"訪","冈":"岡","图":"圖","书":"書","馆":"館","账":"賬","里":"裡","开":"開","发":"發","头":"頭","来":"來","阶":"階","丝":"絲","从":"從","电":"電","载":"載","败":"敗","绿":"綠","灯":"燈","欢":"歡","现":"現","几":"幾","钟":"鐘","过":"過","国":"國","际":"際","驾":"駕","饭":"飯","后":"後","军":"軍","线":"線","设":"設","钥":"鑰","机":"機","储":"儲","没":"沒","调":"調","录":"錄","销":"銷","参":"參","学":"學","旧":"舊","无":"無","写":"寫","权":"權","请":"請","检":"檢","台":"臺","饮":"飲","周":"週","宫":"宮","温":"溫","还":"還","编":"編","辑":"輯","击":"擊","乐":"樂","楼":"樓","备":"備","简":"簡","换":"換","装":"裝","妆":"妝","订":"訂","确":"確","认":"認","样":"樣","广":"廣","场":"場","议":"議","飞":"飛","传":"傳","网":"網","络":"絡","试":"試","细":"細","墙":"牆","签":"簽","纸":"紙","买":"買","游":"遊","谁":"誰","号":"號","弹":"彈","办":"辦","动":"動","们":"們","费":"費","当":"當","骑":"騎","课":"課","园":"園","环":"環","绕":"繞","体":"體","删":"刪","张":"張","干":"幹","两":"兩","联":"聯","兑":"兌","奖":"獎","观":"觀","预":"預","红":"紅","叶":"葉","页":"頁","会":"會","纯":"純","恋":"戀","钱":"錢","条":"條","复":"複","资":"資","亲":"親","绘":"繪","计":"計","么":"麼","给":"給","坝":"壩","铜":"銅","负":"負","责":"責","贴":"貼","内":"內","话":"話","画":"畫","类":"類","属":"屬","礼":"禮","导":"導","标":"標","离":"離","准":"準","热":"熱","选":"選","着":"著","题":"題","关":"關","静":"靜","询":"詢","问":"問","轻":"輕","樱":"櫻","摆":"擺","乌":"烏","龟":"龜","结":"結","缩":"縮","读":"讀","异":"異","兴":"興","优":"優","则":"則","桥":"橋","圣":"聖","黄":"黃","浓":"濃","雾":"霧","带":"帶","护":"護","证":"證","单":"單","让":"讓","报":"報","刚":"剛","双":"雙","杆":"桿","笼":"籠","暂":"暫","绝":"絕","丰":"豐","转":"轉","与":"與","兽":"獸","产":"產","业":"業","驿":"驛","档":"檔","树":"樹","铁":"鐵","戏":"戲","态":"態","鸡":"雞","迹":"蹟","枫":"楓","汤":"湯","达":"達","滚":"滾","轮":"輪","该":"該","闭":"閉","处":"處","营":"營","变":"變","对":"對","为":"為","规":"規","划":"劃","显":"顯","碍":"礙","彦":"彥","练":"練","补":"補","驶":"駛","马":"馬","亚":"亞","实":"實","况":"況","顺":"順","禅":"禪","阁":"閣","务":"務","镜":"鏡","柜":"櫃","夹":"夾","庙":"廟","论":"論","奥":"奧","够":"夠","术":"術","麦":"麥","劳":"勞","厅":"廳","尔":"爾","长":"長","纪":"紀","购":"購","鸭":"鴨","玛":"瑪","纹":"紋","谜":"謎","帐":"帳","师":"師","贺":"賀","厦":"廈","驳":"駁","边":"邊","筑":"築","范":"範","围":"圍","冲":"沖","币":"幣","汇":"匯","详":"詳","决":"決","顶":"頂","觉":"覺","数":"數","厂":"廠","齐":"齊"},"p":{"公里，":"公里，","备注（":"備註（","和发型":"和髮型","生发型":"生髮型","限制）":"限制）","台签":"臺籤","拉面":"拉麵","公里":"公里","虹签":"虹籤","剪发的":"剪髮的","梅干等":"梅乾等"}};
 var TCP=Object.keys(TC.p).sort(function(a,b){return b.length-a.length;});
 function lang(){try{return localStorage.getItem('aot-lang')==='tc'?'tc':'sc';}catch(e){return 'sc';}}
 function tcv(s){if(!s||!/[\u4e00-\u9fff]/.test(s))return s;var out='',i=0;
@@ -1687,6 +1851,7 @@ var ICN={"pin": "<path d=\"M12 21s-6.5-6.2-6.5-11A6.5 6.5 0 0 1 18.5 10c0 4.8-6.
 function ic(n){var s=el('span','ic');s.innerHTML='<svg viewBox="0 0 24 24" aria-hidden="true">'+ICN[n]+'</svg>';return s;}
 function plate(c,n,txt,href){var a=lnk(c,'',href);a.appendChild(ic(n));a.appendChild(el('span','tx',txt));return a;}
 var KICN={"guitar": "<svg viewBox=\"0 0 48 48\"><defs><radialGradient id=\"kgg\" cx=\".42\" cy=\".58\" r=\".62\"><stop offset=\"0\" stop-color=\"#FFC06B\"/><stop offset=\".5\" stop-color=\"#E5483F\"/><stop offset=\"1\" stop-color=\"#8E1B2C\"/></radialGradient></defs><rect x=\"25\" y=\"3\" width=\"4.5\" height=\"22\" rx=\"1.5\" transform=\"rotate(35 27 14)\" fill=\"#C7955F\"/><path d=\"M33 0.5l6.5 3.2-3 5.2-6.5-3.2z\" fill=\"#4A2E1B\"/><path d=\"M14 22c4-3 9-2 10 2 1 2 4 2 5 4 2 5-3 13-10 15C11 45 6 39 7 33c1-4 3-5 3-7 0-2 2-3 4-4z\" fill=\"url(#kgg)\" stroke=\"#5A1A20\" stroke-width=\"1\"/><path d=\"M11.5 29.5l8.5 5.5\" stroke=\"#F5E6C8\" stroke-width=\"2.4\" stroke-linecap=\"round\"/><circle cx=\"14\" cy=\"38\" r=\"1.7\" fill=\"#F5E6C8\"/><circle cx=\"18.5\" cy=\"40\" r=\"1.7\" fill=\"#F5E6C8\"/></svg>", "bass": "<svg viewBox=\"0 0 48 48\"><rect x=\"18\" y=\"1\" width=\"4.5\" height=\"27\" rx=\"1.5\" transform=\"rotate(-32 20 14)\" fill=\"#C7955F\"/><path d=\"M8 0h7v7H8z\" transform=\"rotate(-32 11.5 3.5)\" fill=\"#2B2B2B\"/><path d=\"M30 24c-5-2-10 0-10 4 0 2-3 3-3 6 0 6 6 11 13 10 8-1 12-7 11-13-1-4-4-5-5-7-1-1-3-1-6 0z\" fill=\"#26232A\" stroke=\"#000\" stroke-width=\".8\"/><path d=\"M23.5 30c3-2.2 7.5-1.2 9.5 2 1.2 3-.8 7-4 8.2\" fill=\"none\" stroke=\"#F3EEE6\" stroke-width=\"3.2\" stroke-linecap=\"round\"/><path d=\"M27 33.5l7 4\" stroke=\"#BDBDBD\" stroke-width=\"1.6\"/></svg>", "keys": "<svg viewBox=\"0 0 48 48\"><rect x=\"3\" y=\"14\" width=\"42\" height=\"22\" rx=\"4\" fill=\"#B9A6F0\"/><rect x=\"6\" y=\"22\" width=\"36\" height=\"11\" rx=\"1.5\" fill=\"#fff\"/><g fill=\"#4A3B4F\"><rect x=\"10\" y=\"22\" width=\"2.5\" height=\"6\"/><rect x=\"15\" y=\"22\" width=\"2.5\" height=\"6\"/><rect x=\"23\" y=\"22\" width=\"2.5\" height=\"6\"/><rect x=\"28\" y=\"22\" width=\"2.5\" height=\"6\"/><rect x=\"33\" y=\"22\" width=\"2.5\" height=\"6\"/></g><circle cx=\"10\" cy=\"18\" r=\"1.6\" fill=\"#FFD66B\"/><circle cx=\"15\" cy=\"18\" r=\"1.6\" fill=\"#7ED7C1\"/></svg>", "drums": "<svg viewBox=\"0 0 48 48\"><ellipse cx=\"24\" cy=\"31\" rx=\"12\" ry=\"12\" fill=\"#FFD66B\"/><ellipse cx=\"24\" cy=\"31\" rx=\"8\" ry=\"8\" fill=\"#fff\"/><ellipse cx=\"9\" cy=\"20\" rx=\"7\" ry=\"3\" fill=\"#7ED7C1\"/><rect x=\"2\" y=\"20\" width=\"14\" height=\"6\" fill=\"#7ED7C1\"/><ellipse cx=\"39\" cy=\"20\" rx=\"7\" ry=\"3\" fill=\"#FF8FB1\"/><rect x=\"32\" y=\"20\" width=\"14\" height=\"6\" fill=\"#FF8FB1\"/><path d=\"M5 9l9 6M43 9l-9 6\" stroke=\"#B98552\" stroke-width=\"2.5\" stroke-linecap=\"round\"/></svg>", "tea": "<svg viewBox=\"0 0 48 48\"><path d=\"M8 22h26v6a11 11 0 0 1-11 11h-4A11 11 0 0 1 8 28z\" fill=\"#fff\" stroke=\"#FF8FB1\" stroke-width=\"2.5\"/><path d=\"M34 25h3a4 4 0 0 1 0 8h-4\" fill=\"none\" stroke=\"#FF8FB1\" stroke-width=\"2.5\"/><ellipse cx=\"22\" cy=\"42\" rx=\"16\" ry=\"3\" fill=\"#FFD3E0\"/><path d=\"M16 8c-3 4 3 6 0 10M23 6c-3 4 3 6 0 10\" stroke=\"#C9B6D9\" stroke-width=\"2\" fill=\"none\" stroke-linecap=\"round\"/><circle cx=\"21\" cy=\"30\" r=\"3\" fill=\"#FFB3C9\"/></svg>", "cake": "<svg viewBox=\"0 0 48 48\"><path d=\"M6 36L40 24v14H6z\" fill=\"#FFE9C7\"/><path d=\"M6 36L40 24v4L6 40z\" fill=\"#fff\"/><path d=\"M6 30L40 18v6L6 36z\" fill=\"#FFF7EE\" stroke=\"#FFD3E0\" stroke-width=\"1.5\"/><rect x=\"6\" y=\"38\" width=\"34\" height=\"3\" fill=\"#FFB3C9\"/><path d=\"M28 14c0-4 6-4 6 0 0 3-3 5-3 5s-3-2-3-5z\" fill=\"#FF6F9C\"/><path d=\"M30 10l1 2 2-2\" stroke=\"#7ED7C1\" stroke-width=\"1.6\" fill=\"none\"/></svg>", "turtle": "<svg viewBox=\"0 0 48 48\"><ellipse cx=\"13\" cy=\"38\" rx=\"3.4\" ry=\"2.5\" fill=\"#8BC48A\"/><ellipse cx=\"32\" cy=\"38.5\" rx=\"3.4\" ry=\"2.5\" fill=\"#8BC48A\"/><ellipse cx=\"23\" cy=\"31\" rx=\"15\" ry=\"9.5\" fill=\"#6FAE6E\"/><path d=\"M10 31a13 9 0 0 1 26 0z\" fill=\"#5A9A5E\"/><g fill=\"#A8D8A0\"><circle cx=\"17\" cy=\"27\" r=\"2.6\"/><circle cx=\"23.5\" cy=\"25\" r=\"2.8\"/><circle cx=\"30\" cy=\"27.5\" r=\"2.4\"/></g><circle cx=\"40\" cy=\"27.5\" r=\"5.2\" fill=\"#8BC48A\"/><circle cx=\"41.6\" cy=\"26.2\" r=\"1.1\" fill=\"#2B2B2B\"/><path d=\"M39.5 30c1 .8 2.4.8 3.2 0\" stroke=\"#2B2B2B\" stroke-width=\".9\" fill=\"none\" stroke-linecap=\"round\"/></svg>", "rabbit": "<svg viewBox=\"0 0 48 48\"><ellipse cx=\"19\" cy=\"10\" rx=\"3.6\" ry=\"9.5\" fill=\"#F3E3D3\" transform=\"rotate(-12 19 10)\"/><ellipse cx=\"29\" cy=\"10\" rx=\"3.6\" ry=\"9.5\" fill=\"#F3E3D3\" transform=\"rotate(12 29 10)\"/><ellipse cx=\"19\" cy=\"11\" rx=\"1.6\" ry=\"6\" fill=\"#FFB3C9\" transform=\"rotate(-12 19 11)\"/><ellipse cx=\"29\" cy=\"11\" rx=\"1.6\" ry=\"6\" fill=\"#FFB3C9\" transform=\"rotate(12 29 11)\"/><ellipse cx=\"24\" cy=\"35\" rx=\"13\" ry=\"10\" fill=\"#F3E3D3\"/><circle cx=\"24\" cy=\"23\" r=\"9\" fill=\"#F3E3D3\"/><circle cx=\"20.5\" cy=\"22\" r=\"1.4\" fill=\"#2B2B2B\"/><circle cx=\"27.5\" cy=\"22\" r=\"1.4\" fill=\"#2B2B2B\"/><ellipse cx=\"24\" cy=\"26\" rx=\"1.7\" ry=\"1.2\" fill=\"#FF8FB1\"/><circle cx=\"17.5\" cy=\"25.5\" r=\"1.8\" fill=\"#FFC9D8\"/><circle cx=\"30.5\" cy=\"25.5\" r=\"1.8\" fill=\"#FFC9D8\"/></svg>", "tape": "<svg viewBox=\"0 0 48 48\"><rect x=\"4\" y=\"11\" width=\"40\" height=\"27\" rx=\"3.5\" fill=\"#7CC3F0\"/><rect x=\"9\" y=\"15\" width=\"30\" height=\"12\" rx=\"2\" fill=\"#fff\"/><circle cx=\"17\" cy=\"21\" r=\"3.4\" fill=\"#4A3B4F\"/><circle cx=\"31\" cy=\"21\" r=\"3.4\" fill=\"#4A3B4F\"/><rect x=\"20.5\" y=\"19.5\" width=\"7\" height=\"3\" rx=\"1\" fill=\"#C9B6D9\"/><path d=\"M13 38l3-6.5h16l3 6.5z\" fill=\"#5FB4E8\"/><rect x=\"10\" y=\"28.5\" width=\"28\" height=\"2.2\" rx=\"1\" fill=\"#FFD66B\"/></svg>"};var KSEQ=["guitar", "bass", "keys", "drums", "tea", "cake", "rabbit", "turtle", "tape"];
+var FKI={"ramen": "<svg viewBox=\"0 0 48 48\" fill=\"none\" stroke=\"#FF4FB0\" stroke-width=\"2.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M14 6c-2 3 2 5 0 8M21 4c-2 3 2 5 0 8M28 6c-2 3 2 5 0 8\"/><path d=\"M5 22h38c0 10-8 18-19 18S5 32 5 22z\"/><path d=\"M16 40h16\"/><path d=\"M33 18l10-13M37 19l9-12\"/></svg>", "yatai": "<svg viewBox=\"0 0 48 48\" fill=\"none\" stroke=\"#FFE14D\" stroke-width=\"2.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M5 15L24 6l19 9z\"/><path d=\"M8 15v12h32V15\"/><path d=\"M14 15v12M20 15v12M28 15v12M34 15v12\"/><path d=\"M6 27h36v9H6z\"/><circle cx=\"13\" cy=\"40\" r=\"3.5\"/><circle cx=\"35\" cy=\"40\" r=\"3.5\"/></svg>", "castle": "<svg viewBox=\"0 0 48 48\" fill=\"none\" stroke=\"#2EF2FF\" stroke-width=\"2.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M8 44h32l-3-10H11z\"/><path d=\"M13 34l2-8h18l2 8\"/><path d=\"M10 26l14-8 14 8\"/><path d=\"M16 18h16l-3-6H19z\"/><path d=\"M14 12l10-7 10 7\"/><path d=\"M22 34v-5h4v5\"/></svg>", "train": "<svg viewBox=\"0 0 48 48\" fill=\"none\" stroke=\"#39FF88\" stroke-width=\"2.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"10\" y=\"6\" width=\"28\" height=\"30\" rx=\"7\"/><path d=\"M14 12h20v10H14z\"/><circle cx=\"16\" cy=\"29\" r=\"2\"/><circle cx=\"32\" cy=\"29\" r=\"2\"/><path d=\"M15 36l-5 8M33 36l5 8\"/></svg>", "tower": "<svg viewBox=\"0 0 48 48\" fill=\"none\" stroke=\"#B98CFF\" stroke-width=\"2.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M24 2v6\"/><path d=\"M19 46l4-38h2l4 38\"/><path d=\"M21 20h6M20.5 28h7M20 36h8\"/></svg>", "mentai": "<svg viewBox=\"0 0 48 48\" fill=\"none\" stroke=\"#FF6B6B\" stroke-width=\"2.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M7 32c2-10 14-14 22-12s11 6 11 10c-1 4-9 6-17 6S6 36 7 32z\"/><path d=\"M12 29c4-5 12-7 18-5\"/></svg>", "torii": "<svg viewBox=\"0 0 48 48\" fill=\"none\" stroke=\"#FF4D4D\" stroke-width=\"2.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M4 10c8 2 32 2 40 0\"/><path d=\"M7 16h34\"/><path d=\"M14 13v32M34 13v32\"/><path d=\"M10 22h28\"/></svg>"};var FKSEQ=['ramen','yatai','castle','train','mentai','torii','tower'];
 var KYI={"torii": "<svg viewBox=\"0 0 48 48\"><path d=\"M4 9c8 2 32 2 40 0l-1 5c-8 1.5-30 1.5-38 0z\" fill=\"#C8402B\"/><rect x=\"6\" y=\"13\" width=\"36\" height=\"3\" fill=\"#2B2B2B\"/><rect x=\"9\" y=\"19\" width=\"30\" height=\"3.5\" fill=\"#C8402B\"/><rect x=\"11\" y=\"14\" width=\"4.5\" height=\"30\" fill=\"#C8402B\"/><rect x=\"32.5\" y=\"14\" width=\"4.5\" height=\"30\" fill=\"#C8402B\"/><rect x=\"22\" y=\"16\" width=\"4\" height=\"3.5\" fill=\"#C8402B\"/><rect x=\"10\" y=\"42\" width=\"6.5\" height=\"3\" fill=\"#2B2B2B\"/><rect x=\"31.5\" y=\"42\" width=\"6.5\" height=\"3\" fill=\"#2B2B2B\"/></svg>", "maple": "<svg viewBox=\"0 0 48 48\"><path d=\"M24 3l3.5 9 6-4-1.5 8.5 9-2-5 7 7 3-8 3 3 7-8-3-2 9-3-6-3 6-2-9-8 3 3-7-8-3 7-3-5-7 9 2L14.5 8l6 4z\" fill=\"#D9472B\"/><path d=\"M24 14v31\" stroke=\"#8E2A1A\" stroke-width=\"1.6\" stroke-linecap=\"round\"/></svg>", "lantern": "<svg viewBox=\"0 0 48 48\"><rect x=\"18\" y=\"3\" width=\"12\" height=\"4\" rx=\"1\" fill=\"#2B2B2B\"/><ellipse cx=\"24\" cy=\"25\" rx=\"14\" ry=\"17\" fill=\"#E9573F\"/><g stroke=\"#B8341F\" stroke-width=\"1.2\" fill=\"none\"><path d=\"M10.5 18h27M10 25h28M10.5 32h27\"/></g><rect x=\"18\" y=\"41\" width=\"12\" height=\"4\" rx=\"1\" fill=\"#2B2B2B\"/><text x=\"24\" y=\"29\" font-size=\"10\" text-anchor=\"middle\" fill=\"#fff\" font-family=\"serif\" font-weight=\"700\">京</text></svg>", "fan": "<svg viewBox=\"0 0 48 48\"><path d=\"M24 40L4 18a28 28 0 0 1 40 0z\" fill=\"#2E4A7D\"/><path d=\"M24 40L9 21a22 22 0 0 1 30 0z\" fill=\"#F4EEE2\"/><g stroke=\"#2E4A7D\" stroke-width=\"1\"><path d=\"M24 40L12 19M24 40L18 16M24 40V15M24 40l6-24M24 40l12-21\"/></g><circle cx=\"17\" cy=\"22\" r=\"3\" fill=\"#D9472B\"/><circle cx=\"24\" cy=\"40\" r=\"2.2\" fill=\"#B0894F\"/></svg>", "omamori": "<svg viewBox=\"0 0 48 48\"><path d=\"M24 2c-3 0-5 3-5 5\" stroke=\"#C8402B\" stroke-width=\"2\" fill=\"none\"/><path d=\"M14 12l10-6 10 6v30H14z\" fill=\"#B23A5B\"/><rect x=\"17\" y=\"16\" width=\"14\" height=\"18\" rx=\"1\" fill=\"#F4EEE2\"/><path d=\"M19 20h10M19 24h10M19 28h7\" stroke=\"#B0894F\" stroke-width=\"1.6\"/><path d=\"M14 38h20\" stroke=\"#E6C46A\" stroke-width=\"2\"/></svg>", "dango": "<svg viewBox=\"0 0 48 48\"><path d=\"M8 42L40 6\" stroke=\"#B0894F\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><circle cx=\"17\" cy=\"32\" r=\"7\" fill=\"#F7C6D0\"/><circle cx=\"24.5\" cy=\"23.5\" r=\"7\" fill=\"#FFFDF6\"/><circle cx=\"32\" cy=\"15\" r=\"7\" fill=\"#9CC28A\"/></svg>"};var KYSEQ=['maple','torii','lantern','fan','omamori','dango'];
 function goBlock(s,mode){var w=el('div');var b=el('div','nx-b go');b.appendChild(plate(null,'pin','Google Maps',go(s,mode)));b.appendChild(plate('waze','nav','Waze',waze(s)));w.appendChild(b);return w;}
 function short(n){return n.split('（')[0].split(' ／ ')[0];}
@@ -1795,7 +1960,9 @@ function build(){
   DAYS.forEach(function(D){
     var sec=el('div');sec.id='day-'+D.d;if(D.theme)sec.className=D.theme;
     if(dn){var a=el('a',null,D.lab+' '+D.w);a.href='#day-'+D.d;dn.appendChild(a);}
-    var hd=el('div','dayhead');hd.appendChild(el('span','dd',D.lab));hd.appendChild(el('h3',null,D.w+'　'+D.title));hd.appendChild(el('small',null,D.sub));sec.appendChild(hd);if(D.theme==='kyo'){var lv=el('div','ky-leaves');lv.setAttribute('aria-hidden','true');for(var li=0;li<6;li++){var lf=el('span');lf.innerHTML=KYI.maple;lf.style.left=(8+li*16)+'%';lf.style.animationDelay=(li*1.7)+'s';lf.style.animationDuration=(9+li%3*2)+'s';lv.appendChild(lf);}sec.appendChild(lv);var tb=el('div','ky-torii');tb.setAttribute('aria-hidden','true');tb.innerHTML=new Array(9).join(KYI.torii);sec.appendChild(tb);}
+    var hd=el('div','dayhead');hd.appendChild(el('span','dd',D.lab));hd.appendChild(el('h3',null,D.w+'　'+D.title));hd.appendChild(el('small',null,D.sub));sec.appendChild(hd);if(D.theme==='fuk'){var sign=el('div','nx-sign');sign.setAttribute('aria-hidden','true');sign.appendChild(el('span','nx-s1','NAKASU'));sign.appendChild(el('span','nx-s2','中洲 · 博多 · 天神'));sec.appendChild(sign);
+      var band=el('div','nx-band');band.setAttribute('aria-hidden','true');[['ramen','拉面'],['yatai','屋台'],['castle','古迹'],['train','都市']].forEach(function(o){var it=el('span','nx-bi '+o[0]);it.innerHTML=FKI[o[0]];it.appendChild(el('b',null,o[1]));band.appendChild(it);});sec.appendChild(band);}
+    if(D.theme==='kyo'){var lv=el('div','ky-leaves');lv.setAttribute('aria-hidden','true');for(var li=0;li<6;li++){var lf=el('span');lf.innerHTML=KYI.maple;lf.style.left=(8+li*16)+'%';lf.style.animationDelay=(li*1.7)+'s';lf.style.animationDuration=(9+li%3*2)+'s';lv.appendChild(lf);}sec.appendChild(lv);var tb=el('div','ky-torii');tb.setAttribute('aria-hidden','true');tb.innerHTML=new Array(9).join(KYI.torii);sec.appendChild(tb);}
     if(D.theme==='kon'){var kn=el('div','k-notes');kn.setAttribute('aria-hidden','true');['♪','♫','♪','♬'].forEach(function(c){kn.appendChild(el('span',null,c));});sec.appendChild(kn);var tp=el('div','k-tape');tp.setAttribute('aria-hidden','true');for(var q=0;q<4;q++)tp.appendChild(el('i'));sec.appendChild(tp);var wb=el('div','k-wb');var wi=el('div','k-wb-in');wi.appendChild(el('p','k-wb-t','本日部活 ♪'));var ol=el('ol');var items=D.stops.filter(function(z){return z.kind!=='util';});
       items.slice(0,6).forEach(function(z,ii){var li=el('li','m'+(ii%3));li.textContent=z.name.split('　')[0].replace(/（.*?）/,'');ol.appendChild(li);});if(items.length>6)ol.appendChild(el('li','m2','…还有 '+(items.length-6)+' 处'));
       wi.appendChild(ol);wi.appendChild(el('p','k-wb-s','放課後ティータイム'));var dood=el('span','k-wb-d');dood.innerHTML=KICN.tea;wi.appendChild(dood);wb.appendChild(wi);var tray=el('div','k-wb-tray');['#2D6FD1','#E2556A','#333'].forEach(function(c){var mk=el('i');mk.style.background=c;tray.appendChild(mk);});wb.appendChild(tray);sec.appendChild(wb);
@@ -1810,7 +1977,7 @@ function build(){
     }
     if(tools.children.length)sec.appendChild(tools);
     (function(D){if(!MEMS||MEMS.length<2)return;var st=dayStatus(D.d);var sum=st.sum||0;
-      var strip=el('div','sp-strip');var tx=el('div','sp-st-t');tx.appendChild(el('span',null,D.theme==='kon'?'今日社费':(D.theme==='kyo'?'本日旅费':'本日开销')));tx.appendChild(el('b',null,yen(sum)));
+      var strip=el('div','sp-strip');var tx=el('div','sp-st-t');tx.appendChild(el('span',null,D.theme==='kon'?'今日社费':(D.theme==='kyo'?'本日旅费':(D.theme==='fuk'?FKTH[FKV].day:'本日开销'))));tx.appendChild(el('b',null,yen(sum)));
       tx.appendChild(el('small',null,st.n?(st.tx.length?(st.left?'还有 '+st.left+' 笔没付':'✓ 已结清'):'刚好打平'):'还没有开销'));strip.appendChild(tx);
       var bx=el('div','sp-st-b');var vw=el('a','sp-st-v','结账');vw.href='#split';vw.onclick=function(){SPDAY=D.d;try{localStorage.setItem('aot-spday',D.d);}catch(e){}renderSplit();};bx.appendChild(vw);
       if(token()){var ad=el('button','sp-st-add','＋ 记一笔');ad.type='button';ad.onclick=function(){expenseEditor(null,D);};bx.appendChild(ad);}
@@ -1821,7 +1988,7 @@ function build(){
       if(prev&&s.lat)r.appendChild(leg(prev,s,D.mode,s));
       var next=null;for(var j=idx+1;j<D.stops.length;j++){if(D.stops[j].lat){next=D.stops[j];break;}}
       if(s.kind==='util')r.appendChild(utilCard(s,prev,D.mode,next));
-      else{no++;if(S(s.id).shots.length)done++;var cd=card(s,String(no).padStart(2,'0'),prev,next,D.mode);if(D.theme==='kon'){var stk=el('span','k-stk');stk.setAttribute('aria-hidden','true');stk.innerHTML=KICN[KSEQ[(no)%KSEQ.length]];cd.appendChild(stk);}if(D.theme==='kyo'){var ys=el('span','ky-stk');ys.setAttribute('aria-hidden','true');ys.innerHTML=KYI[KYSEQ[no%KYSEQ.length]];cd.appendChild(ys);}r.appendChild(cd);}
+      else{no++;if(S(s.id).shots.length)done++;var cd=card(s,String(no).padStart(2,'0'),prev,next,D.mode);if(D.theme==='kon'){var stk=el('span','k-stk');stk.setAttribute('aria-hidden','true');stk.innerHTML=KICN[KSEQ[(no)%KSEQ.length]];cd.appendChild(stk);}if(D.theme==='fuk'){var fs=el('span','fk-stk');fs.setAttribute('aria-hidden','true');fs.innerHTML=FKI[FKSEQ[no%FKSEQ.length]];cd.appendChild(fs);}if(D.theme==='kyo'){var ys=el('span','ky-stk');ys.setAttribute('aria-hidden','true');ys.innerHTML=KYI[KYSEQ[no%KYSEQ.length]];cd.appendChild(ys);}r.appendChild(cd);}
       if(s.lat)prev=s;
     });
     sec.appendChild(r);root.appendChild(sec);
@@ -1885,7 +2052,7 @@ function memPut(list){
 }
 function splitSheet(title,unit,th){
   var ov=el('div','namebox vsheet spsheet'+(th?' '+th+'sheet '+th+'-sp':''));ov.setAttribute('role','dialog');ov.setAttribute('aria-modal','true');
-  var c=el('div','nb-card');c.appendChild(el('p','nb-unit',unit||'旅费分账'));var sl=el('span','seal');sl.setAttribute('data-t',th==='kon'?'♪':(th==='kyo'?'銭':'¥'));sl.setAttribute('aria-hidden','true');c.appendChild(sl);c.appendChild(el('h3',null,title));
+  var c=el('div','nb-card');c.appendChild(el('p','nb-unit',unit||'旅费分账'));var sl=el('span','seal');sl.setAttribute('data-t',th==='kon'?'♪':(th==='kyo'?'銭':(th==='fuk'?FKTH[FKV].seal:'¥')));sl.setAttribute('aria-hidden','true');c.appendChild(sl);c.appendChild(el('h3',null,title));
   ov.appendChild(c);ov.addEventListener('click',function(e){if(e.target===ov)ov.remove();});document.body.appendChild(ov);if(lang()==='tc')convNode(ov);return {ov:ov,card:c};
 }
 function memberEditor(){
@@ -1902,7 +2069,7 @@ function memberEditor(){
     ok.disabled=true;ok.textContent='保存中…';memPut(clean).then(function(){return loadRemote(true);}).then(function(){sh.ov.remove();build();}).catch(function(){ok.disabled=false;ok.textContent='保存成员';err.textContent='保存失败，请检查网络或金钥。';});};
 }
 function dayOf(d){for(var i=0;i<DAYS.length;i++)if(DAYS[i].d===d)return DAYS[i];return null;}
-var SPUNIT={'':'旅费分账','kon':'部活笔记　社费','kyo':'京都旅帖　旅费'};
+var SPUNIT={'fuk':'博多屋台帖　开销','':'旅费分账','kon':'部活笔记　社费','kyo':'京都旅帖　旅费'};
 var CATI={car:'<path d="M4 15l2-6h12l2 6v4H4z"/><circle cx="8" cy="19" r="1.8"/><circle cx="16" cy="19" r="1.8"/><path d="M6.5 12h11"/>',gas:'<path d="M5 20V5h9v15M3.5 20h12M5 10h9"/><path d="M14 8l3 2v7a1.5 1.5 0 0 0 3 0v-6l-2-2"/>',toll:'<path d="M4 20V6h4v14M8 9h12M8 13h12"/><path d="M12 9v4M16 9v4"/>',ticket:'<path d="M3 8h18v3a2 2 0 0 0 0 4v3H3v-3a2 2 0 0 0 0-4z"/><path d="M14 8v10" stroke-dasharray="2 2"/>',food:'<path d="M4 12h16a8 8 0 0 1-16 0z"/><path d="M15 4l-3 8M19 4l-4 8"/>',train:'<rect x="6" y="3" width="12" height="14" rx="3"/><path d="M6 11h12M9 21l1.5-4M15 21l-1.5-4"/><circle cx="9" cy="14" r=".8"/><circle cx="15" cy="14" r=".8"/>',hotel:'<path d="M3 18V8M3 14h18v4M21 14v-2a3 3 0 0 0-3-3h-7v5"/><circle cx="7" cy="11" r="2"/>',shop:'<path d="M5 8h14l-1 12H6z"/><path d="M9 8a3 3 0 0 1 6 0"/>',other:'<circle cx="6" cy="12" r="1.4"/><circle cx="12" cy="12" r="1.4"/><circle cx="18" cy="12" r="1.4"/>'};
 function cico(c){return '<svg viewBox="0 0 24 24" aria-hidden="true">'+(CATI[c]||CATI.other)+'</svg>';}
 function avatar(n){var s=el('span','sp-av');s.textContent=(n||'?').trim().charAt(0).toUpperCase();return s;}
@@ -1996,7 +2163,7 @@ function renderSplit(){
     var r=el('div','sp-tx'+(ok?' paid':''));var who=el('div','sp-txw');who.appendChild(avatar(t.from));who.appendChild(el('span','sp-who',t.from));who.appendChild(el('i',null,'→'));who.appendChild(avatar(t.to));who.appendChild(el('span','sp-who',t.to));r.appendChild(who);
     var rt=el('div','sp-txr');var a=el('span','sp-amt2');a.appendChild(el('b',null,yen(t.v)));a.appendChild(el('small',null,myr(t.v)));rt.appendChild(a);
     var pb=el('button','sp-paid'+(ok?' on':''),ok?'✓ 已付':(changed?'金额变了，重新确认':'标记已付'));pb.type='button';if(!can)pb.disabled=true;pb.onclick=function(){togglePaid(SPDAY,t,pb);};rt.appendChild(pb);r.appendChild(rt);sb.appendChild(r);});
-  if(allPaid){var done=el('div','sp-done');done.appendChild(el('span',null,D.theme==='kon'?'今日社费 · 结清 ♪':(D.theme==='kyo'?'本日旅费 · 结清':'本日开销 · 已结清')));sb.appendChild(done);}
+  if(allPaid){var done=el('div','sp-done');done.appendChild(el('span',null,D.theme==='kon'?'今日社费 · 结清 ♪':(D.theme==='kyo'?'本日旅费 · 结清':D.theme==='fuk'?FKTH[FKV].done2:'本日开销 · 已结清')));sb.appendChild(done);}
   card.appendChild(sb);
   /* category summary + items */
   if(ex.length){
@@ -2154,8 +2321,12 @@ function openSharePicker(id){
 function layoutRows(n,fmt){var S9={1:[1],2:[1,1],3:[1,2],4:[2,2],5:[1,2,2],6:[2,2,2],7:[1,3,3],8:[2,3,3],9:[3,3,3]};var P9={1:[1],2:[2],3:[1,2],4:[2,2],5:[2,3],6:[3,3],7:[2,2,3],8:[3,2,3],9:[3,3,3]};return (fmt==='story'?S9:P9)[n];}
 var TH={'':{file:'档案 ',done:'已调查',undone:'未调查',stamp:'已调查',stc:'',vlab:'信号弹',vsub:'调查员评价',unit:'调查记录',lbload:'冲洗照片中…',cnt:'调查进度 ',sty:'调查记录',ask:'你觉得这个地方怎么样？',sunit:'调查报告　评价',seal:'评'},
  kon:{file:'部活笔记 ',done:'已打卡 ♪',undone:'未打卡',stamp:'部活完成 ♪',stc:' kst',vlab:'音符评价',vsub:'社团成员评价',unit:'部活笔记',lbload:'调音中…',cnt:'轻音部 ♪ ',sty:'社团纪录',ask:'这个地方好玩吗？',sunit:'社团笔记　评价',seal:'♪'},
+ fuk:{file:'屋台签 ',done:'已到访',undone:'未到访',stamp:'博多到访',stc:' fkst',vlab:'灯笼评价',vsub:'绿灯喜欢 · 红灯不喜欢',unit:'博多屋台帖',lbload:'煮汤中…',cnt:'博多夜游 ',sty:'博多屋台帖',ask:'这里好玩吗？',sunit:'博多屋台帖　评价',seal:'博'},
  kyo:{file:'旅帖 ',done:'已参拜',undone:'未参拜',stamp:'参拜完成',stc:' kyst',vlab:'红叶评价',vsub:'青枫喜欢 · 红叶不喜欢',unit:'京都旅帖',lbload:'研墨中…',cnt:'京都巡礼 ',sty:'京都旅帖',ask:'这里值得再来吗？',sunit:'京都旅帖　评价',seal:'京'}};
 function TT(id){return TH[themeOf(id)]||TH[''];}
+/* ===== Fukuoka: city food guide ===== */
+var FKV='neon';
+var FKTH={neon:{file:'霓虹签 ',done:'已点亮',undone:'未点亮',stamp:'中洲到访',stc:' fkst',vlab:'霓虹评价',vsub:'绿灯喜欢 · 红灯不喜欢',unit:'中洲霓虹帖',lbload:'灯管预热中…',cnt:'中洲霓虹 ',sty:'中洲霓虹帖',ask:'值得再来吗？',sunit:'中洲霓虹帖　评价',seal:'福',sp:'中洲霓虹帖　开销',day:'今夜开销',done2:'今夜开销 · 结清'}};
 function themeOf(id){for(var i=0;i<DAYS.length;i++){var D=DAYS[i];for(var j=0;j<D.stops.length;j++)if(D.stops[j].id===id)return D.theme||'';}return '';}
 function svgImg(svg){return new Promise(function(res){var im=new Image();im.onload=function(){res(im);};im.onerror=function(){res(null);};im.src='data:image/svg+xml;charset=utf-8,'+encodeURIComponent(svg.replace('<svg ','<svg xmlns="http://www.w3.org/2000/svg" '));});}
 
@@ -2202,6 +2373,48 @@ function makeKyoPoster(id,idxs,fmt,adj,mode){
     if(spot.addr){x.fillStyle=INK;x.font='700 '+(fmt==='story'?32:26)+'px '+SERIF;var ad=T(spot.addr);while(x.measureText(ad).width>W-560&&ad.length>4)ad=ad.slice(0,-1);x.fillText(ad,100,fy+(fmt==='story'?48:38));}
     var bi=fmt==='story'?56:44,bx=W-100-bi*4-30;['lantern','fan','omamori','dango'].forEach(function(n,i){if(ic[n])x.drawImage(ic[n],bx+i*(bi+10),fy-bi*.6,bi,bi);});
     x.textAlign='right';x.font='400 '+(fmt==='story'?34:28)+'px '+BRUSH;x.fillStyle=IND;x.fillText(T('京都 · 2027'),W-100,fy+(fmt==='story'?60:48));x.textAlign='left';
+    return finishCanvas(c,mode,inner,imgs,W,H);
+  });
+}
+
+function makeFukNeon(id,idxs,fmt,adj,mode){
+  var st=S(id),spot=SPOTS.filter(function(s){return s.id===id;})[0];var W=1080,H=fmt==='story'?1920:1350;var shots=idxs.map(function(i){return st.shots[i];});
+  var fontsP=(document.fonts&&document.fonts.load)?Promise.all(['900 100px "Noto Sans SC"','400 60px "ZCOOL KuaiLe"'].map(function(f){return document.fonts.load(f,T(spot.name)+'中洲霓虹到访福冈');})).catch(function(){}):Promise.resolve();
+  var keys=Object.keys(FKI);var iconsP=Promise.all(keys.map(function(k){return svgImg(FKI[k]);})).then(function(a){var o={};keys.forEach(function(k,i){o[k]=a[i];});return o;});
+  return Promise.all([fontsP,iconsP].concat(shots.map(function(s){return loadCORS(s.src);}))).then(function(rs){
+    var ic=rs[1],imgs=rs.slice(2);var c=document.createElement('canvas');c.width=W;c.height=H;var x=c.getContext('2d');
+    var SANS='"Noto Sans SC",sans-serif',CUTE='"ZCOOL KuaiLe","Noto Sans SC",sans-serif',PK='#FF4FB0',CY='#2EF2FF',YE='#FFE14D',GR='#39FF88',VI='#B98CFF';
+    x.fillStyle='#0B0A1A';x.fillRect(0,0,W,H);
+    /* brick wall */
+    x.strokeStyle='rgba(185,140,255,.07)';x.lineWidth=2;for(var by=0,r=0;by<H;by+=40,r++){x.beginPath();x.moveTo(0,by);x.lineTo(W,by);x.stroke();for(var bx=(r%2?-40:0);bx<W;bx+=80){x.beginPath();x.moveTo(bx,by);x.lineTo(bx,by+40);x.stroke();}}
+    var vg=x.createRadialGradient(W/2,H*.35,50,W/2,H*.35,W);vg.addColorStop(0,'rgba(255,79,176,.10)');vg.addColorStop(1,'rgba(0,0,0,.6)');x.fillStyle=vg;x.fillRect(0,0,W,H);
+    function glow(col,b,fn){x.save();x.shadowColor=col;x.shadowBlur=b;fn();x.restore();}
+    function tube(col,fn){glow(col,40,fn);glow(col,14,fn);x.save();x.globalAlpha=.9;fn();x.restore();}
+    /* neon title */
+    var top=fmt==='story'?120:86;x.textAlign='center';x.font='400 '+(fmt==='story'?40:32)+'px '+CUTE;x.fillStyle=CY;tube(CY,function(){x.fillText('NAKASU  ·  FUKUOKA',W/2,top);});
+    var title=T(spot.name.split('　')[0]);var ts=fmt==='story'?120:96;x.font='900 '+ts+'px '+SANS;while(x.measureText(title).width>W-140&&ts>50){ts-=4;x.font='900 '+ts+'px '+SANS;}
+    var ty=top+ts+(fmt==='story'?40:30);x.lineWidth=4;x.strokeStyle=PK;tube(PK,function(){x.strokeText(title,W/2,ty);});x.fillStyle='#FFE6F4';x.fillText(title,W/2,ty);
+    var sub=spot.name.split('　')[1]||'';x.font='700 '+(fmt==='story'?34:28)+'px '+SANS;x.fillStyle=YE;tube(YE,function(){x.fillText(T(sub||'博多'),W/2,ty+(fmt==='story'?62:50));});x.textAlign='left';
+    var iy=ty+(fmt==='story'?96:78),isz=fmt==='story'?64:52,list=['ramen','yatai','castle','train','tower'];var gapI=(W-160-isz*list.length)/(list.length-1);
+    list.forEach(function(n,i){if(!ic[n])return;var cx=80+i*(isz+gapI);glow('#fff',18,function(){x.drawImage(ic[n],cx,iy,isz,isz);});});
+    /* photos */
+    var reflH=fmt==='story'?230:170;var ax=80,ay=iy+isz+(fmt==='story'?44:34),aw=W-160,ah=H-reflH-ay-(fmt==='story'?40:30),gap=fmt==='story'?30:24;var cols=[CY,PK,YE,GR];
+    var rows=layoutRows(imgs.length,fmt),rh=(ah-gap*(rows.length-1))/rows.length,k=0,inner=[];
+    rows.forEach(function(cl,ri){var cw=(aw-gap*(cl-1))/cl;for(var ci=0;ci<cl;ci++){var px=ax+ci*(cw+gap),py=ay+ri*(rh+gap),col=cols[k%4];
+      x.fillStyle='#15142B';x.fillRect(px,py,cw,rh);var m=10,ix=px+m,iy2=py+m,iw=cw-m*2,ih=rh-m*2;inner.push({x:ix,y:iy2,w:iw,h:ih});
+      if(mode!=='bg')drawAdj(x,imgs[k],ix,iy2,iw,ih,adj&&adj[k]);else{x.fillStyle='#1E1C3A';x.fillRect(ix,iy2,iw,ih);}
+      x.strokeStyle=col;x.lineWidth=4;tube(col,function(){x.beginPath();x.roundRect?x.roundRect(px+2,py+2,cw-4,rh-4,10):x.rect(px+2,py+2,cw-4,rh-4);x.stroke();});k++;}});
+    /* neon stamp */
+    var last=shots.map(function(s){return s.at;}).filter(Boolean).sort().pop();var R=fmt==='story'?80:66;x.save();x.translate(W-120,ay-8);x.rotate(-.14);
+    x.fillStyle='rgba(11,10,26,.85)';x.beginPath();x.arc(0,0,R,0,Math.PI*2);x.fill();x.strokeStyle=PK;x.lineWidth=5;tube(PK,function(){x.beginPath();x.arc(0,0,R-6,0,Math.PI*2);x.stroke();});
+    x.textAlign='center';x.fillStyle='#FFE6F4';x.font='900 '+Math.round(R*.4)+'px '+SANS;tube(PK,function(){x.fillText(T('到访'),0,R*.1);});x.font='700 '+Math.round(R*.18)+'px '+SANS;x.fillStyle=YE;x.fillText(last?fmtDate(last):'2027',0,R*.48);x.font='700 '+Math.round(R*.18)+'px '+SANS;x.fillStyle=CY;x.fillText('NAKASU',0,-R*.42);x.restore();x.textAlign='left';
+    /* river reflection */
+    var ry=H-reflH;var rg=x.createLinearGradient(0,ry,0,H);rg.addColorStop(0,'#0E1030');rg.addColorStop(1,'#05060F');x.fillStyle=rg;x.fillRect(0,ry,W,reflH);
+    for(var q=0;q<70;q++){var col2=[PK,CY,YE,GR,VI][q%5];x.fillStyle=col2;x.globalAlpha=.15+Math.random()*.35;var rx=Math.random()*W,rw=20+Math.random()*90,ryy=ry+14+Math.random()*(reflH-30);x.fillRect(rx,ryy,rw,3);}x.globalAlpha=1;
+    x.strokeStyle=CY;x.lineWidth=2;glow(CY,16,function(){x.beginPath();x.moveTo(0,ry);x.lineTo(W,ry);x.stroke();});
+    x.font='700 '+(fmt==='story'?26:22)+'px '+SANS;x.fillStyle=YE;x.fillText(T('到访地点'),80,ry+(fmt==='story'?70:54));
+    if(spot.addr){x.fillStyle='#F2EEFF';x.font='700 '+(fmt==='story'?30:24)+'px '+SANS;var ad=T(spot.addr);while(x.measureText(ad).width>W-500&&ad.length>4)ad=ad.slice(0,-1);x.fillText(ad,80,ry+(fmt==='story'?114:90));}
+    x.textAlign='right';x.font='400 '+(fmt==='story'?44:36)+'px '+CUTE;x.fillStyle=PK;tube(PK,function(){x.fillText(T('福冈 2027'),W-80,ry+(fmt==='story'?110:86));});x.textAlign='left';
     return finishCanvas(c,mode,inner,imgs,W,H);
   });
 }
@@ -2258,7 +2471,7 @@ function drawAdj(x,im,rx,ry,rw,rh,a){a=a||{s:1,ox:0,oy:0};var nw=im.naturalWidth
   x.save();x.beginPath();x.rect(rx,ry,rw,rh);x.clip();x.drawImage(im,rx+(rw-dw)/2+px,ry+(rh-dh)/2+py,dw,dh);x.restore();}
 function openShareEditor(id,sel,fmt,style,isKon,back){
   var spot=SPOTS.filter(function(s){return s.id===id;})[0];var adj=sel.map(function(){return {s:1,ox:0,oy:0};});
-  var maker=style==='plain'?makePlain:(isKon==='kon'?makeKonPoster:(isKon==='kyo'?makeKyoPoster:makePoster));
+  var maker=style==='plain'?makePlain:(isKon==='kon'?makeKonPoster:(isKon==='kyo'?makeKyoPoster:(isKon==='fuk'?makeFukNeon:makePoster)));
   var ov=el('div','gal-ov sh-ov sh-ed'+(isKon?' '+isKon+'ov':''));ov.setAttribute('role','dialog');ov.setAttribute('aria-modal','true');
   var hd=el('div','gal-hd');var ht=el('div','gal-ht');ht.appendChild(el('p','gal-unit',(TH[isKon]||TH['']).unit+'　调整照片'));ht.appendChild(el('h3',null,spot.name.split('　')[0]));hd.appendChild(ht);
   var bk=el('button','gal-x','上一步');bk.type='button';hd.appendChild(bk);ov.appendChild(hd);
@@ -2415,7 +2628,7 @@ function spy(){
   if(!act&&secs.length&&route&&route.getBoundingClientRect().top<=off)act=secs[0].id;
   var sp=document.getElementById('split');if(sp&&sp.getBoundingClientRect().top<=off)act='split';
   var sup=document.getElementById('supply');if(sup&&sup.getBoundingClientRect().top<=off)act='supply';
-  if(act===curDay)return;curDay=act;var se=act&&document.getElementById(act);var th=se?(se.classList.contains('kon')?'kon':(se.classList.contains('kyo')?'kyo':'')):'';document.body.classList.toggle('kon-on',th==='kon');document.body.classList.toggle('kyo-on',th==='kyo');document.body.setAttribute('data-th',th);paintCount();
+  if(act===curDay)return;curDay=act;var se=act&&document.getElementById(act);var th=se?(se.classList.contains('kon')?'kon':(se.classList.contains('kyo')?'kyo':(se.classList.contains('fuk')?'fuk':''))):'';document.body.classList.toggle('kon-on',th==='kon');document.body.classList.toggle('kyo-on',th==='kyo');document.body.classList.toggle('fuk-on',th==='fuk');document.body.setAttribute('data-th',th);paintCount();
   var links=[].slice.call(document.querySelectorAll('#daynav a'));
   links.forEach(function(a){var on=act&&a.getAttribute('href')==='#'+act;a.classList.toggle('on',!!on);if(on){a.setAttribute('aria-current','true');var nav=a.parentNode;var l=a.offsetLeft-(nav.clientWidth-a.offsetWidth)/2;nav.scrollTo?nav.scrollTo({left:l,behavior:'smooth'}):(nav.scrollLeft=l);}else a.removeAttribute('aria-current');});
   var lbl=document.getElementById('curday');if(lbl){var a2=links.filter(function(x){return x.classList.contains('on');})[0];lbl.textContent=a2?'现在：'+a2.textContent:'';}
@@ -2484,7 +2697,7 @@ function setupAdmin(){
   show();
 }
 art=token()?{gh:true}:null;
-build();setupAdmin();hero();applyLang();
+TH.fuk=FKTH[FKV];SPUNIT.fuk=FKTH[FKV].sp;build();setupAdmin();hero();applyLang();
 (function(){
   var chip=document.getElementById('me');
   function paint(){var n=myName();if(chip){chip.textContent='';var s=document.createElement('span');s.className='me-ic';s.innerHTML='<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3.6"/><path d="M5 20c1.2-3.8 4-5.6 7-5.6s5.8 1.8 7 5.6"/></svg>';chip.appendChild(s);chip.appendChild(document.createTextNode(n||'未登记'));var e=document.createElement('i');e.textContent='✎';chip.appendChild(e);}}
