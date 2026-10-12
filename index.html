@@ -1428,7 +1428,9 @@ body.kyo-on .status nav a.on{background:#C8402B!important;border-color:#C8402B!i
 @media (prefers-reduced-motion:reduce){.sp-paid.busy::before{animation-duration:2s}}
 /* fix: expense/member sheets always scroll vertically */
 .spsheet .nb-card{overflow-y:auto!important;overflow-x:hidden!important;-webkit-overflow-scrolling:touch;max-height:calc(100dvh - 32px)!important}
-.spsheet{align-items:flex-start!important;padding-top:16px!important;padding-bottom:16px!important;overflow-y:auto}
+.spsheet{align-items:center!important;padding:16px 12px!important;overflow:hidden!important}
+.spsheet .nb-card{transform:none!important;scrollbar-width:thin;scrollbar-color:rgba(0,0,0,.18) transparent;overscroll-behavior:contain}
+.spsheet .nb-card::-webkit-scrollbar{width:6px}.spsheet .nb-card::-webkit-scrollbar-thumb{background:rgba(0,0,0,.18);border-radius:3px}.spsheet .nb-card::-webkit-scrollbar-track{background:transparent}
 /* ===== Fukuoka: illustrated pastel travel poster ===== */
 .fuk{--pk:#F4A7B9;--pk2:#E07A93;--bl:#BFE3F7;--bl2:#6FB3E0;--bl3:#3E8CC4;--ye:#F9E08B;--ye2:#D9AE3E;--gr:#A8D5A2;--gr2:#5DA55A;--rd:#F28B82;--cr:#F8F1E4;--br:#5A4636;--br2:#A08C76;
   position:relative;margin:48px -6px 0;padding:0 14px 40px;border-radius:30px;color:var(--br);overflow:hidden;background:radial-gradient(rgba(160,140,118,.07) 1px,transparent 1.2px) 0 0/6px 6px,var(--cr);box-shadow:0 0 0 6px #fff,0 18px 40px rgba(0,0,0,.25)}
