@@ -1832,10 +1832,6 @@ html.anim #photoadmin .admin.mv.in-v{transform:none;opacity:1}
 html.anim .gal .lead .stamp.mv{opacity:0;transform:scale(2.4) rotate(-20deg)}
 html.anim .gal .lead .stamp.mv.in-v{opacity:1;transform:rotate(-8deg);transition:transform .45s cubic-bezier(.3,1.6,.4,1) .2s,opacity .2s .2s}
 html.anim .kon .gal .lead .stamp.mv.in-v{transform:rotate(-6deg)}html.anim .fuk .gal .lead .stamp.mv.in-v{transform:rotate(10deg)}
-html.anim #split .sp-dpick.mv .sp-dpb{opacity:0;transform:translateY(30px) rotate(-8deg)}
-html.anim #split .sp-dpick.mv.in-v .sp-dpb{opacity:1;transform:none;transition:transform .6s cubic-bezier(.3,1.4,.5,1),opacity .4s}
-html.anim #split .sp-dpick.mv.in-v .sp-dpb.on{transform:translateY(-6px)}
-html.anim #split .sp-dpick .sp-dpb:nth-child(2){transition-delay:.04s}html.anim #split .sp-dpick .sp-dpb:nth-child(3){transition-delay:.08s}html.anim #split .sp-dpick .sp-dpb:nth-child(4){transition-delay:.12s}html.anim #split .sp-dpick .sp-dpb:nth-child(5){transition-delay:.16s}html.anim #split .sp-dpick .sp-dpb:nth-child(6){transition-delay:.2s}html.anim #split .sp-dpick .sp-dpb:nth-child(7){transition-delay:.24s}html.anim #split .sp-dpick .sp-dpb:nth-child(8){transition-delay:.28s}html.anim #split .sp-dpick .sp-dpb:nth-child(9){transition-delay:.32s}html.anim #split .sp-dpick .sp-dpb:nth-child(10){transition-delay:.36s}html.anim #split .sp-dpick .sp-dpb:nth-child(11){transition-delay:.4s}
 @media(hover:hover){#split .sp-dpb:hover{animation:pochiWig .5s ease}}
 @keyframes pochiWig{0%,100%{rotate:0deg}25%{rotate:-3deg}75%{rotate:3deg}}
 /* receipt prints in */
@@ -1876,17 +1872,6 @@ html.anim #photoadmin::before{animation:lampBreath 5s ease-in-out infinite}
 .rip-host{position:relative;overflow:hidden}
 .rip{position:absolute;border-radius:50%;background:rgba(255,255,255,.45);transform:scale(0);animation:ripple .65s ease-out forwards;pointer-events:none;z-index:3}
 @keyframes ripple{to{transform:scale(1);opacity:0}}
-/* chapter toast */
-.ch-toast{position:fixed;left:50%;top:calc(env(safe-area-inset-top,0px) + 150px);z-index:30;display:flex;flex-direction:column;align-items:center;gap:2px;padding:10px 26px;border-radius:999px;pointer-events:none;
-  background:rgba(27,25,20,.88);color:#EFE8D6;border:1px solid #B48A3A;box-shadow:0 10px 30px rgba(0,0,0,.35);transform:translate(-50%,-20px) scale(.9);opacity:0;transition:transform .45s cubic-bezier(.3,1.4,.5,1),opacity .35s}
-.ch-toast.show{transform:translate(-50%,0) scale(1);opacity:1}
-.ch-toast b{font-family:"Noto Serif SC",serif;font-weight:900;font-size:17px;letter-spacing:.1em}.ch-toast span{font-size:12px;opacity:.8;letter-spacing:.15em}
-body.kon-on .ch-toast{background:#fff;color:#FF6F9C;border:3px solid #FFC2D4}body.kon-on .ch-toast b{font-family:"ZCOOL KuaiLe",sans-serif;font-weight:400}
-body.kyo-on .ch-toast{background:#FBF7EE;color:#2A2620;border:2px solid #C8402B;border-radius:4px}body.kyo-on .ch-toast b{font-family:"Ma Shan Zheng",serif;font-weight:400;font-size:22px;color:#C8402B}
-body.fuk-on .ch-toast{background:#FFFDF7;color:#E07A93;border:none;box-shadow:0 0 0 4px #fff,0 0 0 7px #BFE3F7,0 10px 24px rgba(0,0,0,.2)}body.fuk-on .ch-toast b{font-family:"Fredoka","ZCOOL KuaiLe",sans-serif}
-body.split-on .ch-toast,body.supply-on .ch-toast,body.photo-on .ch-toast{background:#FBF7EE;color:#1F2D4E;border:2px solid #B5302E;border-radius:2px}
-body.split-on .ch-toast b,body.supply-on .ch-toast b,body.photo-on .ch-toast b{font-family:"Ma Shan Zheng",serif;font-weight:400;font-size:22px}
-@media(max-width:560px){.ch-toast{top:calc(env(safe-area-inset-top,0px) + 132px)}}
 /* back to top */
 .to-top{position:fixed;right:16px;bottom:calc(env(safe-area-inset-bottom,0px) + 18px);z-index:25;width:52px;height:52px;border-radius:50%;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;
   background:linear-gradient(180deg,#2F3B27,#1F271A);box-shadow:0 0 0 2px #B48A3A,0 6px 16px rgba(0,0,0,.35);opacity:0;transform:translateY(20px) scale(.8);pointer-events:none;transition:opacity .3s,transform .4s cubic-bezier(.3,1.5,.5,1)}
@@ -1897,8 +1882,31 @@ body.kon-on .to-top{background:linear-gradient(180deg,#FF9EBB,#FF7FA6);box-shado
 body.kyo-on .to-top{background:#C8402B;border-radius:4px;box-shadow:0 0 0 2px #B0894F,0 6px 14px rgba(0,0,0,.3)}body.kyo-on .to-top svg{stroke:#fff}
 body.fuk-on .to-top{background:#F4A7B9;box-shadow:0 0 0 4px #fff,0 6px 14px rgba(160,140,118,.3)}body.fuk-on .to-top svg{stroke:#8E3550}
 body.split-on .to-top,body.supply-on .to-top,body.photo-on .to-top{background:#B5302E;border-radius:4px;box-shadow:0 0 0 2px #C9A24A,0 6px 14px rgba(0,0,0,.3)}body.split-on .to-top svg,body.supply-on .to-top svg,body.photo-on .to-top svg{stroke:#fff}
-@media (prefers-reduced-motion:reduce){.ch-toast,.to-top{transition:none}.to-top svg{animation:none}}
-.ch-toast{white-space:nowrap;max-width:calc(100vw - 32px)}.ch-toast span{overflow:hidden;text-overflow:ellipsis;max-width:100%}
+@media (prefers-reduced-motion:reduce){.to-top{transition:none}.to-top svg{animation:none}}
+html.anim .mv.still,html.anim .mv.still *{transition:none!important}
+html.anim .mv.still{animation:none!important}
+html.anim .gal .lead .stamp.mv.still{transform:rotate(-8deg)}
+/* ===== performance: lighter animations ===== */
+/* gauges: no background-position animation; slide a pattern layer with transform, or sweep a shine */
+.status .gauge i{animation:none!important}
+.status .gauge i::after{content:"";position:absolute;inset:0;background:linear-gradient(100deg,transparent 35%,rgba(255,240,200,.7) 50%,transparent 65%);animation:gShine 2.8s ease-in-out infinite;will-change:transform}
+.status .gauge i::before{content:none}
+body.kon-on .status .gauge i::before,body.supply-on .status .gauge i::before,body.photo-on .status .gauge i::before{content:"";position:absolute;top:0;bottom:0;left:-32px;right:0;background:inherit;animation:gSlide 1.2s linear infinite;will-change:transform}
+body.photo-on .status .gauge i{background-size:16px 100%,auto!important;background-image:radial-gradient(circle at 8px 50%,#FFFDF6 0 2px,transparent 2.5px)!important;background-color:#2C3E5C!important}
+body.fuk-on .status .gauge i::after{background:linear-gradient(100deg,transparent 35%,rgba(255,255,255,.8) 50%,transparent 65%)!important;opacity:1;animation:gShine 2.4s ease-in-out infinite!important}
+@keyframes gSlide{to{transform:translateX(32px)}}
+/* hero glow: opacity instead of filter */
+.breach{animation:none!important}
+.wall.shake .breach{animation:rumbleB .7s ease-out 1!important}
+.breach::before{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:radial-gradient(circle at 50% 45%,rgba(255,170,110,.24),transparent 70%);animation:glowO 3.6s ease-in-out infinite alternate;will-change:opacity}
+@keyframes glowO{from{opacity:0}to{opacity:1}}
+/* drop repaint-heavy loops */
+html.anim .kon .leg::after,html.anim .kyo .leg::after,html.anim .fuk .leg::after{animation:none!important}
+html.anim .fuk .il-top svg > g > g[fill="#fff"],html.anim .fuk .il-top svg > g > circle[fill="#F9E08B"]{animation:none!important}
+.votes .vd{animation:none!important}
+/* pause everything inside sections that are off screen */
+.paused,.paused *,.paused::before,.paused::after,.paused *::before,.paused *::after{animation-play-state:paused!important}
+body.kon-on .status .gauge i,body.kyo-on .status .gauge i,body.fuk-on .status .gauge i,body.split-on .status .gauge i,body.supply-on .status .gauge i,body.photo-on .status .gauge i{animation:none!important}
 </style></head><body><template id="shell">
 <header class="wall pending">
   <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><filter id="keywhite" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB"><feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  -6 -6 -6 0 16.8" result="m"/><feMorphology in="m" operator="erode" radius="1.5" result="me"/><feComposite in="SourceGraphic" in2="me" operator="in" result="c"/><feComposite in="c" in2="SourceAlpha" operator="in"/></filter></svg>
@@ -2054,7 +2062,7 @@ var art=null;
 function el(t,c,txt){var e=document.createElement(t);if(c)e.className=c;if(txt!=null)e.textContent=txt;return e;}
 function lnk(c,txt,href){var a=el('a',c,txt);a.href=href;a.target='_blank';a.rel='noopener';return a;}
 
-var TC={"c":{"与":"與","带":"帶","图":"圖","离":"離","来":"來","这":"這","里":"裡","办":"辦","楼":"樓","对":"對","开":"開","请":"請","马":"馬","边":"邊","静":"靜","观":"觀","进":"進","筑":"築","范":"範","围":"圍","员":"員","传":"傳","败":"敗","检":"檢","网":"網","络":"絡","后":"後","试":"試","铁":"鐵","线":"線","冈":"岡","机":"機","场":"場","约":"約","车":"車","还":"還","旧":"舊","顺":"順","过":"過","删":"刪","钥":"鑰","区":"區","话":"話","无":"無","读":"讀","换":"換","双":"雙","击":"擊","滚":"滾","轮":"輪","动":"動","访":"訪","丰":"豐","轻":"輕","从":"從","时":"時","干":"幹","缩":"縮","营":"營","业":"業","间":"間","变":"變","发":"發","个":"個","补":"補","给":"給","装":"裝","备":"備","选":"選","馆":"館","调":"調","记":"記","录":"錄","团":"團","欢":"歡","当":"當","骑":"騎","学":"學","周":"週","没":"沒","课":"課","门":"門","园":"園","务":"務","内":"內","脚":"腳","鲜":"鮮","鱼":"魚","岛":"島","电":"電","贩":"販","卖":"賣","联":"聯","单":"單","让":"讓","点":"點","鸭":"鴨","汇":"匯","写":"寫","权":"權","贴":"貼","评":"評","价":"價","结":"結","账":"賬","厂":"廠","画":"畫","笔":"筆","费":"費","红":"紅","灯":"燈","页":"頁","墙":"牆","号":"號","弹":"彈","钟":"鐘","议":"議","飞":"飛","黄":"黃","环":"環","绕":"繞","吗":"嗎","觉":"覺","么":"麼","样":"樣","产":"產","鸡":"雞","签":"簽","纸":"紙","远":"遠","两":"兩","关":"關","儿":"兒","转":"轉","术":"術","阶":"階","标":"標","书":"書","准":"準","顶":"頂","宫":"宮","渔":"漁","奥":"奧","温":"溫","麦":"麥","劳":"勞","制":"製","桥":"橋","头":"頭","该":"該","碍":"礙","确":"確","认":"認","驾":"駕","礼":"禮","杆":"桿","笼":"籠","买":"買","乐":"樂","条":"條","钱":"錢","鸟":"鳥","负":"負","责":"責","设":"設","汤":"湯","购":"購","台":"臺","彦":"彥","异":"異","圣":"聖","现":"現","参":"參","张":"張","档":"檔","报":"報","计":"計","简":"簡","体":"體","额":"額","经":"經","满":"滿","闭":"閉","叶":"葉","见":"見","妆":"妝","订":"訂","驿":"驛","饮":"飲","尔":"爾","预":"預","资":"資","显":"顯","实":"實","际":"際","兴":"興","优":"優","几":"幾","销":"銷","谁":"誰","刚":"剛","编":"編","辑":"輯","详":"詳","坝":"壩","复":"複","较":"較","枫":"楓","处":"處","恋":"戀","会":"會","载":"載","绿":"綠","镜":"鏡","柜":"櫃","着":"著","夹":"夾","丝":"絲","论":"論","类":"類","别":"別","帐":"帳","则":"則","风":"風","猫":"貓","国":"國","暂":"暫","厅":"廳","樱":"櫻","储":"儲","导":"導","须":"須","为":"為","铜":"銅","挡":"擋","树":"樹","护":"護","证":"證","饭":"飯","乌":"烏","龟":"龜","们":"們","练":"練","够":"夠","广":"廣","晒":"曬","阳":"陽","厦":"廈","驳":"駁","游":"遊","军":"軍","禅":"禪","阁":"閣","戏":"戲","喂":"餵","规":"規","兽":"獸","浓":"濃","雾":"霧","达":"達","冲":"沖","脸":"臉","长":"長","纯":"純","细":"細","摆":"擺","属":"屬","庙":"廟","询":"詢","问":"問","题":"題","齐":"齊","币":"幣","态":"態","兑":"兌","奖":"獎","决":"決","师":"師","贺":"賀","划":"劃","数":"數","纪":"紀","绝":"絕","驶":"駛","亚":"亞","况":"況","绘":"繪","玛":"瑪","纹":"紋","谜":"謎","码":"碼","亲":"親"},"p":{"梅干等":"梅乾等","公里，":"公里，","公里":"公里","和发型":"和髮型","生发型":"生髮型","备注（":"備註（","限制）":"限制）","百只自":"百隻自","台签":"臺籤","剪发的":"剪髮的"}};
+var TC={"c":{"无":"無","读":"讀","请":"請","后":"後","试":"試","桥":"橋","头":"頭","电":"電","点":"點","图":"圖","区":"區","调":"調","从":"從","岛":"島","宫":"宮","渔":"漁","车":"車","时":"時","间":"間","冈":"岡","机":"機","场":"場","离":"離","铁":"鐵","红":"紅","灯":"燈","欢":"歡","异":"異","还":"還","见":"見","鸟":"鳥","国":"國","学":"學","旧":"舊","这":"這","里":"裡","买":"買","两":"兩","馆":"館","联":"聯","兑":"兌","换":"換","奖":"獎","干":"幹","线":"線","显":"顯","双":"雙","击":"擊","鸡":"雞","签":"簽","画":"畫","纸":"紙","过":"過","远":"遠","员":"員","评":"評","价":"價","开":"開","钥":"鑰","叶":"葉","庙":"廟","游":"遊","钟":"鐘","风":"風","会":"會","发":"發","当":"當","删":"刪","张":"張","脸":"臉","与":"與","带":"帶","单":"單","让":"讓","礼":"禮","驾":"駕","个":"個","来":"來","阶":"階","丝":"絲","经":"經","约":"約","驿":"驛","谁":"誰","档":"檔","轻":"輕","门":"門","进":"進","制":"製","记":"記","优":"優","饮":"飲","周":"週","条":"條","选":"選","参":"參","设":"設","标":"標","询":"詢","问":"問","现":"現","兴":"興","没":"沒","团":"團","书":"書","网":"網","络":"絡","内":"內","导":"導","数":"數","顺":"順","处":"處","观":"觀","樱":"櫻","暂":"暫","绝":"絕","几":"幾","详":"詳","鸭":"鴨","顶":"頂","关":"關","营":"營","业":"業","动":"動","装":"裝","妆":"妝","订":"訂","确":"確","认":"認","样":"樣","结":"結","访":"訪","写":"寫","楼":"樓","细":"細","账":"賬","传":"傳","笔":"筆","权":"權","话":"話","败":"敗","检":"檢","贴":"貼","戏":"戲","销":"銷","彦":"彥","转":"轉","圣":"聖","台":"臺","钱":"錢","术":"術","脚":"腳","鲜":"鮮","鱼":"魚","产":"產","晒":"曬","阳":"陽","乌":"烏","龟":"龜","们":"們","练":"練","丰":"豐","奥":"奧","体":"體","够":"夠","刚":"剛","绿":"綠","决":"決","额":"額","变":"變","录":"錄","计":"計","页":"頁","论":"論","乐":"樂","浓":"濃","雾":"霧","议":"議","纪":"紀","满":"滿","吗":"嗎","笼":"籠","办":"辦","务":"務","坝":"壩","铜":"銅","简":"簡","恋":"戀","黄":"黃","编":"編","辑":"輯","补":"補","给":"給","备":"備","飞":"飛","骑":"騎","课":"課","园":"園","墙":"牆","温":"溫","预":"預","齐":"齊","实":"實","际":"際","帐":"帳","号":"號","汤":"湯","亲":"親","绘":"繪","着":"著","镜":"鏡","柜":"櫃","夹":"夾","护":"護","证":"證","复":"複","纯":"純","缩":"縮","达":"達","猫":"貓","汇":"匯","费":"費","禅":"禪","阁":"閣","厦":"廈","驳":"駁","负":"負","责":"責","儿":"兒","须":"須","则":"則","属":"屬","驶":"駛","马":"馬","亚":"亞","题":"題","静":"靜","杆":"桿","麦":"麥","劳":"勞","军":"軍","觉":"覺","么":"麼","为":"為","码":"碼","资":"資","况":"況","载":"載","该":"該","兽":"獸","对":"對","规":"規","划":"劃","别":"別","挡":"擋","厂":"廠","树":"樹","弹":"彈","储":"儲","报":"報","滚":"滾","轮":"輪","师":"師","贺":"賀","枫":"楓","玛":"瑪","纹":"紋","谜":"謎","冲":"沖","饭":"飯","尔":"爾","类":"類","闭":"閉","贩":"販","卖":"賣","摆":"擺","广":"廣","态":"態","准":"準","喂":"餵","长":"長","较":"較","厅":"廳","购":"購","币":"幣","边":"邊","筑":"築","范":"範","围":"圍","环":"環","绕":"繞","碍":"礙"},"p":{"公里，":"公里，","和发型":"和髮型","生发型":"生髮型","公里":"公里","台签":"臺籤","限制）":"限制）","备注（":"備註（","梅干等":"梅乾等","剪发的":"剪髮的","百只自":"百隻自"}};
 var TCP=Object.keys(TC.p).sort(function(a,b){return b.length-a.length;});
 function lang(){try{return localStorage.getItem('aot-lang')==='tc'?'tc':'sc';}catch(e){return 'sc';}}
 function tcv(s){if(!s||!/[\u4e00-\u9fff]/.test(s))return s;var out='',i=0;
@@ -2939,7 +2947,7 @@ function spy(){
   var sp=document.getElementById('split');if(sp&&sp.getBoundingClientRect().top<=off)act='split';
   var sup=document.getElementById('supply');if(sup&&sup.getBoundingClientRect().top<=off)act='supply';
   var pha=document.getElementById('photoadmin');if(pha){var pr=pha.getBoundingClientRect();if(pr.top<=off||(innerHeight+scrollY>=document.documentElement.scrollHeight-4&&pr.top<innerHeight*.6))act='photoadmin';}
-  if(act===curDay)return;curDay=act;var se=act&&document.getElementById(act);var th=se?(se.classList.contains('kon')?'kon':(se.classList.contains('kyo')?'kyo':(se.classList.contains('fuk')?'fuk':''))):'';document.body.classList.toggle('kon-on',th==='kon');document.body.classList.toggle('kyo-on',th==='kyo');document.body.classList.toggle('fuk-on',th==='fuk');document.body.setAttribute('data-th',th);document.body.classList.toggle('split-on',act==='split');document.body.classList.toggle('supply-on',act==='supply');document.body.classList.toggle('photo-on',act==='photoadmin');paintCount();if(window.chapterToast)chapterToast(act);
+  if(act===curDay)return;curDay=act;var se=act&&document.getElementById(act);var th=se?(se.classList.contains('kon')?'kon':(se.classList.contains('kyo')?'kyo':(se.classList.contains('fuk')?'fuk':''))):'';document.body.classList.toggle('kon-on',th==='kon');document.body.classList.toggle('kyo-on',th==='kyo');document.body.classList.toggle('fuk-on',th==='fuk');document.body.setAttribute('data-th',th);document.body.classList.toggle('split-on',act==='split');document.body.classList.toggle('supply-on',act==='supply');document.body.classList.toggle('photo-on',act==='photoadmin');paintCount();
   var links=[].slice.call(document.querySelectorAll('#daynav a'));
   links.forEach(function(a){var on=act&&a.getAttribute('href')==='#'+act;a.classList.toggle('on',!!on);if(on){a.setAttribute('aria-current','true');var nav=a.parentNode;var l=a.offsetLeft-(nav.clientWidth-a.offsetWidth)/2;nav.scrollTo?nav.scrollTo({left:l,behavior:'smooth'}):(nav.scrollLeft=l);}else a.removeAttribute('aria-current');});
   var lbl=document.getElementById('curday');if(lbl){var a2=links.filter(function(x){return x.classList.contains('on');})[0];lbl.textContent=a2?'现在：'+a2.textContent:'';}
@@ -3068,9 +3076,9 @@ if('serviceWorker' in navigator){navigator.serviceWorker.register('sw.js').catch
   if(RM)return;
   document.documentElement.classList.add('anim');
   /* reveal on scroll */
-  var SEL='.dayhead,.leg,.sp-strip,.k-wb,.k-band,.ky-torii,.il-top,.cd-band,.shead,#split .sp-dpick,#split .sp-legend,#split .sp-all-trip,#supply .tbl tr,#photoadmin .admin,.gal .lead .stamp';
+  var SEL='.dayhead,.leg,.sp-strip,.k-wb,.k-band,.ky-torii,.il-top,.cd-band,.shead,#supply .tbl tr,#photoadmin .admin,.gal .lead .stamp';var settled=false;setTimeout(function(){settled=true;},1800);
   var io='IntersectionObserver' in window?new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in-v');io.unobserve(e.target);}});},{rootMargin:'0px 0px -8% 0px',threshold:.08}):null;
-  function scan(){[].forEach.call(document.querySelectorAll(SEL),function(el,i){if(el.classList.contains('mv'))return;el.classList.add('mv');el.style.setProperty('--d',(i%4*60)+'ms');if(io)io.observe(el);else el.classList.add('in-v');});}
+  function scan(){[].forEach.call(document.querySelectorAll(SEL),function(el,i){if(el.classList.contains('mv'))return;if(settled){var r=el.getBoundingClientRect();if(r.bottom>0&&r.top<innerHeight){el.classList.add('mv','in-v','still');return;}}el.classList.add('mv');el.style.setProperty('--d',(i%4*60)+'ms');if(io)io.observe(el);else el.classList.add('in-v');});}
   scan();new MutationObserver(function(){clearTimeout(scan._t);scan._t=setTimeout(scan,60);}).observe(document.body,{childList:true,subtree:true});
   /* ripple */
   var RIP='.nx-b a,.acts .up,.lgbtn,.tools3 .tool,.sp-btn,.sp-st-add,.nb-ok,.sh-go,.pv-s,.refresh,.sp-dpb,.sh-btn,#daynav a';
@@ -3080,17 +3088,16 @@ if('serviceWorker' in navigator){navigator.serviceWorker.register('sw.js').catch
   var wall=document.querySelector('.wall'),inner=wall&&wall.querySelector('.inner'),breach=wall&&wall.querySelector('.breach'),bricks=wall&&wall.querySelector('.bricks');var tick=false;
   function par(){tick=false;var y=window.scrollY;if(!wall||y>wall.offsetHeight*1.2)return;if(inner){inner.style.translate='0 '+(y*.25)+'px';inner.style.opacity=String(Math.max(0,1-y/(wall.offsetHeight*.9)));}if(breach)breach.style.translate='0 '+(y*.12)+'px';if(bricks)bricks.style.translate='0 '+(y*.06)+'px';}
   window.addEventListener('scroll',function(){if(!tick){tick=true;requestAnimationFrame(par);}},{passive:true});
-  /* chapter toast when entering a new day/section */
-  var last=null,toast=null,tt=null,ready=false;setTimeout(function(){ready=true;},1500);
-  window.chapterToast=function(act){if(!ready||!act||act===last){last=act;return;}last=act;var label='',sub='';
-    if(act==='split'){label='旅费分账';sub='大福帐';}else if(act==='supply'){label='补给与装备';sub='旅支度';}else if(act==='photoadmin'){label='照片管理';sub='写真帖';}
-    else{var D=null;var DS=window.__DAYS||[];for(var i=0;i<DS.length;i++)if('day-'+DS[i].d===act)D=DS[i];if(!D)return;label=D.lab+'　'+D.w;sub=D.title;}
-    if(!toast){toast=document.createElement('div');toast.className='ch-toast';toast.setAttribute('aria-hidden','true');document.body.appendChild(toast);}
-    toast.innerHTML='';var b=document.createElement('b');b.textContent=label;var s=document.createElement('span');s.textContent=sub;toast.appendChild(b);toast.appendChild(s);if(window.__lang&&window.__lang()==='tc'&&window.__conv)window.__conv(toast);
-    toast.classList.remove('show');void toast.offsetWidth;toast.classList.add('show');clearTimeout(tt);tt=setTimeout(function(){toast.classList.remove('show');},2200);};
   /* back to top */
   var top=document.createElement('button');top.type='button';top.className='to-top';top.setAttribute('aria-label','回到顶部');top.innerHTML='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 14l6-6 6 6"/><path d="M12 8v12"/></svg>';top.onclick=function(){window.scrollTo({top:0,behavior:'smooth'});};document.body.appendChild(top);
   window.addEventListener('scroll',function(){top.classList.toggle('show',window.scrollY>900);},{passive:true});
 })();
 
+
+/* pause ambient animations of off-screen sections */
+(function(){if(!('IntersectionObserver' in window))return;
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){e.target.classList.toggle('paused',!e.isIntersecting);});},{rootMargin:'120px 0px 120px 0px'});
+  function watch(){[].forEach.call(document.querySelectorAll('.wall,[id^="day-"],#split,#supply,#photoadmin'),function(el){if(el.__pw)return;el.__pw=1;io.observe(el);});}
+  watch();new MutationObserver(function(){clearTimeout(watch._t);watch._t=setTimeout(watch,80);}).observe(document.body,{childList:true,subtree:true});
+})();
 </script></body></html>
