@@ -1816,6 +1816,89 @@ body.supply-on .status .gauge i::after{background:linear-gradient(90deg,transpar
 body.photo-on .status .gauge i{background:radial-gradient(circle at 6px 50%,#FFFDF6 0 2px,transparent 2.5px) 0 0/12px 100%,#2C3E5C!important;animation:gFilm .8s linear infinite!important}
 body.photo-on .status .gauge i::after{background:linear-gradient(90deg,transparent,rgba(255,214,140,.55),transparent);width:30%;animation:gShine 2.2s ease-in-out infinite}
 @media (prefers-reduced-motion:reduce){.status .gauge i,.status .gauge i::after{animation:none!important}}
+/* ===== motion layer ===== */
+html.anim .mv{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.8,.2,1);transition-delay:var(--d,0ms)}
+html.anim .mv.in-v{opacity:1;transform:none}
+html.anim .dayhead.mv .dd{display:inline-block;transform:translateX(-24px) rotate(-6deg);opacity:0;transition:transform .7s cubic-bezier(.3,1.5,.5,1) .15s,opacity .5s ease .15s}
+html.anim .dayhead.mv.in-v .dd{transform:none;opacity:1}
+html.anim .kon .dayhead.mv.in-v .dd{transform:rotate(-3deg)}
+html.anim .leg.mv{transform:translateX(-16px)}html.anim .leg.mv.in-v{transform:none}
+html.anim #supply .tbl tr.mv{transform:translateY(-30px) rotate(-6deg);transform-origin:50% -20px}
+html.anim #supply .tbl tr.mv.in-v{transform:rotate(-.8deg);animation:omSwing 2.2s ease-out .2s}
+html.anim #supply .tbl tr.mv.in-v:nth-child(even){transform:rotate(.8deg)}
+@keyframes omSwing{0%{rotate:-6deg}30%{rotate:4deg}55%{rotate:-2deg}80%{rotate:1deg}100%{rotate:0deg}}
+html.anim #photoadmin .admin.mv{transform:translateY(-40px) scaleY(.2);transform-origin:50% 0;opacity:0;transition:transform 1s cubic-bezier(.2,.9,.2,1),opacity .5s}
+html.anim #photoadmin .admin.mv.in-v{transform:none;opacity:1}
+html.anim .gal .lead .stamp.mv{opacity:0;transform:scale(2.4) rotate(-20deg)}
+html.anim .gal .lead .stamp.mv.in-v{opacity:1;transform:rotate(-8deg);transition:transform .45s cubic-bezier(.3,1.6,.4,1) .2s,opacity .2s .2s}
+html.anim .kon .gal .lead .stamp.mv.in-v{transform:rotate(-6deg)}html.anim .fuk .gal .lead .stamp.mv.in-v{transform:rotate(10deg)}
+html.anim #split .sp-dpick.mv .sp-dpb{opacity:0;transform:translateY(30px) rotate(-8deg)}
+html.anim #split .sp-dpick.mv.in-v .sp-dpb{opacity:1;transform:none;transition:transform .6s cubic-bezier(.3,1.4,.5,1),opacity .4s}
+html.anim #split .sp-dpick.mv.in-v .sp-dpb.on{transform:translateY(-6px)}
+html.anim #split .sp-dpick .sp-dpb:nth-child(2){transition-delay:.04s}html.anim #split .sp-dpick .sp-dpb:nth-child(3){transition-delay:.08s}html.anim #split .sp-dpick .sp-dpb:nth-child(4){transition-delay:.12s}html.anim #split .sp-dpick .sp-dpb:nth-child(5){transition-delay:.16s}html.anim #split .sp-dpick .sp-dpb:nth-child(6){transition-delay:.2s}html.anim #split .sp-dpick .sp-dpb:nth-child(7){transition-delay:.24s}html.anim #split .sp-dpick .sp-dpb:nth-child(8){transition-delay:.28s}html.anim #split .sp-dpick .sp-dpb:nth-child(9){transition-delay:.32s}html.anim #split .sp-dpick .sp-dpb:nth-child(10){transition-delay:.36s}html.anim #split .sp-dpick .sp-dpb:nth-child(11){transition-delay:.4s}
+@media(hover:hover){#split .sp-dpb:hover{animation:pochiWig .5s ease}}
+@keyframes pochiWig{0%,100%{rotate:0deg}25%{rotate:-3deg}75%{rotate:3deg}}
+/* receipt prints in */
+html.anim #split .sp-daycard{animation:rcPrint .7s cubic-bezier(.2,.8,.2,1)}
+@keyframes rcPrint{from{clip-path:inset(0 0 100% 0);transform:translateY(-14px)}to{clip-path:inset(0 0 -40px 0);transform:none}}
+html.anim #split .sp-paid.on{animation:hankoSlam .45s cubic-bezier(.3,1.6,.4,1)}
+@keyframes hankoSlam{0%{transform:scale(1.8) rotate(-20deg);opacity:0}100%{transform:rotate(-8deg);opacity:1}}
+html.anim #split .sp-done span{animation:hankoBig .6s cubic-bezier(.3,1.5,.4,1) .2s both}
+@keyframes hankoBig{0%{transform:scale(2.2) rotate(-30deg);opacity:0}100%{transform:rotate(-14deg);opacity:1}}
+/* flowing route lines */
+html.anim .kon .leg::after{animation:lineFlow 1.2s linear infinite}
+html.anim .kyo .leg::after,html.anim .fuk .leg::after{animation:lineFlow 1.6s linear infinite}
+@keyframes lineFlow{from{background-position:0 0}to{background-position:0 24px}}
+html.anim .leg::before{animation:legPulse 2.4s ease-in-out infinite}
+@keyframes legPulse{0%,100%{scale:1}50%{scale:1.15}}
+/* Fukuoka scene ambience */
+html.anim .fuk .il-top svg > g > g[fill="#fff"]{animation:cloudDrift 9s ease-in-out infinite alternate}
+html.anim .fuk .il-top svg > g > circle[fill="#F9E08B"]{transform-box:fill-box;transform-origin:center;animation:sunPulse 4s ease-in-out infinite}
+@keyframes cloudDrift{from{transform:translateX(-10px)}to{transform:translateX(14px)}}
+@keyframes sunPulse{0%,100%{transform:scale(1)}50%{transform:scale(1.08)}}
+html.anim .fuk .il-title b{animation:bubblePop 3.6s ease-in-out infinite}
+@keyframes bubblePop{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+/* K-ON whiteboard marker writing */
+html.anim .kon .k-wb.mv.in-v li{animation:inkIn .5s ease both}
+html.anim .kon .k-wb li:nth-child(2){animation-delay:.1s}html.anim .kon .k-wb li:nth-child(3){animation-delay:.2s}html.anim .kon .k-wb li:nth-child(4){animation-delay:.3s}html.anim .kon .k-wb li:nth-child(5){animation-delay:.4s}html.anim .kon .k-wb li:nth-child(6){animation-delay:.5s}html.anim .kon .k-wb li:nth-child(7){animation-delay:.6s}
+@keyframes inkIn{from{clip-path:inset(0 100% 0 0);opacity:.2}to{clip-path:inset(0 0 0 0);opacity:1}}
+html.anim .kon .k-band.mv.in-v svg{animation:bandHop .9s cubic-bezier(.3,1.6,.5,1) both}
+html.anim .kon .k-band svg:nth-child(2){animation-delay:.06s}html.anim .kon .k-band svg:nth-child(3){animation-delay:.12s}html.anim .kon .k-band svg:nth-child(4){animation-delay:.18s}html.anim .kon .k-band svg:nth-child(5){animation-delay:.24s}html.anim .kon .k-band svg:nth-child(6){animation-delay:.3s}html.anim .kon .k-band svg:nth-child(7){animation-delay:.36s}
+@keyframes bandHop{0%{transform:translateY(24px) scale(.6);opacity:0}100%{opacity:1}}
+/* Kyoto torii appear one by one */
+html.anim .kyo .ky-torii.mv.in-v svg{animation:toriiRise .6s cubic-bezier(.2,.9,.3,1.2) both}
+html.anim .kyo .ky-torii svg:nth-child(2){animation-delay:.07s}html.anim .kyo .ky-torii svg:nth-child(3){animation-delay:.14s}html.anim .kyo .ky-torii svg:nth-child(4){animation-delay:.21s}html.anim .kyo .ky-torii svg:nth-child(5){animation-delay:.28s}html.anim .kyo .ky-torii svg:nth-child(6){animation-delay:.35s}html.anim .kyo .ky-torii svg:nth-child(7){animation-delay:.42s}html.anim .kyo .ky-torii svg:nth-child(8){animation-delay:.49s}
+@keyframes toriiRise{from{transform:translateY(20px);opacity:0}to{opacity:.95}}
+/* shoji light breathing */
+html.anim #photoadmin::before{animation:lampBreath 5s ease-in-out infinite}
+@keyframes lampBreath{0%,100%{opacity:.8}50%{opacity:1;transform:scale(1.08)}}
+/* ripple */
+.rip-host{position:relative;overflow:hidden}
+.rip{position:absolute;border-radius:50%;background:rgba(255,255,255,.45);transform:scale(0);animation:ripple .65s ease-out forwards;pointer-events:none;z-index:3}
+@keyframes ripple{to{transform:scale(1);opacity:0}}
+/* chapter toast */
+.ch-toast{position:fixed;left:50%;top:calc(env(safe-area-inset-top,0px) + 150px);z-index:30;display:flex;flex-direction:column;align-items:center;gap:2px;padding:10px 26px;border-radius:999px;pointer-events:none;
+  background:rgba(27,25,20,.88);color:#EFE8D6;border:1px solid #B48A3A;box-shadow:0 10px 30px rgba(0,0,0,.35);transform:translate(-50%,-20px) scale(.9);opacity:0;transition:transform .45s cubic-bezier(.3,1.4,.5,1),opacity .35s}
+.ch-toast.show{transform:translate(-50%,0) scale(1);opacity:1}
+.ch-toast b{font-family:"Noto Serif SC",serif;font-weight:900;font-size:17px;letter-spacing:.1em}.ch-toast span{font-size:12px;opacity:.8;letter-spacing:.15em}
+body.kon-on .ch-toast{background:#fff;color:#FF6F9C;border:3px solid #FFC2D4}body.kon-on .ch-toast b{font-family:"ZCOOL KuaiLe",sans-serif;font-weight:400}
+body.kyo-on .ch-toast{background:#FBF7EE;color:#2A2620;border:2px solid #C8402B;border-radius:4px}body.kyo-on .ch-toast b{font-family:"Ma Shan Zheng",serif;font-weight:400;font-size:22px;color:#C8402B}
+body.fuk-on .ch-toast{background:#FFFDF7;color:#E07A93;border:none;box-shadow:0 0 0 4px #fff,0 0 0 7px #BFE3F7,0 10px 24px rgba(0,0,0,.2)}body.fuk-on .ch-toast b{font-family:"Fredoka","ZCOOL KuaiLe",sans-serif}
+body.split-on .ch-toast,body.supply-on .ch-toast,body.photo-on .ch-toast{background:#FBF7EE;color:#1F2D4E;border:2px solid #B5302E;border-radius:2px}
+body.split-on .ch-toast b,body.supply-on .ch-toast b,body.photo-on .ch-toast b{font-family:"Ma Shan Zheng",serif;font-weight:400;font-size:22px}
+@media(max-width:560px){.ch-toast{top:calc(env(safe-area-inset-top,0px) + 132px)}}
+/* back to top */
+.to-top{position:fixed;right:16px;bottom:calc(env(safe-area-inset-bottom,0px) + 18px);z-index:25;width:52px;height:52px;border-radius:50%;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(180deg,#2F3B27,#1F271A);box-shadow:0 0 0 2px #B48A3A,0 6px 16px rgba(0,0,0,.35);opacity:0;transform:translateY(20px) scale(.8);pointer-events:none;transition:opacity .3s,transform .4s cubic-bezier(.3,1.5,.5,1)}
+.to-top.show{opacity:1;transform:none;pointer-events:auto}
+.to-top svg{width:24px;height:24px;fill:none;stroke:#E8D9A8;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round;animation:upBob 1.8s ease-in-out infinite}
+@keyframes upBob{0%,100%{transform:translateY(1px)}50%{transform:translateY(-3px)}}
+body.kon-on .to-top{background:linear-gradient(180deg,#FF9EBB,#FF7FA6);box-shadow:0 0 0 3px #fff,0 6px 14px rgba(255,111,156,.4)}body.kon-on .to-top svg{stroke:#fff}
+body.kyo-on .to-top{background:#C8402B;border-radius:4px;box-shadow:0 0 0 2px #B0894F,0 6px 14px rgba(0,0,0,.3)}body.kyo-on .to-top svg{stroke:#fff}
+body.fuk-on .to-top{background:#F4A7B9;box-shadow:0 0 0 4px #fff,0 6px 14px rgba(160,140,118,.3)}body.fuk-on .to-top svg{stroke:#8E3550}
+body.split-on .to-top,body.supply-on .to-top,body.photo-on .to-top{background:#B5302E;border-radius:4px;box-shadow:0 0 0 2px #C9A24A,0 6px 14px rgba(0,0,0,.3)}body.split-on .to-top svg,body.supply-on .to-top svg,body.photo-on .to-top svg{stroke:#fff}
+@media (prefers-reduced-motion:reduce){.ch-toast,.to-top{transition:none}.to-top svg{animation:none}}
+.ch-toast{white-space:nowrap;max-width:calc(100vw - 32px)}.ch-toast span{overflow:hidden;text-overflow:ellipsis;max-width:100%}
 </style></head><body><template id="shell">
 <header class="wall pending">
   <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><filter id="keywhite" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB"><feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  -6 -6 -6 0 16.8" result="m"/><feMorphology in="m" operator="erode" radius="1.5" result="me"/><feComposite in="SourceGraphic" in2="me" operator="in" result="c"/><feComposite in="c" in2="SourceAlpha" operator="in"/></filter></svg>
@@ -1971,7 +2054,7 @@ var art=null;
 function el(t,c,txt){var e=document.createElement(t);if(c)e.className=c;if(txt!=null)e.textContent=txt;return e;}
 function lnk(c,txt,href){var a=el('a',c,txt);a.href=href;a.target='_blank';a.rel='noopener';return a;}
 
-var TC={"c":{"这":"這","里":"裡","从":"從","现":"現","导":"導","个":"個","点":"點","两":"兩","间":"間","标":"標","计":"計","离":"離","时":"時","图":"圖","会":"會","记":"記","钟":"鐘","礼":"禮","关":"關","猫":"貓","喂":"餵","规":"規","岛":"島","为":"為","准":"準","进":"進","击":"擊","乌":"烏","题":"題","周":"週","军":"軍","线":"線","编":"編","辑":"輯","员":"員","约":"約","开":"開","销":"銷","轻":"輕","请":"請","书":"書","账":"賬","营":"營","细":"細","实":"實","额":"額","干":"幹","参":"參","选":"選","台":"臺","评":"評","价":"價","败":"敗","检":"檢","网":"網","络":"絡","钥":"鑰","绿":"綠","欢":"歡","暂":"暫","无":"無","还":"還","发":"發","区":"區","过":"過","观":"觀","内":"內","脚":"腳","车":"車","鲜":"鮮","鱼":"魚","没":"沒","冈":"岡","电":"電","话":"話","们":"們","术":"術","学":"學","阶":"階","较":"較","远":"遠","与":"與","带":"帶","坝":"壩","墙":"牆","场":"場","驾":"駕","资":"資","鸟":"鳥","后":"後","报":"報","儿":"兒","转":"轉","绘":"繪","玛":"瑪","亚":"亞","纹":"紋","画":"畫","灯":"燈","谜":"謎","动":"動","脸":"臉","产":"產","业":"業","兴":"興","头":"頭","几":"幾","镜":"鏡","馆":"館","门":"門","柜":"櫃","着":"著","夹":"夾","乐":"樂","删":"刪","张":"張","圣":"聖","来":"來","调":"調","单":"單","态":"態","铁":"鐵","议":"議","飞":"飛","谁":"誰","团":"團","读":"讀","制":"製","试":"試","结":"結","当":"當","机":"機","号":"號","弹":"彈","贴":"貼","温":"溫","传":"傳","纯":"純","办":"辦","鸭":"鴨","设":"設","见":"見","签":"簽","纸":"紙","广":"廣","补":"補","给":"給","装":"裝","备":"備","旧":"舊","页":"頁","简":"簡","码":"碼","国":"國","彦":"彥","费":"費","钱":"錢","样":"樣","风":"風","载":"載","笔":"筆","异":"異","显":"顯","饮":"飲","尔":"爾","买":"買","联":"聯","兑":"兌","换":"換","奖":"獎","条":"條","贩":"販","卖":"賣","吗":"嗎","马":"馬","币":"幣","况":"況","预":"預","订":"訂","红":"紅","叶":"葉","达":"達","经":"經","满":"滿","际":"際","处":"處","恋":"戀","体":"體","务":"務","则":"則","麦":"麥","劳":"勞","桥":"橋","奥":"奧","够":"夠","长":"長","铜":"銅","询":"詢","问":"問","骑":"騎","课":"課","园":"園","刚":"剛","双":"雙","碍":"礙","宫":"宮","渔":"漁","访":"訪","确":"確","认":"認","写":"寫","权":"權","黄":"黃","录":"錄","决":"決","鸡":"雞","纪":"紀","汇":"匯","兽":"獸","负":"負","责":"責","滚":"滾","轮":"輪","驿":"驛","亲":"親","属":"屬","优":"優","楼":"樓","龟":"龜","练":"練","杆":"桿","缩":"縮","购":"購","厦":"廈","驳":"駁","对":"對","划":"劃","笼":"籠","数":"數","顺":"順","别":"別","挡":"擋","饭":"飯","丝":"絲","详":"詳","顶":"頂","晒":"曬","阳":"陽","该":"該","闭":"閉","厂":"廠","游":"遊","厅":"廳","丰":"豐","变":"變","档":"檔","驶":"駛","冲":"沖","樱":"櫻","摆":"擺","觉":"覺","么":"麼","护":"護","证":"證","复":"複","让":"讓","齐":"齊","枫":"楓","禅":"禪","阁":"閣","戏":"戲","帐":"帳","浓":"濃","雾":"霧","绝":"絕","妆":"妝","论":"論","师":"師","贺":"賀","类":"類","边":"邊","静":"靜","筑":"築","范":"範","围":"圍","须":"須","庙":"廟","树":"樹","汤":"湯","储":"儲","环":"環","绕":"繞"},"p":{"公里":"公里","限制）":"限制）","百只自":"百隻自","备注（":"備註（","和发型":"和髮型","生发型":"生髮型","剪发的":"剪髮的","公里，":"公里，","梅干等":"梅乾等","台签":"臺籤"}};
+var TC={"c":{"与":"與","带":"帶","图":"圖","离":"離","来":"來","这":"這","里":"裡","办":"辦","楼":"樓","对":"對","开":"開","请":"請","马":"馬","边":"邊","静":"靜","观":"觀","进":"進","筑":"築","范":"範","围":"圍","员":"員","传":"傳","败":"敗","检":"檢","网":"網","络":"絡","后":"後","试":"試","铁":"鐵","线":"線","冈":"岡","机":"機","场":"場","约":"約","车":"車","还":"還","旧":"舊","顺":"順","过":"過","删":"刪","钥":"鑰","区":"區","话":"話","无":"無","读":"讀","换":"換","双":"雙","击":"擊","滚":"滾","轮":"輪","动":"動","访":"訪","丰":"豐","轻":"輕","从":"從","时":"時","干":"幹","缩":"縮","营":"營","业":"業","间":"間","变":"變","发":"發","个":"個","补":"補","给":"給","装":"裝","备":"備","选":"選","馆":"館","调":"調","记":"記","录":"錄","团":"團","欢":"歡","当":"當","骑":"騎","学":"學","周":"週","没":"沒","课":"課","门":"門","园":"園","务":"務","内":"內","脚":"腳","鲜":"鮮","鱼":"魚","岛":"島","电":"電","贩":"販","卖":"賣","联":"聯","单":"單","让":"讓","点":"點","鸭":"鴨","汇":"匯","写":"寫","权":"權","贴":"貼","评":"評","价":"價","结":"結","账":"賬","厂":"廠","画":"畫","笔":"筆","费":"費","红":"紅","灯":"燈","页":"頁","墙":"牆","号":"號","弹":"彈","钟":"鐘","议":"議","飞":"飛","黄":"黃","环":"環","绕":"繞","吗":"嗎","觉":"覺","么":"麼","样":"樣","产":"產","鸡":"雞","签":"簽","纸":"紙","远":"遠","两":"兩","关":"關","儿":"兒","转":"轉","术":"術","阶":"階","标":"標","书":"書","准":"準","顶":"頂","宫":"宮","渔":"漁","奥":"奧","温":"溫","麦":"麥","劳":"勞","制":"製","桥":"橋","头":"頭","该":"該","碍":"礙","确":"確","认":"認","驾":"駕","礼":"禮","杆":"桿","笼":"籠","买":"買","乐":"樂","条":"條","钱":"錢","鸟":"鳥","负":"負","责":"責","设":"設","汤":"湯","购":"購","台":"臺","彦":"彥","异":"異","圣":"聖","现":"現","参":"參","张":"張","档":"檔","报":"報","计":"計","简":"簡","体":"體","额":"額","经":"經","满":"滿","闭":"閉","叶":"葉","见":"見","妆":"妝","订":"訂","驿":"驛","饮":"飲","尔":"爾","预":"預","资":"資","显":"顯","实":"實","际":"際","兴":"興","优":"優","几":"幾","销":"銷","谁":"誰","刚":"剛","编":"編","辑":"輯","详":"詳","坝":"壩","复":"複","较":"較","枫":"楓","处":"處","恋":"戀","会":"會","载":"載","绿":"綠","镜":"鏡","柜":"櫃","着":"著","夹":"夾","丝":"絲","论":"論","类":"類","别":"別","帐":"帳","则":"則","风":"風","猫":"貓","国":"國","暂":"暫","厅":"廳","樱":"櫻","储":"儲","导":"導","须":"須","为":"為","铜":"銅","挡":"擋","树":"樹","护":"護","证":"證","饭":"飯","乌":"烏","龟":"龜","们":"們","练":"練","够":"夠","广":"廣","晒":"曬","阳":"陽","厦":"廈","驳":"駁","游":"遊","军":"軍","禅":"禪","阁":"閣","戏":"戲","喂":"餵","规":"規","兽":"獸","浓":"濃","雾":"霧","达":"達","冲":"沖","脸":"臉","长":"長","纯":"純","细":"細","摆":"擺","属":"屬","庙":"廟","询":"詢","问":"問","题":"題","齐":"齊","币":"幣","态":"態","兑":"兌","奖":"獎","决":"決","师":"師","贺":"賀","划":"劃","数":"數","纪":"紀","绝":"絕","驶":"駛","亚":"亞","况":"況","绘":"繪","玛":"瑪","纹":"紋","谜":"謎","码":"碼","亲":"親"},"p":{"梅干等":"梅乾等","公里，":"公里，","公里":"公里","和发型":"和髮型","生发型":"生髮型","备注（":"備註（","限制）":"限制）","百只自":"百隻自","台签":"臺籤","剪发的":"剪髮的"}};
 var TCP=Object.keys(TC.p).sort(function(a,b){return b.length-a.length;});
 function lang(){try{return localStorage.getItem('aot-lang')==='tc'?'tc':'sc';}catch(e){return 'sc';}}
 function tcv(s){if(!s||!/[\u4e00-\u9fff]/.test(s))return s;var out='',i=0;
@@ -2856,7 +2939,7 @@ function spy(){
   var sp=document.getElementById('split');if(sp&&sp.getBoundingClientRect().top<=off)act='split';
   var sup=document.getElementById('supply');if(sup&&sup.getBoundingClientRect().top<=off)act='supply';
   var pha=document.getElementById('photoadmin');if(pha){var pr=pha.getBoundingClientRect();if(pr.top<=off||(innerHeight+scrollY>=document.documentElement.scrollHeight-4&&pr.top<innerHeight*.6))act='photoadmin';}
-  if(act===curDay)return;curDay=act;var se=act&&document.getElementById(act);var th=se?(se.classList.contains('kon')?'kon':(se.classList.contains('kyo')?'kyo':(se.classList.contains('fuk')?'fuk':''))):'';document.body.classList.toggle('kon-on',th==='kon');document.body.classList.toggle('kyo-on',th==='kyo');document.body.classList.toggle('fuk-on',th==='fuk');document.body.setAttribute('data-th',th);document.body.classList.toggle('split-on',act==='split');document.body.classList.toggle('supply-on',act==='supply');document.body.classList.toggle('photo-on',act==='photoadmin');paintCount();
+  if(act===curDay)return;curDay=act;var se=act&&document.getElementById(act);var th=se?(se.classList.contains('kon')?'kon':(se.classList.contains('kyo')?'kyo':(se.classList.contains('fuk')?'fuk':''))):'';document.body.classList.toggle('kon-on',th==='kon');document.body.classList.toggle('kyo-on',th==='kyo');document.body.classList.toggle('fuk-on',th==='fuk');document.body.setAttribute('data-th',th);document.body.classList.toggle('split-on',act==='split');document.body.classList.toggle('supply-on',act==='supply');document.body.classList.toggle('photo-on',act==='photoadmin');paintCount();if(window.chapterToast)chapterToast(act);
   var links=[].slice.call(document.querySelectorAll('#daynav a'));
   links.forEach(function(a){var on=act&&a.getAttribute('href')==='#'+act;a.classList.toggle('on',!!on);if(on){a.setAttribute('aria-current','true');var nav=a.parentNode;var l=a.offsetLeft-(nav.clientWidth-a.offsetWidth)/2;nav.scrollTo?nav.scrollTo({left:l,behavior:'smooth'}):(nav.scrollLeft=l);}else a.removeAttribute('aria-current');});
   var lbl=document.getElementById('curday');if(lbl){var a2=links.filter(function(x){return x.classList.contains('on');})[0];lbl.textContent=a2?'现在：'+a2.textContent:'';}
@@ -2925,7 +3008,7 @@ function setupAdmin(){
   show();
 }
 art=token()?{gh:true}:null;
-TH.fuk=FKTH[FKV];SPUNIT.fuk=FKTH[FKV].sp;build();setupAdmin();hero();applyLang();
+window.__DAYS=DAYS;window.__lang=lang;window.__conv=convNode;TH.fuk=FKTH[FKV];SPUNIT.fuk=FKTH[FKV].sp;build();setupAdmin();hero();applyLang();
 (function(){
   var chip=document.getElementById('me');
   function paint(){var n=myName();if(chip){chip.textContent='';var s=document.createElement('span');s.className='me-ic';s.innerHTML='<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3.6"/><path d="M5 20c1.2-3.8 4-5.6 7-5.6s5.8 1.8 7 5.6"/></svg>';chip.appendChild(s);chip.appendChild(document.createTextNode(n||'未登记'));var e=document.createElement('i');e.textContent='✎';chip.appendChild(e);}}
@@ -2976,6 +3059,38 @@ TH.fuk=FKTH[FKV];SPUNIT.fuk=FKTH[FKV].sp;build();setupAdmin();hero();applyLang()
 loadRemote(false).then(build);
 setInterval(function(){if(!document.hidden)loadRemote(false).then(build);},180000);
 if('serviceWorker' in navigator){navigator.serviceWorker.register('sw.js').catch(function(){});}
+})();
+
+
+/* ===== motion layer ===== */
+(function(){
+  var RM=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(RM)return;
+  document.documentElement.classList.add('anim');
+  /* reveal on scroll */
+  var SEL='.dayhead,.leg,.sp-strip,.k-wb,.k-band,.ky-torii,.il-top,.cd-band,.shead,#split .sp-dpick,#split .sp-legend,#split .sp-all-trip,#supply .tbl tr,#photoadmin .admin,.gal .lead .stamp';
+  var io='IntersectionObserver' in window?new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in-v');io.unobserve(e.target);}});},{rootMargin:'0px 0px -8% 0px',threshold:.08}):null;
+  function scan(){[].forEach.call(document.querySelectorAll(SEL),function(el,i){if(el.classList.contains('mv'))return;el.classList.add('mv');el.style.setProperty('--d',(i%4*60)+'ms');if(io)io.observe(el);else el.classList.add('in-v');});}
+  scan();new MutationObserver(function(){clearTimeout(scan._t);scan._t=setTimeout(scan,60);}).observe(document.body,{childList:true,subtree:true});
+  /* ripple */
+  var RIP='.nx-b a,.acts .up,.lgbtn,.tools3 .tool,.sp-btn,.sp-st-add,.nb-ok,.sh-go,.pv-s,.refresh,.sp-dpb,.sh-btn,#daynav a';
+  document.addEventListener('pointerdown',function(e){var t=e.target.closest&&e.target.closest(RIP);if(!t)return;var r=t.getBoundingClientRect(),s=Math.max(r.width,r.height)*1.6;var sp=document.createElement('span');sp.className='rip';
+    sp.style.width=sp.style.height=s+'px';sp.style.left=(e.clientX-r.left-s/2)+'px';sp.style.top=(e.clientY-r.top-s/2)+'px';t.classList.add('rip-host');t.appendChild(sp);setTimeout(function(){sp.remove();},650);},{passive:true});
+  /* hero parallax */
+  var wall=document.querySelector('.wall'),inner=wall&&wall.querySelector('.inner'),breach=wall&&wall.querySelector('.breach'),bricks=wall&&wall.querySelector('.bricks');var tick=false;
+  function par(){tick=false;var y=window.scrollY;if(!wall||y>wall.offsetHeight*1.2)return;if(inner)inner.style.transform='translateY('+(y*.25)+'px)';if(inner)inner.style.opacity=String(Math.max(0,1-y/(wall.offsetHeight*.9)));if(breach)breach.style.transform='translateY('+(y*.12)+'px) scale('+(1+y/4000)+')';if(bricks)bricks.style.transform='translateY('+(y*.06)+'px)';}
+  window.addEventListener('scroll',function(){if(!tick){tick=true;requestAnimationFrame(par);}},{passive:true});
+  /* chapter toast when entering a new day/section */
+  var last=null,toast=null,tt=null,ready=false;setTimeout(function(){ready=true;},1500);
+  window.chapterToast=function(act){if(!ready||!act||act===last){last=act;return;}last=act;var label='',sub='';
+    if(act==='split'){label='旅费分账';sub='大福帐';}else if(act==='supply'){label='补给与装备';sub='旅支度';}else if(act==='photoadmin'){label='照片管理';sub='写真帖';}
+    else{var D=null;var DS=window.__DAYS||[];for(var i=0;i<DS.length;i++)if('day-'+DS[i].d===act)D=DS[i];if(!D)return;label=D.lab+'　'+D.w;sub=D.title;}
+    if(!toast){toast=document.createElement('div');toast.className='ch-toast';toast.setAttribute('aria-hidden','true');document.body.appendChild(toast);}
+    toast.innerHTML='';var b=document.createElement('b');b.textContent=label;var s=document.createElement('span');s.textContent=sub;toast.appendChild(b);toast.appendChild(s);if(window.__lang&&window.__lang()==='tc'&&window.__conv)window.__conv(toast);
+    toast.classList.remove('show');void toast.offsetWidth;toast.classList.add('show');clearTimeout(tt);tt=setTimeout(function(){toast.classList.remove('show');},2200);};
+  /* back to top */
+  var top=document.createElement('button');top.type='button';top.className='to-top';top.setAttribute('aria-label','回到顶部');top.innerHTML='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 14l6-6 6 6"/><path d="M12 8v12"/></svg>';top.onclick=function(){window.scrollTo({top:0,behavior:'smooth'});};document.body.appendChild(top);
+  window.addEventListener('scroll',function(){top.classList.toggle('show',window.scrollY>900);},{passive:true});
 })();
 
 </script></body></html>
