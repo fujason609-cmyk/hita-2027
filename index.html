@@ -2061,6 +2061,23 @@ body.kon-on .status .gauge i,body.kyo-on .status .gauge i,body.fuk-on .status .g
 .mm-allrec{position:absolute;top:-2.5mm;right:-2mm;padding:.8mm 2.4mm;background:#E6C46A;color:#5E3A08;font-family:"Noto Serif SC",serif;font-weight:900;font-size:7.5pt;transform:rotate(6deg);box-shadow:0 .6mm 1mm rgba(0,0,0,.2)}
 @media print{.fl-wrap{display:none!important}.memoir-ov .mm-book{display:block!important}}
 @media (prefers-reduced-motion:reduce){.fl-leaf,.fl-stage{transition:none!important}}
+/* single-page mode: no 3D stack, one page at a time */
+.fl-stage.single{perspective:1800px}
+.fl-stage.single .fl-cur{position:absolute!important;inset:0;transform-origin:0 50%;transition:transform .55s cubic-bezier(.45,.05,.25,1),opacity .55s;box-shadow:0 14px 30px rgba(0,0,0,.45)!important}
+.fl-stage.single .fl-cur.fl-out{transform:rotateY(-95deg);opacity:0}
+.fl-stage.single .fl-cur.fl-in{transform:rotateY(-95deg);opacity:0;transition:none}
+.memoir-ov{touch-action:pan-x pan-y}
+.fl-btn.zoom{width:44px;height:44px}
+.fl-zoom{position:fixed;inset:0;z-index:80;display:flex;flex-direction:column;background:#2A2420}
+.fl-zbar{display:flex;align-items:center;justify-content:center;gap:12px;padding:calc(env(safe-area-inset-top,0px) + 10px) 12px 10px;background:#2A2420;box-shadow:0 2px 0 #C9A24A}
+.fl-zbar button{min-width:44px;min-height:40px;padding:0 12px;font:inherit;font-size:18px;font-weight:700;color:#F3EBDC;background:transparent;border:1px solid #C9A24A;border-radius:2px;cursor:pointer}
+.fl-zbar button:disabled{opacity:.35}.fl-zbar .fl-zx{margin-left:auto;font-size:14px}
+.fl-zbar span{min-width:56px;text-align:center;color:#F3EBDC;font-family:"Noto Serif SC",serif}
+.fl-zsc{flex:1;overflow:auto;-webkit-overflow-scrolling:touch;touch-action:pan-x pan-y;padding:14px 10px 40px}
+.fl-zin{position:relative;margin:0 auto}
+.fl-zpage{position:absolute!important;top:0;width:148mm!important;height:210mm!important;max-width:none!important;aspect-ratio:auto!important;transform-origin:0 0;padding:14mm 12mm!important;box-shadow:0 10px 24px rgba(0,0,0,.4)!important}
+.fl-zpage.mm-day{padding-top:12mm!important}.fl-zpage.mm-cover{padding-left:18mm!important}
+.fl-stage{flex-shrink:0}
 </style></head><body><template id="shell">
 <header class="wall pending">
   <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><filter id="keywhite" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB"><feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  -6 -6 -6 0 16.8" result="m"/><feMorphology in="m" operator="erode" radius="1.5" result="me"/><feComposite in="SourceGraphic" in2="me" operator="in" result="c"/><feComposite in="c" in2="SourceAlpha" operator="in"/></filter></svg>
@@ -2220,7 +2237,7 @@ var art=null;
 function el(t,c,txt){var e=document.createElement(t);if(c)e.className=c;if(txt!=null)e.textContent=txt;return e;}
 function lnk(c,txt,href){var a=el('a',c,txt);a.href=href;a.target='_blank';a.rel='noopener';return a;}
 
-var TC={"c":{"双":"雙","击":"擊","滚":"滾","轮":"輪","动":"動","周":"週","馆":"館","制":"製","图":"圖","调":"調","车":"車","须":"須","传":"傳","败":"敗","请":"請","检":"檢","网":"網","络":"絡","后":"後","试":"試","访":"訪","红":"紅","灯":"燈","欢":"歡","钟":"鐘","发":"發","学":"學","团":"團","点":"點","还":"還","没":"沒","时":"時","笔":"筆","驾":"駕","头":"頭","里":"裡","几":"幾","个":"個","镜":"鏡","门":"門","柜":"櫃","着":"著","轻":"輕","夹":"夾","现":"現","场":"場","乐":"樂","间":"間","营":"營","业":"業","鸡":"雞","签":"簽","画":"畫","纸":"紙","从":"從","过":"過","远":"遠","电":"電","约":"約","记":"記","录":"錄","绿":"綠","张":"張","数":"數","顺":"順","优":"優","饮":"飲","这":"這","开":"開","较":"較","岛":"島","冈":"岡","猫":"貓","销":"銷","评":"評","价":"價","负":"負","责":"責","设":"設","钱":"錢","样":"樣","转":"轉","进":"進","话":"話","计":"計","费":"費","对":"對","页":"頁","为":"為","规":"規","划":"劃","与":"與","无":"無","关":"關","来":"來","参":"參","刚":"剛","论":"論","联":"聯","乌":"烏","题":"題","账":"賬","见":"見","干":"幹","线":"線","区":"區","显":"顯","游":"遊","树":"樹","国":"國","际":"際","厦":"廈","驳":"駁","黄":"黃","纯":"純","宫":"宮","渔":"漁","鸟":"鳥","书":"書","吗":"嗎","旧":"舊","员":"員","别":"別","挡":"擋","谁":"誰","会":"會","载":"載","决":"決","钥":"鑰","机":"機","删":"刪","观":"觀","汇":"匯","导":"導","当":"當","骑":"騎","课":"課","园":"園","类":"類","带":"帶","兽":"獸","叶":"葉","办":"辦","楼":"樓","马":"馬","边":"邊","静":"靜","筑":"築","范":"範","围":"圍","条":"條","异":"異","额":"額","台":"臺","丰":"豐","属":"屬","圣":"聖","礼":"禮","缩":"縮","坝":"壩","结":"結","编":"編","辑":"輯","戏":"戲","换":"換","装":"裝","妆":"妝","订":"訂","确":"確","认":"認","达":"達","内":"內","补":"補","经":"經","满":"滿","脸":"臉","广":"廣","详":"詳","写":"寫","简":"簡","标":"標","樱":"櫻","档":"檔","笼":"籠","纪":"紀","册":"冊","读":"讀","顶":"頂","师":"師","贺":"賀","询":"詢","问":"問","墙":"牆","议":"議","飞":"飛","术":"術","阶":"階","荐":"薦","驿":"驛","选":"選","温":"溫","摆":"擺","龟":"龜","铜":"銅","厅":"廳","们":"們","单":"單","让":"讓","务":"務","铁":"鐵","产":"產","练":"練","体":"體","贴":"貼","丝":"絲","总":"總","恋":"戀","两":"兩","钮":"鈕","备":"備","离":"離","鸭":"鴨","实":"實","号":"號","弹":"彈","尔":"爾","浓":"濃","雾":"霧","汤":"湯","币":"幣","彦":"彥","帐":"帳","况":"況","禅":"禪","阁":"閣","兴":"興","喂":"餵","准":"準","权":"權","则":"則","储":"儲","桥":"橋","码":"碼","购":"購","贩":"販","卖":"賣","暂":"暫","庙":"廟","护":"護","证":"證","复":"複","报":"報","奥":"奧","够":"夠","饭":"飯","细":"細","买":"買","兑":"兌","奖":"獎","亲":"親","绘":"繪","预":"預","军":"軍","枫":"楓","绝":"絕","晒":"曬","阳":"陽","给":"給","齐":"齊","脚":"腳","鲜":"鮮","鱼":"魚","处":"處","杆":"桿","闭":"閉","资":"資","玛":"瑪","亚":"亞","纹":"紋","谜":"謎","驶":"駛","麦":"麥","劳":"勞","风":"風","变":"變","环":"環","绕":"繞","该":"該","冲":"沖","键":"鍵","盘":"盤","儿":"兒","态":"態","觉":"覺","么":"麼","碍":"礙","长":"長","厂":"廠"},"p":{"台签":"臺籤","和发型":"和髮型","生发型":"生髮型","剪发的":"剪髮的","公里，":"公里，","梅干等":"梅乾等","备注（":"備註（","公里":"公里","百只自":"百隻自","限制）":"限制）"}};
+var TC={"c":{"脸":"臉","评":"評","价":"價","营":"營","业":"業","还":"還","车":"車","丰":"豐","个":"個","没":"沒","来":"來","调":"調","过":"過","转":"轉","约":"約","预":"預","订":"訂","红":"紅","叶":"葉","机":"機","页":"頁","学":"學","奥":"奧","体":"體","够":"夠","载":"載","败":"敗","优":"優","饮":"飲","录":"錄","头":"頭","里":"裡","员":"員","桥":"橋","钟":"鐘","坝":"壩","铜":"銅","当":"當","从":"從","骑":"騎","周":"週","课":"課","门":"門","进":"進","园":"園","结":"結","馆":"館","冈":"岡","计":"計","顶":"頂","标":"標","记":"記","准":"準","备":"備","请":"請","检":"檢","网":"網","络":"絡","后":"後","试":"試","猫":"貓","岛":"島","欢":"歡","铁":"鐵","线":"線","场":"場","决":"決","话":"話","访":"訪","时":"時","间":"間","动":"動","变":"變","发":"發","异":"異","笔":"筆","账":"賬","费":"費","干":"幹","点":"點","双":"雙","杆":"桿","缩":"縮","制":"製","图":"圖","见":"見","换":"換","装":"裝","妆":"妝","确":"確","认":"認","样":"樣","国":"國","开":"開","黄":"黃","团":"團","这":"這","们":"們","设":"設","亲":"親","绘":"繪","画":"畫","书":"書","轻":"輕","传":"傳","报":"報","细":"細","马":"馬","议":"議","编":"編","辑":"輯","暂":"暫","绝":"絕","询":"詢","几":"幾","销":"銷","游":"遊","顺":"順","吗":"嗎","汇":"匯","圣":"聖","礼":"禮","宫":"宮","纪":"紀","贴":"貼","厅":"廳","钱":"錢","选":"選","观":"觀","内":"內","脚":"腳","鲜":"鮮","鱼":"魚","帐":"帳","产":"產","兴":"興","无":"無","读":"讀","驾":"駕","击":"擊","现":"現","玛":"瑪","亚":"亞","墙":"牆","纹":"紋","灯":"燈","谜":"謎","驿":"驛","钥":"鑰","负":"負","责":"責","办":"辦","庙":"廟","际":"際","较":"較","远":"遠","处":"處","彦":"彥","册":"冊","军":"軍","买":"買","两":"兩","联":"聯","兑":"兌","奖":"獎","额":"額","经":"經","满":"滿","参":"參","论":"論","资":"資","旧":"舊","号":"號","弹":"彈","区":"區","师":"師","贺":"賀","问":"問","台":"臺","删":"刪","达":"達","购":"購","楼":"樓","写":"寫","着":"著","态":"態","单":"單","币":"幣","鸭":"鴨","电":"電","关":"關","档":"檔","渔":"漁","会":"會","晒":"曬","阳":"陽","与":"與","张":"張","贩":"販","卖":"賣","详":"詳","绿":"綠","签":"簽","纸":"紙","恋":"戀","储":"儲","实":"實","数":"數","显":"顯","离":"離","对":"對","边":"邊","静":"靜","筑":"築","范":"範","围":"圍","鸟":"鳥","刚":"剛","广":"廣","滚":"滾","轮":"輪","尔":"爾","为":"為","规":"規","划":"劃","谁":"誰","樱":"櫻","简":"簡","汤":"湯","护":"護","证":"證","复":"複","戏":"戲","驶":"駛","题":"題","纯":"純","条":"條","温":"溫","码":"碼","闭":"閉","碍":"礙","阶":"階","丝":"絲","浓":"濃","雾":"霧","带":"帶","乌":"烏","补":"補","须":"須","则":"則","厦":"廈","驳":"駁","饭":"飯","乐":"樂","导":"導","况":"況","给":"給","觉":"覺","么":"麼","树":"樹","权":"權","镜":"鏡","让":"讓","齐":"齊","节":"節","类":"類","别":"別","务":"務","厂":"廠","喂":"餵","长":"長","麦":"麥","劳":"勞","总":"總","摆":"擺","龟":"龜","挡":"擋","风":"風","环":"環","绕":"繞","柜":"櫃","夹":"夾","兽":"獸","儿":"兒","禅":"禪","阁":"閣","鸡":"雞","枫":"楓","练":"練","术":"術","飞":"飛","该":"該","荐":"薦","笼":"籠","冲":"沖","属":"屬"},"p":{"和发型":"和髮型","生发型":"生髮型","剪发的":"剪髮的","限制）":"限制）","台签":"臺籤","梅干等":"梅乾等","备注（":"備註（","百只自":"百隻自","公里":"公里","公里，":"公里，"}};
 var TCP=Object.keys(TC.p).sort(function(a,b){return b.length-a.length;});
 function lang(){try{return localStorage.getItem('aot-lang')==='tc'?'tc':'sc';}catch(e){return 'sc';}}
 function tcv(s){if(!s||!/[\u4e00-\u9fff]/.test(s))return s;var out='',i=0;
@@ -2674,30 +2691,50 @@ function renderSplit(){
 var MMC={'':{c:'#3E5C3A',t:'#F1E6C8',k:'#B48A3A',nm:'壁外调查'},kon:{c:'#F27FA5',t:'#fff',k:'#FFD66B',nm:'放课后'},kyo:{c:'#2E4A7D',t:'#fff',k:'#C8402B',nm:'京都巡礼'},fuk:{c:'#6FB3E0',t:'#fff',k:'#F4A7B9',nm:'福冈散步'}};
 function buildFlip(ov,pages){
   var spread=window.innerWidth>=1000;var PW=559,PH=794;
-  var wrap=el('div','fl-wrap');var stage=el('div','fl-stage'+(spread?' spread':''));wrap.appendChild(stage);
-  var leaves=[];var faces=[];
-  function face(p,back){var f=p?p.cloneNode(true):el('section','mm-page fl-blank');f.classList.add('fl-face');if(back)f.classList.add('fl-back');return f;}
-  if(spread){for(var j=0;j<pages.length;j+=2){var lf=el('div','fl-leaf');lf.appendChild(face(pages[j],false));lf.appendChild(face(pages[j+1]||null,true));leaves.push(lf);}}
-  else{pages.forEach(function(p){var lf=el('div','fl-leaf');lf.appendChild(face(p,false));lf.appendChild(face(null,true));leaves.push(lf);});}
-  leaves.forEach(function(lf,i){lf.appendChild(el('i','fl-shade'));stage.appendChild(lf);});
+  var wrap=el('div','fl-wrap');var stage=el('div','fl-stage'+(spread?' spread':' single'));wrap.appendChild(stage);
+  function face(p,back){var f=p?p.cloneNode(true):el('section','mm-page fl-blank');f.classList.add('fl-face');if(back)f.classList.add('fl-back');[].forEach.call(f.querySelectorAll('img'),function(i){i.decoding='async';});return f;}
+  var leaves=[],N,f=0,busy=false,cur=null;
+  if(spread){for(var j=0;j<pages.length;j+=2){var lf=el('div','fl-leaf');lf.appendChild(face(pages[j],false));lf.appendChild(face(pages[j+1]||null,true));lf.appendChild(el('i','fl-shade'));leaves.push(lf);stage.appendChild(lf);}N=leaves.length;}
+  else{N=pages.length;cur=face(pages[0],false);cur.classList.add('fl-cur');stage.appendChild(cur);}
   var nav=el('div','fl-nav');var pv=el('button','fl-btn prev');pv.type='button';pv.setAttribute('aria-label','上一页');pv.innerHTML='<svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg>';
-  var ind=el('span','fl-ind');var nx=el('button','fl-btn next');nx.type='button';nx.setAttribute('aria-label','下一页');nx.innerHTML='<svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg>';
-  nav.appendChild(pv);nav.appendChild(ind);nav.appendChild(nx);wrap.appendChild(nav);
-  wrap.appendChild(el('p','fl-hint',spread?'点右页翻下一页，点左页翻回去；也可以用键盘左右键':'左右滑动翻页，或点两边的按钮'));
+  var ind=el('span','fl-ind');var zb=el('button','fl-btn zoom');zb.type='button';zb.setAttribute('aria-label','放大这一页');zb.innerHTML='<svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l5 5M11 8v6M8 11h6"/></svg>';
+  var nx=el('button','fl-btn next');nx.type='button';nx.setAttribute('aria-label','下一页');nx.innerHTML='<svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg>';
+  nav.appendChild(pv);nav.appendChild(ind);nav.appendChild(zb);nav.appendChild(nx);wrap.appendChild(nav);
+  wrap.appendChild(el('p','fl-hint',spread?'点右页翻下一页，点左页翻回去；放大镜可以放大看':'左右滑动翻页；想看清楚细节，按放大镜'));
   ov.insertBefore(wrap,ov.querySelector('.mm-book'));
-  var f=0,N=leaves.length;
-  function paint(){leaves.forEach(function(lf,i){var on=i<f;lf.classList.toggle('flipped',on);lf.style.zIndex=on?(i+1):(N-i+N);});
-    pv.disabled=f<=0;nx.disabled=f>=(spread?N:N-1);
-    if(spread){var L=f*2,R=f*2+1;ind.textContent=(f===0?'封面':(f>=N?'封底':(L)+' – '+(Math.min(R,pages.length))))+' / '+pages.length;}else ind.textContent=(f+1)+' / '+N;
-    stage.classList.toggle('closed-l',spread&&f===0);stage.classList.toggle('closed-r',spread&&f>=N);fit();}
-  function go(d){var nf=f+d;if(nf<0||nf>(spread?N:N-1))return;var lf=leaves[d>0?f:nf];lf.style.zIndex=999;lf.classList.add('turning');setTimeout(function(){lf.classList.remove('turning');},900);f=nf;paint();lf.style.zIndex=999;setTimeout(paint,880);}
+  var maxF=spread?N:N-1;
+  function label(){if(spread){var L=f*2,R=f*2+1;return (f===0?'封面':(f>=N?'封底':L+' – '+Math.min(R,pages.length)))+' / '+pages.length;}return (f+1)+' / '+N;}
+  function paint(){if(spread){leaves.forEach(function(lf,i){var on=i<f;lf.classList.toggle('flipped',on);lf.style.zIndex=on?(i+1):(N-i+N);lf.style.display=Math.abs(i-f)>2?'none':'';});stage.classList.toggle('closed-l',f===0);stage.classList.toggle('closed-r',f>=N);}
+    pv.disabled=f<=0;nx.disabled=f>=maxF;ind.textContent=T(label());fit();}
+  function goSpread(d){var nf=f+d;if(nf<0||nf>maxF)return;var lf=leaves[d>0?f:nf];lf.style.display='';lf.style.zIndex=999;lf.classList.add('turning');setTimeout(function(){lf.classList.remove('turning');},900);f=nf;paint();lf.style.zIndex=999;setTimeout(paint,880);}
+  function goSingle(d){var nf=f+d;if(busy||nf<0||nf>maxF)return;busy=true;var nxt=face(pages[nf],false);nxt.classList.add('fl-cur');
+    if(d>0){stage.insertBefore(nxt,cur);var old=cur;old.classList.add('fl-out');setTimeout(function(){old.remove();busy=false;},560);}
+    else{nxt.classList.add('fl-in');stage.appendChild(nxt);var old2=cur;requestAnimationFrame(function(){requestAnimationFrame(function(){nxt.classList.remove('fl-in');});});setTimeout(function(){old2.remove();busy=false;},560);}
+    cur=nxt;f=nf;paint();if(lang()==='tc')convNode(nxt);}
+  function go(d){if(spread)goSpread(d);else goSingle(d);}
   pv.onclick=function(){go(-1);};nx.onclick=function(){go(1);};
-  stage.addEventListener('click',function(e){var r=stage.getBoundingClientRect();if(spread){if(e.clientX>r.left+r.width/2)go(1);else go(-1);}});
+  stage.addEventListener('click',function(e){if(!spread)return;var r=stage.getBoundingClientRect();if(e.clientX>r.left+r.width/2)go(1);else go(-1);});
   var sx=null;stage.addEventListener('pointerdown',function(e){sx=e.clientX;});stage.addEventListener('pointerup',function(e){if(sx===null)return;var dx=e.clientX-sx;sx=null;if(Math.abs(dx)>40){e.stopPropagation();go(dx<0?1:-1);}},true);
   ov.addEventListener('keydown',function(e){if(e.key==='ArrowRight')go(1);if(e.key==='ArrowLeft')go(-1);});ov.tabIndex=-1;ov.focus();
+  /* block the browser's own pinch-zoom on the book (it makes iPhone run out of memory); use our zoom instead */
+  ['gesturestart','gesturechange','gestureend'].forEach(function(t){ov.addEventListener(t,function(e){e.preventDefault();},{passive:false});});
+  ov.addEventListener('touchmove',function(e){if(e.touches&&e.touches.length>1)e.preventDefault();},{passive:false});
+  zb.onclick=function(){openPageZoom(spread?[f>0?pages[f*2-1]:null,f<N?pages[f*2]:null].filter(Boolean):[pages[f]]);};
   function fit(){var aw=window.innerWidth-(spread?140:24),ah=window.innerHeight-200;var w=spread?PW*2:PW;var s=Math.min(aw/w,ah/PH,1.25);stage.style.setProperty('--s',s);wrap.style.height=(PH*s+90)+'px';
     var shift=0;if(spread){if(f===0)shift=-PW/2;else if(f>=N)shift=PW/2;}stage.style.setProperty('--x',shift+'px');}
   window.addEventListener('resize',fit);paint();
+}
+function openPageZoom(list){
+  var z=el('div','fl-zoom');z.setAttribute('role','dialog');var bar=el('div','fl-zbar');var minus=el('button',null,'－');var lvl=el('span',null,'');var plus=el('button',null,'＋');var cls=el('button','fl-zx','关闭');[minus,plus,cls].forEach(function(b){b.type='button';});
+  bar.appendChild(minus);bar.appendChild(lvl);bar.appendChild(plus);bar.appendChild(cls);z.appendChild(bar);
+  var sc=el('div','fl-zsc');var inner=el('div','fl-zin');list.forEach(function(p){var c=p.cloneNode(true);c.classList.add('fl-zpage');inner.appendChild(c);});sc.appendChild(inner);z.appendChild(sc);
+  var k=1;var base=Math.min((window.innerWidth-20)/(559*list.length),1.6);
+  function set(){var s=base*k;inner.style.width=(559*list.length*s)+'px';inner.style.height=(794*s)+'px';[].forEach.call(inner.children,function(c,i){c.style.transform='scale('+s+')';c.style.left=(559*s*i)+'px';});lvl.textContent=Math.round(k*100)+'%';minus.disabled=k<=1;plus.disabled=k>=3;}
+  minus.onclick=function(){k=Math.max(1,k-.5);set();};plus.onclick=function(){k=Math.min(3,k+.5);set();};cls.onclick=function(){z.remove();};
+  ['gesturestart','gesturechange'].forEach(function(t){z.addEventListener(t,function(e){e.preventDefault();},{passive:false});});
+  z.addEventListener('touchmove',function(e){if(e.touches&&e.touches.length>1)e.preventDefault();},{passive:false});
+  var lastTap=0;sc.addEventListener('click',function(){var n=Date.now();if(n-lastTap<300){k=k>1?1:2;set();}lastTap=n;});
+  document.body.appendChild(z);set();if(lang()==='tc')convNode(z);
 }
 function openMemoir(){
   var ov=el('div','memoir-ov');ov.setAttribute('role','dialog');ov.setAttribute('aria-modal','true');
