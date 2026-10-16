@@ -1907,6 +1907,131 @@ html.anim .fuk .il-top svg > g > g[fill="#fff"],html.anim .fuk .il-top svg > g >
 /* pause everything inside sections that are off screen */
 .paused,.paused *,.paused::before,.paused::after,.paused *::before,.paused *::after{animation-play-state:paused!important}
 body.kon-on .status .gauge i,body.kyo-on .status .gauge i,body.fuk-on .status .gauge i,body.split-on .status .gauge i,body.supply-on .status .gauge i,body.photo-on .status .gauge i{animation:none!important}
+/* ===== memoir section ===== */
+#memoir{position:relative;margin:56px -6px 0;padding:24px 16px 30px;border-radius:6px;background:radial-gradient(rgba(150,120,80,.06) 1px,transparent 1.4px) 0 0/7px 7px,#F2EADB;color:#2A2420;box-shadow:0 18px 40px rgba(0,0,0,.35)}
+#memoir .shead{border-bottom:none;display:flex;flex-direction:column;align-items:center;gap:6px}
+#memoir .shead h2{font-family:"Ma Shan Zheng","Noto Serif SC",serif;font-weight:400;font-size:clamp(30px,6vw,40px);color:#1F2D4E;letter-spacing:.12em}
+#memoir .shead small{color:#7A6A55;letter-spacing:.2em}
+.mm-intro{display:flex;gap:22px;align-items:center;justify-content:center;flex-wrap:wrap;margin-top:12px}
+.mm-bookcover{position:relative;width:150px;aspect-ratio:148/210;background:linear-gradient(90deg,rgba(0,0,0,.18) 0 14px,transparent 14px),#1F2D4E;border-radius:3px 8px 8px 3px;box-shadow:6px 8px 0 #C9BBA2,0 12px 26px rgba(0,0,0,.3);transform:rotate(-4deg);transition:transform .4s}
+.mm-bookcover::before{content:"";position:absolute;left:5px;top:12%;bottom:12%;width:4px;background:radial-gradient(circle,#E6C46A 0 2px,transparent 2.5px) 0 0/4px 28px repeat-y}
+.mm-bookcover span{position:absolute;right:16px;top:14px;bottom:14px;width:36px;writing-mode:vertical-rl;display:flex;align-items:center;justify-content:center;background:#FBF7EE;color:#1F2D4E;font-family:"Ma Shan Zheng","Noto Serif SC",serif;font-size:24px;letter-spacing:.2em;box-shadow:0 0 0 2px #C9A24A}
+.mm-bookcover em{position:absolute;left:24px;bottom:12px;font-style:normal;font-size:10px;letter-spacing:.2em;color:#C9D3EA;writing-mode:vertical-rl}
+@media(hover:hover){.mm-intro:hover .mm-bookcover{transform:rotate(0) translateY(-6px)}}
+.mm-txt{flex:1;min-width:220px;max-width:380px}
+.mm-txt p{margin:0 0 14px;font-size:14.5px;line-height:1.8;color:#4A3E32}
+.mm-openbtn{width:100%;min-height:52px;font:inherit;font-family:"Ma Shan Zheng","Noto Serif SC",serif;font-size:22px;letter-spacing:.2em;color:#fff;background:#B5302E;border:none;border-radius:2px;box-shadow:0 4px 0 #7A1A18;cursor:pointer}
+@media(max-width:560px){#memoir{margin-left:-12px;margin-right:-12px;border-radius:0}}
+/* ===== memoir viewer ===== */
+.memoir-ov{position:fixed;inset:0;z-index:70;overflow-y:auto;-webkit-overflow-scrolling:touch;background:radial-gradient(ellipse at 50% 0%,#5E5248,#3A322C 70%);padding-bottom:40px}
+.mm-bar{position:sticky;top:0;z-index:3;display:flex;align-items:center;gap:10px;flex-wrap:wrap;padding:calc(env(safe-area-inset-top,0px) + 10px) 14px 10px;background:#2A2420;color:#F3EBDC;box-shadow:0 2px 0 #C9A24A}
+.mm-bar b{font-family:"Ma Shan Zheng","Noto Serif SC",serif;font-weight:400;font-size:22px;letter-spacing:.1em}
+.mm-st{flex:1;min-width:120px;font-size:12.5px;color:#C9BBA2}
+.mm-print,.mm-close{min-height:42px;padding:0 16px;font:inherit;font-weight:700;border-radius:2px;cursor:pointer}
+.mm-print{background:#B5302E;color:#fff;border:none}.mm-print:disabled{opacity:.5}
+.mm-close{background:transparent;color:#F3EBDC;border:1px solid #C9A24A}
+.mm-book{display:flex;flex-direction:column;align-items:center;gap:22px;padding:26px 10px}
+.mm-spacer{display:none}
+@media screen and (min-width:1000px){
+  .mm-book{display:grid;grid-template-columns:148mm 148mm;justify-content:center;gap:28px 0;padding:34px 20px}
+  .mm-spacer{display:block}
+  .mm-page.even{box-shadow:-14px 12px 26px rgba(0,0,0,.4),inset -18px 0 22px -14px rgba(60,40,20,.35)!important}
+  .mm-page:not(.even){box-shadow:14px 12px 26px rgba(0,0,0,.4),inset 18px 0 22px -14px rgba(60,40,20,.35)!important}
+}
+.mm-page{--paper:#FBF6EA;position:relative;width:148mm;height:210mm;max-width:calc(100vw - 20px);box-sizing:border-box;overflow:hidden;color:#2A2420;font-family:"Noto Serif SC",serif;
+  background:radial-gradient(rgba(140,110,70,.06) 1px,transparent 1.3px) 0 0/5px 5px,repeating-linear-gradient(13deg,rgba(140,110,70,.035) 0 1px,transparent 1px 8px),var(--paper);
+  box-shadow:0 12px 30px rgba(0,0,0,.45);padding:14mm 12mm;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+@media screen and (max-width:600px){.mm-page{height:auto;aspect-ratio:148/210;padding:7vw 6vw}}
+.mm-pn{position:absolute;bottom:7mm;font-family:"Noto Serif SC",serif;font-size:8.5pt;color:#9A8A74}
+.mm-page:not(.even) .mm-pn{right:11mm}.mm-page.even .mm-pn{left:11mm}
+.mm-run{position:absolute;bottom:7mm;left:0;right:0;text-align:center;font-size:7.5pt;letter-spacing:.3em;color:#A89880}
+.mm-page h2{margin:0;text-align:center;font-family:"Ma Shan Zheng","Noto Serif SC",serif;font-weight:400;font-size:28pt;color:#2A2420;letter-spacing:.15em}
+.mm-h2s{margin:1mm 0 7mm;text-align:center;font-size:8.5pt;letter-spacing:.5em;color:#A08C76}
+/* cover: cloth-bound album */
+.mm-cover{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8mm;padding-left:18mm;color:#F3EBDC;
+  background:linear-gradient(90deg,#16203A 0 10mm,rgba(255,255,255,.08) 10mm 10.6mm,transparent 10.6mm),repeating-linear-gradient(0deg,rgba(255,255,255,.035) 0 1px,transparent 1px 3px),repeating-linear-gradient(90deg,rgba(0,0,0,.06) 0 1px,transparent 1px 3px),#22305A}
+.mm-plate{padding:8mm 10mm 7mm;background:#FBF6EA;color:#22305A;text-align:center;box-shadow:0 0 0 1.2mm #22305A,0 0 0 1.8mm #C9A24A,0 2mm 4mm rgba(0,0,0,.35)}
+.mm-plate h1{margin:1mm 0;font-family:"Ma Shan Zheng","Noto Serif SC",serif;font-weight:400;font-size:40pt;letter-spacing:.12em;line-height:1.1}
+.mm-c-k{margin:0;font-size:8pt;letter-spacing:.4em;color:#B5302E}
+.mm-c-sub{margin:0;font-size:10pt;letter-spacing:.35em;color:#5A4E40}
+.mm-c-logo{width:26mm;height:26mm;border-radius:22%;box-shadow:0 0 0 .8mm #C9A24A,0 2mm 4mm rgba(0,0,0,.4)}
+.mm-c-mem{margin:0;font-size:10pt;letter-spacing:.2em;color:#E6C46A}
+/* endpaper */
+.mm-endpaper{display:flex;align-items:center;justify-content:center;background:radial-gradient(circle at 0 0,transparent 0 6mm,rgba(201,162,74,.35) 6mm 6.4mm,transparent 6.4mm) 0 0/12mm 12mm,radial-gradient(circle at 6mm 6mm,transparent 0 6mm,rgba(201,162,74,.35) 6mm 6.4mm,transparent 6.4mm) 0 0/12mm 12mm,#22305A}
+.mm-ep-label{display:flex;flex-direction:column;align-items:center;gap:2mm;padding:10mm 12mm;background:#FBF6EA;text-align:center;box-shadow:0 0 0 1mm #C9A24A}
+.mm-ep-label span{font-size:9.5pt;letter-spacing:.2em;color:#5A4E40}.mm-ep-label b{font-family:"Ma Shan Zheng","Noto Serif SC",serif;font-weight:400;font-size:20pt;color:#22305A}
+.mm-ep-label em{font-style:normal;font-size:9pt;color:#B5302E;letter-spacing:.1em;margin-top:2mm}
+.mm-ep-stats{display:flex;gap:4mm;margin-top:4mm}.mm-ep-stats div{display:flex;flex-direction:column;align-items:center;width:18mm;padding:2mm 0;border:.3mm solid #C9A24A}.mm-ep-stats b{font-size:14pt}.mm-ep-stats span{font-size:7.5pt;letter-spacing:.1em}
+/* toc */
+.mm-toc-l{list-style:none;margin:0;padding:0}
+.mm-toc-l li{display:grid;grid-template-columns:3.5mm 15mm auto 1fr 8mm;align-items:center;gap:2.4mm;padding:2.4mm 0;font-size:9.5pt}
+.mm-toc-l li i{width:3.5mm;height:3.5mm;border-radius:50%}.mm-toc-l li b{font-weight:900}
+.mm-toc-l li span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:62mm}
+.mm-toc-l li u{border-bottom:.4mm dotted #B0A08A;height:0;align-self:center}
+.mm-toc-l li em{font-style:normal;text-align:right;color:#7A6A55}
+/* day pages: kraft album */
+.mm-day{--paper:#ECDFC6;padding-top:12mm}
+.mm-tab{position:absolute;top:16mm;right:0;width:13mm;padding:3mm 0;background:var(--tc);color:var(--tt);display:flex;flex-direction:column;align-items:center;border-radius:2mm 0 0 2mm;box-shadow:-.6mm .6mm 0 rgba(0,0,0,.15)}
+.mm-day.even .mm-tab{right:auto;left:0;border-radius:0 2mm 2mm 0}
+.mm-tab b{font-family:"Noto Serif SC",serif;font-size:15pt;line-height:1}.mm-tab span{font-size:6pt;letter-spacing:.2em}
+.mm-dh{margin:0 14mm 4mm 0}.mm-day.even .mm-dh{margin:0 0 4mm 14mm}
+.mm-dk{display:inline-block;padding:.6mm 3mm;background:var(--tk);color:#2A2420;font-size:7.5pt;letter-spacing:.2em;transform:rotate(-1.5deg)}
+.mm-dh h3{margin:1.5mm 0 0;font-family:"Ma Shan Zheng","Noto Serif SC",serif;font-weight:400;font-size:20pt;line-height:1.2;color:#2A2420}
+.mm-dsub{margin:.5mm 0 0;font-size:7.5pt;color:#7A6A55}
+.mm-spot{position:relative;display:grid;grid-template-columns:60mm 1fr;gap:5mm;align-items:start;margin-bottom:4mm;height:47mm}
+.mm-spot.r{grid-template-columns:1fr 60mm}.mm-spot.r .mm-print-photo{order:2;transform:rotate(1.4deg)}
+.mm-print-photo{position:relative;margin:0;padding:2.4mm 2.4mm 2.4mm;background:#fff;box-shadow:0 1mm 2mm rgba(60,40,20,.3);transform:rotate(-1.2deg);height:43mm;box-sizing:border-box}
+.mm-print-photo img{display:block;width:100%;height:100%;object-fit:cover}
+.mm-corner{position:absolute;width:6mm;height:6mm;background:#2A2420;z-index:1}
+.mm-corner.a{top:-1mm;left:-1mm;clip-path:polygon(0 0,100% 0,0 100%)}.mm-corner.b{top:-1mm;right:-1mm;clip-path:polygon(0 0,100% 0,100% 100%)}
+.mm-corner.c{bottom:-1mm;left:-1mm;clip-path:polygon(0 0,0 100%,100% 100%)}.mm-corner.d{bottom:-1mm;right:-1mm;clip-path:polygon(100% 0,100% 100%,0 100%)}
+.mm-side{display:flex;flex-direction:column;gap:2mm;min-width:0;height:100%}
+.mm-cap h4{margin:0;font-family:"Ma Shan Zheng","Noto Serif SC",serif;font-weight:400;font-size:15pt;line-height:1.15;color:#2A2420}
+.mm-sub{margin:.6mm 0 0;font-size:7pt;line-height:1.35;color:#6E5E4A}
+.mm-date{display:inline-block;margin-top:1.4mm;padding:.2mm 2mm;border:.4mm solid #B5302E;border-radius:1mm;color:#B5302E;font-family:"Courier New",monospace;font-weight:700;font-size:8pt;transform:rotate(-3deg)}
+.mm-votes{display:inline-flex;gap:1.2mm;margin-left:2mm;vertical-align:middle}
+.mm-votes span{display:inline-flex;align-items:center;justify-content:center;min-width:8mm;height:8mm;padding:0 1mm;border-radius:50%;font-size:7.5pt;font-weight:900;color:#fff;transform:rotate(6deg)}
+.mm-like{background:#E0627A}.mm-dis{background:#7A8A9A}
+.mm-minis{display:flex;gap:2.5mm;margin-top:auto}
+.mm-mini{margin:0;width:22mm;height:17mm;padding:1.2mm;background:#fff;box-shadow:0 .8mm 1.5mm rgba(60,40,20,.28);box-sizing:border-box;position:relative}
+.mm-mini img{width:100%;height:100%;object-fit:cover;display:block}
+.mm-mini.m0{transform:rotate(2.5deg)}.mm-mini.m1{transform:rotate(-2deg)}
+.mm-mini::before{content:"";position:absolute;top:-1.6mm;left:50%;width:9mm;height:3.2mm;margin-left:-4.5mm;background:var(--tc);opacity:.75;transform:rotate(-4deg)}
+.mm-more{margin:0;font-size:7pt;color:#7A6A55}
+.mm-emptyday{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2mm;height:120mm;margin-top:6mm;border:.6mm dashed #B9A88A;border-radius:2mm}
+.mm-emptyday span{font-family:"Ma Shan Zheng","Noto Serif SC",serif;font-size:16pt;color:#6E5E4A}.mm-emptyday small{font-size:8pt;color:#9A8A74}
+.mm-miss{margin:1mm 0 0;font-size:7.5pt;color:#7A6A55;line-height:1.5}
+.mm-bad{visibility:hidden}
+/* favourites */
+.mm-fav{--paper:#ECDFC6}
+.mm-favgrid{display:grid;grid-template-columns:1fr 1fr;gap:6mm 6mm}
+.mm-fav-it{position:relative;margin:0;padding:2mm 2mm 7mm;background:#fff;box-shadow:0 1mm 2mm rgba(60,40,20,.3)}
+.mm-fav-it:nth-child(odd){transform:rotate(-1.5deg)}.mm-fav-it:nth-child(even){transform:rotate(1.5deg)}
+.mm-fav-it img,.mm-noimg{display:block;width:100%;height:34mm;object-fit:cover;background:#E6DCC9}
+.mm-fav-it figcaption{position:absolute;left:2mm;right:2mm;bottom:1.2mm;display:flex;justify-content:space-between;align-items:baseline;font-family:"Ma Shan Zheng","Noto Serif SC",serif;font-size:10pt}
+.mm-fav-it figcaption span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:42mm}.mm-fav-it figcaption em{font-style:normal;font-family:"Noto Serif SC",serif;font-size:8pt;color:#E0627A;font-weight:900}
+.mm-rank{position:absolute;top:-3mm;left:-3mm;width:9mm;height:9mm;border-radius:50%;background:#B5302E;color:#fff;display:flex;align-items:center;justify-content:center;font-family:"Noto Serif SC",serif;font-size:10pt;box-shadow:0 0 0 .7mm #fff}
+/* money */
+.mm-total{display:flex;flex-direction:column;align-items:center;margin-bottom:6mm}.mm-total span{font-size:8.5pt;letter-spacing:.3em;color:#7A6A55}.mm-total b{font-size:26pt;color:#B5302E}.mm-total small{font-size:8pt;color:#7A6A55}
+.mm-tbl{margin-bottom:6mm}.mm-row{display:grid;grid-template-columns:1.2fr 1fr 1fr;padding:1.6mm 0;border-bottom:.3mm dotted #C9BBA2;font-size:9.5pt}.mm-row span:not(:first-child){text-align:right}.mm-row.hd{font-size:7.5pt;color:#7A6A55}
+.mm-bars{display:flex;flex-direction:column;gap:1.6mm}.mm-bar-r{display:grid;grid-template-columns:14mm 1fr 20mm;align-items:center;gap:2mm;font-size:8pt}.mm-bar-r i{height:3mm;background:#EDE4D3}.mm-bar-r em{display:block;height:100%}.mm-bar-r b{text-align:right}
+/* back cover */
+.mm-back{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8mm;color:#E6C46A;background:repeating-linear-gradient(0deg,rgba(255,255,255,.035) 0 1px,transparent 1px 3px),repeating-linear-gradient(90deg,rgba(0,0,0,.06) 0 1px,transparent 1px 3px),#22305A}
+.mm-plate.small h2{font-size:18pt;color:#22305A}.mm-plate.small p{margin:2mm 0 0;font-size:9pt;color:#5A4E40}
+.mm-back .mm-c-k{color:#E6C46A}
+/* print */
+@page{size:148mm 210mm;margin:0}
+@media print{
+  html,body{overflow:visible!important;height:auto!important;background:#fff!important}
+  body.mm-open>*:not(.memoir-ov){display:none!important}
+  .memoir-ov{position:static!important;overflow:visible!important;background:none!important;padding:0!important}
+  .mm-bar{display:none!important}
+  .mm-book{display:block;padding:0}
+  .mm-page{box-shadow:none!important;margin:0!important;max-width:none!important;width:148mm!important;height:210mm!important;aspect-ratio:auto!important;padding:14mm 12mm!important;break-after:page;page-break-after:always}
+  .mm-day{padding-top:12mm!important}
+  .mm-spacer{display:none!important}.mm-cover{padding-left:18mm!important}
+}
+.mm-day .mm-run{display:none}
 </style></head><body><template id="shell">
 <header class="wall pending">
   <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><filter id="keywhite" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB"><feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  -6 -6 -6 0 16.8" result="m"/><feMorphology in="m" operator="erode" radius="1.5" result="me"/><feComposite in="SourceGraphic" in2="me" operator="in" result="c"/><feComposite in="c" in2="SourceAlpha" operator="in"/></filter></svg>
@@ -1949,6 +2074,10 @@ body.kon-on .status .gauge i,body.kyo-on .status .gauge i,body.fuk-on .status .g
 <section id="split">
   <div class="shead"><h2>旅费分账</h2><small>谁付了什么，最后谁给谁多少</small></div>
   <div id="splitbox"></div>
+</section>
+<section id="memoir">
+  <div class="shead"><h2>旅の栞 · 纪念册</h2><small>回国后，把整趟旅行装订成一本</small></div>
+  <div class="mm-intro"><div class="mm-bookcover" aria-hidden="true"><span>旅の栞</span><em>二〇二七　秋</em></div><div class="mm-txt"><p>所有地点的打卡照片、谁去了哪里、大家的评价，还有旅费总结，会自动排成一本 A5 纪念册。打开后可以直接打印，或在打印画面选「存成 PDF」。</p><button type="button" id="mm-open" class="mm-openbtn">翻开纪念册</button></div></div>
 </section>
 <section id="supply">
   <div class="shead"><h2>补给与装备</h2><small>租车须知</small></div>
@@ -2062,7 +2191,7 @@ var art=null;
 function el(t,c,txt){var e=document.createElement(t);if(c)e.className=c;if(txt!=null)e.textContent=txt;return e;}
 function lnk(c,txt,href){var a=el('a',c,txt);a.href=href;a.target='_blank';a.rel='noopener';return a;}
 
-var TC={"c":{"无":"無","读":"讀","请":"請","后":"後","试":"試","桥":"橋","头":"頭","电":"電","点":"點","图":"圖","区":"區","调":"調","从":"從","岛":"島","宫":"宮","渔":"漁","车":"車","时":"時","间":"間","冈":"岡","机":"機","场":"場","离":"離","铁":"鐵","红":"紅","灯":"燈","欢":"歡","异":"異","还":"還","见":"見","鸟":"鳥","国":"國","学":"學","旧":"舊","这":"這","里":"裡","买":"買","两":"兩","馆":"館","联":"聯","兑":"兌","换":"換","奖":"獎","干":"幹","线":"線","显":"顯","双":"雙","击":"擊","鸡":"雞","签":"簽","画":"畫","纸":"紙","过":"過","远":"遠","员":"員","评":"評","价":"價","开":"開","钥":"鑰","叶":"葉","庙":"廟","游":"遊","钟":"鐘","风":"風","会":"會","发":"發","当":"當","删":"刪","张":"張","脸":"臉","与":"與","带":"帶","单":"單","让":"讓","礼":"禮","驾":"駕","个":"個","来":"來","阶":"階","丝":"絲","经":"經","约":"約","驿":"驛","谁":"誰","档":"檔","轻":"輕","门":"門","进":"進","制":"製","记":"記","优":"優","饮":"飲","周":"週","条":"條","选":"選","参":"參","设":"設","标":"標","询":"詢","问":"問","现":"現","兴":"興","没":"沒","团":"團","书":"書","网":"網","络":"絡","内":"內","导":"導","数":"數","顺":"順","处":"處","观":"觀","樱":"櫻","暂":"暫","绝":"絕","几":"幾","详":"詳","鸭":"鴨","顶":"頂","关":"關","营":"營","业":"業","动":"動","装":"裝","妆":"妝","订":"訂","确":"確","认":"認","样":"樣","结":"結","访":"訪","写":"寫","楼":"樓","细":"細","账":"賬","传":"傳","笔":"筆","权":"權","话":"話","败":"敗","检":"檢","贴":"貼","戏":"戲","销":"銷","彦":"彥","转":"轉","圣":"聖","台":"臺","钱":"錢","术":"術","脚":"腳","鲜":"鮮","鱼":"魚","产":"產","晒":"曬","阳":"陽","乌":"烏","龟":"龜","们":"們","练":"練","丰":"豐","奥":"奧","体":"體","够":"夠","刚":"剛","绿":"綠","决":"決","额":"額","变":"變","录":"錄","计":"計","页":"頁","论":"論","乐":"樂","浓":"濃","雾":"霧","议":"議","纪":"紀","满":"滿","吗":"嗎","笼":"籠","办":"辦","务":"務","坝":"壩","铜":"銅","简":"簡","恋":"戀","黄":"黃","编":"編","辑":"輯","补":"補","给":"給","备":"備","飞":"飛","骑":"騎","课":"課","园":"園","墙":"牆","温":"溫","预":"預","齐":"齊","实":"實","际":"際","帐":"帳","号":"號","汤":"湯","亲":"親","绘":"繪","着":"著","镜":"鏡","柜":"櫃","夹":"夾","护":"護","证":"證","复":"複","纯":"純","缩":"縮","达":"達","猫":"貓","汇":"匯","费":"費","禅":"禪","阁":"閣","厦":"廈","驳":"駁","负":"負","责":"責","儿":"兒","须":"須","则":"則","属":"屬","驶":"駛","马":"馬","亚":"亞","题":"題","静":"靜","杆":"桿","麦":"麥","劳":"勞","军":"軍","觉":"覺","么":"麼","为":"為","码":"碼","资":"資","况":"況","载":"載","该":"該","兽":"獸","对":"對","规":"規","划":"劃","别":"別","挡":"擋","厂":"廠","树":"樹","弹":"彈","储":"儲","报":"報","滚":"滾","轮":"輪","师":"師","贺":"賀","枫":"楓","玛":"瑪","纹":"紋","谜":"謎","冲":"沖","饭":"飯","尔":"爾","类":"類","闭":"閉","贩":"販","卖":"賣","摆":"擺","广":"廣","态":"態","准":"準","喂":"餵","长":"長","较":"較","厅":"廳","购":"購","币":"幣","边":"邊","筑":"築","范":"範","围":"圍","环":"環","绕":"繞","碍":"礙"},"p":{"公里，":"公里，","和发型":"和髮型","生发型":"生髮型","公里":"公里","台签":"臺籤","限制）":"限制）","备注（":"備註（","梅干等":"梅乾等","剪发的":"剪髮的","百只自":"百隻自"}};
+var TC={"c":{"设":"設","亲":"親","绘":"繪","制":"製","计":"計","厅":"廳","钟":"鐘","车":"車","载":"載","发":"發","区":"區","从":"從","开":"開","过":"過","约":"約","张":"張","冈":"岡","访":"訪","吗":"嗎","护":"護","证":"證","驾":"駕","复":"複","属":"屬","点":"點","选":"選","转":"轉","绿":"綠","灯":"燈","欢":"歡","学":"學","旧":"舊","樱":"櫻","买":"買","乐":"樂","账":"賬","团":"團","个":"個","贴":"貼","结":"結","费":"費","笔":"筆","没":"沒","奥":"奧","温":"溫","馆":"館","驿":"驛","里":"裡","题":"題","调":"調","还":"還","来":"來","画":"畫","后":"後","网":"網","络":"絡","汤":"湯","游":"遊","时":"時","当":"當","圣":"聖","礼":"禮","冲":"沖","现":"現","兴":"興","这":"這","两":"兩","联":"聯","兑":"兌","换":"換","奖":"獎","无":"無","读":"讀","请":"請","试":"試","红":"紅","叶":"葉","评":"評","价":"價","帐":"帳","号":"號","动":"動","败":"敗","检":"檢","钥":"鑰","台":"臺","机":"機","马":"馬","币":"幣","内":"內","晒":"曬","阳":"陽","简":"簡","干":"幹","线":"線","类":"類","别":"別","经":"經","传":"傳","删":"刪","标":"標","记":"記","轻":"輕","鸟":"鳥","员":"員","间":"間","挡":"擋","门":"門","进":"進","见":"見","铁":"鐵","编":"編","辑":"輯","图":"圖","产":"產","档":"檔","鸭":"鴨","汇":"匯","笼":"籠","几":"幾","暂":"暫","头":"頭","镜":"鏡","柜":"櫃","着":"著","夹":"夾","场":"場","营":"營","业":"業","负":"負","责":"責","刚":"剛","务":"務","议":"議","们":"們","预":"預","订":"訂","周":"週","补":"補","观":"觀","销":"銷","岛":"島","单":"單","页":"頁","会":"會","饭":"飯","关":"關","书":"書","报":"報","贩":"販","卖":"賣","术":"術","阶":"階","击":"擊","乌":"烏","总":"總","体":"體","参":"參","够":"夠","显":"顯","双":"雙","纯":"純","绝":"絕","询":"詢","与":"與","兽":"獸","导":"導","离":"離","缩":"縮","写":"寫","优":"優","饮":"飲","浓":"濃","雾":"霧","带":"帶","顺":"順","桥":"橋","顶":"頂","电":"電","黄":"黃","须":"須","纪":"紀","册":"冊","彦":"彥","签":"簽","钱":"錢","样":"樣","宫":"宮","渔":"漁","确":"確","认":"認","坝":"壩","谁":"誰","楼":"樓","龟":"龜","练":"練","恋":"戀","树":"樹","风":"風","满":"滿","闭":"閉","课":"課","杆":"桿","庙":"廟","录":"錄","枫":"楓","丝":"絲","决":"決","话":"話","尔":"爾","为":"為","墙":"牆","则":"則","详":"詳","滚":"滾","轮":"輪","国":"國","装":"裝","骑":"騎","园":"園","丰":"豐","麦":"麥","劳":"勞","实":"實","际":"際","师":"師","贺":"賀","问":"問","购":"購","对":"對","规":"規","划":"劃","办":"辦","态":"態","细":"細","边":"邊","静":"靜","筑":"築","范":"範","围":"圍","较":"較","远":"遠","铜":"銅","军":"軍","条":"條","变":"變","处":"處","碍":"礙","备":"備","额":"額","广":"廣","纸":"紙","飞":"飛","觉":"覺","么":"麼","环":"環","绕":"繞","该":"該","脸":"臉","准":"準","猫":"貓","禅":"禪","阁":"閣","论":"論","弹":"彈","脚":"腳","鲜":"鮮","鱼":"魚","玛":"瑪","亚":"亞","纹":"紋","谜":"謎","数":"數","长":"長","妆":"妝","戏":"戲","喂":"餵","权":"權","厦":"廈","驳":"駁","储":"儲","给":"給","摆":"擺","鸡":"雞","齐":"齊","达":"達","厂":"廠","况":"況","驶":"駛","资":"資","让":"讓","儿":"兒","异":"異","码":"碼"},"p":{"梅干等":"梅乾等","台签":"臺籤","剪发的":"剪髮的","限制）":"限制）","公里，":"公里，","备注（":"備註（","公里":"公里","和发型":"和髮型","生发型":"生髮型","百只自":"百隻自"}};
 var TCP=Object.keys(TC.p).sort(function(a,b){return b.length-a.length;});
 function lang(){try{return localStorage.getItem('aot-lang')==='tc'?'tc':'sc';}catch(e){return 'sc';}}
 function tcv(s){if(!s||!/[\u4e00-\u9fff]/.test(s))return s;var out='',i=0;
@@ -2510,6 +2639,73 @@ function renderSplit(){
   if(can){var me=el('button','sp-btn ghost sp-memb','编辑成员');me.type='button';me.onclick=memberEditor;all.appendChild(me);}
   box.appendChild(all);
   var rt2=el('div','sp-rate');rt2.appendChild(el('span',null,'汇率：1 日元 ≈ RM'));var ri=el('input');ri.type='number';ri.step='0.001';ri.value=String(rate());ri.onchange=function(){var x=parseFloat(ri.value);if(x>0){try{localStorage.setItem('aot-rate',String(x));}catch(er){}build();}};rt2.appendChild(ri);rt2.appendChild(el('small',null,'只存在这台手机，用来换算马币'));box.appendChild(rt2);
+}
+
+/* ===== 旅の栞 纪念册 ===== */
+var MMC={'':{c:'#3E5C3A',t:'#F1E6C8',k:'#B48A3A',nm:'壁外调查'},kon:{c:'#F27FA5',t:'#fff',k:'#FFD66B',nm:'放课后'},kyo:{c:'#2E4A7D',t:'#fff',k:'#C8402B',nm:'京都巡礼'},fuk:{c:'#6FB3E0',t:'#fff',k:'#F4A7B9',nm:'福冈散步'}};
+function openMemoir(){
+  var ov=el('div','memoir-ov');ov.setAttribute('role','dialog');ov.setAttribute('aria-modal','true');
+  var bar=el('div','mm-bar');bar.appendChild(el('b',null,'旅の栞 · 纪念册'));var st=el('span','mm-st','整理中…');bar.appendChild(st);
+  var pr=el('button','mm-print','打印 / 存成 PDF');pr.type='button';pr.disabled=true;pr.onclick=function(){window.print();};bar.appendChild(pr);
+  var cl=el('button','mm-close','关闭');cl.type='button';cl.onclick=function(){ov.remove();document.documentElement.style.overflow='';document.body.classList.remove('mm-open');};bar.appendChild(cl);ov.appendChild(bar);
+  var book=el('div','mm-book');ov.appendChild(book);book.appendChild(el('div','mm-spacer'));
+  var pages=[];function page(cls){var p=el('section','mm-page '+(cls||''));book.appendChild(p);pages.push(p);return p;}
+  var allShots=[],visited=0;SPOTS.forEach(function(s){var x=S(s.id);if(x.shots.length)visited++;x.shots.forEach(function(p){allShots.push(p.at||'');});});
+  var dates=allShots.filter(Boolean).sort();var mem=(MEMS&&MEMS.length?MEMS:[]);
+  function md(iso){try{var t=new Date(iso);return (t.getMonth()+1)+'.'+String(t.getDate()).padStart(2,'0');}catch(e){return '';}}
+  /* cover: cloth album */
+  var c=page('mm-cover');var plate=el('div','mm-plate');plate.appendChild(el('p','mm-c-k','PHOTO ALBUM　二〇二七'));plate.appendChild(el('h1',null,'旅の栞'));plate.appendChild(el('p','mm-c-sub','日田 · 京都 · 福冈'));c.appendChild(plate);
+  var ci=el('img','mm-c-logo');ci.src='icon-512.png';ci.alt='';c.appendChild(ci);
+  if(mem.length)c.appendChild(el('p','mm-c-mem',mem.join('　·　')));
+  /* endpaper */
+  var ep=page('mm-endpaper');var epl=el('div','mm-ep-label');epl.appendChild(el('span',null,'この本は'));epl.appendChild(el('b',null,(mem.length?mem.join('、'):'我们')+' 的'));epl.appendChild(el('span',null,'二〇二七年 秋の旅の記録です'));
+  if(dates.length)epl.appendChild(el('em',null,fmtDate(dates[0])+' ～ '+fmtDate(dates[dates.length-1])));
+  var stt=el('div','mm-ep-stats');[[String(visited),'个地方'],[String(allShots.length),'张照片'],['11','天']].forEach(function(q){var d=el('div');d.appendChild(el('b',null,q[0]));d.appendChild(el('span',null,q[1]));stt.appendChild(d);});epl.appendChild(stt);ep.appendChild(epl);
+  /* contents */
+  var t=page('mm-toc');t.appendChild(el('h2',null,'もくじ'));t.appendChild(el('p','mm-h2s','目录'));var tl=el('ol','mm-toc-l');t.appendChild(tl);var tocRows=[];
+  /* day pages */
+  var dayFirst={};
+  DAYS.forEach(function(D){var C=MMC[D.theme||'']||MMC[''];var sp=D.stops.filter(function(z){return z.kind!=='util';});
+    var done=sp.filter(function(z){return S(z.id).shots.length;}),miss=sp.filter(function(z){return !S(z.id).shots.length;});
+    var chunks=[];for(var i=0;i<done.length;i+=3)chunks.push(done.slice(i,i+3));if(!chunks.length)chunks=[[]];
+    chunks.forEach(function(ch,ci2){var p=page('mm-day'+(ci2?' cont':''));p.style.setProperty('--tc',C.c);p.style.setProperty('--tt',C.t);p.style.setProperty('--tk',C.k);
+      if(ci2===0)dayFirst[D.d]=pages.length;
+      var tab=el('div','mm-tab');tab.appendChild(el('b',null,D.d));tab.appendChild(el('span',null,'DAY'));p.appendChild(tab);
+      var hd=el('header','mm-dh');hd.appendChild(el('span','mm-dk',C.nm+'　'+D.lab+(ci2?'　つづき':'')));hd.appendChild(el('h3',null,D.title));if(D.sub&&!ci2)hd.appendChild(el('p','mm-dsub',D.sub));p.appendChild(hd);
+      if(!ch.length){var em=el('div','mm-emptyday');em.appendChild(el('span',null,sp.length?'这一天的照片还没贴上来':'这一天在路上'));em.appendChild(el('small',null,sp.length?'回来后记得补上打卡照片':'移动日 · 自由行'));p.appendChild(em);}
+      ch.forEach(function(s,k){var x=S(s.id);var blk=el('article','mm-spot '+(k%2?'r':'l'));
+        var main=el('figure','mm-print-photo');var im=el('img');im.src=x.shots[0].src;im.alt='';main.appendChild(im);main.appendChild(el('i','mm-corner a'));main.appendChild(el('i','mm-corner b'));main.appendChild(el('i','mm-corner c'));main.appendChild(el('i','mm-corner d'));blk.appendChild(main);
+        var side=el('div','mm-side');var cap=el('div','mm-cap');cap.appendChild(el('h4',null,s.name.split('　')[0]));var sub=s.name.split('　')[1];if(sub)cap.appendChild(el('p','mm-sub',sub));
+        var at=x.shots.map(function(q){return q.at;}).filter(Boolean).sort();if(at.length)cap.appendChild(el('span','mm-date',md(at[0])));
+        var vs=VOTES[s.id]||[],lk=vs.filter(function(v){return v.val==='L';}).length,dk=vs.filter(function(v){return v.val==='D';}).length;
+        if(lk||dk){var vb=el('div','mm-votes');if(lk)vb.appendChild(el('span','mm-like','♥ '+lk));if(dk)vb.appendChild(el('span','mm-dis','✕ '+dk));cap.appendChild(vb);}
+        side.appendChild(cap);
+        var minis=[];if(x.shots.length>1)minis.push(x.shots[x.shots.length-1]);if(x.shots.length>2)minis.push(x.shots[Math.floor(x.shots.length/2)]);
+        if(minis.length){var mr=el('div','mm-minis');minis.forEach(function(q,j){var f=el('figure','mm-mini m'+j);var mi=el('img');mi.src=q.src;mi.alt='';f.appendChild(mi);mr.appendChild(f);});side.appendChild(mr);}
+        if(x.shots.length>3)side.appendChild(el('p','mm-more','还有 '+(x.shots.length-3)+' 张'));
+        blk.appendChild(side);p.appendChild(blk);});
+      if(ci2===chunks.length-1&&miss.length&&ch.length<3){p.appendChild(el('p','mm-miss','下次再来：'+miss.map(function(z){return z.name.split('　')[0];}).join('、')));}
+      p.appendChild(el('footer','mm-run','旅の栞　·　'+D.lab+'　'+D.w));});});
+  /* favourites */
+  var rank=SPOTS.map(function(s){var vs=VOTES[s.id]||[];return {s:s,l:vs.filter(function(v){return v.val==='L';}).length,d:vs.filter(function(v){return v.val==='D';}).length,n:S(s.id).shots.length};}).filter(function(r){return r.l||r.n;}).sort(function(a,b){return b.l-a.l||b.n-a.n;}).slice(0,6);
+  var fv=page('mm-fav');fv.appendChild(el('h2',null,'お気に入り'));fv.appendChild(el('p','mm-h2s','大家最喜欢的地方'));var fg=el('div','mm-favgrid');
+  if(!rank.length)fv.appendChild(el('p','mm-miss','还没有评价。'));
+  rank.forEach(function(r,i){var f=el('figure','mm-fav-it');var x=S(r.s.id);if(x.shots.length){var im=el('img');im.src=x.shots[0].src;im.alt='';f.appendChild(im);}else f.appendChild(el('span','mm-noimg'));
+    f.appendChild(el('b','mm-rank',String(i+1)));var fc=el('figcaption');fc.appendChild(el('span',null,r.s.name.split('　')[0]));fc.appendChild(el('em',null,'♥ '+r.l));f.appendChild(fc);fg.appendChild(f);});fv.appendChild(fg);
+  /* money */
+  if(MEMS&&MEMS.length>1&&EXPS.length){var mp=page('mm-money');mp.appendChild(el('h2',null,'旅のおかね'));mp.appendChild(el('p','mm-h2s','旅费总结'));var tot=EXPS.reduce(function(a,e){return a+e.a;},0);
+    var big=el('div','mm-total');big.appendChild(el('span',null,'全程合计'));big.appendChild(el('b',null,yen(tot)));big.appendChild(el('small',null,'约 '+myr(tot)+'　·　'+EXPS.length+' 笔'));mp.appendChild(big);
+    var SA=settleList(EXPS);var tb=el('div','mm-tbl');[['','付了','该分']].concat(MEMS.map(function(m){return [m,yen(SA.paid[m]),yen(SA.share[m])];})).forEach(function(r,ri){var row=el('div','mm-row'+(ri?'':' hd'));r.forEach(function(v){row.appendChild(el('span',null,v));});tb.appendChild(row);});mp.appendChild(tb);
+    var mx=0,per=DAYS.map(function(D){var s=dayExps(D.d).reduce(function(a,e){return a+e.a;},0);mx=Math.max(mx,s);return [D,s];});
+    var chb=el('div','mm-bars');per.forEach(function(q){var C=MMC[q[0].theme||'']||MMC[''];var r=el('div','mm-bar-r');r.appendChild(el('span',null,q[0].lab));var tr=el('i');var f=el('em');f.style.width=(mx?q[1]/mx*100:0)+'%';f.style.background=C.c;tr.appendChild(f);r.appendChild(tr);r.appendChild(el('b',null,q[1]?yen(q[1]):'—'));chb.appendChild(r);});mp.appendChild(chb);}
+  /* back */
+  var bk=page('mm-back');var bp=el('div','mm-plate small');bp.appendChild(el('h2',null,'おつかれさまでした'));bp.appendChild(el('p',null,'旅はまだ続く。下一趟旅行见。'));bk.appendChild(bp);bk.appendChild(el('p','mm-c-k','旅の栞　二〇二七'));
+  /* toc rows with page numbers */
+  DAYS.forEach(function(D){var C=MMC[D.theme||'']||MMC[''];var li=el('li');var dot=el('i');dot.style.background=C.c;li.appendChild(dot);li.appendChild(el('b',null,D.lab));li.appendChild(el('span',null,D.title));li.appendChild(el('u'));li.appendChild(el('em',null,String(dayFirst[D.d]||'')));tl.appendChild(li);});
+  pages.forEach(function(p,i){if(i>1&&i<pages.length-1){var n=el('span','mm-pn',String(i+1));p.appendChild(n);}if(i%2===1)p.classList.add('even');});
+  document.body.appendChild(ov);document.body.classList.add('mm-open');document.documentElement.style.overflow='hidden';if(lang()==='tc')convNode(ov);
+  var imgs=[].slice.call(ov.querySelectorAll('img')),left=imgs.length;function tick(){left--;st.textContent=T(left>0?'照片载入中 '+(imgs.length-left)+' / '+imgs.length:'共 '+pages.length+' 页，可以打印了');if(left<=0)pr.disabled=false;}
+  if(!left){st.textContent=T('共 '+pages.length+' 页，可以打印了');pr.disabled=false;}imgs.forEach(function(im){if(im.complete)tick();else{im.onload=tick;im.onerror=function(){im.classList.add('mm-bad');tick();};}});
 }
 
 function stamp(){var d=new Date();function p(n){return String(n).padStart(2,'0');}return d.getUTCFullYear()+p(d.getUTCMonth()+1)+p(d.getUTCDate())+'T'+p(d.getUTCHours())+p(d.getUTCMinutes())+p(d.getUTCSeconds())+'Z';}
@@ -3016,7 +3212,7 @@ function setupAdmin(){
   show();
 }
 art=token()?{gh:true}:null;
-window.__DAYS=DAYS;window.__lang=lang;window.__conv=convNode;TH.fuk=FKTH[FKV];SPUNIT.fuk=FKTH[FKV].sp;build();setupAdmin();hero();applyLang();
+window.__DAYS=DAYS;window.__lang=lang;window.__conv=convNode;TH.fuk=FKTH[FKV];SPUNIT.fuk=FKTH[FKV].sp;build();document.addEventListener('click',function(e){if(e.target&&e.target.id==='mm-open')openMemoir();});setupAdmin();hero();applyLang();
 (function(){
   var chip=document.getElementById('me');
   function paint(){var n=myName();if(chip){chip.textContent='';var s=document.createElement('span');s.className='me-ic';s.innerHTML='<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3.6"/><path d="M5 20c1.2-3.8 4-5.6 7-5.6s5.8 1.8 7 5.6"/></svg>';chip.appendChild(s);chip.appendChild(document.createTextNode(n||'未登记'));var e=document.createElement('i');e.textContent='✎';chip.appendChild(e);}}
