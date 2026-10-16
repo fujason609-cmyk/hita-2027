@@ -2075,10 +2075,6 @@ body.kon-on .status .gauge i,body.kyo-on .status .gauge i,body.fuk-on .status .g
   <div class="shead"><h2>旅费分账</h2><small>谁付了什么，最后谁给谁多少</small></div>
   <div id="splitbox"></div>
 </section>
-<section id="memoir">
-  <div class="shead"><h2>旅の栞 · 纪念册</h2><small>回国后，把整趟旅行装订成一本</small></div>
-  <div class="mm-intro"><div class="mm-bookcover" aria-hidden="true"><span>旅の栞</span><em>二〇二七　秋</em></div><div class="mm-txt"><p>所有地点的打卡照片、谁去了哪里、大家的评价，还有旅费总结，会自动排成一本 A5 纪念册。打开后可以直接打印，或在打印画面选「存成 PDF」。</p><button type="button" id="mm-open" class="mm-openbtn">翻开纪念册</button></div></div>
-</section>
 <section id="supply">
   <div class="shead"><h2>补给与装备</h2><small>租车须知</small></div>
   <div class="tbl"><table><tbody>
@@ -2089,6 +2085,10 @@ body.kon-on .status .gauge i,body.kyo-on .status .gauge i,body.fuk-on .status .g
     <tr><th>租期</th><td>第 2～3 天（第 2 天早上取车，第 3 天傍晚还车），提早 1–2 个月预订（红叶旺季）。</td></tr>
     <tr><th>开车</th><td>靠左行驶，和马来西亚一样。11 月早上盆地多浓雾、可能结霜，山路慢开。大山一带山路窄，建议小型车。不需要雪胎。</td></tr>
   </tbody></table></div>
+</section>
+<section id="memoir">
+  <div class="shead"><h2>旅の栞 · 纪念册</h2><small>回国后，把整趟旅行装订成一本</small></div>
+  <div class="mm-intro"><div class="mm-bookcover" aria-hidden="true"><span>旅の栞</span><em>二〇二七　秋</em></div><div class="mm-txt"><p>所有地点的打卡照片、谁去了哪里、大家的评价，还有旅费总结，会自动排成一本 A5 纪念册。打开后可以直接打印，或在打印画面选「存成 PDF」。</p><button type="button" id="mm-open" class="mm-openbtn">翻开纪念册</button></div></div>
 </section>
 <section id="photoadmin">
   <div class="shead"><h2>照片管理</h2><small>只有负责上传的人需要设定</small></div>
@@ -3142,8 +3142,9 @@ function spy(){
   if(!act&&secs.length&&route&&route.getBoundingClientRect().top<=off)act=secs[0].id;
   var sp=document.getElementById('split');if(sp&&sp.getBoundingClientRect().top<=off)act='split';
   var sup=document.getElementById('supply');if(sup&&sup.getBoundingClientRect().top<=off)act='supply';
+  var mmo=document.getElementById('memoir');if(mmo&&mmo.getBoundingClientRect().top<=off)act='memoir';
   var pha=document.getElementById('photoadmin');if(pha){var pr=pha.getBoundingClientRect();if(pr.top<=off||(innerHeight+scrollY>=document.documentElement.scrollHeight-4&&pr.top<innerHeight*.6))act='photoadmin';}
-  if(act===curDay)return;curDay=act;var se=act&&document.getElementById(act);var th=se?(se.classList.contains('kon')?'kon':(se.classList.contains('kyo')?'kyo':(se.classList.contains('fuk')?'fuk':''))):'';document.body.classList.toggle('kon-on',th==='kon');document.body.classList.toggle('kyo-on',th==='kyo');document.body.classList.toggle('fuk-on',th==='fuk');document.body.setAttribute('data-th',th);document.body.classList.toggle('split-on',act==='split');document.body.classList.toggle('supply-on',act==='supply');document.body.classList.toggle('photo-on',act==='photoadmin');paintCount();
+  if(act===curDay)return;curDay=act;var se=act&&document.getElementById(act);var th=se?(se.classList.contains('kon')?'kon':(se.classList.contains('kyo')?'kyo':(se.classList.contains('fuk')?'fuk':''))):'';document.body.classList.toggle('kon-on',th==='kon');document.body.classList.toggle('kyo-on',th==='kyo');document.body.classList.toggle('fuk-on',th==='fuk');document.body.setAttribute('data-th',th);document.body.classList.toggle('split-on',act==='split'||act==='memoir');document.body.classList.toggle('supply-on',act==='supply');document.body.classList.toggle('photo-on',act==='photoadmin');paintCount();
   var links=[].slice.call(document.querySelectorAll('#daynav a'));
   links.forEach(function(a){var on=act&&a.getAttribute('href')==='#'+act;a.classList.toggle('on',!!on);if(on){a.setAttribute('aria-current','true');var nav=a.parentNode;var l=a.offsetLeft-(nav.clientWidth-a.offsetWidth)/2;nav.scrollTo?nav.scrollTo({left:l,behavior:'smooth'}):(nav.scrollLeft=l);}else a.removeAttribute('aria-current');});
   var lbl=document.getElementById('curday');if(lbl){var a2=links.filter(function(x){return x.classList.contains('on');})[0];lbl.textContent=a2?'现在：'+a2.textContent:'';}
